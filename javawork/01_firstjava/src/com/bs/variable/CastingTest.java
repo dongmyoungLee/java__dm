@@ -1,5 +1,7 @@
 package com.bs.variable;
 
+import java.util.Scanner;
+
 public class CastingTest {
 	public static void main(String[] args) {
 		// 자동 형 변환
@@ -62,7 +64,53 @@ public class CastingTest {
 		// 실수 : %f
 		// 문자 : %c
 		
-		System.out.printf("오늘 %s 수업은 %d 점 입니다.", "java", 80);
+		System.out.printf("오늘 %s 수업은 %d 점 %f입니다. \n", "java", 80, 54.3);
+		// %5s -> 5칸확보 
+		// %-5s -> 앞자리부터 5칸확보, %.2f -> 소수점 2자리표현
+		System.out.printf("오늘 %5s 수업은 %3d 점 %.2f입니다.\n", "java", 80, 54.3);
+		
+		// 문자열에  escape 문 출력하기
+		// 개행, 자바사용하는 기호를 사용, 특정공간을 띄우는 것
+		
+		// 개행 : \n
+		// tap : \t
+		// 역슬러쉬 : \\
+		// 큰따옴표 : \"
+		// 작은따옴표 : \'
+		
+		String temp = "안녕\n 오늘 첫 수업이었어 \t\t 다들 열심히 듣는 것 같아. \"호호\"";
+		System.out.println(temp);
+		temp = "다운로드 경로 : c:\\Users\\user";
+		System.out.println(temp);
+		
+		temp = "<p onclick=\"alert(\'test\')\">이거클릭해봐</p>";
+		System.out.println(temp);
+		
+		// 사용자가 키보드에 입력하는 데이터 받아오는 방법
+		// 1. import java.util.Scanner; 선언
+		// 2. Scanner sc = new Scanner(System.in);
+		// 3. 입력받을 데이터의 자료형에 맞춰서 입력을 받기 -> 이용하는 사람으로 부터...
+		// 4. 입력받은 내용을 사용자에게 출력..
+		
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("나이 ?: ");
+		int age2 = sc.nextInt();
+		//System.out.println(age2);
+		
+		System.out.print("키 ?: ");
+		double height = sc.nextDouble();
+		
+		
+		// sc.next() : 입력받는 값에 띄어 쓰기가 없는경우
+		// sc.nextLine() : 입력받는 값에 띄어쓰기가 있는 경우
+ 		
+		System.out.print("주소 ?: ");
+		sc.nextLine();
+		// nextLine() 쓸 경우엔 nextLine 이 아닌 다른 메소드를 nextLine이 나오기 전에 실행했다면 sc.nextLine(); 을 선언해서 buffer 를 비워줘야 함..
+		String address = sc.nextLine();
+		System.out.println("나이는 " + age2 + " 키는 " +  height + " 주소는 " + address);
+		
 		
 		
 	}
