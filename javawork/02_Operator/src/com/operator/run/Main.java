@@ -10,7 +10,8 @@ public class Main {
 //		new OperatorController().calculatorOp();
 //		new OperatorController().compareOp();
 //		new OperatorController().logicOp();
-		new OperatorController().myCalculator();
+		new OperatorController().complexOp();
+//		new OperatorController().myCalculator();
 
 	}
 }

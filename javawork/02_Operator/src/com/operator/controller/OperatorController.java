@@ -120,6 +120,31 @@ public class OperatorController {
 		
 	}
 	
+	public void complexOp() {
+		// 복합 대입 연산자
+		
+		// 용돈관리 기능, 잔고에 대한 내역
+		
+		//점수를 입력받아 60점 이상이면 합격 출력 아니면 불합격 출력
+		Scanner sc = new Scanner(System.in);
+		
+		//System.out.println("점수 :");
+		int score = sc.nextInt();
+		
+		//System.out.println(score > 59 ? "합격" : "불합격");
+		
+		// 아이디와 패스워드를 입력받아 아이디가 admin 이고 pass가 ouser01이면
+		System.out.println("아이디 :");
+		String id = sc.next();
+		System.out.println("비밀번호 : ");
+		String pass = sc.next();
+		
+		System.out.println((id.equals("admin") && pass.equals("user01")) ? "로그인 성공" : "로그인 실패");
+		// 로그인 성공 출력 아니면 로그인실패 출력
+		
+		
+	}
+	
 	public void myCalculator() {
 		// 계산기 만들기
 		// public void myCalculator() 메소드 만들고
