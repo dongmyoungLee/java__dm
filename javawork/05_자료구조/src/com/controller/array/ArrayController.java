@@ -98,9 +98,10 @@ public class ArrayController {
 		
 		for (int i = 0; i < newArr.length; i++) {
 			
+			
 			for (int j = 0; j < i; j++) {
 				if (newArr[i] < newArr[j]) {
-					int tmp = newArr[i];
+					int tmp = newArr[i];	
 					newArr[i] = newArr[j];
 					newArr[j] = tmp;
 				}
