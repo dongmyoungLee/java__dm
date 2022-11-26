@@ -1,7 +1,6 @@
 package com.controller.run;
 
-import com.obj.model.vo.Employee;
-import com.obj.model.vo.NewStudent;
+import com.obj.model.vo.Animal;
 
 public class ConstructorMain {
 
@@ -22,9 +21,23 @@ public class ConstructorMain {
 //		
 //		lee.NewStudentInfo();
 		
-		Employee lee2 = new Employee("이병승", "강사부", "강사", 10000, 0.1);
-		Employee park = new Employee("박세현", "강사부", "강사", 10000, 0.1);
-		Employee oh = new Employee("오윤재", "개발부", "연구원", 600, 0.5);
+		/*
+		Employee e = new Employee();
+		System.out.println(e.name + " " + e.department + " " + e.job + " " + e.pay + " " + e.bonus);
+		
+		Employee lee = new Employee("이병승");
+		System.out.println(lee.name + " " + lee.department);
+		
+		Employee lee2 = new Employee("김병승", "강사부", "강사", 100, 0.5);
+		System.out.println(lee2.EMPLOY_NUM + " " + lee2.name + " " + lee2.department + " " + lee2.job);
+		*/
+		
+		//System.out.println(lee.name + " " + lee.department + " " + lee.job + " " + lee.pay + " " + lee.bonus);
+		//Employee lee2 = new Employee("이병승", "강사부", "강사", 10000, 0.1);
+		
+		
+		Animal pet = new Animal("고양이", 17, "샴", '여');
+		System.out.println(pet.name + " " + pet.age + " " + pet.type + " " + pet.gender);
 		
 		
 	}
