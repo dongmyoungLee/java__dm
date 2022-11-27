@@ -1,6 +1,9 @@
 package com.Inherit.controller;
 
+import com.Inherit.model.vo.Cat;
+import com.Inherit.model.vo.Dog;
 import com.Inherit.model.vo.Employee;
+import com.Inherit.model.vo.Hamster;
 import com.Inherit.model.vo.Student;
 import com.Inherit.model.vo.Teacher;
 
@@ -26,13 +29,21 @@ public class InheritController {
 		t1.setName("선생");
 		
 		s1 = new Student("김태훈", 25, '남', "경기도", 1, 2, 3);
-		System.out.println(s1.infoStudent());
+		System.out.println(s1.infoStudent());		
+	}
+	
+	public void overrideTest() {
+		// 오버라이드.. 재정의하다.. -> 상속관계에 있을 때 자식 클래스에서 부모 클래스에서 정의되어있는 메소드를 커스터마이징 한다..
 		
+		System.out.println("오버라이드 테스트");
 		
+		Cat cat = new Cat("고양이", "나비", 8, '여');
+		Dog dog = new Dog("강아지", "달콤이", 10, '여');
+		Hamster hamster = new Hamster("햄스타", "햄톨이", 5, '남');
 		
-		
-		
-		
+		System.out.println(cat.bark());
+		System.out.println(dog.bark());
+		System.out.println(hamster.bark());
 		
 	}
 }

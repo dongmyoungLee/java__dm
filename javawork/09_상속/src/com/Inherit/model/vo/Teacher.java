@@ -38,7 +38,7 @@ public class Teacher extends Person {
 		this.exp = exp;
 	}
 	
-	
+
 	
 	
 	

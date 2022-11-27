@@ -8,7 +8,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		InheritController ic = new InheritController();
 		
-		ic.basicInherit();
+		//ic.basicInherit();
+		ic.overrideTest();
 	}
 
 }

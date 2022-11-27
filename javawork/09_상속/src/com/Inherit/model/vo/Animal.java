@@ -1,25 +1,35 @@
 package com.Inherit.model.vo;
 
-public class Person {
+public class Animal {
+	private String type;
 	private String name;
 	private int age;
 	private char gender;
-	private String address;
-		
-	public Person() {}
+	
+	public Animal() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public Person(String name, int age, char gender, String address) {
+	public Animal(String type, String name, int age, char gender) {
 		super();
+		this.type = type;
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
-		this.address = address;
 	}
-	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -39,18 +49,11 @@ public class Person {
 	public void setGender(char gender) {
 		this.gender = gender;
 	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	
+	public String bark() {
+		return "울음소리";
 	}
 	
-	public void test() {
-		System.out.println("부모 클래스의 test 메소드");
-	}
 	
 	
 	

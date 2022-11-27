@@ -41,7 +41,12 @@ public class Student extends Person {
 	
 	// 학생정보 출력
 	public String infoStudent() {
-		return name + " " + getAge() + " " + getGender() + " " + getAddress() + " " +  grade + " " + classNumber + " " + number; 
+		test();
+		return getName() + " " + getAge() + " " + getGender() + " " + getAddress() + " " +  grade + " " + classNumber + " " + number; 
+	}
+	
+	public void test() {
+		System.out.println("자식 클래스의 test 메소드");
 	}
 
 	
