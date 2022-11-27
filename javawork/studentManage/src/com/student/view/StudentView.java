@@ -22,8 +22,9 @@ public class StudentView {
 			System.out.println("1. 학생등록");
 			System.out.println("2. 학생수정");
 			System.out.println("3. 학생삭제");
-			System.out.println("4. 이름으로 조회");
-			System.out.println("5. 전공으로 조회");
+			System.out.println("4. 전체조회");			
+			System.out.println("5. 이름으로 조회");
+			System.out.println("6. 전공으로 조회");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("입력 : ");
 		
@@ -40,9 +41,12 @@ public class StudentView {
 					System.out.println("서비스 개발중..");
 					break;
 				case 4 : 
-					System.out.println("서비스 개발중..");
+					controller.searchAll();
 					break;
 				case 5 : 
+					controller.searchName();
+					break;
+				case 6 : 
 					System.out.println("서비스 개발중..");
 					break;
 				case 0 : 
@@ -56,8 +60,8 @@ public class StudentView {
 	}
 	
 	// 2. 시스템 메세지를 출력해준다.
-	public void printMsg(String msg) {
-		System.out.println("********** 시스템 메세지 **********");
+	public void printMsg(String msg, String gb) {
+		System.out.println("********** " + gb + " 메세지 **********");
 		System.out.println("내용 : " + msg);
 		System.out.println("********************************");
 	}
@@ -99,6 +103,15 @@ public class StudentView {
 		//Student student = new Student(name, age, gender, address, phone, email, major);
 		
 		return student;
+	}
+	
+	public String inputName() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("========== 이름으로 학생 조회 ==========");
+		System.out.print("검색할 이름은 ? : ");
+		
+		return sc.nextLine();
 	}
 	
 }
