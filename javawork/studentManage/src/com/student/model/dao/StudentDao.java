@@ -3,6 +3,17 @@ package com.student.model.dao;
 import com.student.model.vo.Student;
 
 public class StudentDao {
+	
+	// 객체 싱글톤..
+	private static StudentDao dao;
+	private StudentDao () {};
+	public static StudentDao getDao() {
+		if(dao == null) {
+			dao = new StudentDao();
+		}
+		return dao;
+	}
+	
 	// 입력된 학생(생성된 Student 객체)을 관리하는 역할..
 	private Student s1;
 	private Student s2;

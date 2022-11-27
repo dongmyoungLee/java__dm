@@ -5,26 +5,41 @@ import com.student.model.vo.Student;
 import com.student.view.StudentView;
 
 public class StudentController {
-	private StudentDao dao = new StudentDao();
+	// 저장이 되는 객체는 상태가 유지되어야 하기 때문에 new로 계속 생성을 해줘서는 안됨..
+	// 내 프로젝트 내에서는 기능을 제공하는 생성자는 하나만 만들자..-> singleton
+	
+	
+	// 객체 singleton..
+	private static StudentController controller;
+	private StudentController() {};
+	public static StudentController getController() {
+		if (controller == null) {
+			controller = new StudentController();
+		}
+		return controller;
+	}
+	
+	private StudentDao dao = StudentDao.getDao();
+
 
 	// 서비스를 진행하는 역할..
 	
 	// 1. main메뉴를 출력해주는 기능..
 	public void mainMenu() {
-		new StudentView().mainMenu();
+		StudentView.getView().mainMenu();
 	}
 	
 	// 2.  학생등록 서비스 기능
 	public void insertStudent() {
 		// 1. 학생 등록하는 화면을 실행..
-		Student student = new StudentView().inputStudentView();
+		Student student = StudentView.getView().inputStudentView();
 		System.out.println("저장된 학생 정보 : " + student.studentInfo());
 		
 		// 2. 입력된 학생을 저장..
 		boolean result = dao.saveStudent(student);
 		
 		// 3. 저장결과 출력
-		new StudentView().printMsg(result ? "학생 저장 성공" : "학생 저장 실패", "학생 저장 성공");	
+		StudentView.getView().printMsg(result ? "학생 저장 성공" : "학생 저장 실패", "학생 저장 성공");	
 	}
 	
 	// 3. 전체학생조회
@@ -33,17 +48,17 @@ public class StudentController {
 		String searchStudent = dao.searchAll();
 		
 		// 가져온 데이터 출력
-		new StudentView().printMsg(searchStudent, "전제 조회 성공");
+		StudentView.getView().printStudent(searchStudent);
 	}
 	
 	// 4. 이름으로 조회
 	public void searchName() {
 		// 이름으로 조회하는 기능
-		String searchName = new StudentView().inputName();
+		String searchName = StudentView.getView().inputName();
 		
 		String result = dao.searchName(searchName);
 		
-		new StudentView().printMsg(result, "이름으로 조회 성공");
+		StudentView.getView().printStudent(result);
 	}
 	
 	

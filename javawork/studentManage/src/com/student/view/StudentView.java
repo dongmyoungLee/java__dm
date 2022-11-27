@@ -6,6 +6,17 @@ import com.student.controller.StudentController;
 import com.student.model.vo.Student;
 
 public class StudentView {
+	
+	// 객체 싱글톤..
+	private static StudentView view;
+	private StudentView() {};
+	public static StudentView getView() {
+		if (view == null) {
+			view = new StudentView();
+		}
+		return view;
+	}
+	
 	// student 를 관리하는 사용자에게 보여주는 화면..(html 에 관련된 것들 여기들어감)
 	// 사용자에게 화면을 출력해주는 역할
 	
@@ -15,7 +26,7 @@ public class StudentView {
 		// mainMenu..
 		
 		Scanner sc = new Scanner(System.in);
-		StudentController controller = new StudentController();
+		StudentController controller = StudentController.getController();
 		
 		do {
 			System.out.println("========== 학생관리 프로그램 v0.1 ==========");
@@ -104,6 +115,18 @@ public class StudentView {
 		
 		return student;
 	}
+
+	public void printStudent(String data) {
+		System.out.println("========== 조회한 학생정보 ==========");
+		
+		if(data.length() > 0) {
+			System.out.println(data);
+		} else {
+			System.out.println("조회된 결과가 없습니다.");
+		}
+		
+		System.out.println("================================");
+	}
 	
 	public String inputName() {
 		Scanner sc = new Scanner(System.in);
@@ -113,5 +136,6 @@ public class StudentView {
 		
 		return sc.nextLine();
 	}
+	
 	
 }
