@@ -48,7 +48,26 @@ public class Student extends Person {
 	public void test() {
 		System.out.println("자식 클래스의 test 메소드");
 	}
-
+	
+	// 동등성 비교를 위해 equals override..
+	/// Object 자료형으로 선언하게 되면 java에서 생성되는 모든 클래스를 전부 저장 할 수 있음. 따라서 아래 파라미터에 타입형이 무엇이어도 상관없음.
+	@Override
+	public boolean equals(Object o) {
+		Student student = (Student)o;
+		
+		if (this.getName().equals(student.getName())
+			&& this.getAge() == student.getAge()
+			&& this.getGender() == student.getGender()
+			&& this.getAddress().equals(student.getAddress())
+			&& this.getNumber() == student.getNumber()) {
+			
+			return true;
+		
+		}
+		
+		return false;
+	}
+	
 	
 	
 }
