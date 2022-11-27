@@ -21,7 +21,6 @@ public class StudentController {
 	
 	private StudentDao dao = StudentDao.getDao();
 
-
 	// 서비스를 진행하는 역할..
 	
 	// 1. main메뉴를 출력해주는 기능..
