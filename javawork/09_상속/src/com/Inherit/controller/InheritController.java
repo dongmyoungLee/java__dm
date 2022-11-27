@@ -63,5 +63,10 @@ public class InheritController {
 		Student s2 = new Student("유병승", 19, '남', "경기도 시흥시", 1,2,3);
 		
 		System.out.println(s1.equals(s2));
+		
+		// Object 의 toString 이 실행..(현재는 override 했음)
+		System.out.println(s1);
+		System.out.println(s1.hashCode());
+		System.out.println(s2.hashCode());
 	}
 }

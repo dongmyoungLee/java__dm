@@ -1,5 +1,7 @@
 package com.Inherit.model.vo;
 
+import java.util.Objects;
+
 public class Student extends Person {
 	private int grade;
 	private int classNumber;
@@ -62,12 +64,21 @@ public class Student extends Person {
 			&& this.getNumber() == student.getNumber()) {
 			
 			return true;
-		
 		}
 		
 		return false;
 	}
 	
+	// toString override..
+	@Override
+	public String toString() {
+		return getName() + " " + getAge() + " " + getGender() + " " + getAddress() + " " + grade + " " + classNumber + " " + number;
+	}
 	
-	
+	@Override
+	public int hashCode() {
+		// 아래값들이 같으면 같은 hashcode 를 출력하도록 override ..
+		return Objects.hash(getName(), getAge(), getGender(), getAddress(), number);
+	}
+
 }
