@@ -7,8 +7,9 @@ public class Student extends Person {
 	
 	public Student() {}
 
-	public Student(int grade, int classNumber, int number) {
-		super();
+	public Student(String name, int age, char gender, String address, int grade, int classNumber, int number) {
+		// super 에 매개변수 넣어도 되고 안 넣으면 default 설정
+		super(name, age, gender, address);
 		this.grade = grade;
 		this.classNumber = classNumber;
 		this.number = number;
@@ -38,7 +39,10 @@ public class Student extends Person {
 		this.number = number;
 	}
 	
-	
+	// 학생정보 출력
+	public String infoStudent() {
+		return name + " " + getAge() + " " + getGender() + " " + getAddress() + " " +  grade + " " + classNumber + " " + number; 
+	}
 
 	
 	

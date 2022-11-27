@@ -25,6 +25,12 @@ public class InheritController {
 		e1.setName("직원");
 		t1.setName("선생");
 		
+		s1 = new Student("김태훈", 25, '남', "경기도", 1, 2, 3);
+		System.out.println(s1.infoStudent());
+		
+		
+		
+		
 		
 		
 		

@@ -1,25 +1,25 @@
 package com.Inherit.model.vo;
 
 public class Person {
-	private String name;
+	protected String name;
 	private int age;
-	private String gender;
+	private char gender;
 	private String address;
 		
 	public Person() {}
 
-	public Person(String name, int age, String gender, String address) {
+	public Person(String name, int age, char gender, String address) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
 		this.address = address;
 	}
+	
 
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -32,11 +32,11 @@ public class Person {
 		this.age = age;
 	}
 
-	public String getGender() {
+	public char getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(char gender) {
 		this.gender = gender;
 	}
 
@@ -47,7 +47,6 @@ public class Person {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
 	
 	
 	
