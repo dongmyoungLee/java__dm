@@ -36,10 +36,23 @@ public class StudentController {
 		System.out.println("저장된 학생 정보 : " + student.studentInfo());
 		
 		// 2. 입력된 학생을 저장..
-		boolean result = dao.saveStudent(student);
+		int result = dao.saveStudent(student);
+		String msg = "";
+		
+		switch(result) {
+			case 0 :
+				msg = "학생 저장 성공";
+			break;
+			case 1 :
+				msg = "학생 저장 실패 (중복)";
+				break;
+			case 2 :
+				msg = "학생 저장 실패 (저장 공간 부족)";
+				break;
+		}
 		
 		// 3. 저장결과 출력
-		StudentView.getView().printMsg(result ? "학생 저장 성공" : "학생 저장 실패", "학생 저장 성공");	
+		StudentView.getView().printMsg(msg);	
 	}
 	
 	// 3. 전체학생조회

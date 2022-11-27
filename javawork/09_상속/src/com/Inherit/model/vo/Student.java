@@ -77,7 +77,7 @@ public class Student extends Person {
 	
 	@Override
 	public int hashCode() {
-		// 아래값들이 같으면 같은 hashcode 를 출력하도록 override ..
+		// 아래값들이 같으면 같은 hashCode 를 출력하도록 override ..
 		return Objects.hash(getName(), getAge(), getGender(), getAddress(), number);
 	}
 

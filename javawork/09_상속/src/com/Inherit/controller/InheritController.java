@@ -66,7 +66,10 @@ public class InheritController {
 		
 		// Object 의 toString 이 실행..(현재는 override 했음)
 		System.out.println(s1);
+		
+		// hashCode 조건 추가 후 Override 했음..
 		System.out.println(s1.hashCode());
 		System.out.println(s2.hashCode());
+		
 	}
 }

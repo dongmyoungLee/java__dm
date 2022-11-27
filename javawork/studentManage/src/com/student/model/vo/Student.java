@@ -1,5 +1,7 @@
 package com.student.model.vo;
 
+import java.util.Objects;
+
 public class Student {
 	private long studentNo;
 	private String name;
@@ -83,6 +85,36 @@ public class Student {
 	}
 	
 	public String studentInfo() {
+		return name + " " + age + " " + gender + " " + phone + " " + email + " " + address + " " + major;
+	}
+	
+	// 모든 필드가 같아야 동등비교가 true..
+	@Override
+	public boolean equals(Object o) {
+		Student student = (Student)o;
+		
+		if (this.name.equals(student.name)
+				&& this.age == student.age
+				&& this.gender == student.gender
+				&& this.phone.equals(student.phone)
+				&& this.email.equals(student.email)
+				&& this.address.equals(student.address)
+				&& this.major.equals(student.major)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	// 모든 필드가 같으면 hashCode도 같음.
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, age, gender, phone, email, address, major);
+	}
+	
+	// 출력 override
+	@Override
+	public String toString() {
 		return name + " " + age + " " + gender + " " + phone + " " + email + " " + address + " " + major;
 	}
 	

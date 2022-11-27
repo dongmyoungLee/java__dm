@@ -71,8 +71,8 @@ public class StudentView {
 	}
 	
 	// 2. 시스템 메세지를 출력해준다.
-	public void printMsg(String msg, String gb) {
-		System.out.println("********** " + gb + " 메세지 **********");
+	public void printMsg(String msg) {
+		System.out.println("********** 메세지 **********");
 		System.out.println("내용 : " + msg);
 		System.out.println("********************************");
 	}
