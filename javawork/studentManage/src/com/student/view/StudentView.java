@@ -29,7 +29,7 @@ public class StudentView {
 		StudentController controller = StudentController.getController();
 		
 		do {
-			System.out.println("========== 학생관리 프로그램 v0.2 ==========");
+			System.out.println("========== 학생관리 프로그램 v0.3 ==========");
 			System.out.println("1. 학생등록");
 			System.out.println("2. 학생수정");
 			System.out.println("3. 학생삭제");
@@ -46,7 +46,7 @@ public class StudentView {
 					controller.insertStudent();
 					break;
 				case 2 : 
-					System.out.println("서비스 개발중..");
+					controller.modifyStudent();
 					break;
 				case 3 : 
 					System.out.println("서비스 개발중..");
@@ -74,18 +74,20 @@ public class StudentView {
 	public void printMsg(String msg) {
 		System.out.println("********** 메세지 **********");
 		System.out.println("내용 : " + msg);
-		System.out.println("********************************");
+		System.out.println("**************************");
 	}
 	
 
 	// 3. 입력화면을 출력해준다. (학생등록, 학생수정, 삭제 등)
-	public Student inputStudentView() {
+	// flag - 1 : 신규등록, 2 : 기존 회원 수정
+	public Student inputStudentView(int flag) {
 		Scanner sc = new Scanner(System.in);
+		
 		
 		// default 생성자로 생성함.. 아무것도 없음.
 		Student student = new Student();
 		
-		System.out.println("========== 학생 등록 ==========");
+		System.out.println(flag == 1 ? "========== 학생 등록 ==========" :  "========== 수정 할 학생의 정보를 다시 기입하세요. ==========");
 		
 		System.out.print("이름 : ");
 		student.setName(sc.nextLine());
@@ -135,6 +137,15 @@ public class StudentView {
 		System.out.print("검색할 이름은 ? : ");
 		
 		return sc.nextLine();
+	}
+	
+	public String inputModName() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("========== 수정할 학생 이름 입력 ==========");
+		System.out.print("수정할 학생 이름은 ? ");
+		
+		return sc.next();
 	}
 	
 	

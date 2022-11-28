@@ -28,10 +28,10 @@ public class StudentController {
 		StudentView.getView().mainMenu();
 	}
 	
-	// 2.  학생등록 서비스 기능
+	// 1.  학생등록 서비스 기능
 	public void insertStudent() {
 		// 1. 학생 등록하는 화면을 실행..
-		Student student = StudentView.getView().inputStudentView();
+		Student student = StudentView.getView().inputStudentView(1);
 		System.out.println("저장된 학생 정보 : " + student.studentInfo());
 		
 		// 2. 입력된 학생을 저장..
@@ -54,7 +54,34 @@ public class StudentController {
 		StudentView.getView().printMsg(msg);	
 	}
 	
-	// 3. 전체학생조회
+	// 2. 학생 수정
+	public void modifyStudent() {
+		// 수정할 학생의 이름을 받음..
+		String modifyInputName = StudentView.getView().inputModName();
+		String msg = "";
+		
+		// 받은 이름으로 존재하는 학생인지 검색..
+		// -1 : 없음 , 나머지는 해당 index
+		int result = dao.searchModifyName(modifyInputName);
+		
+		if (result != -1) {
+			// 수정할 정보 받기
+			Student modifyStudent = StudentView.getView().inputStudentView(2);
+			
+			// 수정한 정보로 갈아끼우기
+			int modResult = dao.modifyChangeStudent(modifyStudent, result);
+			
+			// 성공 메시지 출력
+			StudentView.getView().printMsg(modResult == 1 ? "수정이 완료 되었습니다." : "수정 실패");
+			return ;
+		}
+		
+		StudentView.getView().printMsg("입력하신 학생은 존재하지 않습니다.");
+
+		
+	}
+	
+	// 4. 전체학생조회
 	public void searchAll() {
 		// dao 에 저장되어 있는 학생정보 가져오기
 		String searchStudent = dao.searchAll();
@@ -63,7 +90,7 @@ public class StudentController {
 		StudentView.getView().printStudent(searchStudent);
 	}
 	
-	// 4. 이름으로 조회
+	// 5. 이름으로 조회
 	public void searchName() {
 		// 이름으로 조회하는 기능
 		String searchName = StudentView.getView().inputName();

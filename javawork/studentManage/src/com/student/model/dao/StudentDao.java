@@ -18,7 +18,9 @@ public class StudentDao {
 	
 	// 객체배열로 저장
 	private Student[] students = new Student[3];
-		
+	
+	
+	// 학생 저장..
 	public int saveStudent(Student student) {
 		// 0 : 저장성공 , 1 : 저장실패 (중복), 2 : 저장실패 (저장 공간 부족)
 		int result = 2; 
@@ -43,6 +45,7 @@ public class StudentDao {
 	
 	}
 	
+	// 학생 전체 조회..
 	public String searchAll() {
 		String result = "";
 		
@@ -57,6 +60,7 @@ public class StudentDao {
 		return result;
 	}
 	
+	// 학생 이름으로 조회..
 	public String searchName(String searchName) {
 		// 매개변수로 전달된 값이랑 저장된값을 비교..
 		String result = "";
@@ -70,4 +74,38 @@ public class StudentDao {
 		return result;
 		
 	}
+	
+	// 이름으로 검색한 학생이 있다면 index 반환..
+	public int searchModifyName(String modifyName) {
+		int index = 0;
+		int result = -1;
+		
+		// 저장된 데이터중 수정 대상 학생 index 반환
+		for (Student student : students) {
+			
+			if (student != null && student.getName().equals(modifyName)) {
+				result = index;
+				return result;
+			}
+			
+			index++;
+		}
+		
+		return result;
+	}
+	
+	// 수정한 정보로 학생 수정..
+	public int modifyChangeStudent(Student modifyStudent, int index) {
+		int result = 0;
+		
+		if (index != -1) {
+			students[index] = modifyStudent;
+			result = 1;
+		}
+		
+		
+		return result;
+	}
+	
+	
 }
