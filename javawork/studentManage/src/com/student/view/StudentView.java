@@ -29,7 +29,7 @@ public class StudentView {
 		StudentController controller = StudentController.getController();
 		
 		do {
-			System.out.println("========== 학생관리 프로그램 v0.3 ==========");
+			System.out.println("========== 학생관리 프로그램 v0.4 ==========");
 			System.out.println("1. 학생등록");
 			System.out.println("2. 학생수정");
 			System.out.println("3. 학생삭제");
@@ -49,7 +49,7 @@ public class StudentView {
 					controller.modifyStudent();
 					break;
 				case 3 : 
-					System.out.println("서비스 개발중..");
+					controller.deleteStudent();
 					break;
 				case 4 : 
 					controller.searchAll();
@@ -58,7 +58,7 @@ public class StudentView {
 					controller.searchName();
 					break;
 				case 6 : 
-					System.out.println("서비스 개발중..");
+					controller.searchMajor();
 					break;
 				case 0 : 
 					System.out.println("학생 관리 프로그램을 종료..");
@@ -82,12 +82,20 @@ public class StudentView {
 	// flag - 1 : 신규등록, 2 : 기존 회원 수정
 	public Student inputStudentView(int flag) {
 		Scanner sc = new Scanner(System.in);
+		int flagResult = 0;
 		
 		
 		// default 생성자로 생성함.. 아무것도 없음.
 		Student student = new Student();
 		
-		System.out.println(flag == 1 ? "========== 학생 등록 ==========" :  "========== 수정 할 학생의 정보를 다시 기입하세요. ==========");
+		switch(flag) {
+			case 1 :
+				System.out.println("========== 학생 등록 ==========");
+				break;
+			case 2 :
+				System.out.println("========== 수정할 학생의 정보를 입력 해 주세요. ==========");
+			break;
+		}
 		
 		System.out.print("이름 : ");
 		student.setName(sc.nextLine());
@@ -98,7 +106,6 @@ public class StudentView {
 		System.out.print("성별 : ");
 		student.setGender(sc.next().charAt(0));
 		
-		// nextLine 을 쓰기 전에 nextint 등등 다른걸 썻다면 처음에 버퍼를 비워줘야함.
 		sc.nextLine();
 		
 		System.out.print("주소 : ");
@@ -113,9 +120,9 @@ public class StudentView {
 		System.out.print("전공 : ");
 		student.setMajor(sc.nextLine());
 		
-		//Student student = new Student(name, age, gender, address, phone, email, major);
+
+		return student;		
 		
-		return student;
 	}
 
 	public void printStudent(String data) {
@@ -139,11 +146,31 @@ public class StudentView {
 		return sc.nextLine();
 	}
 	
-	public String inputModName() {
+	public String inputMajor() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("========== 수정할 학생 이름 입력 ==========");
-		System.out.print("수정할 학생 이름은 ? ");
+		System.out.println("========== 전공으로 학생 조회 ==========");
+		System.out.print("검색할 전공은 ? : ");
+		
+		return sc.nextLine();
+	}
+	
+	public String inputModName(String gb) {
+		Scanner sc = new Scanner(System.in);
+		String gbMsg = "";
+		
+		switch(gb) {
+			case "mod" :
+				gbMsg = "수정";
+			break;
+			case "del" :
+				gbMsg = "삭제";
+			break;
+		}
+		
+		
+		System.out.println("==========" + gbMsg +  "할 학생 이름 입력 ==========");
+		System.out.print(gbMsg + "할 학생 이름은 ? ");
 		
 		return sc.next();
 	}

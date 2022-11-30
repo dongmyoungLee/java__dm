@@ -57,7 +57,7 @@ public class StudentController {
 	// 2. 학생 수정
 	public void modifyStudent() {
 		// 수정할 학생의 이름을 받음..
-		String modifyInputName = StudentView.getView().inputModName();
+		String modifyInputName = StudentView.getView().inputModName("mod");
 		String msg = "";
 		
 		// 받은 이름으로 존재하는 학생인지 검색..
@@ -81,6 +81,27 @@ public class StudentController {
 		
 	}
 	
+	// 3. 학생 삭제
+	public void deleteStudent() {
+	
+		// 삭제할 학생이 존재하는지..
+		String modifyInputName = StudentView.getView().inputModName("del");
+		int result = dao.searchModifyName(modifyInputName);
+		
+		// -1 : 없음 , 나머지는 해당 index
+		if (result != -1) {
+			int deletedStudentResult = dao.deletedStudent(result);
+			
+			// 성공 메시지 출력
+			StudentView.getView().printMsg(deletedStudentResult== 1 ? "삭제가 완료 되었습니다." : "삭제 실패");
+			return ;
+		}
+		
+		
+		StudentView.getView().printMsg("입력하신 학생은 존재하지 않습니다.");
+		
+	}
+	
 	// 4. 전체학생조회
 	public void searchAll() {
 		// dao 에 저장되어 있는 학생정보 가져오기
@@ -98,6 +119,17 @@ public class StudentController {
 		String result = dao.searchName(searchName);
 		
 		StudentView.getView().printStudent(result);
+	}
+	
+	// 6. 전공으로 조회
+	public void searchMajor() {
+		// 학생정보 가져오기..
+		String searchMajor = StudentView.getView().inputMajor();
+		
+		String result = dao.searchMajor(searchMajor);
+		
+		StudentView.getView().printStudent(result);
+		
 	}
 	
 	

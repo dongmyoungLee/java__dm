@@ -1,5 +1,7 @@
 package com.student.model.dao;
 
+import java.util.Scanner;
+
 import com.student.model.vo.Student;
 
 public class StudentDao {
@@ -75,6 +77,18 @@ public class StudentDao {
 		
 	}
 	
+	public String searchMajor(String searchMajor) {
+		String result = "";
+		
+		for (Student student : students) {
+			if (student != null && student.getMajor().equals(searchMajor)) {
+				result += student + "\n";
+			}
+		}
+		
+		return result; 
+	}
+	
 	// 이름으로 검색한 학생이 있다면 index 반환..
 	public int searchModifyName(String modifyName) {
 		int index = 0;
@@ -98,13 +112,40 @@ public class StudentDao {
 	public int modifyChangeStudent(Student modifyStudent, int index) {
 		int result = 0;
 		
+	
 		if (index != -1) {
 			students[index] = modifyStudent;
+			
+			
 			result = 1;
 		}
 		
 		
 		return result;
+	}
+	
+	// 학생 삭제
+	public int deletedStudent(int index) {
+		int result = 0;
+		int deleteConfirm = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		
+		if (index != -1 && students[index] != null) {
+			
+			System.out.println("정말 삭제 하시겠습니까 ? ( Y & N )");
+			String deleteResult = sc.nextLine();
+			
+			if (deleteResult.equals("Y") || deleteResult.equals("y")) {
+				students[index] = null;
+				return 1;
+			} 
+		}
+		
+		
+		System.out.println("학생 삭제를 취소 합니다...");
+		return 0;
+		
 	}
 	
 	

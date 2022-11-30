@@ -88,6 +88,15 @@ public class Student {
 		return name + " " + age + " " + gender + " " + phone + " " + email + " " + address + " " + major;
 	}
 	
+	public static String[] removeElement(String[] arr, int index) {
+        String[] result = new String[arr.length - 1];
+        System.arraycopy(arr, 0, result, 0, index);
+        if (arr.length != index) {
+            System.arraycopy(arr, index + 1, result, index, arr.length - index - 1);
+        }
+        return result;
+    }
+	
 	// 모든 필드가 같아야 동등비교가 true..
 	@Override
 	public boolean equals(Object o) {
