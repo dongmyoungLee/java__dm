@@ -77,6 +77,7 @@ public class InheritController {
 		
 		
 		// 클래스 선언부에서 final 예약어 사용하기 -> 상속이 불가능한 클래스
+		// 상속이 불가능하다..
 	}
 	
 	
