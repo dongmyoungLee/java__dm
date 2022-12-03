@@ -71,5 +71,14 @@ public class InheritController {
 		System.out.println(s1.hashCode());
 		System.out.println(s2.hashCode());
 		
+		
+		// 메소드 예약어 final
+		// 메소드의 재정의를 못하게 하는 예약어
+		
+		
+		// 클래스 선언부에서 final 예약어 사용하기 -> 상속이 불가능한 클래스
 	}
+	
+	
+	
 }

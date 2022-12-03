@@ -52,6 +52,12 @@ public class Person {
 		System.out.println("부모 클래스의 test 메소드");
 	}
 	
+	// final 이라는 예약어가 붙으면 재정의가 불가능하다..
+	public final String personPrint() {
+		
+		return "사람 : " + name + age + gender + address;
+	}
+	
 	
 	
 }

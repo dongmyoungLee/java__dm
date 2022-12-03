@@ -80,5 +80,7 @@ public class Student extends Person {
 		// 아래값들이 같으면 같은 hashCode 를 출력하도록 override ..
 		return Objects.hash(getName(), getAge(), getGender(), getAddress(), number);
 	}
+	
+	
 
 }
