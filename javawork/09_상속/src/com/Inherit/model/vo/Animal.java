@@ -1,6 +1,6 @@
 package com.Inherit.model.vo;
 
-public class Animal {
+public abstract class Animal {
 	private String type;
 	private String name;
 	private int age;
@@ -50,9 +50,7 @@ public class Animal {
 		this.gender = gender;
 	}
 	
-	public String bark() {
-		return "울음소리";
-	}
+	public abstract void bark();
 	
 	
 	

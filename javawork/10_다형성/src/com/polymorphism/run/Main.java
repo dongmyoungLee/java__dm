@@ -1,9 +1,6 @@
 package com.polymorphism.run;
 
 import com.polymorphism.controller.polymorphismController;
-import com.polymorphism.vo.Animal;
-import com.polymorphism.vo.Cat;
-import com.polymorphism.vo.Dog;
 
 public class Main {
 
@@ -17,6 +14,8 @@ public class Main {
 		
 		//poly.animal();
 		poly.polyArrayTest();
+		
+	
 	}
 
 }

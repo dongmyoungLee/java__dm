@@ -1,6 +1,6 @@
 package com.polymorphism.vo;
 
-public class Character {
+public abstract class Character {
 	private String name;
 	private int hp;
 	
@@ -26,7 +26,5 @@ public class Character {
 		this.hp = hp;
 	}
 	
-	public void attack() {
-		
-	}
+	public abstract void attack();
 }

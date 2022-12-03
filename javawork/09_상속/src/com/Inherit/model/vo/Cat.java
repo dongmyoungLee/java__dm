@@ -12,7 +12,7 @@ public class Cat extends Animal {
 	
 	// 부모에 정의되어 있는 메소드를 재정의 함.
 	@Override
-	public String bark() {
-		return "야옹";
+	public void bark() {
+		System.out.println("야옹");
 	}
 }
