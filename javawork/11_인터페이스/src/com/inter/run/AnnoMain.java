@@ -28,12 +28,19 @@ public class AnnoMain {
 		// 인터페이스에 선언된 추상메소드가 한개인것은 functional 인터페이스이다..
 		// 람다표현식을 적용할 수 있음.. (화살표함수랑 같음)
 		
+		// 인터페이스에 선언된 내용을 보고 Lambda를 정의한다
 		TestLambda tl = new TestLambda() {
 			@Override
 			public String checkStr(String str, char ch) {
 				return str;
 			}
 		};
+		
+		// 추상메소드에 대해 구현체 부분만 표시
+		// (매개변수명1, 매개변수명2 ...) -> {로직 return 값};  
+		// 매개변수없으면 () -> {로직 return 값};
+		// return 값만 있을경우
+		// (매개1,매개2...) -> 리턴값;
 		
 		// Lambda 식으로 다시 재정의..
 		tl = (str, ch) -> "안녕";
