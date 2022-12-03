@@ -1,6 +1,7 @@
 package com.inter.controller;
 
 import com.inter.common.BasicInterface;
+import com.inter.common.BasicInterface2;
 import com.inter.model.vo.BasicInterfaceClass;
 
 public class InterfaceController {
@@ -17,12 +18,16 @@ public class InterfaceController {
 		// public class 클래스명 impleaments 인터페이스명 {}
 		
 		BasicInterface bis = new BasicInterfaceClass();
-		bis.test();
+		//bis.test();
+		//System.out.println(bis.calc(10, 20));
 		
-		System.out.println(bis.calc(10, 20));
 		
-		//new BasicInterface(); // 불가
+		// 인터페이스는 다중 구현이 가능하다.
+		BasicInterface2 bis2 = new BasicInterfaceClass();
 		
+		System.out.println(bis2.sum("Abb", "AbA"));
+		
+		System.out.println(bis2.result("Aaa"));
 		
 	}
 }
