@@ -29,7 +29,7 @@ public class StudentView {
 		StudentController controller = StudentController.getController();
 		
 		do {
-			System.out.println("========== 학생관리 프로그램 v0.4 ==========");
+			System.out.println("========== 학생관리 프로그램 v0.5 ==========");
 			System.out.println("1. 학생등록");
 			System.out.println("2. 학생수정");
 			System.out.println("3. 학생삭제");

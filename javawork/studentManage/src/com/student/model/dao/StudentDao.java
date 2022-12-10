@@ -18,8 +18,10 @@ public class StudentDao {
 	
 	// 입력된 학생(생성된 Student 객체)을 관리하는 역할..
 	
+	
 	// 객체배열로 저장
 	private Student[] students = new Student[3];
+	private static int index = 0;
 	
 	
 	// 학생 저장..
@@ -35,6 +37,7 @@ public class StudentDao {
 			}
 		}
 		
+		/*
 		for (int i = 0; i < students.length; i++) {
 			if (this.students[i] == null) {
 				this.students[i] = student;
@@ -42,6 +45,19 @@ public class StudentDao {
 				break;
 			}
 		}
+		*/
+		
+		try {
+			students[StudentDao.index++]=student;
+		} catch(ArrayIndexOutOfBoundsException e) {
+			Student[] temp = new Student[students.length+1];
+			//깊은복사 students 의 0번째 인덱스를 temp 의 0번째인덱스 부터 stduents의 개수만큼.. 
+			System.arraycopy(students, 0, temp, 0, students.length);
+			temp[students.length] = student;
+			students = temp;
+		}
+		
+		
 		
 		return result;
 	
