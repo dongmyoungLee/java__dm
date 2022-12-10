@@ -84,7 +84,8 @@ public class StudentDao {
 		String result = "";
 		
 		for (Student student : students) {
-			if (student != null && student.getName().equals(searchName)) {
+			// 포함하는 이름 전부검색..
+			if (student != null && student.getName().contains(searchName)) {
 				result += student + "\n";
 			}
 		}
