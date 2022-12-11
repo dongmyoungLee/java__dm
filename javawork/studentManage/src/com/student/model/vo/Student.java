@@ -1,8 +1,10 @@
 package com.student.model.vo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Student {
+public class Student implements Serializable {
+	private static final long serialVersionUID = 2309470036282437672L;
 	private long studentNo;
 	private String name;
 	private int age;

@@ -132,5 +132,18 @@ public class StudentController {
 		
 	}
 	
+	// 7. 학생 파일로 내보내기
+	public void saveData() {
+		dao.saveStudents();
+		
+		System.out.println("학생 파일로 내보내기 성공..");
+	}
+	
+	// 7. 파일로 저장된 학생 불러오기
+	public void loadData() {
+		dao.loadStudents();
+		System.out.println("학생 불러오기 성공..저장됨");
+	}
+	
 	
 }

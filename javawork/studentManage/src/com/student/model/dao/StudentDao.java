@@ -1,5 +1,10 @@
 package com.student.model.dao;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 import com.student.model.vo.Student;
@@ -36,17 +41,7 @@ public class StudentDao {
 				return result;
 			}
 		}
-		
-		/*
-		for (int i = 0; i < students.length; i++) {
-			if (this.students[i] == null) {
-				this.students[i] = student;
-				result = 0;
-				break;
-			}
-		}
-		*/
-		
+			
 		try {
 			students[StudentDao.index++]=student;
 		} catch(ArrayIndexOutOfBoundsException e) {
@@ -57,12 +52,11 @@ public class StudentDao {
 			students = temp;
 		}
 		
-		
-		
 		return result;
 	
 	}
 	
+
 	// 학생 전체 조회..
 	public String searchAll() {
 		String result = "";
@@ -165,5 +159,48 @@ public class StudentDao {
 		
 	}
 	
+	// 저장된 학생 파일로 내보내기
+	public void saveStudents() {
+		// students 필드를 파일로 저장
+		
+		try(FileOutputStream fos = new FileOutputStream("students.txt"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+			
+			oos.writeObject(this.students);
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 내보낸 학생 파일 불러오기
+	public void loadStudents() {
+		try(FileInputStream fis = new FileInputStream("students.txt"); ObjectInputStream ois = new ObjectInputStream(fis)) {
+			
+			this.students = (Student[])ois.readObject();
+			int count = 0;
+			
+			for(Student s : students) {
+				if (s != null) {
+					count++;
+				}
+			}
+						
+			StudentDao.index = count;
+			
+			
+			/*
+			 * 
+			 * 한번 불러온 파일은 스택형식으로 나가기 때문에 파일이 없다.
+			Student[] st = (Student[])ois.readObject();
+			for (Student ss1 : st) {
+				System.out.println(ss1);
+			}
+			*/
+			
+			
+		} catch(IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

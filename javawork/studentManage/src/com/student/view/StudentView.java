@@ -29,13 +29,15 @@ public class StudentView {
 		StudentController controller = StudentController.getController();
 		
 		do {
-			System.out.println("========== 학생관리 프로그램 v0.5 ==========");
+			System.out.println("========== 학생관리 프로그램 v0.6 ==========");
 			System.out.println("1. 학생등록");
 			System.out.println("2. 학생수정");
 			System.out.println("3. 학생삭제");
 			System.out.println("4. 전체조회");			
 			System.out.println("5. 이름으로 조회");
 			System.out.println("6. 전공으로 조회");
+			System.out.println("7. 저장된 학생 파일로 내보내기");
+			System.out.println("8. 저장된 학생 불러오기");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("입력 : ");
 		
@@ -59,6 +61,12 @@ public class StudentView {
 					break;
 				case 6 : 
 					controller.searchMajor();
+					break;
+				case 7 : 
+					controller.saveData();
+					break;
+				case 8 : 
+					controller.loadData();
 					break;
 				case 0 : 
 					System.out.println("학생 관리 프로그램을 종료..");
