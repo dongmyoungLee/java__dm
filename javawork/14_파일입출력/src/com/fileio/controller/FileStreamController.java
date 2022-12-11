@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class FileStreamController {
@@ -200,6 +201,22 @@ public class FileStreamController {
 	// 2. dataType 기반으로 데이터를 저장할 수 있게 해주는 보조 스트림
 	// 3. 객체자제를 저장할 수 있게 해주는 보조스트림
 	// 4. 저장, 읽어오기 속도를 향상시켜주는 보조스트림
+	
+	// 기본스트림에 특수한 기능을 추가한 것.
+	// 보조스트림만 생성해서 이용할 수는 없음. 모든 보조스트림은 기본스트림을 생성한 객체를 이용
+	// new 보조스트림(new 기본스트림));
+	
+	public void changeStream() {
+		//byte 단위로 불러온 stream을 문자열기반 stream 으로 처리
+		try(FileInputStream fis = new FileInputStream("memo"); InputStreamReader isr = new InputStreamReader(fis)) {
+			int data = 0;
+			while((data = isr.read()) != -1 ) {
+				System.out.println((char)data);
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

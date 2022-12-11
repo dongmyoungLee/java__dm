@@ -15,8 +15,9 @@ public class Main {
 //		fsc.loadFile();
 //		fsc.saveFileStr();
 //		fsc.loadFileStr();
-		fsc.memoFile();
-		fsc.memoLoad();
+//		fsc.memoFile();
+//		fsc.memoLoad();
+		fsc.changeStream();
 		
 	}
 
