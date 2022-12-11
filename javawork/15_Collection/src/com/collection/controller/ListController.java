@@ -130,6 +130,21 @@ public class ListController {
 		Integer[] nums = new Integer[] {1,2,3,4,5};
 		List numbers = Arrays.asList(nums);
 		
+		// 만들면서 초기화
+		List data = Arrays.asList(new String[] {"a1","a2","a3"});
+		System.out.println(data);
+		
+		// List.of() -> 선언과 동시에 초기화 * 불변의 리스트!
+		data = List.of(1,2,3,4,5);
+		System.out.println(data);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	
@@ -139,24 +154,5 @@ public class ListController {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }
