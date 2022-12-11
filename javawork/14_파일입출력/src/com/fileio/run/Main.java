@@ -11,7 +11,13 @@ public class Main {
 		//fic.fileManage();
 		
 		FileStreamController fsc = new FileStreamController();
-		fsc.fileSave();
+//		fsc.fileSave();
+//		fsc.loadFile();
+//		fsc.saveFileStr();
+//		fsc.loadFileStr();
+		fsc.memoFile();
+		fsc.memoLoad();
+		
 	}
 
 }
