@@ -11,9 +11,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
+
+import com.fileio.vo.Person;
 
 public class FileStreamController {
 	public void fileSave() {
@@ -274,9 +278,32 @@ public class FileStreamController {
 		}
 	}
 	
+	// 자바에서 사용하는 객체를 저장하는 보조스트림 이용하기
+	// ObjectInputStream / ObjectOutputStream 이용하자!
+	// 파일로 저장하려는 객체는 조건이 있다.. -> 직렬화, 역직렬화 ( Serialization, Deserialization)
+	// Seriallizable interface 를 구현하고 SerialVersionUID 값을 필드로 선언..
 	
+	public void objectSave() {
+		try(FileOutputStream fos = new FileOutputStream("objectdata.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+			Person p = new Person("유뵹승", 19, '남', 190.5);
+			oos.writeObject(p);
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
-	
+	public void objectLoad() {
+		try(FileInputStream fis = new FileInputStream("objectdata.dat"); ObjectInputStream ois = new ObjectInputStream(fis);) {
+			
+			Person p = (Person)ois.readObject();
+			
+			System.out.println(p.toString());
+		} catch(IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

@@ -18,8 +18,10 @@ public class Main {
 //		fsc.memoFile();
 //		fsc.memoLoad();
 //		fsc.changeStream();
-		fsc.dataTypeWriter("유병승", 19, '남', 180.5);
-		fsc.dataTypeReader();
+//		fsc.dataTypeWriter("유병승", 19, '남', 180.5);
+//		fsc.dataTypeReader();
+		fsc.objectSave();
+		fsc.objectLoad();
 	}
 
 }
