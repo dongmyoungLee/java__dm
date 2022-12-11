@@ -286,7 +286,13 @@ public class FileStreamController {
 	public void objectSave() {
 		try(FileOutputStream fos = new FileOutputStream("objectdata.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 			Person p = new Person("유뵹승", 19, '남', 190.5);
-			oos.writeObject(p);
+			Person[] persons = {
+					p,
+					new Person("ttt", 19, '남', 123.2),
+					new Person("ttt2", 29, '남', 1212.2),
+			};
+			
+			oos.writeObject(persons);
 			
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -297,9 +303,13 @@ public class FileStreamController {
 	public void objectLoad() {
 		try(FileInputStream fis = new FileInputStream("objectdata.dat"); ObjectInputStream ois = new ObjectInputStream(fis);) {
 			
-			Person p = (Person)ois.readObject();
+			Person[] persons = (Person[])ois.readObject();
 			
-			System.out.println(p.toString());
+			for(Person p : persons) {
+				System.out.println(p.toString());
+			}
+			
+			
 		} catch(IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
