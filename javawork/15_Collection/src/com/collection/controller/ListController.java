@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import com.collection.model.vo.Animal;
 import com.collection.model.vo.Food;
 
 public class ListController {
@@ -132,18 +133,43 @@ public class ListController {
 		
 		// 만들면서 초기화
 		List data = Arrays.asList(new String[] {"a1","a2","a3"});
-		System.out.println(data);
+		//System.out.println(data);
 		
 		// List.of() -> 선언과 동시에 초기화 * 불변의 리스트!
 		data = List.of(1,2,3,4,5);
-		System.out.println(data);
+		//System.out.println(data);
+		
+		// ArrayList 에 data가 있는지 확인.. isEmpty();
 		
 		
 		
+		// Animal 클래스를 선언
+		// 이름, 몸무게, 나이, 종류
+		// 뽀삐 5.2, 3, 10, 강아지
+		// 야옹이 4.2 , 5, 고양이
+		// 킥킥이 15.3, 8, 원숭이
+		// 하하 200, 3, 9, 하마
 		
+		// 1. 모두출력
+		// 2. 이름,나이,몸무게만 출력
+		// 3.몸무게 10 이상 이름,종류,몸무게 출력
+		// 4. 나이가 5 이상인 데이터 전체출력
+		// 5. 저장된 데이터의 나이를 1살씩 추가 한후 모든데이터 출력
+		// 학생관리 ArrayList 사용해서 구현
 		
+		ArrayList animalList = new ArrayList();
+		// 1
+		animalList.add(new Animal("뽀삐", 5.2, 10, "강아지"));
+		animalList.add(new Animal("야옹이", 4.2, 5, "고양이"));
+		animalList.add(new Animal("킥킥이", 15.3, 8, "원숭이"));
+		animalList.add(new Animal("하하", 200, 9, "하마"));
+		System.out.println(animalList);
 		
+		//2
 		
+		for (int i = 0; i < animalList.size(); i++) {
+			System.out.println(animalList.get(i));
+		}		
 		
 		
 	}
