@@ -17,8 +17,9 @@ public class Main {
 //		fsc.loadFileStr();
 //		fsc.memoFile();
 //		fsc.memoLoad();
-		fsc.changeStream();
-		
+//		fsc.changeStream();
+		fsc.dataTypeWriter("유병승", 19, '남', 180.5);
+		fsc.dataTypeReader();
 	}
 
 }

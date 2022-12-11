@@ -1,5 +1,7 @@
 package com.fileio.controller;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -236,6 +238,37 @@ public class FileStreamController {
 			System.out.println(sb);
 			
 			writer.write(new String(sb));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 데이터 자료형을 유지하면서 파일에 데이터를 저장시켜주는 보조스트림
+	public void dataTypeWriter(String name, int age, char gender, double height) {
+		// DataOutputStream
+		try(FileOutputStream fos = new FileOutputStream("data.dat"); DataOutputStream dos = new DataOutputStream(fos)) {
+			
+			dos.writeUTF(name);
+			dos.writeInt(age);
+			dos.writeChar(gender);
+			dos.writeDouble(height);
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void dataTypeReader() {
+		try(FileInputStream fis = new FileInputStream("data.dat"); DataInputStream dis = new DataInputStream(fis)) {
+			// 데이터를 가져올 때 주의사항
+			// 데이터를 write 했을 때 자료형을 기준으로 동일한 순서로 불러와야 함.
+			String name = dis.readUTF();
+			int age = dis.readInt();
+			char gender = dis.readChar();
+			double height = dis.readDouble();
+			
+			System.out.println(name + " " + age + " " + gender + " " + height);
+			
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
