@@ -7,7 +7,10 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Scanner;
 
 public class FileStreamController {
@@ -213,6 +216,26 @@ public class FileStreamController {
 			while((data = isr.read()) != -1 ) {
 				System.out.println((char)data);
 			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		// 제공되는 API 네트워크 상에서 데이터를 가져올 때 byte 기반 스트림을 많이 이용하게 된다.
+		// 그때 문자열을 받아서 처리하는 내용이면 InputStreamReader 로 변환을 한다.
+		
+		try (FileWriter writer = new FileWriter("naver.html");){
+			URL url = new URL("https://www.naver.com");
+			HttpURLConnection connect = (HttpURLConnection)url.openConnection();
+			InputStream page = connect.getInputStream();
+			InputStreamReader isr2 = new InputStreamReader(page);
+			int val = 0;
+			StringBuffer sb = new StringBuffer();
+			while((val = isr2.read()) != -1 ) {
+				sb.append((char)val);
+			}
+			System.out.println(sb);
+			
+			writer.write(new String(sb));
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
