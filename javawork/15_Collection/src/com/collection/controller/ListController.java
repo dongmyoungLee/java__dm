@@ -166,10 +166,52 @@ public class ListController {
 		System.out.println(animalList);
 		
 		//2
+		Animal[] tmp = new Animal[animalList.size()];
+	
+		for (int i = 0; i < animalList.size(); i++) {
+			tmp[i] = (Animal)animalList.get(i);
+			//System.out.println(tmp[i].getName() + " " + tmp[i].getAge() + " " + tmp[i].getWeight());
+		}
+		
+		//3
 		
 		for (int i = 0; i < animalList.size(); i++) {
-			System.out.println(animalList.get(i));
-		}		
+			tmp[i] = (Animal)animalList.get(i);
+			
+			if (tmp[i].getWeight() > 10) {
+				//System.out.println(tmp[i].getName() + " " + tmp[i].getAge() + " " + tmp[i].getWeight());
+			}
+		}
+		
+		//4 
+		
+		for (int i = 0; i < animalList.size(); i++) {
+			tmp[i] = (Animal)animalList.get(i);
+			
+			if (tmp[i].getAge()  > 5) {
+				//System.out.println(tmp[i].toString());
+			}
+		}
+		
+		//5
+		for (int i = 0; i < animalList.size(); i++) {
+			tmp[i] = (Animal)animalList.get(i);
+			
+			tmp[i].setAge(tmp[i].getAge()+1);	
+		}
+		System.out.println(animalList);
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
