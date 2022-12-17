@@ -3,8 +3,10 @@ package com.collection.controller;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.collection.model.vo.Animal;
 
@@ -123,13 +125,58 @@ public class SetController {
 		for(Object o : lotto) {
 			System.out.println(o);
 		}
+		
 		System.out.println();
 		
 		ArrayList list2 = new ArrayList(lotto);
 		list2.sort((pre,next) -> (int)pre - (int)next);
 		System.out.println(list2);
+		
+		// 순서 기억
+		LinkedHashSet linkSet = new LinkedHashSet();
+		linkSet.add(1);
+		linkSet.add(2);
+		linkSet.add(5);
+		linkSet.add(6);
+		linkSet.add(2);
+		linkSet.add(10);
+		System.out.println(linkSet);
+		
+		for(Object o : linkSet) {
+			System.out.println(o);
+		}
+		
+		System.out.println();
+		
+		// 정렬기능을 이용할수 있음 (  tree 는 객체를 구분할 수 있는 순서가 있어야함... animal class 에서 Comparable 인터페이스가 구현되어 있어야 함....)
+		TreeSet tSet = new TreeSet();
+		tSet.add(1);
+		tSet.add(5);
+		tSet.add(6);
+		tSet.add(8);
+		tSet.add(3);
+		tSet.add(2);
+		
+		System.out.println(tSet);
+		
+		tSet = new TreeSet(animals);
+		
+		for(Object o : tSet) {
+			System.out.println(o);
+		}
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

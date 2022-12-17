@@ -2,7 +2,7 @@ package com.collection.model.vo;
 
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Comparable{
 	private String name;
 	private double weight;
 	private int age;
@@ -75,6 +75,11 @@ public class Animal {
 		return "Animal [name=" + name + ", weight=" + weight + ", age=" + age + ", type=" + type + "]";
 	}
 	
+	@Override
+	public int compareTo(Object o) {
+		
+		return this.age - ((Animal)o).age;
+	}
 	
 	
 }
