@@ -3,6 +3,7 @@ package com.collection.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import com.collection.model.vo.Food;
 
 public class ListController {
 	public static void main(String[] args) {
+		
 		//List 는 Collection 인터페이스를 상속받은 인터페이스
 		// 클래스를 다수 저장, 관리하는 기능을 정의한 인터페이스
 		// 구현한객체
@@ -99,7 +101,7 @@ public class ListController {
 		names.add("a6");
 		names.add("a7");
 		
-		System.out.println(names.contains("a7"));
+		//System.out.println(names.contains("a7"));
 		
 		// List에 추가적인 메소드
 		foods.add(new Food("탕수육", 25000, "중식"));
@@ -163,7 +165,7 @@ public class ListController {
 		animalList.add(new Animal("야옹이", 4.2, 5, "고양이"));
 		animalList.add(new Animal("킥킥이", 15.3, 8, "원숭이"));
 		animalList.add(new Animal("하하", 200, 9, "하마"));
-		System.out.println(animalList);
+		//System.out.println(animalList);
 		
 		//2
 		Animal[] tmp = new Animal[animalList.size()];
@@ -199,28 +201,88 @@ public class ListController {
 			
 			tmp[i].setAge(tmp[i].getAge()+1);	
 		}
-		System.out.println(animalList);
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//System.out.println(animalList);
+		listTest2();
 		
 		
 	}
 	
 	private static void printArrayList(List list) {
 		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
+			//System.out.println(list.get(i));
 		}
 	}
 	
+	public static void listTest2() {
+		// arrayList 추가 메소드
+		// forEach(Consumer(functional인터페이스))
 		
+		ArrayList foods = new ArrayList(); // 저장공간 생성
+		foods.add(new Food("자장면", 9000, "중식"));
+		foods.add(new Food("치킨", 21000, "한식"));
+		foods.add(new Food("김밥", 2000, "한식"));
+		foods.add(new Food("초밥", 25000, "일식"));
+		
+		// 1번째 방법 ( 클래스직접 만들었음 )
+		//foods.forEach(new Test());
+		
+		// 2번째 방법
+		
+//		foods.forEach(new Consumer() {
+//			@Override
+//			public void accept(Object o) {
+//				Food f = (Food)o;
+//				if(f.getType().equals("한식")) {
+//					System.out.println(f);
+//				}
+//			}
+//		});
+		
+		// 3번째 방법 lambda
+		//foods.forEach((o) -> {System.out.println(o);});
+		
+		// 4번째 방법 lambda를 풀어서 씀
+//		foods.forEach((o)-> {
+//			Food f = (Food)o;
+//			if(f.getType().equals("한식")) {
+//				System.out.println(f);
+//			}
+//		});
+		
+		// 리스트에 저장된 데이터는 순서를 가지고 있음
+		// 정렬 기준을 제공하는 클래스, 인터페이스를 구현.
+		// 값을 정렬하는 기준 : 메소드의 리턴값을 기준으로 설정함..
+		// 양수 : 앞뒤 순서를 변경
+		// 음수 : 변경하지 않음
+		// 0 : 변경하지 않음
+		
+		// 1. Comparator 인터페이스를 구현한 클래스를 이용하는 방식 -> 정렬을 처리하는 전용클래스를 생성
+		foods.forEach(o -> System.out.println(o));
+		
+		System.out.println();
+		
+		//Collections.sort(foods, new FoodPriceFilter());
+		Collections.sort(foods, (pre,next) -> {
+			Food f2 = (Food)pre;
+			Food f1 = (Food)next;
+			return f1.getPrice() - f2.getPrice();
+		});
+		
+		foods.forEach(o -> System.out.println(o));
+		// 2. Comparable 인터페이스를 구현함 -> vo 클래스에 구현함
+		
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
