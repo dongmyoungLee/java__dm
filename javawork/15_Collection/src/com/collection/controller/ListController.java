@@ -5,10 +5,12 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.collection.model.vo.Animal;
 import com.collection.model.vo.Food;
+import com.collection.model.vo.FoodNameOrder;
 
 public class ListController {
 	public static void main(String[] args) {
@@ -203,7 +205,8 @@ public class ListController {
 		}
 		//System.out.println(animalList);
 		listTest2();
-		
+		//listTest3();
+		linkedListTest();
 		
 	}
 	
@@ -269,13 +272,48 @@ public class ListController {
 		});
 		
 		foods.forEach(o -> System.out.println(o));
+		
+		System.out.println();
+		
 		// 2. Comparable 인터페이스를 구현함 -> vo 클래스에 구현함
+		Collections.sort(foods);
+		foods.forEach(o -> System.out.println(o));
+		System.out.println();
+		System.out.println("음식 이름순 정렬");
+		Collections.sort(foods, new FoodNameOrder());
+		foods.forEach(o -> System.out.println(o));
 		
+		System.out.println();
 		
+		Collections.sort(foods, (pre, next) -> {
+			return ((Food)(next)).getName().compareTo(((Food)pre).getName());
+		});
+		foods.forEach(o -> System.out.println(o));
 	}
 	
+	public static void listTest3() {
+		List name = new ArrayList();
+		name.add("유병승");
+		name.add("박세현");
+		name.add("김수진");
+		name.add("오윤재");
+		name.add("제라라");
+		name.forEach(o -> System.out.println(o));
+		System.out.println();
+		Collections.sort(name);
+		name.forEach(o -> System.out.println(o));
+		
+	}
 
-	
+	public static void linkedListTest() {
+		// list 내부에 있는 데이터를 수정,삭제,삽입이 빈번한 경우 ArrayList 보다 성능이 좋은 클래스이다.
+		LinkedList list = new LinkedList();
+		list.add("유뺑승");
+		list.add("유병승");
+		list.add("유보승");
+		//System.out.println(list.get(0));
+		list.forEach(o -> System.out.println(o));
+	}
 	
 	
 	

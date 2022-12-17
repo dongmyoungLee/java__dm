@@ -3,8 +3,7 @@ package com.collection.model.vo;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Food implements Serializable {
-	
+public class Food implements Serializable, Comparable {
 	
 	private static final long serialVersionUID = 991725894934200825L;
 	private String name;
@@ -72,6 +71,12 @@ public class Food implements Serializable {
 		return Objects.equals(name, other.name) && price == other.price && Objects.equals(type, other.type);
 	}
 	
+	// 가격기준 오름차순 (내림차순을 원한다면 반대로..)
+	@Override
+	public int compareTo(Object o) {
+	
+		return this.price - ((Food)o).price;
+	}
 	
 	
 }
