@@ -1,0 +1,212 @@
+SELECT * FROM DBA_USERS;
+
+-- 실습을 위한 사용자 계정 만들기
+
+-- SYSTEM(관리자계정)으로 생성을 해줘야 한다.
+
+-- CREATE USER 사용자명 IDENTIFIED BY 비밀번호 DEFAULT TABLESPACE USERS QUOTA UNLIMIED ON USERS;
+
+-- 18C 버전부터는 사용자명에 ##을 부여 하게 되어 있음. -> 해제할 수 있음
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+CREATE USER DM IDENTIFIED BY DM DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+CREATE USER BS IDENTIFIED BY BS DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+
+-- 생성된 계정 확인하기
+SELECT * FROM DBA_USERS;
+
+-- 생성된 계정으로 접속하기 -> 접속 만들기 -> 접속
+-- 생성된 계정으로 접속이 금지되어있음 -> 권한설정이 안되어있음
+-- 관리자 계정으로 사용자에게 접속권한 부여해주기 -- CONNECT 권한 부여
+-- GRANT 권한명 || ROLE이름 TO 부여할 사용자명
+GRANT CONNECT TO DM;
+GRANT CONNECT TO BS;
+-- 저장공간생성하는 권한 부여하기
+GRANT RESOURCE TO DM;
+GRANT RESOURCE TO BS;
+-- 사용자가 생성한 테이블 조회
+SELECT * FROM TAB;
+
+-- 새로운 계정을 생성을 하게 되면 SYSTEM 계정으로 알맞는 권한을 부여해줘야한다.
+-- 기본적으로 RESOURCE, CONNECT 권한을 부여한다.
+CREATE TABLE TEST(
+    TEST_NAME VARCHAR2(200)
+);
+
+-- BS 계정에 추가된 데이터 확인하기
+-- 추가된 테이블(저장공간) 확인하기
+
+-- EMPLOYEE : 사원정보저장 테이블
+-- DEPARTMENT : 부서정보저장 테이블
+-- JOB : 직책정보저장 테이블
+-- LOCATION : 부서지역정보저장 테이블
+-- NATIONAL : 국가정보저장 테이블
+-- SAL_GRADE : 급여수준저장 테이블
+
+SELECT * FROM EMPLOYEE;
+
+
+SELECT 1+10, 5*3, 10/2 FROM DUAL;
+--계산결과르 출력해주는 컬럼 -> 가상 컬럼이라고함
+
+SELECT EMP_NAME, SALARY, SALARY + 100  FROM EMPLOYEE;
+
+SELECT EMP_NAME, SALARY, SALARY * 12 AS "연봉" FROM EMPLOYEE;
+
+-- 컬럼값이 NULL 인 경우 산술연산이 불가능하다.
+-- NVL -> NULL 인 경우 기본값 지정가능
+SELECT EMP_NAME, BONUS, NVL(BONUS, 0) + 0.5 FROM EMPLOYEE;
+
+-- 컬럼과 산술연산을 할 경우 타입이 숫자형이어야 한다.
+-- FROM 절에서 사용한 테이블에 있는 컬럼만 조회가 가능함.
+
+-- 중복데이터 (ROW) 를 제거하기
+-- DISTINCT
+SELECT DISTINCT DEPT_CODE FROM EMPLOYEE;
+
+-- DISTINCT 는 SELECT 예약어 다음에만 사용이 가능.
+
+-- 문자열을 결합해주는 연산처리하기
+-- 문자열||문자열 -> 문자열을 합침
+-- 오라클에서 문자열 리터럴표시 -> ''
+
+SELECT '여러분' || '점심맛있게먹었나요?' AS MSG FROM DUAL;
+
+-- 문자열 컬럼을 결합하여 출력할때도 사용함
+SELECT EMP_NAME || EMAIL FROM EMPLOYEE;
+
+SELECT * FROM EMPLOYEE;
+-- 데이터를 필터하기 -> 조건에 맞는 데이터 조회하기
+
+SELECT EMP_NAME, SALARY FROM EMPLOYEE WHERE SALARY >= 3000000;
+
+-- 사원 중 유씨성을 가진 사원의 사원명, 월급, 부서코드, 조회하기
+SELECT EMP_NAME, SALARY, DEPT_CODE FROM EMPLOYEE  WHERE EMP_NAME LIKE '유%';
+SELECT EMP_NAME, SALARY, DEPT_CODE FROM EMPLOYEE  WHERE EMP_NAME LIKE '유__';
+
+-- EMAIL에 Y 를 포함하고 있는 사원의 이름, 이메일을 조회하기
+SELECT EMP_NAME, EMAIL FROM EMPLOYEE WHERE EMAIL LIKE '%y%';
+
+-- LIKE 부정연산하기
+-- 사원의 성이 유가 아닌 사원들 조회하기
+SELECT * FROM EMPLOYEE WHERE EMP_NAME NOT LIKE '유%';
+
+-- 이메일 _ 앞의 글자가 3글자인 사원의 사원명, 이메일 조회하기
+-- ESCAPE * 다음에 있는건 문자로 인식
+SELECT EMP_NAME, EMAIL FROM EMPLOYEE WHERE EMAIL LIKE '___*_%' ESCAPE '*';
+
+-- NULL 값 비교하기
+-- 기본적으로 NULL 값은 비교연산 처리를 할 수 있다.
+-- NULL 값을 처리하기 위한 연산자를 만들어 놓음
+-- IS NULL/ IS NOT NULL
+-- 사원 중 보너스를 받는 사람의 이름, 급여, 보너스를 조회하기
+SELECT * FROM EMPLOYEE WHERE BONUS IS NOT NULL;
+
+-- 사원 중 매니저가 지정되않은 사원을 조회하기
+SELECT * FROM EMPLOYEE WHERE MANAGER_ID IS NULL;
+
+-- 부서가 없는 사원 조회하기
+SELECT E.*, NVL(DEPT_CODE, '인턴') AS 결과 FROM EMPLOYEE E WHERE DEPT_CODE IS NULL;
+
+-- 다중 값 동등비교하기
+-- OR로 연결해서 처리하기 IN을 활용하기
+-- 사원 중 부서가 D5이거나 D6인 사원의 사원명 부서코드를 조회하기
+-- 신봉선, 송중기 사원과 같은 부서인 사원 구하기
+SELECT EMP_NAME, DEPT_CODE FROM EMPLOYEE WHERE DEPT_CODE IN(SELECT DEPT_CODE FROM EMPLOYEE WHERE EMP_NAME IN('심봉선','송종기')); 
+
+-- NOT IN() 사용하기
+-- D5, D6 이 아닌 사원 조회하기
+SELECT DEPT_CODE FROM EMPLOYEE WHERE DEPT_CODE NOT IN('D5', 'D6');
+
+-- 논리연산 사용시 연산자 우선순위에 유의해야함
+-- 직책이 J7 이거나 J2 인 사원 중 급여가 200만원 이상인 사원을 조회
+SELECT EMP_NAME, JOB_CODE, SALARY FROM EMPLOYEE WHERE (JOB_CODE = 'J7' OR JOB_CODE = 'J2') AND SALARY >= 2000000;
+
+-- WHERE 절에도 산설연산을 사용할 수 있다.
+SELECT * FROM EMPLOYEE WHERE SALARY > SALARY * 12;
+
+--오라클에서 제공하는 함수 사용
+-- 함수를 사용할때는 SELECT 문 사용
+-- SELECT 문의 컬럼쓰는곳이나 WHERE 사용가능
+
+-- 단일행함수 선택한 테이블에 있는 모든 ROW 에 결과를 출력해주는 함수
+-- 문자열 처리함수
+-- LENGTH() : 매개변수로 전달된 컬럼이나 리터럴의 길이를 출력해주는 함수
+
+SELECT LENGTH('유병승') FROM DUAL;
+
+-- 이메일의 길이가 13이상인 사원
+SELECT EMAIL FROM EMPLOYEE WHERE LENGTH(EMAIL)>13;
+
+-- INSTR() : JAVA INDEXOF 메소드와 유사함
+-- 문자열의 인덱스 위치를 반환해주는 함수
+-- INSERT (대상문자열||컬럼, 찾을문자열[,검색시작위치]) : 찾은 문자열의 인덱스번호를 반환
+
+SELECT INSTR('메가스터디IT','IT'), INSTR('메가스터디IT', '메가') FROM DUAL;
+
+SELECT EMAIL, INSTR(EMAIL,'J') FROM EMPLOYEE;
+
+SELECT INSTR('메가 스터디 메가스터디 IT 메가 스터디 미용', '메가', 4) FROM DUAL;
+
+-- LPAD/RPAD : 지정한 길이에 문자열이 채워지지 않았을 때 특정 문자로 채워주는 함수
+-- LPAD||RPAD(문자열||컬럼명,길이,공백시채워줄문자)
+
+SELECT LPAD('메가', 10, '*') FROM DUAL;
+
+-- LTRIM || RTRIM : 공백 또는 특정문자를 삭제해주는 기능
+SELECT '         유병승', LTRIM('          유병승'), '1111병승', LTRIM('1111병승', '1') FROM DUAL;
+
+-- TRIM : 양쪽의 값을 제거 하는 함수, 기본 : 공백, 설정한 값을 제거
+SELECT '     병승  ', TRIM('         병승        ') FROM DUAL;
+
+-- SUBSTR : JAVA SUBSTRING 메소드와 유사함
+-- SUBSTR(대상문자열, 시작인덱스[,끝인덱스])
+SELECT DISTINCT SUBSTR(EMP_NAME,1,1) FROM EMPLOYEE;
+
+-- 80년대생 남자
+SELECT * FROM EMPLOYEE WHERE SUBSTR(EMP_NO, 1, 2) BETWEEN 80 AND 89;
+
+-- 2000년대생 포함 여자
+SELECT * FROM EMPLOYEE WHERE SUBSTR(EMP_NO, 8, 1) IN('2','4');
+
+-- 사원의 이메일에서 아이디만 출력하기
+SELECT EMAIL, SUBSTR(EMAIL, 1, INSTR(EMAIL,'@')-1) FROM EMPLOYEE;
+
+SELECT EMAIL, SUBSTR(EMAIL, 1, INSTR(EMAIL,'@')-1) FROM EMPLOYEE WHERE LENGTH(SUBSTR(EMAIL, 1, INSTR(EMAIL,'@')-1)) >= 7;
+
+-- 영문자를 처리하는 함수
+-- UPPER, LOWERM INITCAP
+SELECT LOWER('Welcome to oRAcle worlD') FROM DUAL;
+
+-- REPLACE : 대상문에서 지정문자를 찾아서 대체문자로 변경해주는 함수
+-- REPLACE(문자열||컬럼명, '찾을문자', '대체문자')
+
+SELECT EMAIL, REPLACE(EMAIL, 'or.kr', 'BS.or.kr') from employee;
+
+update employee set email = replace(email, 'or.kr', 'BS.or.kr');
+
+select * from employee;
+commit;
+
+-- MOD () : 나머지 구하는함수
+SELECT MOD(3,2) FROM DUAL;
+
+SELECT E.SALARY, MOD(SALARY, 3) FROM EMPLOYEE E;
+
+SELECT ROUND(126.456), FLOOR(126.567), TRUNC(126.567,1), CEIL(126.123) FROM DUAL;
+
+-- 날짜처리함수
+-- 오라클에서 날짜를 출력할때 두가지 
+-- SYSTEM 예악어를 사용 -> 오늘날짜 출력
+SELECT SYSDATE FROM DUAL;
+
+-- 날짜 연산가능
+SELECT SYSDATE, SYSDATE+3, SYSDATE-10 FROM DUAL;
+
+-- NEXT_DAY : 인자로 전달된 요일중 가장 가까운 다음날짜를 출력
+SELECT NEXT_DAY(SYSDATE, '화') FROM DUAL;
+
+
+
+
