@@ -489,4 +489,72 @@ SELECT * FROM DEPARTMENT;
 SELECT * FROM LOCATION;
 
 
+-- 2. 오라클에서 제공하는 WINDOW 함수를 이용해서 출력하는 방법
+-- RANK OVER();
+-- DENSE_RANK OVER();
+SELECT *
+FROM (
+    SELECT RANK() OVER(ORDER BY SALARY DESC) AS RANK, SALARY, EMP_NAME
+    FROM EMPLOYEE
+)
+WHERE RANK BETWEEN 5 AND 10;
+
+SELECT *
+FROM (
+    SELECT
+        RANK() OVER(ORDER BY SALARY DESC) AS RANK,
+        DENSE_RANK() OVER(ORDER BY SALARY DESC) AS RANK2,
+        SALARY, EMP_NAME
+        FROM EMPLOYEE
+);
+
+-- DDL
+-- 데이터를 정의하는 언어 오라클에서 사용하는 객체를 생성, 수정, 삭제할때 사용하는 명령어
+
+-- CREATE TABLE -> 테이블, 저장소를 생성하는 명령어
+-- 저장소의 이름, 타입을 정해줘야 함.
+
+-- 오라클자료형
+-- 숫자형 : NUMBER
+-- 문자형 : CHAR, VARCHAR2, NCHER, NVARCHAR2
+-- 날짜형 : DATE, TIMESTAMP
+
+CREATE TABLE TBL_STR(
+    A CHAR(6),
+    B VARCHAR(6),
+    C NCHAR(6),
+    D NVARCHAR2(6)
+);
+
+SELECT * FROM TBL_STR;
+INSERT INTO TBL_STR VALUES('ABC', 'ABC', 'ABC', 'ABC');
+-- VARCHAR 는 들어오는값에 따른 가변형
+SELECT LENGTH(A), LENGTH(B), LENGTH(C),  LENGTH(D) FROM TBL_STR;
+
+-- 최대 2000BYTE 까지 저장이 가능
+-- 한글자 2BYTE 차지, EXPRESS 영문1, 한글3
+
+-- 숫자자료형 : 정수, 실수, 음수, 양수 모두 저장
+-- 사용
+-- NUMBER(PRECISION, SCALE)
+-- PRECISION : 표현할수 있는 전체자리수 (1~38)
+-- SCALE : 소수점 이하 자리수(-84 ~ 127 )
+
+CREATE TABLE TBL_NUMBER(
+    A NUMBER,
+    B NUMBER(5),
+    C NUMBER(5,1),
+    D NUMBER(5,-1)
+)
+
+INSERT INTO TBL_NUMBER VALUES(1234.567, 1234.567, 1234.567, 1234.567);
+
+SELECT * FROM TBL_NUMBER;
+
+
+
+
+
+
+
 
