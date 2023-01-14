@@ -46,10 +46,104 @@ CREATE TABLE TBL_MEMBER(
 
 
 SELECT * FROM TBL_MEMBER;
+-- 생성된 테이블의 컬럼에 설명작성하기
+COMMENT ON COLUMN TBL_MEMBER.MEMBER_ID IS '회원아이디 최소 8글자 이상 작성';
+
+SELECT *
+FROM USER_COL_COMMENTS
+WHERE TABLE_NAME = 'TBL_MEMBER';
+
+-- 테이블에 대한 설명작성하기
+COMMENT ON TABLE TBL_MEMBER IS '회원정보저장 테이블';
+
+SELECT *
+FROM USER_TAB_COMMENTS;
+
+-- 생성한 테이블에 제약조건 설정하기
+-- 각 컬럼에 설정, 컬럼에 저장할 데이터를 필터링한다.
+-- NOT NULL(C) : 컬럼에 NULL 값을 대입하지 않음.
+-- UNIQUE : 컬럼에 중복된 값을 저장하지 않는다.
+-- PRIMARYKEY : 테이블당 1개의 기본키 NULL과 중복을 허용하지 않음.
+
+-- 각 테이블에 설정한 제약조건 확인하기
+SELECT * FROM USER_CONSTRAINTS;
+SELECT * FROM USER_CONS_COLUMNS;
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, COLUMN_NAME
+FROM USER_CONSTRAINTS JOIN USER_CONS_COLUMNS USING(CONSTRAINT_NAME);
+
+-- 테이블 제약조건 설정하기
+-- 제약조건을 설정하는 방법 2가지
+-- 1. 컬럼레벨에서 설정
+-- 컬럼을 선언하는 부분에서 제약조건 설정 개별 -> 제약조건을 설정
+-- 2. 테이블레벨에서 설정
+-- 컬럼끝나고 마지막 부분에서 제약조건을 설정 -> 다수의 컬럼을 가지고 제약조건을 설정할 때
+
+-- NOT NULL 제약조건 설정하기
+CREATE TABLE NN_MEMBER(
+    MEMBER_ID VARCHAR2(30) NOT NULL,
+    MEMBER_PWD VARCHAR2(30) NOT NULL
+)
+
+INSERT INTO NN_MEMBER VALUES(NULL, NULL);
+
+
+-- UNIQUE 제약조건
+-- 컬럼의 데이터가 유일값을 유지해야할때 설정함.
+CREATE TABLE UQ_MEMBER(
+    MEMBER_ID VARCHAR2(30) UNIQUE
+);
+
+INSERT INTO UQ_MEMBER VALUES('TEST');
+
+-- 생성된 테이블에 PRIMARY KEY (PK) 설정하기
+
+-- 여러컬럼을 PRIMARY KEY 로 설정하기
+-- 복합키
+
+CREATE TABLE PK_MEMBER2(
+    MEMBER_NO NUMBER,
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30),
+    MEMBER_NAME VARCHAR2(20),
+    PRIMARY KEY (MEMBER_NO, MEMBER_ID)
+);
+
+SELECT * FROM PK_MEMBER2;
+INSERT INTO PK_MEMBER2 VALUES(1, 'ADMIN', 1234, '관리자');
+INSERT INTO PK_MEMBER2 VALUES(2, 'ADMIN', 1234, '관리자');
+
+-- 장바구니
+CREATE TABLE CART(
+    MEMBER_ID VARCHAR2(20),
+    PRODUCT_NO NUMBER,
+    DAY DATE,
+    STOCK NUMBER,
+    PRIMARY KEY(MEMBER_ID, PRODUCT_NO)
+);
+
+-- FOREIGN KEY 제약조건 설정하기
+-- 다른테이블에서 데이터를 가져와 저장하는것 -> 참조
+-- 다른테이블에 없는 값을 저장할수 없게 하는것
+-- 게시글, 댓글 || 게시글, 첨부파일 ||사물함, 회원||학과, 학생 ||사원, 부서
+
+CREATE TABLE BOARD(
+    BOARD_NO NUMBER PRIMARY KEY,
+    BOARD_TITLE VARCHAR(200) NOT NULL,
+    BOARD_CONTENT VARCHAR2(2000),
+    BOARD_WRITER VARCHAR(20) NOT NULL,
+    BOARD_DATE DATE
+);
 
 
 
+CREATE TABLE BOARD_COMMENT (
+    BOARD_COMMENT_NO NUMBER PRIMARY KEY,ㄹ
+    BOARD_COMMNET_CONTENT VARCHAR2(800) NOT NULL,
+    BOARD_COMMENT_DATE DATE,
+    BOARD_REF NUMBER REFERENCES BOARD(BOARD_NO)
+);
 
-
-
+INSERT INTO BOARD VALUES(1, '첫번째 게시글', '나의 첫 게시글', 'ADMIN', SYSDATE);
+INSERT INTO BOARD VALUES(1, '첫게시글 축하해', SYSDATE, 1);
+SELECT * FROM BOARD;
 
