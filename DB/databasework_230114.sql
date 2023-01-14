@@ -1,0 +1,1978 @@
+SELECT * FROM DBA_USERS;
+-- 실습을 위한 사용자 계정만들기
+-- SYSTEM(관리자계정)으로 생성을 해줘야한다.
+-- CREATE USER 사용자명 IDENTIFIED BY 비밀번호 DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+-- 18C 버전부터는 사용자명에 C##을 부여하게 되어있음, -> 해제할 수 있음, 해제해서 사용하자
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+CREATE USER BS IDENTIFIED BY BS DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+-- 생성된 계정 확인하기
+SELECT * FROM DBA_USERS;--데이터베이스에 등록된 계정을 조회하는 명령어
+
+-- 생성된 계정으로 접속하기 -> 접속만들기 -> 접속
+-- 생성된 계정으로 접속이 금지되어있음 -> 권한이 없음
+-- 관리자 계정으로 사용자에게 접속권한 부여해주기 -> CONNECT권한 부여
+-- GRANT 권한명||ROLE이름 TO 부여할 사용자명
+GRANT CONNECT TO BS;
+
+-- BS계정으로 접속해서 명령어 실행해보기
+SELECT * FROM TAB; -- BS계정이 가지고 있는 테이블(데이터를 저장하는 공간) 조회하기
+--  저장공간 생성해보기
+-- 샘플로 TEST이름의 저장공간을 생성하는 구문
+-- 기본적으로 저장공간을 생성할 수 있는 권한은 부여되어 있지않다.! -> SYSTEM계정으로 부여를 해줘야함.
+CREATE TABLE TEST(
+    TEST_NAME VARCHAR2(200)
+);
+
+-- 저장공간생성하는 권한 부여하기
+GRANT RESOURCE TO BS;
+
+-- 사용자가 생성한 테이블 조회
+SELECT * FROM TAB;
+
+-- 새로운 계정을 생성을 하게 되면 SYSTEM계정으로 알맞는 권한을 부여해줘야한다.
+-- 기본적으로 RESOURCE, CONNECT권한을 부여한다.
+
+-- BS계정에 추가된 데이터 확인하기
+-- 추가된 테이블(저장공간) 확인하기
+SELECT * FROM TAB;
+-- EMPLOYEE : 사원정보 저장테이블
+SELECT * FROM EMPLOYEE;
+-- DEPARTMENT : 부서정보 저장테이블
+SELECT * FROM DEPARTMENT;
+-- JOB : 직책정보 저장테이블
+SELECT * FROM JOB;
+-- LOCATION : 부서지역정보 저장테이블
+SELECT * FROM LOCATION;
+-- NATIONAL : 국가정보 저장 테이블
+SELECT * FROM NATIONAL;
+-- SAL_GRADE : 급여 수준 저장 테이블
+SELECT * FROM SAL_GRADE;
+
+-- SELECT문 활용하기
+-- 기본 SELECT 문
+-- SELECT 컬럼명, 컬럼명,.....(컬럼을 선택)
+-- FROM 테이블명
+
+-- EMPLOYEE 테이블의 EMP_ID, EMP_NAME, SALARY 컬럼을 조회하기
+SELECT EMP_ID, EMP_NAME, SALARY 
+FROM EMPLOYEE;
+
+-- DEPARTMENT테이블의 DEPT_TITLE조회하기
+SELECT DEPT_TITLE
+FROM DEPARTMENT;
+
+-- EMPLOYEE테이블에 있는 전체 컬럼을 조회하기
+-- SELECT문에 컬럼을 설정부분에 * 을 사용하면 된다.
+SELECT * 
+FROM EMPLOYEE;
+
+-- DEPARTMENT테이블에 있는 전체 컬럼을 조회하기
+SELECT * FROM DEPARTMENT;
+
+-- 계정에 저장되어있는 테이블과 컬럼 확인하기
+-- 테이블조회
+SELECT * FROM TAB;
+-- 테이블의 컬럼명 조회하기
+DESC DEPARTMENT;
+
+-- SELECT문을 이용해서 산술연산 처리결과를 확인할 수 있음
+-- SELECT  1+10 FROM EMPLOYEE;
+-- 테스트용 기본 테이블 제공 -> DUAL테이블
+-- 간단한 계산, 오라클제공함수실행할 때 사용
+SELECT 1+10,5*3,10/2 FROM DUAL;
+-- 계산결과를 출력해주는 컬럼 -> 가상컬럼이라고 함.
+-- 데이터가 있는 테이블의 컬럼과 산술연산이 가능
+-- EMPLOYEE테이블의 SALARY에 100더하기
+SELECT EMP_NAME, SALARY,SALARY+100
+FROM EMPLOYEE;
+
+-- 각 사원의 이름, 월급 연봉을 조회하기
+SELECT EMP_NAME, SALARY, SALARY * 12
+FROM EMPLOYEE;
+
+-- 컬럼값이 NULL인 경우 산술연산이 불가능 -> 함수를 이용해서 NULL일때 대체값을 지정할 수 있음
+SELECT * FROM EMPLOYEE;
+SELECT EMP_NAME, BONUS, NVL(BONUS,0)+0.5
+FROM EMPLOYEE;
+
+-- 컬럼과 산술연산을 할 경우 컬럼의 타입이 숫자형이어야 한다.
+--SELECT EMP_NAME+100
+--FROM EMPLOYEE;
+
+-- FROM절에서 사용한 테이블에 있는 컬럼만 조회가 가능하다
+--SELECT DEPT_ID, DEPT_TITLE,EMP_NAME 
+--FROM DEPARTMENT;
+
+-- 컬럼명을 새롭게 지정할 수 있음 -> 별칭부여하기
+SELECT EMP_ID, EMP_NAME, EMAIL
+FROM EMPLOYEE;
+-- 컬럼을 선택하고 AS예약어를 이용해서 별칭을 부여
+SELECT EMP_ID AS 사원번호,EMP_NAME AS 사원명, EMAIL AS 이메일
+FROM EMPLOYEE;
+-- 가상컬럼에 별칭을 부여하는 경우가 많음
+SELECT EMP_ID, EMP_NAME, SALARY, SALARY*12 AS YEAR_SALARY
+FROM EMPLOYEE;
+-- 별칭은 ""을 이용해서 띄어쓰기 할 수 있다.
+SELECT EMP_ID AS "사원 번호",EMP_NAME AS "이$름"
+FROM EMPLOYEE;
+
+-- 중복데이터(ROW)을 제거 조회하기
+-- DISTINCT예약어를 사용해서 조회를 한다
+SELECT DISTINCT DEPT_CODE
+FROM EMPLOYEE;
+SELECT DISTINCT JOB_CODE
+FROM EMPLOYEE;
+-- DISTINCT는 SELECT 예약어 다음에만 사용이 가능
+-- SELECT EMP_NAME, DISTINCT DEPT_CODE
+-- FROM EMPLOYEE;
+SELECT DISTINCT DEPT_CODE, JOB_CODE
+FROM EMPLOYEE;
+
+-- 문자열을 결합해주는 연산처리하기
+-- 문자열||문자열 -> 문자열을 결합
+-- 오라클에서 문자열 리터럴표시 -> ''
+SELECT '여러분 '||'점심맛있게 먹었나요?' AS MSG
+FROM DUAL;
+
+-- 문자열 컬럼을 결합하여 출력할때도 사용
+SELECT EMP_NAME||'님의 이메일은 '||EMAIL
+FROM EMPLOYEE;
+
+SELECT * FROM EMPLOYEE;
+-- 데이터(ROW)를 필터하기 -> 조건에 맞는 데이터(ROW) 조회하기
+-- WHERE 예약어를 사용
+-- 사용
+-- SELECT *||컬럼명,컬럼명.....
+-- FROM 테이블명
+-- WHERE 조건문(비교연산(=, >=, <=, !=), 논리연산(AND, OR))
+-- EMPLOYEE 테이블에서 월급이 300만원이상인 사원을 조회하자
+SELECT EMP_NAME, SALARY
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+-- EMPLOYEE 테이블에서 DEPT_CODE가 D5인 사원의 전체컬럼을 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5';
+
+-- EMPLOYEE 테이블에서 JOB_CODE가 J2인 사원의 이름, 급여, 직책코드 조회하기
+SELECT EMP_NAME, SALARY, JOB_CODE
+FROM EMPLOYEE
+WHERE  JOB_CODE='J2';
+
+-- EMPLOYEE테이블에서 부서코드가 D5가 아닌 사원의 이름, 부서코드 조회하기
+SELECT EMP_NAME, DEPT_CODE
+FROM EMPLOYEE
+WHERE DEPT_CODE != 'D5';
+
+-- EMPLOYEE 테이블에서 부서코드가 D5이고 월급이 300만원이상인 사원의 전체컬럼 조회하기
+SELECT *
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5' AND SALARY>=3000000;
+
+-- EMPLOYEE 테이블에서 부서코드가 D5이거나 월급이 300만원 이하인 사원의 전체컬럼 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5' OR SALARY<=3000000;
+
+-- 날짜형 데이터도 대소비교가 가능하다
+-- 날짜표시는 문자열로 패턴에 맞춰서 표현 -> 'YYYY/MM/DD' 'YY/MM/DD'
+-- EMPLOYEE테이블에서 입사일(HIRE_DATE)이 2000년도 이전인 사원을 구하기
+SELECT *
+FROM EMPLOYEE
+WHERE HIRE_DATE < '00/01/01';
+
+
+-- 특정범위를 조회하는 구문
+-- AND 연결하여 사용, BETWEEN AND를 사용해서 처리하는 방법
+-- EMPLOYEE테이블에서 월급을 200만원 이상 300만원 이하로 받는 사원의 이름, 급여, 보너스, 입사일 조회하기
+SELECT *
+FROM EMPLOYEE
+--WHERE SALARY>=2000000 AND SALARY<=3000000;
+WHERE SALARY BETWEEN 2000000 AND 3000000;
+
+-- EMPLOYEE테이블에서 입사일이 2000년인 사원을 조회하기
+SELECT *
+FROM EMPLOYEE
+--WHERE HIRE_DATE>='00/01/01' AND HIRE_DATE<='00/12/31';
+WHERE HIRE_DATE BETWEEN '00/01/01' AND '00/12/31'; 
+
+
+-- LIKE연산자 이용하기
+-- 문자열 데이터를 패턴으로 비교하는 연산 -> 부분일치, 패턴에 맞는 문자열을 찾을 사용
+-- 이메일 'EA'가 있는 사원, 성이 김씨인 사원, 주민번호에 32가 있는 사원
+-- 컬럼명 LIKE '비교할문자패턴'
+-- % : 문자가 0개이상 아무문자나 허용 
+-- 예) '%강%' : 강이 있는 포함된 문자열 한강(O), 강사(o) 강하라(0),강강술래(0), 김강우(0),ㅁㄴㅇㄻㄴㄹㄴ강ㅁㄴㅇㄻㄴㅇㄹ(0)'
+--     '강%' : 강으로 시작하는 문자열
+-- _ : 문자가 1개 아무무자나 허용
+-- 예) '_강_' : 3글자 문자열 중간에 강이 있는것
+-- 예) '_유%' : 2글자이상 문자열 두번째 글자가 '유'인 문자열
+
+-- 사원 중 유씨성을 가진 사원의 사원명, 월급, 부서코드 조회하기
+SELECT EMP_NAME, SALARY, DEPT_CODE
+FROM EMPLOYEE
+--WHERE EMP_NAME LIKE '유%';
+WHERE EMP_NAME LIKE '유__';
+-- EMAIL에 YO를 포함하고 있는 사원의 이름, 이메일을 조회하기
+SELECT EMP_NAME, EMAIL
+FROM EMPLOYEE
+WHERE EMAIL LIKE '%y%';
+
+-- LIKE부정연산하기
+-- 사원의 성이 유가 아닌 사원들 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE EMP_NAME NOT LIKE '유%';
+
+-- 이메일주소에 _앞글자가 3글자인 사원의 사원명, 이메일 조회하기
+SELECT EMP_NAME, EMAIL 
+FROM EMPLOYEE
+WHERE EMAIL LIKE '___\_%' ESCAPE '\';
+
+-- NULL값 비교하기
+-- 기본적으로 NULL값은 비교연산 처리를 할 수 없다.
+-- NULL값을 처리하기 위한 연산자를 만들어 놓음
+-- IS NULL / IS NOT NULL
+-- 사원중 보너스를 받는 사원의 이름, 급여, 보너스를 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE BONUS IS NOT NULL;
+--WHERE BONUS = NULL
+
+-- 사원중 매니저가 지정되지않은 사원을 조회하기
+SELECT * FROM EMPLOYEE;
+SELECT * 
+FROM EMPLOYEE
+WHERE MANAGER_ID IS NULL;
+
+-- 부서가 없는 사원 조회하기
+-- 부서코드에 인턴으로 작성하기
+SELECT E.*, NVL(DEPT_CODE,'인턴')
+FROM EMPLOYEE E 
+WHERE DEPT_CODE IS NULL;
+
+-- 다중값 동등비교하기
+-- OR로 연결해서 처리하기 IN을 활용하기
+-- 사원중 부서가 D5이거나 D6인 사원의 사원명 부서코드를 조회하기
+SELECT EMP_NAME, DEPT_CODE
+FROM EMPLOYEE
+--WHERE DEPT_CODE='D5' OR DEPT_CODE='D6';
+--WHERE DEPT_CODE IN ('D5','D6');
+WHERE DEPT_CODE IN (SELECT DEPT_CODE FROM EMPLOYEE WHERE EMP_NAME IN('심봉선','송종기'));
+-- 신봉선, 송종기사원과 같은 부서인 사원구하기
+SELECT DEPT_CODE FROM EMPLOYEE WHERE EMP_NAME IN('심봉선','송종기');
+
+-- NOT IN()사용하기
+-- D5, D6이 아닌 사원 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPT_CODE NOT IN ('D5','D6');
+
+-- 논리연산사용시 연산자 우선순위에 유의하자.
+-- 직책이 J7이거나 J2인 사원 중 급여가 200만원 이상인 사원을 조회
+SELECT EMP_NAME, JOB_CODE, SALARY
+FROM EMPLOYEE
+WHERE (JOB_CODE='J7' OR JOB_CODE='J2') AND SALARY>=2000000;
+
+-- WHERE 절에도 산술연산을 사용할 수 있다.
+SELECT *
+FROM EMPLOYEE
+WHERE SALARY > SALARY*12;
+
+
+-- 오라클에서 제공하는 함수를 사용해보자
+-- 함수를 사용할때는 SELECT문에서 사용을 한다.
+-- SELECT문의 컬럼쓰는 곳이나 WHERE에 사용을 할 수 있다.
+
+-- 단일행함수 선택한 테이블에 있는 모든 ROW에 결과를 출력해주는 함수
+-- 문자열 처리함수
+-- LENGTH() : 매개변수로 전달된 컬럼이나 리터럴의 길이를 출력해주는 함수
+SELECT LENGTH('유병승') FROM DUAL;
+-- 이메일 길이 확인하기
+SELECT LENGTH(EMAIL), EMAIL FROM EMPLOYEE;
+
+-- 이메일의 길이가 13이상이 사원
+SELECT EMAIL 
+FROM EMPLOYEE
+WHERE LENGTH(EMAIL)>=13;
+
+--LENGTHB()
+
+-- INSTR() : JAVA INDEXOF()메소드와 유사
+-- 문자열의 인덱스 위치를 반환해주는 함수
+-- INSTR(대상문자열||컬럼,찾을문자열[,검색시작위치]) : 찾은 문자열의 인덱스번호를 반환
+SELECT INSTR('메가스터디IT','IT'), INSTR('메가스터디IT','메가')
+FROM DUAL;
+SELECT EMAIL, INSTR(EMAIL,'j')
+FROM EMPLOYEE;
+
+SELECT INSTR('메가 스터디 메가스터디 IT 메가 스터디 미용','메가',4),
+INSTR('메가 스터디 메가스터디 IT 메가 스터디 미용','메가',1,3)
+FROM DUAL;
+
+-- LPAD/RPAD : 지정한 길이에 문자열이 채워지지 않았을대 특정문자로 채워주는 함수
+-- LPAD||RPAD(문자열||컬럼명,길이,공백시채워줄문자)
+SELECT LPAD('메가',10,'*'),RPAD('메가',10,'*')
+FROM DUAL;
+SELECT RPAD(EMP_NAME,8,'님')
+FROM EMPLOYEE;
+
+-- LTRIM/RTRIM : 공백 또는 특정 문자를 삭제해주는 기능
+SELECT '    유병승',LTRIM('    유병승'),'1111병승',LTRIM('1111병승','1'),LTRIM('11211병승','1')
+FROM DUAL;
+
+-- TRIM : 양쪽의 값을 제거하는 함수, 기본 : 공백, 설정한 값을 제거
+SELECT '     병승      ',TRIM('     병승      '),
+TRIM('Z' FROM 'ZZZZZ병승ZZZZZ'),
+TRIM(LEADING 'Z' FROM 'ZZZZZ병승ZZZZZ'),
+TRIM(TRAILING 'Z' FROM 'ZZZZZ병승ZZZZZ'),
+TRIM(BOTH 'Z' FROM 'ZZZZZ병승ZZZZZ')
+FROM DUAL;
+
+-- SUBSTR : JAVA SUBSTRING메소드와 유사한 함수
+-- SUBSTR(대상문자열,시작인덱스[,끝인덱스])
+SELECT EMP_NAME, SUBSTR(EMP_NAME,1,1)
+FROM EMPLOYEE;
+SELECT DISTINCT SUBSTR(EMP_NAME,1,1)
+FROM EMPLOYEE;
+
+SELECT * FROM EMPLOYEE;
+SELECT SUBSTR(EMP_NO,1,2) AS 년도, SUBSTR(EMP_NO,8,1) AS 성별
+FROM EMPLOYEE;
+
+SELECT * 
+FROM EMPLOYEE
+WHERE SUBSTR(EMP_NO,1,2) BETWEEN 80 AND 89;
+
+SELECT *
+ FROM EMPLOYEE
+ WHERE SUBSTR(EMP_NO,8,1) IN ('2','4');
+ 
+-- 사원의 이메일에서 아이디만 출력하기
+SELECT EMAIL,SUBSTR(EMAIL,1,INSTR(EMAIL,'@')-1)
+FROM EMPLOYEE;
+SELECT EMAIL,SUBSTR(EMAIL,1,INSTR(EMAIL,'@')-1)
+FROM EMPLOYEE
+WHERE LENGTH(SUBSTR(EMAIL,1,INSTR(EMAIL,'@')-1))>=7;
+
+-- 영문자를 처리하는 함수
+-- UPPER, LOWER, INITCAP
+SELECT LOWER('Welcome to oRACLE world'),
+UPPER('Welcome to oRACLE world'),
+INITCAP('Welcome to oRACLE world')
+FROM DUAL;
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPT_CODE = UPPER('d5');
+
+-- REPLACE : 대상문에서 지정문자를 찾아서 대체문자로 변경해주는 함수
+-- REPLACE(문자열||컬럼명,'찾을문자','대체문자')
+SELECT EMAIL, REPLACE(EMAIL,'or.kr','BS.or.kr')
+FROM EMPLOYEE;
+UPDATE EMPLOYEE SET EMAIL=REPLACE(EMAIL,'or.kr','BS.or.kr');
+SELECT * FROM EMPLOYEE;
+COMMIT;
+
+-- 숫자처리함수
+-- 소수점에 대한 처리, 계산에 대한 처리도 있다...
+-- ABS : 절대값
+SELECT ABS(-10), ABS(10)
+FROM DUAL;
+
+--MOD() : 나머지구하는함수 -> %
+SELECT MOD(3,2)
+FROM DUAL;
+SELECT E.*, MOD(SALARY,3)
+FROM EMPLOYEE E;
+
+-- 소수점을 처리하는 함수
+-- ROUND(반올림), FLOOR(소수점버림), TRUNC(소수점버림, 버리는 자리수정함), CEIL(무조건올림)
+SELECT ROUND(126.456),FLOOR(126.567),TRUNC(126.567,1),CEIL(126.123) 
+FROM DUAL;
+
+-- 보너스를 포함한 월급구하기
+SELECT EMP_NAME,SALARY,FLOOR(SALARY+(SALARY*NVL(BONUS,0)-(SALARY*0.03))) AS SALARY
+FROM EMPLOYEE;
+
+-- 날짜처리함수
+-- 오라클에서 날짜를 출력할때 두가지
+-- SYSDATE예약어를 사용 -> 오늘날짜출력(DB서버컴퓨터에 설정한 날짜)
+-- SYSTIMESTAMP예약어 사용 날짜,시간을 동시출력
+SELECT SYSDATE, SYSTIMESTAMP FROM DUAL;
+
+-- 날짜는 연산이 가능함. +, - 일수를 계산
+SELECT SYSDATE, SYSDATE+3, SYSDATE-10
+FROM DUAL;
+-- NEXT_DAY : 인자로 전달된 요일중 가장 가까운 다음날짜를 출력
+SELECT NEXT_DAY(SYSDATE,'화'), NEXT_DAY(SYSDATE,'금')
+FROM DUAL;
+SELECT * FROM V$NLS_PARAMETERS;
+ALTER SESSION SET NLS_LANGUAGE='KOREAN';
+
+-- LAST_DAY : 그달의 마지막날을 출력해주는 함수
+SELECT LAST_DAY(SYSDATE)
+FROM EMPLOYEE;
+
+SELECT NEXT_DAY(HIRE_DATE,'토'), LAST_DAY(HIRE_DATE)
+FROM EMPLOYEE;
+
+-- 개월수를 계산해주는(더해주는) 함수
+-- ADD_MONTHS()
+SELECT ADD_MONTHS(SYSDATE,-3), ADD_MONTHS(SYSDATE,3)
+FROM DUAL;
+-- 두 날짜의 개월수차이를 출력해주는 함수
+-- MONTHS_BETWEEN(날짜, 날짜)
+SELECT FLOOR(MONTHS_BETWEEN(SYSDATE,'23/04/20'))
+FROM DUAL;
+
+-- 날짜의 년도, 월, 일을 따로 출력해주는 함수
+-- EXTRACT(YEAR||MONTH||DAY FROM 날짜) : 숫자
+SELECT EXTRACT(YEAR FROM SYSDATE), EXTRACT(MONTH FROM SYSDATE), EXTRACT(DAY FROM SYSDATE)
+FROM DUAL;
+
+SELECT EXTRACT(YEAR FROM SYSDATE)-1995
+FROM DUAL;
+
+-- 사원중 12월에 입사한 사원 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE EXTRACT(MONTH FROM HIRE_DATE)=12;
+
+-- 사원중 2000년대 입사한 사원 조회하기
+SELECT * 
+FROM EMPLOYEE
+WHERE EXTRACT(YEAR FROM HIRE_DATE) BETWEEN 2000 AND 2009;
+
+-- 오늘부로 태훈씨가 군대로 끌려가게 되었습니다.ㅠㅠ 잘가 태훈씨~ 군대복무기간은 1년 6개월로
+-- 전역일자를 구하고, 복무일수, 전역때까지 먹그 짬밥갯수(하루 3끼)를 구하기
+SELECT ADD_MONTHS(SYSDATE,18) AS 전역일, ADD_MONTHS(SYSDATE,18)-SYSDATE AS 복무일수,
+    (ADD_MONTHS(SYSDATE,18)-SYSDATE)*3 AS 짬밥수
+FROM DUAL;
+
+-- 형변환 함수 -> (자료형), parseOOO, String.valueOf
+-- 오라클은 자동형변환이 잘 작동.
+-- 강제적 형변환을 이용해서 처리할 수 있음
+-- 숫자 : NUMBER
+-- 문자열 : VARCHAR2
+-- 날짜 : DATE, TIMESTAMP
+
+-- TO_CHAR : 숫자, 날짜를 문자형으로 변경해주는 함수
+-- 날짜형을 문자형으로 변경하기
+-- 날짜를 기호로 표시해서 문자형으로 변경함 
+-- Y:년, M:월, D:일, H:시, MI:분, SS:초
+SELECT SYSDATE, TO_CHAR(SYSDATE,'YYYY-MM-DD'),
+TO_CHAR(SYSDATE,'YY.MM.DD'), TO_CHAR(SYSDATE,'YY.MM.DD HH24:MI:SS')
+FROM DUAL;
+
+-- 숫자를 문자로 변환하기 
+-- 패턴에 맞춰서 변환 -> 자리수에 대한 패턴을 설정
+-- 0 : 변환하는 값이 해당자리에 없으면 0으로 표시, 자리에 값이 있으면 그 숫자로 표현
+-- 9 : 변환하는 값이 해당자리에 없으면 표시 생략, 자리에 값이 있으면 그 숫자로 표현 
+-- 통화를 표시하려면 L표시함
+SELECT 12345678, TO_CHAR(12345678,'999,999,999'),
+TO_CHAR(1234567,'000,000,000'),
+TO_CHAR(12345678,'L999,999,999'),
+TO_CHAR(180.5,'FM999.99'),
+TO_CHAR(180.5,'FM999.00')
+FROM DUAL;
+SELECT EMP_NAME, SALARY, TO_CHAR(SALARY,'L999,999,999') AS CONVERT
+FROM EMPLOYEE;
+
+-- 문자형을 숫자형으로 변경하는 함수
+-- TO_NUMBER()
+-- 패턴으로 변경
+SELECT '1,000,000', TO_CHAR(TO_NUMBER('1,000,000','999,999,999')+100,'L999,999,999')
+FROM DUAL;
+
+-- 문자, 숫자를 날짜형으로 변경해주는 함수
+-- TO_DATE() 날짜패턴으로 날짜형으로 변환
+-- Y M D, 기본날짜패턴 : YY/MM/DD
+SELECT TO_DATE('22/12/25','YY/MM/DD')-SYSDATE, TO_DATE('221225','YYMMDD'),
+    TO_DATE(221225,'YYMMDD'),TO_DATE(20230108,'YYYYMMDD'),
+    TO_DATE(TO_CHAR(001225,'009999'),'YYMMDD')
+FROM DUAL;
+
+-- NULL 값을 처리해주는 함수
+-- NVL() : 특정컬럼값이 NULL인 경우 대체값으로 출력해주는것
+SELECT EMP_NAME, DEPT_CODE,NVL(DEPT_CODE,'인턴'),BONUS,NVL(BONUS,0)
+FROM EMPLOYEE
+WHERE NVL(DEPT_CODE,'인턴')='인턴';
+-- NVL2() : NULL값일때 값, NULL값이 아닐때 값을 설정
+SELECT EMP_NAME, DEPT_CODE, NVL2(DEPT_CODE,'정규직','인턴')
+FROM EMPLOYEE;
+
+-- 조건에 따라 출력값을 변경해주는 함수
+-- 1. DECODE
+-- DECODE(컬럼명||문자열,'동등비교할값','같았을때 출력할값','동등비교할값','같았을때출력할값')
+SELECT EMP_NAME, JOB_CODE,DECODE(JOB_CODE,'J1','대표','J2','부사장','J3','부장','사원')
+FROM EMPLOYEE;
+-- 성별을 남,여 로 출력하는 컬럼만들기
+SELECT EMP_NAME, SALARY, DECODE(SUBSTR(EMP_NO,8,1),'1','남','2','여') AS GENDER
+FROM EMPLOYEE
+WHERE DECODE(SUBSTR(EMP_NO,8,1),'1','남','2','여')='남';
+-- 2. CASE WHEN THEN
+-- CASE
+--  WHEN 조건문 THEN 실행내용(출력구문)
+--  WHEN 조건문 THEN 실행내용(출력구문)
+--  WHEN 조건문 THEN 실행내용(출력구문)
+--  ELSE 실행내용
+-- END
+SELECT EMP_NAME, JOB_CODE,
+    CASE
+        WHEN JOB_CODE='J1' THEN '대표'
+        WHEN JOB_CODE='J2' THEN '부사장'
+        WHEN JOB_CODE='J3' THEN '부장'
+        WHEN JOB_CODE='J4' THEN '과장'
+        ELSE '사원'
+    END AS 직책,
+    CASE
+        WHEN SALARY>3000000 THEN '고액월급'
+        WHEN SALARY<=3000000 THEN '기본'
+    END AS 비고
+FROM EMPLOYEE;
+
+-- 사원테이블에서 현재나이구하기
+-- 오라클에서 년도를 표시하는 패턴값은 2가지 Y, R
+SELECT EMP_NAME, EXTRACT(YEAR FROM SYSDATE)-EXTRACT(YEAR FROM TO_DATE(SUBSTR(EMP_NO,1,2),'RR')) AS 나이,
+    EXTRACT(YEAR FROM TO_DATE(SUBSTR(EMP_NO,1,2),'YY')) AS YY,
+    EXTRACT(YEAR FROM TO_DATE(SUBSTR(EMP_NO,1,2),'RR')) AS RR
+FROM EMPLOYEE;
+
+-- RR로 년도를 출력할때 
+--현재년도       입력년도     계산년도
+--00~49         00~49       현세기
+--00~49         50~99       전세기
+--50~99         00~49       다음세기
+--50~99         50~99       현세기
+
+-- 그룹함수 활용하기
+-- 테이블의 데이터를 종합해서 하나의 ROW로 결과를 출력하는 함수 -> 결과가 한개만 나옴
+-- 컬럼값에 대한 합계, 평균, 갯수 구할대 사용
+-- 그룹함수를 이용하면 SELECT문에서 컬럼의 사용이 제한 * 그룹함수에서 사용한 컬럼만 사용이 가능
+-- 종류 
+-- SUM : 컬럼값에 대한 합계를 출력해주는 함수
+-- AVG : 컬럼값에 대한 평균을 출력해주는 함수
+-- COUNT : 테이블의 ROW수를 출력해주는 함수 * 컬럼값을 기준
+-- MIN : 컬럼값의 가장 작은값을 출력해주는 함수
+-- MAX : 컬럼값의 가장 큰값을 출력해주는 함수
+
+-- 사원테이블에서 사원이 받는 급여의 합계를 조회하기
+SELECT * FROM EMPLOYEE;
+SELECT SUM(SALARY) FROM EMPLOYEE;
+-- 사원이 받는 급여의 평균을 조회
+SELECT FLOOR(AVG(SALARY)) FROM EMPLOYEE;
+
+SELECT SUM(SALARY), AVG(SALARY) FROM EMPLOYEE;
+--SELECT SUM(EMP_NAME) FROM EMPLOYEE;
+-- 부서가 D5인 사원의 급여 합계, 평균을 구하기
+SELECT SUM(SALARY) AS 합계, AVG(SALARY) AS 평균
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5';
+
+-- SUM, AVG이용시 NULL값이 있는 경우? -> 연산에서 빼버림
+SELECT TRUNC(AVG(BONUS),3), TRUNC(AVG(NVL(BONUS,0)),3)
+FROM EMPLOYEE;
+
+-- ROW의 갯수를 출력해주는 함수
+-- EMPLOYEE에 등록된 사원수 구하기
+SELECT COUNT(*) 
+FROM EMPLOYEE;
+-- D5부서의 사원수 구하기
+SELECT COUNT(*) 
+FROM EMPLOYEE
+WHERE DEPT_CODE='D9';
+
+-- 400백만원 이상 급여를 받는 사원 수
+SELECT COUNT(*)
+FROM EMPLOYEE
+WHERE SALARY>=4000000;
+
+-- 현재 보너스를 받고 있는 사원수
+SELECT COUNT(*)
+FROM EMPLOYEE
+WHERE BONUS IS NOT NULL;
+
+-- 부서가 D6,D5,D9인 사원의 수, 급여평균, 급여합계를 조회하기
+SELECT COUNT(*) AS 수, TRUNC(AVG(SALARY),-2) AS 평균, SUM(SALARY) AS 합계
+FROM EMPLOYEE
+WHERE DEPT_CODE IN('D6','D5','D9') AND SALARY >= 3000000;
+
+-- COUNT(*) VS COUNT(컬럼명)
+SELECT COUNT(*), COUNT(DEPT_CODE), COUNT(BONUS)
+FROM EMPLOYEE;
+
+-- MIN/MAX
+SELECT MAX(SALARY), MIN(SALARY) 
+FROM EMPLOYEE;
+
+-- 그룹함수는 WHERE에서 사용이 불가능함
+--SELECT * 
+--FROM EMPLOYEE
+--WHERE MAX(SALARY)=SALARY;
+
+-- GROUP BY 절 이용하기
+-- GROUP BY 는 특정컬럼의 값을 기준으로 묶어서 결과값을 출력하는 명령어
+-- 부서별 급여의 합계, 평균
+SELECT DEPT_CODE,SUM(SALARY),AVG(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY DEPT_CODE;
+
+-- 직책별 급여의 합계, 평균
+SELECT JOB_CODE, SUM(SALARY), AVG(SALARY)
+FROM EMPLOYEE
+GROUP BY JOB_CODE;
+
+-- 부서별 인원 조회하기
+SELECT DEPT_CODE, COUNT(DEPT_CODE)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY DEPT_CODE;
+
+-- GROUP BY절에는 다수의 컬럼을 사용할 수 있음
+-- GROUP BY 컬럼, 컬럼,....
+SELECT DEPT_CODE, JOB_CODE, COUNT(*), SUM(SALARY),AVG(SALARY)
+FROM EMPLOYEE
+GROUP BY DEPT_CODE, JOB_CODE;
+
+-- 부서별 최고급여,최소급여 조회하기
+SELECT DEPT_CODE, MAX(SALARY), MIN(SALARY)
+FROM EMPLOYEE
+GROUP BY DEPT_CODE;
+
+-- 그룹함수를 조건으로 사용할때는 HAVING절을 이용하자
+-- 부서별 인원수가 4명이상인 부서를 조회
+SELECT DEPT_CODE, COUNT(*)
+FROM EMPLOYEE
+--WHERE COUNT(*)>=4
+GROUP BY DEPT_CODE
+HAVING COUNT(*)>=4;
+
+-- 매니저가 관리하는사원이 2명 이상인 매니저 출력하기
+SELECT * FROM EMPLOYEE;
+SELECT MANAGER_ID, COUNT(*)
+FROM EMPLOYEE
+WHERE MANAGER_ID IS NOT NULL
+GROUP BY MANAGER_ID
+HAVING COUNT(*)>=2;
+
+--SELECT * 
+--FROM EMPLOYEE
+--WHERE EMP_ID IN(SELECT MANAGER_ID FROM EMPLOYEE GROUP BY MANAGER_ID HAVING COUNT(*)>=2);
+
+-- ROLLUP, CUBE이용하기
+-- 그룹별 집계결과와 총 집계결과를 출력해주는 함수
+-- 컬럼을 한개만 지정했을때 ROLLUP과 CUBE가 동일
+-- 컬럼을 여러개 지정했을때 ROLLUP -> 왼쪽에 있는 컬럼을 기준으로 집계, 총 집계
+--                       CUBE -> 선언된 컬럼을 기준으로 집계(두개다), 총 집계 
+-- ROLLUP
+SELECT NVL(DEPT_CODE,'TOTAL'), SUM(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY ROLLUP(DEPT_CODE);
+-- CUBE
+SELECT NVL(DEPT_CODE,'TOTAL'), SUM(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY CUBE(DEPT_CODE);
+
+-- 두개컬럼 이상을 GROUP으로 연결했을때 처리하는게 다름
+SELECT DEPT_CODE, JOB_CODE, SUM(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY ROLLUP(DEPT_CODE, JOB_CODE);
+
+SELECT DEPT_CODE, JOB_CODE, SUM(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY CUBE(DEPT_CODE,JOB_CODE);
+
+-- GOURPING() : 집계된 컬럼을 확인해주는 함수
+SELECT COUNT(*) AS 인원수, 
+    CASE 
+        WHEN GROUPING(JOB_CODE)=1 AND GROUPING(DEPT_CODE)=0 THEN '부서별인원'
+        WHEN GROUPING(JOB_CODE)=0 AND GROUPING(DEPT_CODE)=1 THEN '직책별인원'
+        WHEN GROUPING(JOB_CODE)=0 AND GROUPING(DEPT_CODE)=0 THEN '그룹별인원'
+        WHEN GROUPING(JOB_CODE)=1 AND GROUPING(DEPT_CODE)=1 THEN '총인원'
+    END AS 비고
+FROM EMPLOYEE
+WHERE DEPT_CODE IS NOT NULL
+GROUP BY CUBE(JOB_CODE,DEPT_CODE);
+
+-- 조회한 데이터를 정렬하기
+-- ORDER BY 절 사용
+-- SELECT 컬럼,컬럼
+-- FROM 테이블
+-- [WHERE 조건식]
+-- [GROUP BY 컬럼명]
+-- [HAVING 그룹함수이용 조건]
+-- [ORDER BY 컬럼명 정렬옵션(DESC,ASC:DEFAULT)]
+-- 전체사원을 급여 많이 받는 순으로 정렬해서 조회하기
+SELECT * 
+FROM EMPLOYEE
+ORDER BY SALARY DESC;
+
+-- 사원의 이름순으로 전체사원 조회하기
+SELECT *
+FROM EMPLOYEE
+ORDER BY EMP_NAME DESC;
+
+-- ORDER BY 절에도 한개이상의 컬럼을 사용할 수 있음
+SELECT * 
+FROM EMPLOYEE
+ORDER BY DEPT_CODE DESC, SALARY DESC;
+-- DESC, ASC : NULL값
+-- DESC : NULL값이 최상단으로.. 
+-- ASC : NULL값을 최하단으로.. 
+-- NULLS FIRST||LAST 옵션을 이용하면 NULL출력위치를 변경할 수 있음
+SELECT BONUS
+FROM EMPLOYEE
+ORDER BY BONUS NULLS LAST;
+
+-- ORDER BY 컬럼은 인덱스번호로 대체할 수 있다.
+SELECT * FROM EMPLOYEE;
+SELECT * 
+FROM EMPLOYEE
+ORDER BY 6 DESC NULLS LAST, 9;
+
+-- 집합연산자
+-- 여러개의 SELECT문을 한개의 결과로 출력해주는것
+-- 첫번째 SELECT문의 컬럼수와 그 이후 SELECT문의 컬럼수가 같아야 함, 각 컬럼의 TYPE도 같아야함.
+-- UNION
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+UNION
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+-- UNION ALL
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+UNION ALL
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+-- SELECT문의 선택한 컬럼의 수가 다를때 실행안됨!
+SELECT EMP_ID, EMP_NAME, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+UNION
+SELECT EMP_ID, EMP_NAME, 0
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+-- SELECT문의 컬럼수는 같은데 TYPE이 다른 경우
+SELECT EMP_ID, EMP_NAME, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+UNION
+SELECT EMP_ID, EMP_NAME, EMAIL
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+-- 집합연산은 다른테이블과 연결
+SELECT EMP_ID, EMP_NAME
+FROM EMPLOYEE
+WHERE JOB_CODE='J5'
+UNION
+SELECT DEPT_ID, DEPT_TITLE
+FROM DEPARTMENT
+UNION
+SELECT JOB_CODE,JOB_NAME
+FROM JOB;
+
+-- MINUS, INTERSECT
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+MINUS
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE='D5'
+INTERSECT
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE SALARY>=3000000;
+
+-- JOIN에 대해 알아보자
+-- 두개이상의 테이블을 특정 기준값으로 연결해주는 기능(ROW를 연결)
+-- JOIN 종류
+-- INNER JOIN : 특정기준값이 일치하는 ROW만 출력 -> 누락되는 데이터가 있음
+-- OUTER JOIN : 기준테이블을 설정해서 기준테이블의 모든ROW를 출력하게하는 JOIN -> 누락되는 데이터가 없다
+
+-- INNER JOIN을 사용해보자
+-- EMPLOYEE, DEPARTMENT 테이블 연결하기
+SELECT * FROM EMPLOYEE;
+SELECT * FROM DEPARTMENT;
+
+SELECT EMP_NAME, DEPT_TITLE, SALARY, BONUS
+FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID;
+
+-- 부서가 총무부인 사원을 조회하기
+SELECT * 
+FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+WHERE DEPT_TITLE='총무부';
+
+-- 사원의 이름, 직책명, 월급 보너스를 조회하기
+SELECT EMP_NAME, JOB.JOB_CODE, JOB_NAME
+-- FROM EMPLOYEE E JOIN JOB J ON E.JOB_CODE=J.JOB_CODE;
+FROM EMPLOYEE JOIN JOB ON EMPLOYEE.JOB_CODE=JOB.JOB_CODE;
+-- FROM EMPLOYEE JOIN JOB USING(JOB_CODE);-- 두테이블에 동일한 이름의 컬럼일 경우 사용가능
+-- USING을 사용하면 테이블에 별칭을 부여하지 못함.
+
+-- JOIN한 테이블에 WHERE, GROUP BY, HAVING, ORDER BY 모두 사용이가능
+
+-- 부서별 인원과 급여 평균을 구하자 부서명, 인원수, 평균
+SELECT DEPT_TITLE AS 부서명, COUNT(*) AS 인원수, AVG(SALARY) AS 평균
+FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+GROUP BY DEPT_TITLE;
+
+SELECT DEPT_CODE,COUNT(*) AS 인원수, AVG(SALARY) AS 평균
+FROM EMPLOYEE
+GROUP BY DEPT_CODE;
+
+-- 직책이 과장인 사원의 이름, 직책명, 직책코드, 월급을 조회하기
+SELECT EMP_NAME,JOB_NAME, JOB_CODE, SALARY
+FROM EMPLOYEE JOIN JOB USING(JOB_CODE)
+WHERE JOB_NAME='과장';
+
+-- OUTER JOIN 활용하기
+-- 연결테이블에 기준을 설정해서 기준이 된 테이블의 모든 데이터를 출력하게 하는 것
+-- 기준테이블을 설정
+-- LEFT||RIGHT JOIN
+SELECT * 
+FROM EMPLOYEE LEFT OUTER JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+--FROM EMPLOYEE RIGHT OUTER JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+WHERE DEPT_TITLE IS NULL;
+
+-- CROSS JOIN
+-- 연결조건을 설정하지않아 모든 ROW가 전부 연결이 되는 테이블 생성
+SELECT EMP_NAME, DEPT_TITLE
+FROM EMPLOYEE CROSS JOIN DEPARTMENT
+ORDER BY 1,2;
+
+-- SELF JOIN 
+-- 물리적테이블 한개를 가지고 두개의 테이블처럼 연결하는 JOIN
+-- 한 테이블 동일한 데이터를 가지는 컬럼이 있어야한다.
+SELECT * FROM EMPLOYEE;
+-- MANAGER가 있는 사원의 이름, 사원번호, 매니저 이름, 매니저 사원번호를 조회
+-- MANAGER가 없는 사원은 매니저 이름에 '없다' 출력
+SELECT E.EMP_NAME, E.EMP_ID,E.MANAGER_ID, NVL(M.EMP_NAME,'없다'), M.EMP_ID
+FROM EMPLOYEE E LEFT JOIN EMPLOYEE M ON E.MANAGER_ID=M.EMP_ID;
+
+-- 다중조인 
+-- 두개이상의 테이블 조인해서 조회하기
+-- 사원의 이름, 부서명, 직책명, 급여, 보너스를 조회하기
+
+SELECT EMP_NAME,DEPT_TITLE, JOB_NAME, SALARY, BONUS
+FROM EMPLOYEE 
+    LEFT JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+    JOIN JOB USING(JOB_CODE);
+    
+-- 사원의 사원명, 부서명, 직책명, 근무지역명(LOCALNAME) 조회하기
+
+SELECT * FROM LOCATION;
+SELECT * FROM DEPARTMENT;
+
+SELECT EMP_NAME, DEPT_TITLE, JOB_NAME, LOCATION_ID, LOCAL_NAME
+FROM EMPLOYEE
+    LEFT JOIN DEPARTMENT ON DEPT_ID=DEPT_CODE
+    LEFT JOIN LOCATION ON LOCATION_ID=LOCAL_CODE
+    JOIN JOB USING(JOB_CODE);
+ 
+-- 비동등조인 활용하기
+-- 범위에 따라 ROW를 연결하는 JOIN방식
+-- 범위를 나타내는 컬럼을 가지는 테이블이 있어야함.
+SELECT * FROM SAL_GRADE;
+ -- 포인트별 회원등급설정, 점수에 따른 제품상태설정
+ SELECT * 
+ FROM EMPLOYEE 
+    JOIN SAL_GRADE ON SALARY BETWEEN MIN_SAL AND MAX_SAL;
+   
+-- 서브쿼리 -> SELECT문 안에 또다른 SELECT문을 작성하는 것
+-- MAIN QUERY-> 서브쿼리를 감싸고 있는 SELECT문
+-- SUB QUERY -> MAIN QUERY내부에 있는 SELECT문
+-- 전지연 사원의 매니저의 정보를 출력하기
+SELECT MANAGER_ID FROM EMPLOYEE WHERE EMP_NAME='전지연';
+SELECT * FROM EMPLOYEE WHERE EMP_ID='214';
+--서브쿼리 이용해서 처리하기
+SELECT *
+FROM EMPLOYEE
+WHERE EMP_ID=(SELECT MANAGER_ID FROM EMPLOYEE WHERE EMP_NAME='전지연');
+
+-- D5부서의 평균급여보다 많이 받는 사원 조회하기
+SELECT AVG(SALARY) FROM EMPLOYEE WHERE DEPT_CODE='D5';
+SELECT * 
+FROM EMPLOYEE
+WHERE SALARY>=(SELECT AVG(SALARY) FROM EMPLOYEE WHERE DEPT_CODE='D5');
+
+-- 1. 단일행 서브쿼리
+--  SELECT문의 결과가 1개 컬럼, 1개 ROW갖는 것
+-- WHERE절, SELECT 컬럼에 많이 사용
+-- 사원들의 급여 평균보다 많은 급여를 받는 사원의 이름, 급여, 부서코드 조회
+SELECT EMP_NAME, SALARY, DEPT_CODE, FLOOR((SELECT AVG(SALARY) FROM EMPLOYEE)) AS 평균급여
+FROM EMPLOYEE
+WHERE SALARY>=(SELECT AVG(SALARY) FROM EMPLOYEE);
+
+-- 부서가 총무부인 사원을 조회하기 
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPT_CODE=(SELECT DEPT_ID FROM DEPARTMENT WHERE DEPT_TITLE='총무부');
+
+SELECT *
+FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+WHERE DEPT_TITLE ='총무부';
+
+
+-- 다중행 서브쿼리 
+-- RESULT SET SELECT문의 결과가 다수 ROW로 출력되는 것
+-- 직책이 부장, 과장인 사원을 조회하기
+SELECT JOB_CODE FROM JOB WHERE JOB_NAME IN ('과장','부장');
+SELECT *
+FROM EMPLOYEE
+WHERE JOB_CODE IN (SELECT JOB_CODE FROM JOB WHERE JOB_NAME IN('과장','부장'));
+
+-- 송종기, 박나라와 같이 근무하는 사원 조회하기
+SELECT *
+FROM EMPLOYEE
+WHERE DEPT_CODE IN (SELECT DEPT_CODE FROM EMPLOYEE WHERE EMP_NAME IN('송종기','박나라'));
+
+-- 부서별 최고급여를 받는 사원 구하기
+SELECT  *
+FROM EMPLOYEE 
+WHERE SALARY NOT IN(SELECT MAX(SALARY) FROM EMPLOYEE GROUP BY DEPT_CODE);
+
+-- 대소비교하기 
+-- ANY, ALL함수를 이용하여 처리
+-- ANY : 그 다수값 중 하나가 참이면 참
+-- 컬럼 >(=) ANY(다중값) : 다중값 중 하나라도 컬럼보다 작으면 참 -> 다중값의 최소값보다 크면 참
+-- 컬럼 <(=) ANY(다중값) : 다중값 중 하나라도 컬럼보다 크면 참 -> 다중값의 최대값보다 작으면 참
+
+SELECT *
+FROM EMPLOYEE
+--WHERE SALARY > ANY(SELECT MIN(SALARY)FROM EMPLOYEE GROUP BY DEPT_CODE);
+WHERE SALARY < ANY(SELECT MIN(SALARY)FROM EMPLOYEE GROUP BY DEPT_CODE);
+
+-- ALL : 다중값 모두가 참일때 참
+-- 컬럼 >(=) ALL(다중값) : 다중값의 최대값보다 크면 참
+-- 컬럼 <(=) ALL(다중값) : 다중값의 최소값보다 작으면 참
+SELECT *
+FROM EMPLOYEE
+WHERE SALARY > ALL(SELECT MIN(SALARY)FROM EMPLOYEE GROUP BY DEPT_CODE);
+
+-- 2000년 1월 1일 이전에 입사자 중 200년 1월1일 이후 입사한 사원 중 급여를 가장 높게 받는 사원보다 급여가 많은 사원조회하기
+SELECT *
+FROM EMPLOYEE
+WHERE HIRE_DATE<'00/01/01'
+--AND SALARY>(SELECT MAX(SALARY) FROM EMPLOYEE WHERE HIRE_DATE>'00/01/01');
+AND SALARY> ALL(SELECT SALARY FROM EMPLOYEE WHERE HIRE_DATE>'00/01/01');
+
+-- 다중열 서브쿼리 : ROW 1개 COLUMN 여러개
+-- 퇴직한 여사원의 같은부서 같은 직급에 해당하는 사워 조회하기
+SELECT DEPT_CODE, JOB_CODE FROM EMPLOYEE WHERE ENT_YN='Y';
+
+SELECT *
+FROM EMPLOYEE
+WHERE (DEPT_CODE, JOB_CODE) IN (SELECT DEPT_CODE, JOB_CODE FROM EMPLOYEE WHERE ENT_YN='Y');
+
+-- 기술지원부이면서 급여가 200만원인 사원이 있다고 한다 그 사원의 정보를 조회하기
+SELECT *
+FROM EMPLOYEE
+WHERE (DEPT_CODE,SALARY) IN (SELECT DEPT_CODE, SALARY 
+                            FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID 
+                            WHERE DEPT_TITLE='기술지원부' AND SALARY=2000000);
+
+-- 다중행 다중열
+-- 총무부이면서 300만원이상 급여를 받는 사원
+SELECT EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE 
+WHERE (DEPT_CODE, SALARY) IN (SELECT DEPT_CODE, SALARY
+                                FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+                                WHERE DEPT_TITLE='총무부' AND SALARY>=3000000);
+
+-- 상관서브쿼리
+-- 서브쿼리를 구성할때 메인쿼리에 값을 가져와 사용하게 구성하여 서브쿼리 결과가 메인쿼리값에 영향을 받고 서브쿼리의 결과가
+-- 메인쿼리 결과에 영향을 미치되는 쿼리
+
+-- 각 사원이 속한 부서의 인원수 조회하기
+-- 중첩 반복문이 실행하는것과 비슷
+SELECT EMP_NAME, DEPT_CODE,(SELECT COUNT(*) FROM EMPLOYEE WHERE DEPT_CODE=E.DEPT_CODE) AS 인원수
+FROM EMPLOYEE E;
+SELECT COUNT(*) FROM EMPLOYEE WHERE DEPT_CODE='D9';
+SELECT COUNT(*) FROM EMPLOYEE WHERE DEPT_CODE='D6';
+
+-- 자신이 속한 부서의 평균급여보다 급여를 많이 받는 사원을 조회하기
+SELECT * 
+FROM EMPLOYEE E
+WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE WHERE DEPT_CODE=E.DEPT_CODE);
+
+
+-- FROM절에 서브쿼리 사용하기
+-- INLINE VIEW -> 다중행 다중열 서브쿼리를 사용
+-- 가상컬럼이 추가된 SELECT문이나 집합연산을 사용한 SELEC문을 INLINE VIEW로 많이 사용
+-- STORED VIEW -> 오라클에서 관리하는 하나의 OBJECT
+-- INLINE VIEW는 1회용
+-- STORED VIEW는 특정명칭으로 INLINE VIEW를 저장해서 사용 -> VIEWTABLE이라고 함
+SELECT *
+FROM EMPLOYEE;
+SELECT * 
+FROM EMPLOYEE
+WHERE SUBSTR(EMP_NO,8,1)='2';
+
+SELECT *
+FROM (SELECT E.*,DECODE(SUBSTR(EMP_NO,8,1),'1','남','2','여') AS GENDER FROM EMPLOYEE E)
+WHERE GENDER='여';
+
+-- JOIN문 
+
+SELECT * 
+FROM (SELECT E.*,D.*, JOB_NAME,
+        (SELECT TRUNC(AVG(SALARY),-1) FROM EMPLOYEE WHERE DEPT_CODE=E.DEPT_CODE) AS DEPT_SAL,
+        (SELECT COUNT(*) FROM EMPLOYEE WHERE JOB_CODE=E.JOB_CODE) AS JOB_COUNT
+        FROM EMPLOYEE E LEFT JOIN DEPARTMENT D ON DEPT_CODE=DEPT_ID
+        JOIN JOB J ON E.JOB_CODE=J.JOB_CODE)
+WHERE DEPT_SAL>3000000 AND JOB_COUNT=4;
+
+-- INLINE VIEW를 생성했을때 INLINE VIEW에서 선언한 컬럼만 이용할 수 있음
+SELECT *
+FROM  (SELECT EMP_NAME, SALARY, DEPT_CODE FROM EMPLOYEE)
+WHERE DEPT_CODE='D5';
+
+SELECT CODE, TITLE 
+FROM (
+    SELECT EMP_ID AS CODE, EMP_NAME AS TITLE
+    FROM EMPLOYEE 
+    UNION
+    SELECT DEPT_ID, DEPT_TITLE
+    FROM DEPARTMENT
+    UNION
+    SELECT JOB_CODE, JOB_NAME
+    FROM JOB)
+WHERE CODE LIKE '%1%';
+
+-- 데이터를 기준으로 순위 출력하는 구문 작성하기
+-- 2가지 방법
+-- 1. 오라클에서 제공하는 ROWNUM컬럼을 이용해서 출력
+--  SELECT문이 실행되면 자동으로 오라클 부여하는 가상컬럼, SELECT문이 실행될때 ROW에 번호를 부여한 컬럼
+SELECT ROWNUM, E.*
+FROM EMPLOYEE E
+WHERE ROWNUM BETWEEN 1 AND 3;
+-- 급여를 많이 받는 사원 1등 3등까지 조회하기
+SELECT ROWNUM, E.*
+FROM EMPLOYEE E
+WHERE ROWNUM BETWEEN 1 AND 3
+ORDER BY SALARY;
+
+-- ROWNUM을 사용해서 정상적인 순위를 출력하려면 INLINE VIEW를 이용해야한다.
+-- 중간순위에 대한 데이터를 출력할 수가 없다!
+SELECT *
+FROM (
+    SELECT ROWNUM AS RNUM, E.*
+    FROM (SELECT * FROM EMPLOYEE ORDER BY SALARY) E
+    )
+WHERE RNUM BETWEEN 5 AND 10;
+
+
+-- 2. 오라클에서 제공하는 WINDOW함수를 이용해서 출력하는 방법
+-- RANK OVER() : 
+-- DENSE_RANK OVER() : 
+SELECT *
+FROM (
+    SELECT 
+        RANK() OVER(ORDER BY SALARY DESC) AS RANK, 
+        DENSE_RANK() OVER(ORDER BY SALARY DESC) AS RANK2,
+        SALARY, EMP_NAME
+    FROM EMPLOYEE
+    );
+--WHERE RANK BETWEEN 5 AND 10;
+
+-- DDL
+-- 데이터를 정의하는 언어 오라클에서 사용하는 객체를 생성, 수정 삭제할때 사용하는 명령어
+-- TABLE, USER, SEQUENCE, INDEX 등등...
+-- CREATE : 생성
+-- ALTER : 수정
+-- DROP : 삭제
+
+-- CREATE TABLE -> 테이블, 저장소를 생성하는 명령어
+-- 저장소의 이름,타입을 정해줘야함.
+--CREATE TABLE 테이블명(
+--    컬럼명 자료형, -> 자바에서 변수선언과 비슷
+--    컬럼명 자료형,
+--)
+-- 오라클 자료형
+-- 숫자형 : NUMBER
+-- 문자형 : CHAR, VARCHAR2,NCHAR, NVARCHAR2
+-- 날짜형 : DATE, TIMESTAMP
+-- 문자형 컬럼만들어보기
+CREATE TABLE TBL_STR(
+    A CHAR(6),
+    B VARCHAR2(6),
+    C NCHAR(6),
+    D NVARCHAR2(6)
+);
+SELECT * FROM TBL_STR;
+INSERT INTO TBL_STR VALUES('ABC','ABC','ABC','ABC');
+INSERT INTO TBL_STR VALUES('ABCDEF','ABCDEF','ABCDEF','ABCDEF');
+SELECT LENGTH(A), LENGTH(B), LENGTH(C), LENGTH(D) FROM TBL_STR;
+-- 최대 2000BYTE까지 저장이 가능
+-- 한글자 2BYTE차지, EXPRESS 영문 1, 한글은 3
+
+-- 숫자자료형 : 정수, 실수, 음수, 양수 모두 저장
+-- 사용
+-- NUMBER
+-- NUMBER(PRECISION, SCALE)
+-- PRECISION : 표현할 수 있는 전체 자리수(1 ~ 38)
+-- SCALE : 소수점 이하 자리수(-84 ~ 127)
+CREATE TABLE TBL_NUMBER(
+    A NUMBER,
+    B NUMBER(5),
+    C NUMBER(5,1),
+    D NUMBER(5,-1)
+);
+INSERT INTO TBL_NUMBER VALUES(1234.567,1234.567,1234.567,1234.567);
+INSERT INTO TBL_NUMBER VALUES(123456.127,12345.127,1234.127,12345.127);
+
+INSERT INTO TBL_NUMBER VALUES('1234.123','1234.123','1234.123','1234.123');
+INSERT INTO TBL_NUMBER VALUES('1234.123원','1234.123','1234.123','1234.123');
+SELECT * FROM TBL_NUMBER;
+
+--날짜
+CREATE TABLE TBL_DATE(
+    DAY DATE
+);
+
+SELECT * FROM TBL_DATE;
+INSERT INTO TBL_DATE VALUES('23/01/14');
+INSERT INTO TBL_DATE VALUES(TO_DATE('23/01/14','RR/MM/DD'));
+CREATE TABLE TBL_TIMESTAMP(
+    TIMEDATE TIMESTAMP
+);
+INSERT INTO TBL_TIMESTAMP VALUES('99/02/24 10:14:20');
+INSERT INTO TBL_TIMESTAMP VALUES(TO_TIMESTAMP('19990224101420','YYYYMMDDHH24MISS'));
+SELECT * FROM TBL_TIMESTAMP;
+
+-- 테이블 생성해보기
+-- 회원을 저장하는 테이블 만들기
+-- 아이디, 패스워드, 이름, 나이, 생년월일, 전화번호
+CREATE TABLE TBL_MEMBER(
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30),
+    MEMBER_NAME VARCHAR2(15),
+    MEMBER_AGE NUMBER,
+    MEMBER_BIRTHDAY DATE,
+    MEMBER_PHONE VARCHAR2(20)
+);
+SELECT * FROM TBL_MEMBER;
+-- 생성된 테이블의 컬럼에 설명작성하기
+COMMENT ON COLUMN TBL_MEMBER.MEMBER_ID IS '회원아이디 최소 8글자 이상 작성';
+SELECT * 
+FROM USER_COL_COMMENTS
+WHERE TABLE_NAME='TBL_MEMBER';
+-- 테이블에 대한 설명작성하기
+COMMENT ON TABLE TBL_MEMBER IS '회원정보저장테이블';
+SELECT *
+FROM USER_TAB_COMMENTS;
+
+-- 생성한 테이블에 제약조건 설정하기
+-- 각 컬럼에 설정, 컬럼에 저장할 데이터를 필터링한다.
+-- NOT NULL(C) : 컬럼에 NULL값을 대입하지 않음
+-- UNIQUE(U) : 컬럼에 중복된값을 저장하지 않는다.
+-- PRIMARYKEY(P) : 테이블 당 한개의 PRIMARYKEY를 설정, 테이블에 저장된 데이터(ROW)를 구분하는 구분자, 
+--                 -> NOT NULL, UNIQUE제약조건설정
+-- FOREIGNKEY(R) : 다른테이블의 컬럼에 있는 값을 저장하게 설정 다른테이블에 없는 값을 저장하지 못함,
+-- CHECK(C) : 컬럼에 저장된 데이터를 조건에 따라 지정(범위, 특정값나열)
+
+-- 각 테이블에 설정한 제약조건 확인하기
+SELECT * FROM USER_CONSTRAINTS;
+SELECT * FROM USER_CONS_COLUMNS;
+--두개의 테이블을 조인해서 정보를 확인 한다.
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, COLUMN_NAME
+FROM USER_CONSTRAINTS JOIN USER_CONS_COLUMNS USING(CONSTRAINT_NAME);
+
+-- 테이블에 제약조건을 설정해보기
+-- 제약조건을 설정하는 방법 2가지가 있음
+-- 1. 컬럼레벨에서 설정
+-- 컬럼을 선언하는 부분에서 제약조건을 설정 개별 -> 제약조건설정할때 
+-- 2. 테이블레벨에서 설정
+-- 컬럼끝나고 마지막 부분에서 제약조건을 설정 -> 다수의 컬럼을 가지고 제약조건을 설정할때,
+
+-- NOT NULL 제약조건 설정하기
+CREATE TABLE BASIC_MEMBER(
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30)
+);
+SELECT * FROM BASIC_MEMBER;
+INSERT INTO BASIC_MEMBER VALUES(NULL, NULL);
+-- NOT NULL제약조건은 컬럼레벨에서만 선언이 가능
+CREATE TABLE NN_MEMBER(
+    MEMBER_ID VARCHAR2(30) NOT NULL,
+    MEMBER_PWD VARCHAR2(30) NOT NULL
+);
+SELECT * FROM NN_MEMBER;
+INSERT INTO NN_MEMBER VALUES(NULL, NULL);
+INSERT INTO NN_MEMBER VALUES('ADMIN','1234');
+
+-- UNIQUE제약조건
+-- 컬럼의 데이터가 유일값을 유지해야할때 설정
+CREATE TABLE UQ_MEMBER(
+    MEMBER_ID VARCHAR2(30) UNIQUE,
+    MEMBER_PWD VARCHAR2(30)
+);
+INSERT INTO BASIC_MEMBER VALUES('ADMIN', '1234');
+SELECT * FROM BASIC_MEMBER;
+INSERT INTO UQ_MEMBER VALUES('ADMIN1','1234');
+SELECT * FROM UQ_MEMBER;
+
+-- UNIQUE제약조건 테이블 레벨에서 선언하기
+CREATE TABLE UQ_MEMBER2(
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30),
+    UNIQUE(MEMBER_ID)
+);
+SELECT * FROM UQ_MEMBER2;
+INSERT INTO UQ_MEMBER2 VALUES('ADMIN','1234');
+-- 두개이상의 컬럼에 대해 UNIQUE제약조건을 설정할 수 있다.
+CREATE TABLE UQ_MEMBER3(
+    MEMBER_ID VARCHAR2(30) UNIQUE,
+    MEMBER_PWD VARCHAR2(30),
+    MEMBER_NAME VARCHAR2(20) UNIQUE,
+    UNIQUE(MEMBER_ID,MEMBER_NAME)
+);
+SELECT * FROM UQ_MEMBER3;
+INSERT INTO UQ_MEMBER3 VALUES('ADMIN','1234','관리자');
+INSERT INTO UQ_MEMBER3 VALUES('USER','1234','관리자');
+
+-- 생성된 테이블에 PRIMARY KEY(PK)설정하기
+-- PRIMARY KEY를 사용할 컬럼을 새로 생성 -> IDX, NO 
+-- SEQUENCE를 이용해서 값을 대입해줌.
+CREATE TABLE PK_MEMBER(
+    MEMBER_NO NUMBER PRIMARY KEY,
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30),
+    MEMBER_NAME VARCHAR2(20)
+);
+INSERT INTO PK_MEMBER VALUES(1, 'ADMIN','1234','관리자');
+INSERT INTO PK_MEMBER VALUES(2, 'USER','1234','유저');
+INSERT INTO PK_MEMBER VALUES(1, 'USER1','1111','유저1');
+INSERT INTO PK_MEMBER VALUES(NULL, 'USER1','1111','유저1');
+SELECT * FROM PK_MEMBER;
+
+-- 여러컬럼을 PRIMARY KEY로 설정하기
+-- 복합키
+
+CREATE TABLE PK_MEMBER2(
+    MEMBER_NO NUMBER,
+    MEMBER_ID VARCHAR2(30),
+    MEMBER_PWD VARCHAR2(30),
+    MEMBER_NAME VARCHAR2(20),
+    PRIMARY KEY(MEMBER_NO, MEMBER_ID)    
+);
+SELECT * FROM PK_MEMBER2;
+INSERT INTO PK_MEMBER2 VALUES(1, 'ADMIN','1234','관리자');
+INSERT INTO PK_MEMBER2 VALUES(2, 'ADMIN','1234','관리자');
+INSERT INTO PK_MEMBER2 VALUES(NULL, 'ADMIN','1234','관리자');
+INSERT INTO PK_MEMBER2 VALUES(3, NULL,'1234','관리자');
+INSERT INTO PK_MEMBER2 VALUES(2, 'ADMIN','1234','관리자');
+INSERT INTO PK_MEMBER2 VALUES(2, 'USER','1234','관리자');
+
+
+-- 장바구니 
+CREATE TABLE CART(
+    MEMBER_ID VARCHAR2(20),
+    PRODUCNT_NO NUMBER,
+    DAY DATE, 
+    STOCK NUMBER,
+    PRIMARY KEY(MEMBER_ID, PRODUCT_NO,DAY)
+);
+
+-- FOREIGN KEY제약조건 설정하기
+-- 다른테이블에서 데이터를 가져와 저장하는것 -> 참조
+-- 다른테이블에 없는 값을 저장할 수 없게하는 것
+-- 게시글, 댓글 || 게시글, 첨부파일 || 사물함, 회원 || 학과, 학생|| 사원, 부서
+CREATE TABLE BOARD(
+    BOARD_NO NUMBER PRIMARY KEY,
+    BOARD_TITLE VARCHAR2(200) NOT NULL,
+    BOARD_CONTENT VARCHAR2(2000),
+    BOARD_WRITER VARCHAR2(20) NOT NULL,
+    BOARD_DATE DATE
+);
+SELECT * FROM BOARD;
+
+CREATE TABLE BOARD_COMMENT(
+    BOARD_COMMENT_NO NUMBER PRIMARY KEY,
+    BOARD_COMMENT_CONTENT VARCHAR2(800) NOT NULL,
+    BOARD_COMMENT_DATE DATE,
+    BOARD_REF NUMBER REFERENCES BOARD(BOARD_NO)
+);
+-- DROP TABLE BOARD_COMMENT;
+INSERT INTO BOARD VALUES(1, '첫번째게시글','나의 첫 게시글','ADMIN',SYSDATE);
+INSERT INTO BOARD VALUES(2, '두째게시글','나의 두 게시글','ADMIN',SYSDATE);
+SELECT * FROM BOARD;
+INSERT INTO BOARD_COMMENT VALUES(1,'첫게시글 축하해',SYSDATE,1);
+INSERT INTO BOARD_COMMENT VALUES(2,'첫게시글 축하해2',SYSDATE,1);
+INSERT INTO BOARD_COMMENT VALUES(3,'첫게시글 축하해2',SYSDATE,2);
+INSERT INTO BOARD_COMMENT VALUES(4,'첫게시글 축하해3',SYSDATE,2);
+SELECT * FROM BOARD_COMMENT;
+-- 참조 컬럼은 한개만 가능!
+
+SELECT * FROM BOARD WHERE BOARD_NO=1;
+SELECT * FROM BOARD_COMMENT WHERE BOARD_REF=1;
+SELECT * FROM BOARD JOIN BOARD_COMMENT ON BOARD_NO=BOARD_REF
+WHERE BOARD_NO=1;
+
+-- UNIQUE제약조건 설정된 컬럼에 NULL값 넣기 -> NULL값은 중복체크 못한다.
+-- UNIQUE제약조건이 설정된 컬럼에 NOT NULL제약조건까지 설정을 해야한다. 
+SELECT * FROM UQ_MEMBER;
+INSERT INTO UQ_MEMBER VALUES(NULL,'4444');
+
+CREATE TABLE UQ_MEMBER4 (
+    MEMBER_ID VARCHAR2(30) UNIQUE NOT NULL,-- 한개 컬럼에 여러 제약조건도 설정이 가능하다.
+    MEMBER_PWD VARCHAR2(30) NOT NULL
+);
+
+INSERT INTO UQ_MEMBER4 VALUES(NULL, '1234');
+INSERT INTO UQ_MEMBER4 VALUES('ADMIN', '1234');
+INSERT INTO UQ_MEMBER4 VALUES('ADMIN', '1234');
+
+-- FK제약 조건을 설정했을대 NULL값 - NOT NULL제약조건을 추가로 설정
+-- NULLABLE이 되어 있으면 선택
+-- NOT NULL이 되어 있으면 필수
+INSERT INTO BOARD_COMMENT VALUES(5,'NULL값',SYSDATE, NULL);
+SELECT * FROM BOARD_COMMENT;
+
+-- 테이블간의 FK관계가 있는 경우 ROW삭제할때 주의해야 한다.
+-- FK설정하면 두개의 테이블이 부모, 자식 관계로 설정이 된다.
+-- 부모테이블에 있는 ROW는 함부로 삭제할 수 없다. * 참조하는 자식테이블의 ROW가 있는 경우!!!
+CREATE TABLE FK_PRODUCT(
+  PRODUCT_NO NUMBER PRIMARY KEY,
+  PRODUCT_NAME VARCHAR2(200) NOT NULL,
+  PRICE NUMBER
+);
+SELECT * FROM FK_PRODUCT;
+INSERT INTO FK_PRODUCT VALUES(1, '노트북',3000000);
+INSERT INTO FK_PRODUCT VALUES(2, '키보드',500000);
+INSERT INTO FK_PRODUCT VALUES(3, '마우스',70000);
+-- FK로 다른 테이블의 컬럼값을 설정할때는 반드시 설정 대상컬럼은 중복값을 가지면 안됨. -> UNIQUE, PRIMARY KEY 제약조건설정해야함.
+
+CREATE TABLE FK_BUY(
+    BUY_NO NUMBER PRIMARY KEY,
+    MEMBER_ID VARCHAR2(20) REFERENCES UQ_MEMBER4(MEMBER_ID),
+    PRODUCT_NO NUMBER REFERENCES FK_PRODUCT(PRODUCT_NO) 
+);
+DROP TABLE FK_BUY;
+INSERT INTO FK_BUY VALUES(1, 'ADMIN',1);
+INSERT INTO FK_BUY VALUES(2, 'ADMIN',2);
+SELECT * FROM FK_BUY;
+DELETE FROM FK_PRODUCT WHERE PRODUCT_NO=3;
+-- 참조관계에 있는 부모테이블 삭제시 옵션을 사용할 수 있다.
+-- ON DELETE CASCADE||SET NULL 
+-- CASCADE : 부모데이터가 지워지면 자식데이터도 같이 삭제
+-- SET NULL : 참조컬럼에 NULL값 저장! * FK설정시 NOT NULL제약조건이 설정되면 안됨!
+CREATE TABLE FK_BUY(
+    BUY_NO NUMBER PRIMARY KEY,
+    MEMBER_ID VARCHAR2(20) REFERENCES UQ_MEMBER4(MEMBER_ID),
+    --PRODUCT_NO NUMBER REFERENCES FK_PRODUCT(PRODUCT_NO) ON DELETE CASCADE
+    PRODUCT_NO NUMBER NOT NULL, --REFERENCES FK_PRODUCT(PRODUCT_NO) ON DELETE SET NULL,
+    FOREIGN KEY(PRODUCT_NO) REFERENCES FK_PRODUCT(PRODUCT_NO)
+);
+DROP TABLE FK_BUY;
+INSERT INTO FK_BUY VALUES(1, 'ADMIN',2);
+INSERT INTO FK_BUY VALUES(2, 'ADMIN',3);
+SELECT * FROM FK_BUY;
+DELETE FROM FK_PRODUCT WHERE PRODUCT_NO=3;
+
+
+-- CHECK 제약조건 설정하기
+-- 컬럼에 저장할 수 있는 데이터를 지정
+CREATE TABLE CK_MEMBER(
+    MEMBER_ID VARCHAR2(20),
+    MEMBER_PWD VARCHAR2(20),
+    GENDER VARCHAR2(5)CHECK(GENDER IN ('남','여')) NOT NULL,
+    AGE NUMBER CHECK(AGE > 0)
+);
+SELECT * FROM CK_MEMBER;
+INSERT INTO CK_MEMBER VALUES('AMDIN','1234','남',19);
+INSERT INTO CK_MEMBER VALUES('AMDIN','1234','넘',19);
+INSERT INTO CK_MEMBER VALUES('AMDIN','1234','여',-19);
+INSERT INTO CK_MEMBER VALUES('AMDIN','1234','여',NULL);
+
+-- 컬럼에 DEFAULT값을 설정할 수 있음
+CREATE TABLE TBL_DEFAULT(
+    TEST_NO NUMBER PRIMARY KEY,
+    TEST_DATE DATE DEFAULT SYSDATE,
+    TEST_LEVEL VARCHAR2(20) DEFAULT '새싹'
+);
+INSERT INTO TBL_DEFAULT VALUES(1, DEFAULT, DEFAULT);
+SELECT * FROM TBL_DEFAULT;
+INSERT INTO TBL_DEFAULT(TEST_NO) VALUES(2);
+
+SELECT * FROM USER_CONSTRAINTS;
+-- 제약조건을 설정할때 이름을 설정할 수 있다.
+-- 이름설정하지않으면 SYS_0000 오라클이 자동으로 제약조건명을 설정
+CREATE TABLE CONS_NAME(
+    TEST_NO NUMBER CONSTRAINT PK_CONSNAME_TESTNO PRIMARY KEY,
+    TEST_NAME VARCHAR2(20) CONSTRAINT NN_TESTNAME NOT NULL
+);
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME='CONS_NAME';
+
+-- 테이블을 생성할때 서브쿼리를 이용할 수 있음
+-- 기존테이블에 있는 테이블을 복사
+CREATE TABLE EMP_COPY
+AS SELECT * FROM EMPLOYEE;
+
+SELECT * FROM EMP_COPY;
+SELECT * FROM EMPLOYEE;
+
+-- JOIN, UNION,서브쿼리를 이용한 RESULT SET을 가지고 만들수도 있음
+
+CREATE TABLE EMP_ALL_COPY
+AS SELECT * FROM EMPLOYEE 
+            JOIN DEPARTMENT ON DEPT_CODE= DEPT_ID 
+            JOIN JOB USING(JOB_CODE);
+SELECT * FROM EMP_ALL_COPY;
+-- 서브쿼리로 생성한 테이블은 NOT NULL제약조건 이외의 설정된 제약조건은 생략한다.
+-- 필요한 제약조건은 추가로 설정을 해야한다.
+
+-- 컬럼만 복사하여 새로운 테이블을 생성하려면
+-- 서브쿼리의 조건을 모두 FALSE로 만들면 된다.
+CREATE TABLE COLUMN_COPY
+AS SELECT * FROM EMPLOYEE WHERE 1=0;
+SELECT * FROM COLUMN_COPY;
+
+
+-- DML에 대해 알아보자
+-- INSERT 문 활용하기
+-- INERT문 테이블에 한개 데이터(ROW) 추가하는 명령어
+-- 한번에 한개의 데이터만 삽입이 가능
+-- 방법
+-- 1. 전체컬럼에 대해 값을 대입하는것
+-- 2. 대입원하는 컬럼을 지정하여 대입하는것 * 지정되지 않은 컬럼은 NULL값 또는 DEFAULT값 대입, 
+--     **지정되지않은값에 NOT NULL제약조건이 설정되어있으면 대입이 불가능함.
+CREATE TABLE TEMP_DEPT
+AS SELECT * FROM DEPARTMENT WHERE 1=0;
+SELECT * FROM TEMP_DEPT;
+-- 기본 INSERT 문
+-- INSERT INTO 테이블명 [(컬럼명, 컬럼명......)] VALUES(값, 값, 값......)
+INSERT INTO TEMP_DEPT VALUES('D1','자바학부','L1');
+DESC TEMP_DEPT;
+SELECT * FROM TEMP_DEPT;
+INSERT INTO TEMP_DEPT VALUES('D1','자바학부');
+INSERT INTO TEMP_DEPT VALUES('D1','자바학부','1',2,3);
+
+-- 컬럼을 지정해서 값 넣기
+-- 지정하지않은 컬럼에 NOT NULL제약조건이 설정되어 있으면 INSERT문을 실행할 수 없다.
+INSERT INTO TEMP_DEPT (DEPT_ID,DEPT_TITLE) VALUES('D2','메가스터디');-- LOCATION_ID에NOT NULL제약조건이 설정되서 불가능
+INSERT INTO TEMP_DEPT(DEPT_ID,LOCATION_ID) VALUES('D2','L2');-- 가능 DEPT_TITLE에 NULLABLE이기 때문에
+DESC TEMP_DEPT;
+SELECT * FROM TEMP_DEPT;
+
+-- 지정하지않은 컬럼에 NOTNULL제약조건이 설정되어있더라도 DEFAULT값이 설정되어있다면
+-- 실행이 가능하다.
+CREATE TABLE TEST_TAB(
+    TEST_NAME VARCHAR2(20) DEFAULT '없음' NOT NULL,
+    TEST_NUM NUMBER
+);
+INSERT INTO TEST_TAB (TEST_NUM) VALUES(100);
+SELECT * FROM TEST_TAB;
+
+-- 서브쿼리를 이용해서 INSERT하기
+CREATE TABLE INSERT_SUB
+AS SELECT EMP_ID, EMP_NAME, DEPT_TITLE
+    FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID WHERE 1=0;
+    
+SELECT * FROM INSERT_SUB;
+INSERT INTO INSERT_SUB(SELECT EMP_ID, EMP_NAME,DEPT_TITLE
+                        FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+                        WHERE DEPT_CODE='D5');
+INSERT INTO INSERT_SUB(SELECT EMP_ID, EMP_NAME, DEPT_TITLE
+                            FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID
+                            WHERE JOB_CODE='J2');
+SELECT * FROM INSERT_SUB;               
+
+INSERT INTO INSERT_SUB(EMP_ID, EMP_NAME)(SELECT EMP_ID, EMP_NAME FROM EMPLOYEE WHERE DEPT_CODE='D9');
+
+-- INSERT ALL
+-- 서브쿼리를 이용해서 두개이상의 테이블에 데이터를 삽입하는 명령어
+CREATE TABLE EMP_HIRE_DATE
+AS SELECT EMP_ID, EMP_NAME, HIRE_DATE FROM EMPLOYEE;
+DELETE FROM EMP_HIRE_DATE;
+CREATE TABLE EMP_MANAGER
+AS SELECT EMP_ID, EMP_NAME, MANAGER_ID FROM EMPLOYEE WHERE 1=0;
+SELECT * FROM EMP_HIRE_DATE;
+SELECT * FROM EMP_MANAGER;
+
+INSERT ALL
+INTO EMP_HIRE_DATE VALUES(EMP_ID,EMP_NAME,HIRE_DATE)
+INTO EMP_MANAGER VALUES(EMP_ID, EMP_NAME,MANAGER_ID)
+SELECT EMP_ID, EMP_NAME, HIRE_DATE, MANAGER_ID
+FROM EMPLOYEE;
+
+-- INSERT ALL을 이용해서 테이블에 값을 넣을때 조건에 맞춰서 넣기
+CREATE TABLE EMP_OLD
+AS SELECT EMP_ID,EMP_NAME, HIRE_DATE FROM EMPLOYEE WHERE 1=0;
+CREATE TABLE EMP_NEW
+AS SELECT EMP_ID,EMP_NAME, HIRE_DATE FROM EMPLOYEE WHERE 1=0;
+-- EMP_OLD테이블에 00년01월01일 전에 입사한 사원들의 데이터를 삽입
+-- EMP_NEW테이블에 00년01월01일 이후에 입사한 사원들의 데이터를 삽입
+INSERT ALL
+    WHEN '00/01/01'>HIRE_DATE THEN INTO EMP_OLD VALUES(EMP_ID, EMP_NAME, HIRE_DATE)
+    WHEN '00/01/01'<=HIRE_DATE THEN INTO EMP_NEW VALUES(EMP_ID, EMP_NAME, HIRE_DATE)
+SELECT EMP_ID, EMP_NAME, HIRE_DATE
+FROM EMPLOYEE;
+SELECT * FROM EMP_OLD;
+SELECT * FROM EMP_NEW;
+
+-- UPDATE 활용하기
+-- UPDATE 테이블명 SET 컬럼명=값, 컬럼명=값..... [WHERE 조건식]
+-- WHERE 절이 있으면 WHERE절에 조건이 TRUE되는 ROW를 변경하고
+-- WHERE 절이 없으면 테이블 전체 ROW를 변경한다.
+CREATE TABLE EMP_SALARY
+AS SELECT  EMP_ID, EMP_NAME, DEPT_CODE, JOB_CODE, SALARY, BONUS
+FROM EMPLOYEE;
+SELECT * FROM EMP_SALARY;
+-- WHERE이 없는 UPDATE문 실행하기
+-- SALARY 300만원으로 수정하기
+UPDATE EMP_SALARY SET SALARY=3000000;
+ROLLBACK;--트렌젝션
+-- BONUS가 없는 사원의 보너스값을 0.2로 수정하기
+UPDATE EMP_SALARY SET BONUS=0.2 WHERE BONUS IS NULL;
+SELECT * FROM EMP_SALARY;
+-- 방명수의 급여를 300만원, 보너스를 0.3으로 수정하기
+UPDATE EMP_SALARY SET BONUS=0.3, SALARY=3000000 WHERE EMP_NAME='방명수';
+SELECT * FROM EMP_SALARY;
+
+-- 유씨성을 가진 사원의 급여를 지금 급여에서 50만원, 보너스는 0.3 올려주자
+UPDATE EMP_SALARY SET SALARY=SALARY+500000, BONUS=BONUS+0.3 WHERE EMP_NAME LIKE '유%';
+SELECT * FROM EMP_SALARY;
+
+-- 자신이 속한 부서의 평균 급여로 급여를 수정하기
+UPDATE EMP_SALARY SET SALARY=(SELECT FLOOR(AVG(SALARY)) FROM EMPLOYEE WHERE EMP_SALARY.DEPT_CODE=DEPT_CODE);
+
+-- 서브쿼리를 이용해서 UPDATE하기
+-- 두개컬럼 수정하기
+UPDATE EMP_SALARY SET (SALARY, BONUS) = (SELECT SALARY,BONUS FROM EMPLOYEE WHERE EMP_ID=200) 
+WHERE DEPT_CODE IS NULL;
+SELECT * FROM EMP_SALARY;
+
+-- UPDATE 문에서 함수 사용하기
+UPDATE EMP_SALARY SET SALARY=LENGTH('ASDLFKJASDLFKJASDFLKJ');
+SELECT * FROM EMP_SALARY;
+
+-- DELETE문 활용하기
+-- 테이블의 ROW를 삭제하는 명령어
+-- DELETE FROM 테이블명 [WHERE 조건식]
+DELETE FROM EMP_SALARY WHERE DEPT_CODE='D2';
+DELETE FROM EMP_SALARY;
+
+ROLLBACK;
+SELECT * FROM EMP_SALARY;
+
+-- TRUNCATE 
+-- 테이블에 있는 데이터를 삭제하는 구문 전체삭제 속도가 빠름
+-- 복원이 불가능함.
+TRUNCATE TABLE EMP_SALARY;
+SELECT * FROM EMP_SALARY;
+ROLLBACK;
+
+-- 트렌젝션처리하는 명령어
+-- 트렌젝션 : 한개의 작업단위, 데이터를 조작하는 작업의 단위
+-- 한개 서비스에서 데이터를 조작(삽입,수정,삭제)하는 명령어가 여러개이면 관리를 해줘야한다.
+-- 저장, 취소할지 결정할 수 있다, -> COMMIT, ROLLBACK으로 함.
+-- 지금까지의 작업을 저장하려면 COMMIT을 수행
+-- 지금까지의 작업을 모두 취소하려면 ROLLBACK
+-- 작업 -> DML - INSERT, UPDATE, DELETE이 대상이다.
+SELECT * FROM TEMP_DEPT;
+INSERT INTO TEMP_DEPT VALUES('D3','COMMIT전','L4');
+COMMIT;
+
+-- ALTER, DROP 명령어 사용하기
+-- 오브젝트를 수정/ 삭제하는 명령어
+-- ALTER TABLE : TABLE에 정의되어있는 내용을 수정할 때 사용
+-- 컬럼, 제약조건을 수정할 수 있다.
+
+CREATE TABLE TBL_USERALTER(
+    USER_NO NUMBER PRIMARY KEY,
+    USER_ID VARCHAR2(20),
+    USER_PWD VARCHAR2(20)
+);
+
+SELECT * FROM TBL_USERALTER;
+-- 테이블에 컬럼 추가하기
+-- ALTER TABLE 테이블명 ADD( 컬럼선언부(컬럼명 타입 제약조건) )
+ALTER TABLE TBL_USERALTER ADD(USER_NAME VARCHAR2(20));
+INSERT INTO TBL_USERALTER VALUES(1,'ADMIN','1234','관리자');
+COMMIT;
+SELECT * FROM TBL_USERALTER;
+-- 기존테이블에 데이터가 있을때 컬럼을 추가해보자.
+ALTER TABLE TBL_USERALTER ADD(EMAIL VARCHAR2(50));
+-- 기존테이블에 데이터가 있을때 추가되는 컬럼에 NOT NULL제약조건을 설정하면 에러가 발생함.
+-- NOT NULL제약조건을 설정하려면 DEFAULT을 설정하면 됨.
+ALTER TABLE TBL_USERALTER ADD(NICKNAME VARCHAR2(20) DEFAULT '미설정' NOT NULL);
+
+-- 컬럼 수정하기
+DESC TBL_USERALTER;
+-- ALTER TABLE 테이블명 MODIFY 변경할 컬럼명 자료형
+ALTER TABLE TBL_USERALTER MODIFY USER_ID VARCHAR2(30);
+SELECT * FROM TBL_USERALTER;
+ALTER TABLE TBL_USERALTER MODIFY USER_NAME VARCHAR2(5);
+
+-- 컬럼삭제하기
+-- ALTER TABLE 테이블명 DROP COLUMN 컬럼명
+ALTER TABLE TBL_USERALTER DROP COLUMN NICKNAME;
+SELECT * FROM TBL_USERALTER;
+
+-- 제약조건 추가
+-- ALTER TABLE 테이블명 ADD CONSTRAINT 제약조건명 제약조건
+ALTER TABLE TBL_USERALTER ADD CONSTRAINT UQ_USERID UNIQUE(USER_ID);
+INSERT INTO TBL_USERALTER VALUES(2,'ADMIN','1111','유저','USER@USER');
+
+
+-- 제약조건 수정
+-- 수정하는 제약조건명을 알아야한다.
+-- 생성된 컬럼은 모두 NULLABLE설정이 되어있으므로 NOT NULL제약조건 추가시에는
+-- MODIFY로 해야한다.
+ALTER TABLE TBL_USERALTER
+MODIFY USER_PWD CONSTRAINT UQ_USER_PWD NOT NULL;
+
+-- 제약조건 삭제하기
+ALTER TABLE TBL_USERALTER
+DROP CONSTRAINT UQ_USER_PWD;
+DESC TBL_USERALTER;
+
+-- 컬럼명 수정하기 
+ALTER TABLE TBL_USERALTER RENAME COLUMN EMAIL TO USER_EMAIL;
+SELECT * FROM TBL_USERALTER;
+-- 제약조건명 수정하기
+ALTER TABLE TBL_USERALTER RENAME CONSTRAINT SYS_C007731 TO PK_USERID;
+
+-- 테이블 명 수정하기
+RENAME TBL_USERALTER TO TBL_USER;
+SELECT * FROM TBL_USERALER;
+SELECT * FROM TBL_USER;
+
+-- 테이블 삭제하기
+DROP TABLE TBL_USER;
+SELECT * FROM TBL_USER;
+-- 테이블 삭제시 FK로 연결된 테이블은 삭제가 불가능함.
+SELECT * FROM EMP_COPY;
+-- EMP_ID에 컬럼에 PK설정하기
+ALTER TABLE EMP_COPY ADD CONSTRAINT PK_EMP_ID PRIMARY KEY(EMP_ID);
+
+CREATE TABLE TEST_FKTBL(
+    EMP_ID VARCHAR2(20) REFERENCES EMP_COPY(EMP_ID),
+    CONTENT VARCHAR2(500)
+);
+
+INSERT INTO TEST_FKTBL VALUES(200,'하나');
+INSERT INTO TEST_FKTBL VALUES(201,'둘');
+INSERT INTO TEST_FKTBL VALUES(202,'셋');
+INSERT INTO TEST_FKTBL VALUES(203,'넷');
+SELECT * FROM TEST_FKTBL;
+
+DROP TABLE EMP_COPY;
+
+-- 제약조건이 설정된 테이블 삭제할때는 옵션을 설정하여 지울 수 있음
+DROP TABLE EMP_COPY CASCADE CONSTRAINT;
+
+-- 오라클이 제공하는 오브젝트에 대해 알아보자.
+-- VIEW, SEQUENCE
+-- VIEW 가상의 테이블 실제 존재하지 않는 테이블
+-- RESULT SET(SELECT문)만든 가상 테이블 -> 실제테이블 기반으로 생성한다.
+-- VIEW -> 여러가지 가상컬럼을 사용하는 테이블 이용할때 
+-- JOIN, UNION,UNION ALL, 그룹함수를 사용한 SELECT문
+-- 생성하는 방법
+-- CREATE VIEW VIW이름 
+-- AS SELECT문....
+-- VIEW테이블을 생성하려면 별도의 생성권한이 필요함. 
+CREATE VIEW V_EMP_DEPT
+AS SELECT * FROM EMPLOYEE JOIN DEPARTMENT ON DEPT_CODE=DEPT_ID;
+
+-- BS계정에 VIEW생성권한 부여하기
+GRANT CREATE VIEW TO BS;
+
+SELECT *
+FROM V_EMP_DEPT;
+
+SELECT EMP_NAME, DEPT_TITLE, SALARY
+FROM V_EMP_DEPT;
+
+--각 분야별 월급의 평균
+SELECT DEPT_CODE, FLOOR(AVG(SALARY)) FROM EMPLOYEE GROUP BY DEPT_CODE;
+SELECT JOB_CODE, FLOOR(AVG(SALARY)) FROM EMPLOYEE GROUP BY JOB_CODE;
+
+CREATE VIEW V_AVG_TYPE
+AS
+SELECT DEPT_CODE AS TYPE, FLOOR(AVG(SALARY)) AS AVG_SAL FROM EMPLOYEE GROUP BY DEPT_CODE
+UNION
+SELECT JOB_CODE, FLOOR(AVG(SALARY)) FROM EMPLOYEE GROUP BY JOB_CODE;
+
+SELECT * FROM V_AVG_TYPE;
+
+-- 1. VIEW테이블 생성시에 설정한 컬럼만 사용할 수 있음
+SELECT AVG_SAL FROM V_AVG_TYPE;
+-- 2. VIEW테이블은 데이터를 조회하기 용도로 DML구문은 VIEW테이블로 일반적으로 사용하지않음
+
+
+--생성된 VIEW테이블 조회하기
+SELECT * FROM USER_VIEWS;
+
+
+-- SEQUENCE 이용하기
+-- 오라클에서 제공하는 자동번호 발생기
+-- 1. SEQUENCE를 생성하기
+-- 2. 생성한 SEQUENCE의 예약어로 번호를 생성하고 가져온다.
+--   NEXTVAL, CURRVAL
+-- PK값 설정하는 컬럼에 사용
+-- 기본 SEQUENCE 생성하기
+CREATE SEQUENCE SEQ_BASIC; -- 기본생성된 시퀀스는 1부터 1씩증가하는 번호를 생성해줌
+SELECT SEQ_BASIC.NEXTVAL FROM DUAL;
+SELECT * FROM BOARD;
+INSERT INTO BOARD VALUES(SEQ_BASIC.NEXTVAL,'네번째 글', '나의 세번째 글','ADMIN',SYSDATE);
+
+-- 현재발급된 번호를 확인
+SELECT SEQ_BASIC.CURRVAL FROM DUAL;
+
+-- 옵션을 설정해서 생성할 수 있다.
+-- START WITH 숫자 : 생성번호가 설정한 숫자부터 시작 DEFAULT 1
+-- INCREMENT BY 숫자 : 번호 증가 간격 DEFAULT 1
+-- MAXVALUE : 증가번호의 최대값
+-- MINVALUE : 증가번호의 최소값
+-- CYCLE/NOCYCLE : 번호를 순활할지 결정 *MAXVALUE, MINVALUE가 있어야함.
+-- CACHE : 미리 번호를 생성해 놓는것 * 속도 DEFAULT 20
+CREATE SEQUENCE SEQ_01
+START WITH 100
+INCREMENT BY 5;
+SELECT SEQ_01.NEXTVAL FROM DUAL;
+
+CREATE SEQUENCE SEQ_02
+START WITH 100
+INCREMENT BY 10
+MAXVALUE 200;
+SELECT SEQ_02.NEXTVAL FROM DUAL;
+CREATE SEQUENCE SEQ_03
+START WITH 100
+INCREMENT BY -20
+MAXVALUE 200
+MINVALUE 0;
+SELECT SEQ_03.NEXTVAL FROM DUAL;
+CREATE SEQUENCE SEQ_04
+START WITH 100
+INCREMENT BY -20
+MAXVALUE 200
+MINVALUE 0
+CYCLE
+NOCACHE;
+SELECT SEQ_04.NEXTVAL FROM DUAL;
+
+SELECT * FROM USER_SEQUENCES;
+
+-- 1. CURRVAL 실행시 같은 SESSION에서 NEXTVAL을 한번이라도 실행을 해야한다.
+CREATE SEQUENCE SEQ_TEST;
+SELECT SEQ_TEST.NEXTVAL FROM DUAL;
+SELECT SEQ_TEST.CURRVAL FROM DUAL;
+-- 2. PK p_1, P_001
+SELECT 'P_'||SEQ_TEST.NEXTVAL FROM DUAL;
+SELECT 'P_'||TRIM(TO_CHAR(SEQ_TEST.NEXTVAL,'000')) FROM DUAL;
+
+
+-- 계층형 쿼리 
+-- ROW를 구조에 맞춰서 순서대로 가져오는 것
+SELECT LEVEL, EMP_ID, EMP_NAME, MANAGER_ID
+FROM EMPLOYEE
+    START WITH EMP_ID=200
+    CONNECT BY PRIOR EMP_ID=MANAGER_ID;
+    
+SELECT LEVEL||' '||LPAD(' ',(LEVEL-1)*5,' ')||EMP_NAME||NVL2(MANAGER_ID,'('||MANAGER_ID||')','') AS 조직도
+FROM EMPLOYEE
+    START WITH EMP_ID=200
+    CONNECT BY PRIOR EMP_ID=MANAGER_ID;
+    
+-- PL/SQL, FUNCTION, PROCEDURE, TRIGGER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
