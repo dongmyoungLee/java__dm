@@ -177,6 +177,8 @@ public class BasicJdbcTest {
 				*/
 				
 				// 주소 조회
+				
+				/*
 				System.out.println("주소로 조회하기");
 				System.out.println("주소 입력 : ");
 				String addrKeyword = sc.next();
@@ -198,6 +200,44 @@ public class BasicJdbcTest {
 				}
 				
 				members.stream().forEach(e -> System.out.println(e));
+				
+				*/
+				
+				// DML 구문 실행하기
+				// insert, updatem, delete 구문 실행
+				// 트랜잭션 처리를 해줘야함..
+				System.out.println("회원가입");
+				System.out.println("아이디 : ");
+				String id = sc.nextLine();
+				System.out.println("패스워드 :");
+				String pw = sc.nextLine();
+				System.out.println("이름 :");
+				String nm = sc.nextLine();
+				System.out.println("성별 :");
+				String gender = sc.nextLine();
+				System.out.println("나이 : ");
+				int age = sc.nextInt();
+				sc.nextLine();
+				System.out.println("이메일 : ");
+				String mail = sc.nextLine();
+				System.out.println("번호 : ");
+				String phone = sc.nextLine();
+				System.out.println("주소 : ");
+				String addr = sc.nextLine();
+				System.out.println("취미 : ");
+				String hobb = sc.nextLine();
+				
+				
+				sql = "INSERT INTO MEMBER VALUES('"+id+"', '"+pw+"', '"+nm+"', '"+gender+"', "+age+",'"+mail+"', '"+phone+"', '"+addr+"', '"+hobb+"', SYSDATE)";
+				int result = stmt.executeUpdate(sql);
+				System.out.println(result);
+				
+				if (result > 0) {
+					conn.commit();
+					System.out.println("회원가입이 완료 되었습니다.");
+				} else {
+					conn.rollback();
+				}
 				
 			} catch(ClassNotFoundException e) {
 				e.printStackTrace();
