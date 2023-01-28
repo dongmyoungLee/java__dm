@@ -78,6 +78,52 @@ public class MemberDao {
 		
 		
 	}
+
+	public List<Member> searchId(String id) {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		List<Member> members = new ArrayList();
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "BS", "BS");
+			stmt = conn.createStatement();
+			
+			String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID LIKE '%"+ id +"%'";
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Member m = getDataBaseMember(rs);
+				members.add(m);
+			}
+			
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				
+				if(rs != null && !rs.isClosed()) {
+					rs.close();
+				}
+				
+				if(stmt != null && !stmt.isClosed()) {
+					stmt.close();
+				}
+				
+				if(conn != null && !conn.isClosed()) {
+					conn.close();
+				}
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return members;
+	}
 	
 	public List<Member> searchName(String name) {
 		Connection conn = null;
@@ -160,13 +206,7 @@ public class MemberDao {
 			
 			result = pstmt.executeUpdate();
 			
-			
-			
-			
-			
-			
-			
-			
+		
 			if (result > 0) {
 				conn.commit();
 			} else {

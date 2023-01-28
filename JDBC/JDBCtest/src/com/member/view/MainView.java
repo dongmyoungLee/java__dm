@@ -105,4 +105,13 @@ public class MainView {
 		System.out.println("======================");
 	}
 	
+	public String deleteMember(String id) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("===== 회원 삭제 =====");
+		System.out.println("삭제할 "+ id +" 입력 : ");
+		
+		return sc.nextLine();
+	}
+	
 }

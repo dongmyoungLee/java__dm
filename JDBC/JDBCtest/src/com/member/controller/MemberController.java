@@ -2,31 +2,32 @@ package com.member.controller;
 
 import java.util.List;
 
-import com.member.model.dao.MemberDao;
+import com.member.model.service.MemberService;
 import com.member.model.vo.Member;
 import com.member.view.MainView;
 
 public class MemberController {
 	
-	private MemberDao dao = new MemberDao();
+	//private MemberDao dao = new MemberDao();
+	private MemberService service = new MemberService();
 	
-	public void mainMenu() {
-		
-	}
 	
 	public void searchAll() {
-		List<Member> members = dao.searchAll();
+		List<Member> members = service.searchAll();
 		
 		new MainView().printMembers(members);
 	}
 	
 	public void searchId() {
+		String id = new MainView().searchData("ID");
+		List<Member> members = service.searchId(id);
 		
+		new MainView().printMembers(members);
 	}
 	
 	public void searchName() {
 		String name = new MainView().searchData("이름");
-		List<Member> members = dao.searchName(name);
+		List<Member> members = service.searchName(name);
 		
 		new MainView().printMembers(members);
 		
@@ -34,7 +35,7 @@ public class MemberController {
 	
 	public void insertMember() {
 		Member m = new MainView().inputMember();
-		int result = dao.insertMember(m);
+		int result = service.insertMember(m);
 		
 		new MainView().printMsg(result > 0 ? "회원가입 성공" : "회원가입 실패");
 	}
@@ -44,7 +45,11 @@ public class MemberController {
 	}
 	
 	public void deleteMember() {
+		String id = new MainView().deleteMember("ID");
 		
+		int result = service.deleteMember(id);
+
+		new MainView().printMsg(result > 0 ? "회원삭제 성공" : "회원삭제 실패");
 	}
 	
 
