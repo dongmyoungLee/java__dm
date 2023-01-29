@@ -2,17 +2,33 @@ package com.member.model.dao;
 
 import static com.member.common.JDBCTemplate.close;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import com.member.common.JDBCTemplate;
 import com.member.model.vo.Member;
 
 public class MemberDao2 {
+	private Properties sqlData = new Properties();
+	
+	public MemberDao2() {
+		String path = MemberDao2.class.getResource("/mappers/member_sql.properties").getPath();
+		try {
+			sqlData.load(new FileReader(path));
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	
 	private Member getMember(ResultSet rs) throws SQLException {
 		Member m = new Member();
@@ -36,7 +52,7 @@ public class MemberDao2 {
 		List<Member> result = new ArrayList();
 		
 		try {
-			String sql = "SELECT * FROM MEMBER";
+			String sql = sqlData.getProperty("searchAll");
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery(sql);
 			while(rs.next()) {
@@ -58,7 +74,7 @@ public class MemberDao2 {
 		ResultSet rs = null;
 		List<Member> result = new ArrayList();
 		
-		String sql = "SELECT * FROM MEMBER WHERE MEMBER_NAME LIKE ?";
+		String sql = sqlData.getProperty("searchName");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -83,8 +99,9 @@ public class MemberDao2 {
 		ResultSet rs = null;
 		List<Member> result = new ArrayList();
 					
-		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID LIKE ?";
+		String sql = sqlData.getProperty("searchId");
 		
+		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + id + "%");
@@ -107,7 +124,7 @@ public class MemberDao2 {
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,?,?,?,?, SYSDATE)";
+		String sql = sqlData.getProperty("insertMember");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -138,7 +155,7 @@ public class MemberDao2 {
 	public int updateMember(Connection conn, Member m) {
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String sql = "UPDATE MEMBER SET MEMBER_NAME = ?, AGE = ?, EMAIL = ?, ADDRESS = ? WHERE MEMBER_ID = ?";
+		String sql = sqlData.getProperty("updateMember");
 	
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -163,7 +180,7 @@ public class MemberDao2 {
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String sql = "DELETE FROM MEMBER WHERE MEMBER_ID = ?";
+		String sql = sqlData.getProperty("deleteMember");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
