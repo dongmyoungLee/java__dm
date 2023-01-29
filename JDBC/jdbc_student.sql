@@ -33,3 +33,4 @@ insert into member values('seonn','seonn','±è°øºÎ','F', 28, 'study11@naver.com',
 
 commit;
 select * from member;
+
