@@ -1,11 +1,14 @@
 package com.member.common;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class JDBCTemplate {
 	// DAO 들이 공통으로 사용하는 기능을 가지고 있는 클래스
@@ -13,15 +16,21 @@ public class JDBCTemplate {
 	
 	public static Connection getConnection() {
 		Connection conn = null;
+		Properties data = new Properties();
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "BS", "BS");
+			String path = JDBCTemplate.class.getResource("/driver.properties").getPath();
+			data.load(new FileReader(path));
+			
+			Class.forName(data.getProperty("driver"));
+			conn = DriverManager.getConnection(data.getProperty("url"), data.getProperty("user"), data.getProperty("pw"));
 			conn.setAutoCommit(false);
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
