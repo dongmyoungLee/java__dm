@@ -135,12 +135,35 @@ public class MemberDao2 {
 				
 	}
 	
+	public int updateMember(Connection conn, Member m) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String sql = "UPDATE MEMBER SET MEMBER_NAME = ?, AGE = ?, EMAIL = ?, ADDRESS = ? WHERE MEMBER_ID = ?";
+	
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getMemberName());
+			pstmt.setInt(2, m.getAge());
+			pstmt.setString(3, m.getEmail());
+			pstmt.setString(4, m.getAddress());
+			pstmt.setString(5, m.getMemberId());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return result;
+	} 
+	
 	public int deleteMember(Connection conn, String id) {
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
 		String sql = "DELETE FROM MEMBER WHERE MEMBER_ID = ?";
-		System.out.println(sql);
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

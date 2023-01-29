@@ -41,7 +41,12 @@ public class MemberController {
 	}
 	
 	public void updateMember() {
+		// 업데이트 내용을 받아서 처리할거임..
 		
+		Member m = new MainView().updateMember();
+		int result = service.updateMember(m);
+		
+		new MainView().printMsg(result > 0 ? "회원수정 성공" : "회원수정 실패");
 	}
 	
 	public void deleteMember() {

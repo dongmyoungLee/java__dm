@@ -114,4 +114,34 @@ public class MainView {
 		return sc.nextLine();
 	}
 	
+	public Member updateMember() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("===== 회원정보 수정 =====");
+		Member m = new Member();
+		
+		System.out.println("수정할 이름 : ");
+		m.setMemberName(sc.nextLine());
+		
+		System.out.println("수정할 나이 : ");
+		m.setAge(sc.nextInt());
+		
+		sc.nextLine();
+		
+		System.out.println("수정할 이메일 : ");
+		m.setEmail(sc.nextLine());
+		
+		System.out.println("수정할 주소 : ");
+		m.setAddress(sc.nextLine());
+		
+		System.out.println("수정할 회원의 ID : ");
+		m.setMemberId(sc.nextLine());
+		
+		return m;
+	}
+	
 }
+
+
+
+

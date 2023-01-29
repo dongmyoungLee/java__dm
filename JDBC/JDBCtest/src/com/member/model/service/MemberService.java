@@ -49,12 +49,25 @@ public class MemberService {
 			JDBCTemplate.rollback(conn);
 		}
 		
+		JDBCTemplate.close(conn);
+		
 		return result;
 	}
 	
 	public int updateMember(Member m) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = dao.updateMember(conn, m);
 		
-		return 0;
+		// 트랜잭션 관리..
+		if (result > 0) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
+		
+		JDBCTemplate.close(conn);
+		
+		return result;
 	}
 	
 	public int deleteMember(String id) {
@@ -67,6 +80,8 @@ public class MemberService {
 		} else {
 			JDBCTemplate.rollback(conn);
 		}
+		
+		JDBCTemplate.close(conn);
 		
 		return result;
 	}
