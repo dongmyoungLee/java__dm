@@ -6,10 +6,21 @@
 	</head>
 	<body>
 		<h2>클라이언트가 보낸 데이터 확인하기</h2>
+		<h3>GET</h3>
 		<form action="login.do" method="GET">
 			<input name="userId" type="text"><br>
 			<input name="password" type="password"><br>
 			<input type="submit" value="로그인">
 		</form>
+		
+		<h3>POST</h3>
+		<form action="login.do" method="POST">
+			<input name="userId" type="text"><br>
+			<input name="password" type="password"><br>
+			<input type="submit" value="로그인">
+		</form>
+		
+		<h3>클라이언트가 보낸 데이터 처리하기</h3>
+		<h3><a href="views/testPerson.html">개인취향 테스트</a></h3>
 	</body>
 </html>

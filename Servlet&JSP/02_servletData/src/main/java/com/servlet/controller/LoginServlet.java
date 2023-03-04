@@ -26,8 +26,15 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// 클라이언트가 보낸 메세지 가져오기
+		
+		//HttpServletRequerst 객체 사용.. getParameter() 를 이용한 값은 무조건 String임..
+		
+		String userId = request.getParameter("userId");
+		String password = request.getParameter("password");
+		
+		System.out.println(userId);
+		System.out.println(password);
 	}
 
 	/**
