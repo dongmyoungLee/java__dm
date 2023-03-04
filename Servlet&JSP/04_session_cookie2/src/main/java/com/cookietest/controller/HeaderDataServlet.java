@@ -5,22 +5,21 @@ import java.io.IOException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CreateCookieServlet
+ * Servlet implementation class HeaderDataServlet
  */
-@WebServlet("/createcookie.do")
-public class CreateCookieServlet extends HttpServlet {
+@WebServlet("/headerdata.do")
+public class HeaderDataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreateCookieServlet() {
+    public HeaderDataServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,25 +28,20 @@ public class CreateCookieServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String accept = request.getHeader("Accept");
+		System.out.println(accept);
 		
-		// 쿠키 생성하고 클라이언트에 저장시키기
-		Cookie c = new Cookie("userId", "admin");
-		Cookie c2 = new Cookie("readPro", "|1|2|3");
+		String cookie = request.getHeader("Cookie");
+		System.out.println(cookie);
 		
-		// 상세정보 설정
-		c.setMaxAge(60 * 60 * 24);
-		
-		
-		response.addCookie(c);
-		response.addCookie(c2);
+		// 이전페이지 정보 가능..
+		String prev = request.getHeader("Referer");
+		System.out.println(prev);
 		
 		// context-param 으로 등록된 데이터 가져오기
 		ServletContext context = request.getServletContext();
 		String data = context.getInitParameter("admin");
 		System.out.println(data);
-		
-		response.sendRedirect(request.getContextPath());
-		
 	}
 
 	/**
