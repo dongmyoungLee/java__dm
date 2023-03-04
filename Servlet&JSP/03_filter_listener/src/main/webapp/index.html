@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>필터 적용하기</h2>
+	<p>
+		클라이언트가 보낸요청을 중간에 검토 또는 세팅하는 기능
+		예) 사용자 권한확인, 인증여부확인, 인코딩처리
+		서블릿에 각각 적용해야 할 로직을 filter에서 한번에 처리할 수 있음.
+	</p>
+	<p>
+		필터구현 : 일반클래스에 Filter 인터페이스를 구현하면 됨
+		doFilter() 메소드를 재정의함.
+		1. web.xml 에서 설정
+		2. 어노테이션 방식으로 설정 @WebFilter(주소, 서블릿명칭);
+		doFilter(servletRequest, ServletResponse, FilterChain);
+		servletRequest : HttpServletRequest 부모클래스 , HttpServletRequest 형 변환해서 사용함.
+		servletResponse : HttpServletResponse 부모클래스, HttpServletResponse 형 변환해서 사용함.
+		FilterChain : 다음 필터 또는 서블릿을 호출하는 메소드를 제공하는 클래스
+	</p>
+	
+	<h2>필터 테스트 하기</h2>
+	<form action="filtertest" method="post">
+		<input type="text" name="data">
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>
