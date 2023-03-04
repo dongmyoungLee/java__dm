@@ -103,7 +103,7 @@
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 			<Context docBase="01_firstWeb" path="/01_firstWeb" reloadable="true" source="org.eclipse.jst.jee.server:01_firstWeb"/>
-			<Context docBase="02_servletData" path="/02_servletData" reloadable="true" source="org.eclipse.jst.jee.server:02_servletData"/><Context docBase="03_filter_listener" path="/03_filter_listener" reloadable="true" source="org.eclipse.jst.jee.server:03_filter_listener"/></Host>
+			<Context docBase="02_servletData" path="/02_servletData" reloadable="true" source="org.eclipse.jst.jee.server:02_servletData"/><Context docBase="03_filter_listener" path="/03_filter_listener" reloadable="true" source="org.eclipse.jst.jee.server:03_filter_listener"/><Context docBase="04_session_cookie2" path="/04_session_cookie2" reloadable="true" source="org.eclipse.jst.jee.server:04_session_cookie2"/></Host>
 		</Engine>
 	</Service>
 </Server>
