@@ -36,5 +36,43 @@
 		
 		<h3><a href="views/testPerson2.html">서버내에서 다른 서블릿 호출하기 -requestDispatcher.forward()</a></h3>
 		<h3><a href="views/testPerson3.html">서버내에서 재요청 -sendRedirect()</a></h3>
+		
+		<h2>서버에서 데이터를 공유, 저장하는 객체</h2>
+		<ul>
+			<li>
+				HttpServletRequest : 1회용 데이터를 저장하는 저장소
+				요청하고 응답이 완료될때까지만 사용 * 일반적으로 가장 많이 사용하는 저장소
+			</li>
+			<li>
+				HttpSession : 원하는 시점까지 데이터를 유지하는 저장소
+				개발자가 삭제하거나 설정값에 의해 자동으로 삭제될때까지 이용
+			</li>
+			<li>
+				ServletContext : 서버의 context영역이 생성되면 유지 서버시작되면 유지, 종료시 삭제;
+			</li>
+			
+		</ul>
+		
+		<h3>객체에 데이터 저장하는 메소드는 동일</h3>
+		<p>
+			저장 : setAttribute()
+			가져올때 : getAttribute()
+			데이터 저장구조 key, value 형식
+			key : String
+			value : object 형
+		</p>
+		<h3><a href="/02_servletData/shareData.do">데이터 저장객체 활용</a></h3>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

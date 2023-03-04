@@ -2,23 +2,26 @@ package com.servlet.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class sendRedirectTestServlet
+ * Servlet implementation class ShareDataServlet
  */
-@WebServlet("/sendRedirect.do")
-public class sendRedirectTestServlet extends HttpServlet {
+@WebServlet("/shareData.do")
+public class ShareDataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public sendRedirectTestServlet() {
+    public ShareDataServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,14 +30,23 @@ public class sendRedirectTestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 각 데이터 저장 객체에 데이터 저장하기..
 		
-		System.out.println("sendRedirect 서블릿 실행!");
+		// request
+		request.setAttribute("request", "Request Data");
 		
-		// 페이지 전환을 하기
-		// 재요청..
-		// sendRedirect 같은 경우.. ex) 로그인 , 무언가 등록했을 때, 
-		response.sendRedirect("requestDispatcher.do");
+		// HttpSession
+		HttpSession session = request.getSession();
+		session.setAttribute("session", "Session Data");
 		
+		// servletContext
+		ServletContext context = request.getServletContext();
+		context.setAttribute("context", "Context Data");
+		
+		
+		
+		RequestDispatcher rd = request.getRequestDispatcher("shareDataCheck.do");
+		rd.forward(request, response);
 	}
 
 	/**
