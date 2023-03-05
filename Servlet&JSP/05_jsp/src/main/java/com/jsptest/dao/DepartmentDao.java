@@ -41,4 +41,34 @@ public class DepartmentDao {
       
       return list;
    }
+	
+	public List<Department> searchDepartment(Connection conn, String keyword) {
+		  PreparedStatement pstmt=null;
+	      ResultSet rs=null;
+	      String sql="SELECT * FROM DEPARTMENT WHERE DEPT_TITLE LIKE ?";
+	      List<Department> list = new ArrayList();
+	      
+	      try {
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setString(1, "%" + keyword + "%");
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 Department d = new Department();
+	        	 d.setDeptId(rs.getString("dept_id"));
+	        	 d.setDeptTitle(rs.getString("dept_title"));
+	        	 d.setLocationId(rs.getString("location_id"));
+	        	 
+	        	 list.add(d);
+	         }
+	         
+	      }catch(SQLException e) {
+	         e.printStackTrace();
+	      }finally {
+	         JDBCTemplate.close(rs);
+	         JDBCTemplate.close(pstmt);
+	      }
+	      
+	      return list;
+	}
 }

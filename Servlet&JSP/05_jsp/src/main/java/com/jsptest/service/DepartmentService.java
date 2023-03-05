@@ -16,6 +16,12 @@ public class DepartmentService {
 	      JDBCTemplate.close(conn);
 	      return list; 
    }
-	
+
+   public List<Department> searchDepartment(String keyword) {
+	   Connection conn = JDBCTemplate.getConnection();
+	   List<Department> list = dao.searchDepartment(conn, keyword);
+	   JDBCTemplate.close(conn);
+	   return list; 
+   }
 	
 }

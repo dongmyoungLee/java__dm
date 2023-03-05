@@ -14,16 +14,16 @@ import com.jsptest.service.DepartmentService;
 import com.jsptest.vo.Department;
 
 /**
- * Servlet implementation class DepartmentInfoServlet
+ * Servlet implementation class SearchDepartmentServlet
  */
-@WebServlet("/department.do")
-public class DepartmentInfoServlet extends HttpServlet {
+@WebServlet("/searchdepartment.do")
+public class SearchDepartmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DepartmentInfoServlet() {
+    public SearchDepartmentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,15 +32,23 @@ public class DepartmentInfoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// DB 에 저장된 department 에 대한 정보를 가져오는 기능...
+		// 클라이언트가 보낸 검색어를 기준으로 department 를 조회하기..
 		
-		List<Department> list = new DepartmentService().selectDepartment();
+		// post방식을 위해.. encoding 먼저 해주자.. 
+		request.setCharacterEncoding("utf-8");
 		
+		// 클라이언트에서 보낸 keyword
+		String keyword = request.getParameter("keyword");
+		
+		// DB Connecting 후 값 받아오자..
+		List<Department> list = new DepartmentService().searchDepartment(keyword);
+		
+		// 로직 태우고 난 후 값 저장해주자..
 		request.setAttribute("departments", list);
 		
+		// jsp 로 출력해주자..
 		RequestDispatcher rd = request.getRequestDispatcher("/views/infoDepartment.jsp");
 		rd.forward(request, response);
-	
 	}
 
 	/**
