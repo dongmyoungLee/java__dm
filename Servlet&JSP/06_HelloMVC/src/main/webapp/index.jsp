@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/views/common/header.jsp" %>
 <section id="content">
-	<h2 align="center" style="margin-top: 200px">안녕하세요</h2>
+	<h2 align="center" style="margin-top: 200px">안녕하세요 MVC ?</h2>
 </section>
 <%@ include file="/views/common/footer.jsp" %>

@@ -13,7 +13,7 @@
 		<header>
 			<h1>HelloMVC</h1>
 			<div class="login-container">
-				<form id="loginFrm" action="" method="post">
+				<form id="loginFrm" action="<%=request.getContextPath()%>/login.do" method="post">
 					<table>
 	                  <tr>
 	                     <td>   
