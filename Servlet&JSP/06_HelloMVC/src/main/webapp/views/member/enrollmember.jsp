@@ -74,7 +74,7 @@
          </tr>
       </table>
       <input type="submit" value="가입" >
-      <input type="reset" value="취소">
+      <input type="reset" value="취소" onClick="location.replace('<%=request.getContextPath()%>')">
         </form>
     </section>
 <%@ include file="/views/common/footer.jsp" %>

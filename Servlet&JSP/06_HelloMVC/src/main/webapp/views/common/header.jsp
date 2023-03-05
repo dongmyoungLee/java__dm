@@ -54,7 +54,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="button" value="내정보확인">
+								<input type="button" value="내정보확인" onClick="location.replace('<%=request.getContextPath()%>/memberView.do?userId=<%=loginMember.getUserid()%>')">
 							</td>
 							<td>
 								<input type="button" value="로그아웃" onClick="location.replace('<%=request.getContextPath()%>/logout.do')">
