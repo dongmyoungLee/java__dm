@@ -79,6 +79,40 @@
 			<li><%=n %></li>
 		<%} %>
 	</ul>
+	
+	<h2>jsp 내장객체를 이용해서 데이터 처리하기</h2>
+	<p>
+		jsp 내장객체는 서블릿에서 사용한 데이터 저장객체들을 의미함.
+		HttpServletRequest : request
+		HttpSession : session
+		ServletContext : application
+		지역변수로 선언이 되어 있기 때문에 별도 생성없이 변수명으로 사용이 가능함.
+	</p>
+	
+	<%
+		out.print(request);
+		out.print(session);
+		out.print(application);
+		out.print(response);
+	%>
+	
+	<h2>기본 root 경로 : <%=request.getContextPath() %></h2>
+	<h2>헤더정보 : <%=request.getHeader("Accept") %></h2>
+	<h2><a href="<%=request.getContextPath()%>/searchStudent.do">학생정보 가져오기</a></h2>
+	
+	<h3>지시자 태그 이용하기</h3>
+	<h4>include 태그 이용해서 다른 페이지 불러오기</h4>
+	<p>
+		include 태그는 공용으로 사용하는 페이지를 불러와서 현페이지 포함시켜줌.
+		header, footer, aside 를 넣을때 유용하게 사용한다.
+	</p>
+	<h3><a href="views/main.jsp">메인화면</a></h3>
+	
+	<h3>에러페이지 등록하기</h3>
+	<h2><a href="<%=request.getContextPath()%>/errorTest.do">에러테스트</a></h2>
+	
+	<h3>부서정보 가져오기</h3>
+	<h2><a href="<%=request.getContextPath()%>/department.do">부서정보</a></h2>
 </body>
 </html>
 

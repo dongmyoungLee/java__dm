@@ -9,4 +9,15 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <!-- Error Page 등록
+  		
+  		1. errorcode 를 가지고 에러페이지 연결하기 -> 404, 405, 500 코드를 기준으로 에러페이지 연결
+  		2. exception type 을 가지고 에러페이지 연결 -> NullPointerException 등등..
+  		
+   -->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/views/error/500error.jsp</location>
+  </error-page>
 </web-app>
