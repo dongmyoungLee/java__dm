@@ -2,6 +2,17 @@ package com.member.vo;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Member {
 	private String userid;
 	private String password;
@@ -13,6 +24,5 @@ public class Member {
 	private String address;
 	private String hobby;
 	private Date enrollDate;
-	
 	
 }

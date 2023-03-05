@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.member.vo.Member" %>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,33 +17,51 @@
 		<header>
 			<h1>HelloMVC</h1>
 			<div class="login-container">
-				<form id="loginFrm" action="<%=request.getContextPath()%>/login.do" method="post">
-					<table>
-	                  <tr>
-	                     <td>   
-	                        <input type="text" name="userId" id="userId"
-	                        placeholder="아이디" >
-	                     </td>
-	                  </tr>
-	                  <tr>
-	                     <td>
-	                        <input type="password" name="password" id="password"
-	                        placeholder="패스워드">
-	                     </td>
-	                     <td>
-	                        <input type="submit" value="로그인">
-	                     </td>
-	                  </tr>
-	                  <tr>
-	                     <td>
-	                        <input type="checkbox" name="saveId" id="saveId">
-	                        <label for="saveId">아이디저장</label>
-	                        <input type="button" value="회원가입"
-	                        onclick=>
-	                     </td>
-	                  </tr>
-	               </table>
-				</form>
+				<%if(loginMember == null) { %>
+					<form id="loginFrm" action="<%=request.getContextPath()%>/login.do" method="post">
+						<table>
+		                  <tr>
+		                     <td>   
+		                        <input type="text" name="userId" id="userId"
+		                        placeholder="아이디" >
+		                     </td>
+		                  </tr>
+		                  <tr>
+		                     <td>
+		                        <input type="password" name="password" id="password"
+		                        placeholder="패스워드">
+		                     </td>
+		                     <td>
+		                        <input type="submit" value="로그인">
+		                     </td>
+		                  </tr>
+		                  <tr>
+		                     <td>
+		                        <input type="checkbox" name="saveId" id="saveId">
+		                        <label for="saveId">아이디저장</label>
+		                        <input type="button" value="회원가입"
+		                        onClick="location.replace('<%=request.getContextPath()%>/member/enrollMember.do')">
+		                     </td>
+		                  </tr>
+		               </table>
+					</form>
+				<%} else {%>
+					<table id="logged-in">
+						<tr>
+							<td colspan="2">
+								<%=loginMember.getUserName()%>님, 어서오세요!
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" value="내정보확인">
+							</td>
+							<td>
+								<input type="button" value="로그아웃" onClick="location.replace('<%=request.getContextPath()%>/logout.do')">
+							</td>
+						</tr>
+					</table>
+				<%} %>
 			</div>
 			<nav>
 				<ul class="main-nav">
