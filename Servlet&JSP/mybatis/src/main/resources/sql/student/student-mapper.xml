@@ -2,6 +2,35 @@
 <!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="student">
 	<insert id="inerstStudent">
-		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, '유병승', '01012341234','paajg@naver.com', '경기도시흥시', DEFAULT)
+		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, '갓갓갓갓성', '01012341234','darkCp', '삼각지', DEFAULT)
 	</insert>
+	
+	<!-- 
+		인자를 전달받는 sql 태그는 parameterType 속성을 사용한다.
+		인자는 #{} 로 표시한다
+	-->
+	<insert id="insertStudentName" parameterType="string">
+		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, #{name}, '01012341234','darkCp', '삼각지', DEFAULT)
+	</insert>
+	
+	<!-- 
+		parameterType 으로 생성한 클래스가 전달될때는
+		패키지명부터 클래스명 까지 작성해줘야한다..
+	 -->
+	<insert id="insertStudentAll" parameterType="com.mybatis.model.vo.Student">
+		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, #{name}, #{phone}, #{email}, #{address}, DEFAULT)
+	</insert>
+	
+	<update id="updateStudent" parameterType="com.mybatis.model.vo.Student">
+		UPDATE STUDENT
+     	SET STUDENT_NAME = #{name},
+	        STUDENT_TEL = #{phone},
+	        STUDENT_EMAIL = #{email}
+       	WHERE STUDENT_NO = #{studentNo} 
+	</update>
+	
+	<delete id="deleteStudent" parameterType="_int">
+		DELETE FROM STUDENT WHERE STUDENT_NO = #{no}
+	</delete>
+	
 </mapper>

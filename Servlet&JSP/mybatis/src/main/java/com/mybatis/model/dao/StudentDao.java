@@ -2,6 +2,8 @@ package com.mybatis.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.mybatis.model.vo.Student;
+
 public class StudentDao {
 	
 	public int inserStudent(SqlSession session) {
@@ -16,5 +18,21 @@ public class StudentDao {
 		int result = session.insert("student.inerstStudent");
 		
 		return result;
+	}
+	
+	public int insertStudentName(SqlSession session, String name) {
+		return session.insert("student.insertStudentName", name);
+	}
+	
+	public int insertStudentName(SqlSession session, Student s) {
+		return session.insert("student.insertStudentAll", s);
+	}
+	
+	public int updateStudent(SqlSession session, Student s) {
+		return session.insert("student.updateStudent", s);
+	}
+	
+	public int deleteStudent(SqlSession session, int no) {
+		return session.insert("student.deleteStudent", no);
 	}
 }
