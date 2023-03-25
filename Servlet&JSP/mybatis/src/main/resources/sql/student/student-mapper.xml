@@ -21,6 +21,10 @@
 		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, #{name}, #{phone}, #{email}, #{address}, DEFAULT)
 	</insert>
 	
+	<insert id="insertStudentInfoMap" parameterType="map">
+		INSERT INTO STUDENT VALUES(SEQ_STUDENT.NEXTVAL, #{STUDENT_NAME}, #{STUDENT_TEL}, #{STUDENT_EMAIL}, #{STUDENT_ADDR}, DEFAULT)
+	</insert>
+	
 	<update id="updateStudent" parameterType="com.mybatis.model.vo.Student">
 		UPDATE STUDENT
      	SET STUDENT_NAME = #{name},
@@ -83,6 +87,12 @@
 	<select id ="selectStudentMapAll" parameterType="_int" resultType="map">
 		SELECT * FROM STUDENT
 	</select>
+	
+	<select id="selectStudentPage" resultMap="studentMap">
+		SELECT * FROM STUDENT ORDER BY REG_DATE DESC
+	</select>
+	
+	
 	
 </mapper>
 

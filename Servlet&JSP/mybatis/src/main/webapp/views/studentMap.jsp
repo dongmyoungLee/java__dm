@@ -35,7 +35,6 @@
 			</c:forEach>
 		</c:if>
 		
-		<%-- 주석 이걸로 작성 --%>
 		<%-- <c:if test="${student != null }">
 			<tr>
 				<td>${student["STUDENT_NO"] }</td>

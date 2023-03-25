@@ -28,27 +28,9 @@
 				</tr>
 			</c:forEach>
 		</c:if>
-		<%-- <tr>
-			<th>번호</th>
-			<th>이름</th>
-			<th>전화번호</th>
-			<th>이메일</th>
-			<th>주소</th>
-			<th>등록일</th>
-		</tr>
-		<c:if test="${student != null }">
-			<td>${student.studentNo }</td>
-			<td>${student.name }</td>
-			<td>${student.phone }</td>
-			<td>${student.email }</td>
-			<td>${student.address }</td>
-			<td>${student.reg_date }</td>
-		</c:if>
-		<c:if test="${student == null }">
-			<tr>
-				<td colspan="6">조회한 결과가 없습니다.</td>
-			</tr>
-		</c:if> --%>
 	</table>
+	<div id="pageBar">
+		${pageBar }
+	</div>
 </body>
 </html>

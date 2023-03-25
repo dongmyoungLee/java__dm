@@ -80,6 +80,29 @@
 	
 	
 	<h4><a href="${pageContext.request.contextPath}/student/selectStusentMapAll.do">전체학생조회 Map으로조회</a></h4>
+	
+	<h3>페이징처리 하기</h3>
+	<p>mybatis 에서 페이징처리.. selectList메소드에 페이징처리용 클래스를 생성해서 매개변수를 넣어주면 된다.</p>
+	<h4><a href="${pageContext.request.contextPath}/student/studentPage.do">페이징 처리하기</a></h4>
+	
+	<h3>Map을 이용해서 학생정보입력받아 저장하기</h3>
+	   <form action="${pageContext.request.contextPath }/student/insertStudentInfoMap.do"
+	   method="post">
+	      <input type="text" name="name"><br>
+	      <input type="text" name="phone"><br>
+	      <input type="text" name="email"><br>
+	      <input type="text" name="address"><br>
+	      <input type="submit" value="저장">
+	   </form>
+	   <h3>Map을 이용해서 학생정보 수정하기</h3>
+	   <form action=""
+	   method="post">
+	      <input type="text" name="studentNo" placeholder="수정할 학생번호"/>
+	      <input type="text" name="name" placeholder="이름"/>
+	      <input type="text" name="phone" placeholder="전화번호"/>
+	      <input type="text" name="email" placeholder="이메일"/>
+	      <input type="submit" value="학생정보수정">
+	   </form>
 </body>
 </html>
 

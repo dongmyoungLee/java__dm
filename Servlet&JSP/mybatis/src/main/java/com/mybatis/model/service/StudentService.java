@@ -159,6 +159,25 @@ public class StudentService {
 		
 		return result;
 	}
+	public List<Student> selectStudentPage(int cpage, int numberPage) {
+		SqlSession session = getSession();
+		
+		List<Student> result = dao.selectStudentPage(session, cpage, numberPage);
+		
+		session.close();
+		
+		return result;
+	}
+	
+	public int insertStudentInfoMap(Map<String, String> m) {
+		SqlSession session = getSession();
+		
+		int result = dao.selectStudentInfoMap(session, m);
+		
+		session.close();
+		
+		return result;
+	}
 	
 	
 }
