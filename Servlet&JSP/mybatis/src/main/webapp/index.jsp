@@ -73,8 +73,20 @@
 	<h4>
 		<a href="${pageContext.request.contextPath}/student/selectAll.do">전체학생조회</a>
 	</h4>
+	
+	<h4>vo 객체를 생성하지 않고 db데이터를 가져오기</h4>
+	<p>HashMap 클래스를 이용해서 저장관리할 수 있다.</p>
+	<h4><a href="${pageContext.request.contextPath}/student/selectStusentMap.do?no=61">61번학생조회 Map으로조회</a></h4>
+	
+	
+	<h4><a href="${pageContext.request.contextPath}/student/selectStusentMapAll.do">전체학생조회 Map으로조회</a></h4>
 </body>
 </html>
+
+
+
+
+
 
 
 

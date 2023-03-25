@@ -1,6 +1,7 @@
 package com.mybatis.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -63,11 +64,19 @@ public class StudentDao {
 		return session.selectOne("student.selectStudent", no);
 	}
 	
-	public Student selectStudentName(SqlSession session, String name) {
-		return session.selectOne("student.selectStudentName", name);
+	public List<Student> selectStudentName(SqlSession session, String name) {
+		return session.selectList("student.selectStudentName", name);
 	}
 	
 	public List<Student> selectStudentAll(SqlSession session) {
 		return session.selectList("student.selectStudentAll");
+	}
+	
+	public Map selectStudentMap(SqlSession session, int no) {
+		return session.selectOne("student.selectStudentMap", no);
+	}
+	
+	public List<Map> selectStudentMapAll(SqlSession session) {
+		return session.selectList("student.selectStudentMapAll");
 	}
 }

@@ -1,7 +1,7 @@
 package com.mybatis.controller;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mybatis.model.service.StudentService;
-import com.mybatis.model.vo.Student;
 
 /**
- * Servlet implementation class SelectStudentNameServelt
+ * Servlet implementation class SelectStudentMapServlet
  */
-@WebServlet("/student/selectStudentName.do")
-public class SelectStudentNameServelt extends HttpServlet {
+@WebServlet("/student/selectStusentMap.do")
+public class SelectStudentMapServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectStudentNameServelt() {
+    public SelectStudentMapServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +30,14 @@ public class SelectStudentNameServelt extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("name");
-	
-		List<Student> list = new StudentService().selectStudentName(name);
+		int no = Integer.parseInt(request.getParameter("no"));
 		
-		request.setAttribute("list", list);
-		request.getRequestDispatcher("/views/studentContent.jsp").forward(request, response);
+		Map s = new StudentService().selectStudentMap(no);
+
+		request.setAttribute("student", s);
+		request.getRequestDispatcher("/views/studentMap.jsp").forward(request, response);
+		
+		
 	}
 
 	/**

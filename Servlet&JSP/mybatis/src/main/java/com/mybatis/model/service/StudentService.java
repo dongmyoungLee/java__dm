@@ -3,6 +3,7 @@ package com.mybatis.model.service;
 import static com.mybatis.common.SqlSessionTemplate.getSession;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -119,14 +120,14 @@ public class StudentService {
 		return s;
 	}
 	
-	public Student selectStudentName(String name) {
+	public List<Student> selectStudentName(String name) {
 		SqlSession session = getSession();
 		
-		Student s = dao.selectStudentName(session, name);
+		List<Student> list = dao.selectStudentName(session, name);
 		
 		session.close();
 		
-		return s;
+		return list;
 	}
 	
 	public List<Student> selectStudentAll() {
@@ -137,6 +138,26 @@ public class StudentService {
 		session.close();
 		
 		return list;
+	}
+	
+	public Map selectStudentMap(int no) {
+		SqlSession session = getSession();
+		
+		Map result = dao.selectStudentMap(session, no);
+		
+		session.close();
+		
+		return result;
+	}
+	
+	public List<Map> selectStudentMapAll() {
+		SqlSession session = getSession();
+		
+		List<Map> result = dao.selectStudentMapAll(session);
+		
+		session.close();
+		
+		return result;
 	}
 	
 	

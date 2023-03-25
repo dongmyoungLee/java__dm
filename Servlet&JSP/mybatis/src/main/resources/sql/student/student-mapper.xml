@@ -68,11 +68,19 @@
 	   	WHERE STUDENT_NO=#{no}
 	</select>
 	
-	<select id="selectStudentName" parameterType="string" resultType="com.mybatis.model.vo.Student">
-		SELECT * FROM STUDENT WHERE STUDENT_NAME = #{name}
+	<select id="selectStudentName" parameterType="string" resultMap="studentMap">
+		SELECT * FROM STUDENT WHERE STUDENT_NAME LIKE '%'||#{name}||'%'
 	</select>
 	
 	<select id="selectStudentAll" resultMap="studentMap">
+		SELECT * FROM STUDENT
+	</select>
+	
+	<select id ="selectStudentMap" parameterType="_int" resultType="map">
+		SELECT * FROM STUDENT WHERE STUDENT_NO = #{no}
+	</select>
+	
+	<select id ="selectStudentMapAll" parameterType="_int" resultType="map">
 		SELECT * FROM STUDENT
 	</select>
 	
