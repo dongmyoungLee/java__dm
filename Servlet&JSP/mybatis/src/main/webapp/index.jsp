@@ -53,7 +53,26 @@
 	</form>
 	
 	<h2>DB에 저장된 데이터 조회하는 기능 구현하기</h2>
-	<p></p>
+	<p>select 문을 실행한 결과를 java에서 사용하는 vo객체에 저장</p>
+	<p>mybatis 에서는 resultSet 으로 가져온 데이터를 지정한 vo에 자동으로 저장해줌 -> mapping</p>
+	
+	<h3>학생 수 조회하기</h3>
+	<h4><a href="${pageContext.request.contextPath}/student/studentCount.do">학생수 조회하기</a></h4>
+	
+	<h4>
+		<a href="${pageContext.request.contextPath}/student/selectStudent.do?no=61">61 학생 조회</a>
+	</h4>
+	
+	<h4>이름으로 조회</h4>
+	<form action="${pageContext.request.contextPath }/student/selectStudentName.do" method="post">
+		<input type="text" name="name" placeholder="조회할 이름" >
+		<input type="submit" value="조회" >
+	</form>
+	
+	
+	<h4>
+		<a href="${pageContext.request.contextPath}/student/selectAll.do">전체학생조회</a>
+	</h4>
 </body>
 </html>
 

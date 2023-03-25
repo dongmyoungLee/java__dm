@@ -33,4 +33,49 @@
 		DELETE FROM STUDENT WHERE STUDENT_NO = #{no}
 	</delete>
 	
+	<!-- 
+	
+		SELECT 문은 SELECT 태그를 이용해서 설정을 한다.
+		id속성, parameterType 속성
+		select 문을 실행하면 반드시 결과가 있음.. 때문에 결과에 대한 설정인 resultType || resultMap 속성을 설정해줘야한다..
+		
+		vo 객체와 resultSet을 매핑해줄때 vo객체의 필드명과 resultSet에서 이용하는 column 명이 같으면 자동으로 설정해줌..
+		만약 필드명과 column 명이 다르면 매핑을 못시켜줌
+		
+		
+		resultType : vo 객체의 타입 || 기본타입 을 작성해주는것 -> 컬럼명과 필드명이 같을 때
+		
+		resultMap : vo 객체가 아닌 중간에 맵핑시켜주는 resultMap 태그에서 선언한 중간객체를 사용할때 작성
+		
+	 -->
+	<select id="selectStudentCount" resultType="_int">
+		SELECT COUNT(*) FROM STUDENT
+	</select>
+	
+	<resultMap id="studentMap" type="com.mybatis.model.vo.Student">
+		<!-- id 는 primary key... -->
+		<id column="student_no" property="studentNo" />
+		<result column="student_name" property="name" />
+		<result column="student_tel" property="phone" />
+		<result column="student_email" property="email" />
+		<result column="student_addr" property="address" />
+	</resultMap>
+	
+	<!-- 컬럼명과 핃드명이 같으면 조회가능 -->
+	<select id="selectStudent" parameterType="_int" resultMap="studentMap">
+		SELECT *
+	   	FROM STUDENT
+	   	WHERE STUDENT_NO=#{no}
+	</select>
+	
+	<select id="selectStudentName" parameterType="string" resultType="com.mybatis.model.vo.Student">
+		SELECT * FROM STUDENT WHERE STUDENT_NAME = #{name}
+	</select>
+	
+	<select id="selectStudentAll" resultMap="studentMap">
+		SELECT * FROM STUDENT
+	</select>
+	
 </mapper>
+
+
