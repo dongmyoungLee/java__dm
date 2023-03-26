@@ -22,4 +22,19 @@ public class SqlSessionTemplate {
 		
 		return session;
 	}
+	public static SqlSession getSessionWeb() {
+		SqlSession session = null;
+		
+		String file = "/mybatis-config.xml";
+		
+		try {
+			InputStream is = Resources.getResourceAsStream(file);
+			session = new SqlSessionFactoryBuilder().build(is, "web").openSession(false);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return session;
+	}
 }
