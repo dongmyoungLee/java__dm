@@ -44,6 +44,42 @@
 						</label>
 					</td>
 				</tr>
+				<tr>
+					<td>급여</td>
+					<td>
+						<input type="number" name="salary" step="500000" min="1200000">
+						<label>
+							<input type="radio" name="salFlag" value="ge">이상
+						</label>
+						<label>
+							<input type="radio" name="salFlag" value="le">이하
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>입사일</td>
+					<td>
+						<input type="date" name="hireDate">
+						<label>
+							<input type="radio" name="dateFlag" value="ge">이후
+						</label>
+						<label>
+							<input type="radio" name="dateFlag" value="le">이전
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>직책조회</td>
+					<td>
+						<label><input type="checkbox" name="jobCode" value="J1">대표</label>
+						<label><input type="checkbox" name="jobCode" value="J2">부사장</label>
+						<label><input type="checkbox" name="jobCode" value="J3">부장</label>
+						<label><input type="checkbox" name="jobCode" value="J4">차장</label>
+						<label><input type="checkbox" name="jobCode" value="J5">과장</label>
+						<label><input type="checkbox" name="jobCode" value="J6">대리</label>
+						<label><input type="checkbox" name="jobCode" value="J7">사원</label>
+					</td>
+				</tr>
 				<td colspan="2">
 					<input type="submit" value="검색">
 				</td>

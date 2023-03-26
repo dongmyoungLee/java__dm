@@ -42,6 +42,11 @@ public class SearchEmpServlet extends HttpServlet {
 		param.put("type", type);
 		param.put("keyword", keyword);
 		param.put("gender", gender);
+		param.put("salary", request.getParameter("salary"));
+		param.put("salFlag", request.getParameter("salFlag"));
+		param.put("hireDate", request.getParameter("hireDate"));
+		param.put("dateFlag", request.getParameter("dateFlag"));
+		param.put("jobCode", request.getParameterValues("jobCode"));
 		
 		request.setAttribute("list", new EmpService().searchEmp(param));
 		request.getRequestDispatcher("/views/empList.jsp").forward(request, response);

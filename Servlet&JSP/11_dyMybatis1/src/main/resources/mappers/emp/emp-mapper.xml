@@ -29,13 +29,59 @@
 			SELECT e.*, DECODE(SUBSTR(EMP_NO, 8, 1), '1', 'M', '2', 'F') AS GENDER 
 			FROM EMPLOYEE e 
 		)
-		WHERE
+		<where>		
+		<!-- <trim prefix="where" prefixOverrides="AND||OR"> -->
+			 
 			 <if test="keyword != null and keyword != ''"> 
-		        ${type} LIKE '%'||#{keyword}||'%'
+		        AND ${type} LIKE '%'||#{keyword}||'%'
 			 </if>
+			 
 			 <if test="gender != null and gender != ''">
 			 	AND GENDER=#{gender}
 			 </if>
-			   
+			
+		     <if test="salary != null and salary != ''">
+		     	
+		     	 <if test="salFlag eq 'ge'">
+		     		AND SALARY >= #{salary}
+		     	 </if>
+		     	
+		     	 <if test="salFlag eq 'le'">
+		     		AND SALARY <![CDATA[<=]]> #{salary}
+		     	 </if>
+	     	
+		     	<!-- <choose>
+		     		<when test="salFlag eq 'ge'">
+		     			AND SALARY >= #{salary}
+		     		</when>
+		     		<otherwise>
+		     			AND SALARY <![CDATA[<=]]> #{salary}
+		     		</otherwise>
+		     	</choose> -->
+		     </if>
+		     <if test="hireDate != null and hireDate != ''">
+		     	
+		     	<if test="dateFlag eq 'ge'">
+		     		AND HIRE_DATE >= #{hireDate}
+		     	</if>
+		     	
+		     	<if test="dateFlag eq 'le'">
+		     		AND HIRE_DATE <![CDATA[<=]]> #{hireDate}
+		     	</if>	     	
+		     </if>
+		     
+		     <if test="jobCode != null and jobCode != ''">
+		     	AND JOB_CODE IN
+		     	<foreach collection="jobCode" item="j" open="(" close=")" separator=",">
+		     	#{j}
+		     	</foreach>
+		     </if>
+		     
+		     
+		     
+		     
+		 <!-- </trim> -->
+		 </where>
+				   
 	</select>
 </mapper>
