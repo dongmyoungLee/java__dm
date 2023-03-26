@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatisdy.model.dao.EmpDao;
 import com.mybatisdy.model.vo.Employee;
+import com.mybatisdy.model.vo.Job;
 
 public class EmpService {
 	
@@ -32,5 +33,15 @@ public class EmpService {
 		session.close();
 		
 		return list;
+	}
+	
+	public Job searchJob(String jobCode) {
+		SqlSession session = getSession();
+		
+		Job j = dao.searchJob(session, jobCode);
+		
+		session.close();
+		
+		return j;
 	}
 }

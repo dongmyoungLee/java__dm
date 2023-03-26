@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="job">
+	
+	<resultMap id="jobMap" type="job">
+		<id column="job_code" property="jobCode" />
+		<result column="job_name" property="jobName" />
+		<collection property="employees" ofType="emp">
+			<id column="emp_id" property="empId" />
+			<result column="emp_name" property="empName" />
+			<result column="emp_no" property="empNo" />
+			<result column="email" property="email" />
+			<result column="phone" property="phone" />
+			<result column="SAL_LEVEL" property="salLevel" />
+			<result column="SALARY" property="salary" />
+			<result column="BONUS" property="bonus" />
+			<result column="MANAGER_ID" property="managerId" />
+			<result column="HIRE_DATE" property="hireDate" />
+			<result column="ENT_DATE" property="empDate" />
+		</collection>
+	</resultMap>
+ 	<select id="searchJob" parameterType="string" resultMap="jobMap">
+ 		SELECT *
+ 		FROM JOB JOIN EMPLOYEE USING(JOB_CODE)
+ 		WHERE JOB_CODE = #{jobCode} 
+ 	</select>
+</mapper>

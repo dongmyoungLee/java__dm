@@ -11,5 +11,7 @@
 </head>
 <body>
 	<h3><a href="${path}/emp/selectEmpAll.do">전체사원 조회하기</a></h3>
+	
+	<h3><a href="${path}/job/selectjob.do?jobcode=J6">클래스 연관관계 맵핑하기 -job-</a></h3>
 </body>
 </html>

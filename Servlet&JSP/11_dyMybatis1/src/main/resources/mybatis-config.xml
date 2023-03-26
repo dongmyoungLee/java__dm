@@ -13,6 +13,8 @@
 	<!-- mapper에서 type을 설정할 때 별칭설정 -->
 	<typeAliases>
 		<typeAlias type="com.mybatisdy.model.vo.Employee" alias="emp" />
+		<typeAlias type="com.mybatisdy.model.vo.Department" alias="dept" />
+		<typeAlias type="com.mybatisdy.model.vo.Job" alias="job" />
 	</typeAliases>
 	
 
@@ -30,5 +32,6 @@
 	
 	<mappers>
 		<mapper resource="mappers/emp/emp-mapper.xml" />
+		<mapper resource="mappers/job/job-mapper.xml" />
 	</mappers>
 </configuration>

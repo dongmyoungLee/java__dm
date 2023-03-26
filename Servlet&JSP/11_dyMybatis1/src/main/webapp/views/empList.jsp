@@ -18,14 +18,14 @@
 			<tr>
 				<td>
 					<select name="type">
-						<option value="emp_id">사원번호</option>
-						<option value="emp_name">사원명</option>
-						<option value="email">이메일</option>
-						<option value="phone">전화번호</option>
+						<option value="emp_id" ${param.type eq "emp_id" ? "selected" : ""}>사원번호</option>
+						<option value="emp_name" ${param.type eq "emp_name" ? "selected" : ""}>사원명</option>
+						<option value="email" ${param.type eq "email" ? "selected" : ""}>이메일</option>
+						<option value="phone" ${param.type eq "phone" ? "selected" : ""}>전화번호</option>
 					</select>
 				</td>
 				<td>
-					<input type="text" name="keyword">
+					<input type="text" name="keyword" value="${param.keyword.length() > 0 ? param.keyword : ''}">
 				</td>
 			</tr>
 			<tr>
@@ -35,11 +35,11 @@
 					</td>
 					<td>
 						<label>
-							<input type="radio" name="gender" value="M" >
+							<input type="radio" name="gender" value="M" ${param.gender eq "M" ? "checked" : " "}>
 							남
 						</label>
 						<label>
-							<input type="radio" name="gender" value="F" >
+							<input type="radio" name="gender" value="F" ${param.gender eq "F" ? "checked" : " "}>
 							여
 						</label>
 					</td>
@@ -102,7 +102,7 @@
 					<td>이메일</td>
 					<td>이메일</td>
 					<td>전화번호</td>
-					<td>부서코드</td>
+					<td>부서</td>
 					<td>직책코드</td>
 					<td>급여수준</td>
 					<td>급여</td>
@@ -121,7 +121,13 @@
 						<td>${emp.email }</td>
 						<td>${emp.empName }</td>
 						<td>${emp.phone }</td>
-						<td>${emp.deptCode eq null ? "인턴" :  emp.deptCode}</td>
+						<td>
+							<ul>
+								<li>부서명 : ${emp.dept.deptTitle}</li>
+								<li>부서코드 : ${emp.dept.deptId}</li>
+								<li>지역코드 : ${emp.dept.locationId}</li>
+							</ul>
+						</td>
 						<td>${emp.jobCode }</td>
 						<td>${emp.salLevel }</td>
 						<td>

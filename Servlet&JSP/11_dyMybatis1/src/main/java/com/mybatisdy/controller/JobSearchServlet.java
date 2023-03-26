@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mybatisdy.model.service.EmpService;
-import com.mybatisdy.model.vo.Employee;
+import com.mybatisdy.model.vo.Job;
 
 /**
- * Servlet implementation class SelectEmpAllServelt
+ * Servlet implementation class JobSearchServlet
  */
-@WebServlet("/emp/selectEmpAll.do")
-public class SelectEmpAllServelt extends HttpServlet {
+@WebServlet("/job/selectjob.do")
+public class JobSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectEmpAllServelt() {
+    public JobSearchServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +31,13 @@ public class SelectEmpAllServelt extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Employee> result = new EmpService().selectEmpAll();
 		
-		System.out.println(result);
+		String jobCode = request.getParameter("jobcode");
 		
-		request.setAttribute("list", result);
-		request.getRequestDispatcher("/views/empList.jsp").forward(request, response);
+		Job job = new EmpService().searchJob(jobCode);
+		
+		request.setAttribute("job", job);
+		request.getRequestDispatcher("/views/jobView.jsp").forward(request, response);
 	}
 
 	/**
