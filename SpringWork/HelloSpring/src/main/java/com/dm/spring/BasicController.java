@@ -10,4 +10,19 @@ public class BasicController {
 	public String mainView() {
 		return "index";
 	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

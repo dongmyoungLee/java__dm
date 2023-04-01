@@ -47,7 +47,7 @@
 						</li>
 
 						<li class="navbar-item">
-							<a class="nav-link" href="">Demo</a>
+							<a class="nav-link" href="${path}/demo/demo.do">Demo</a>
 						</li>
 					</ul>
 					
