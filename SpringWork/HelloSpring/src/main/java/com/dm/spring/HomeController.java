@@ -37,7 +37,6 @@ public class HomeController {
 	@Qualifier(value="p2")
 	private Person person;
 	
-	
 	// 생성자를 이용해서 필드에 주입할 수 있음
 	/*
 	public HomeController(@Qualifier("p3") Person person) {
@@ -63,7 +62,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/test2", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
