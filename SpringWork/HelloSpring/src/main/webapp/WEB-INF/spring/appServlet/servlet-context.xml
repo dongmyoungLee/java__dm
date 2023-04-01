@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.dm.spring" />
+	
+	<!-- 스프링에서 활용할 POJO 클래스는 bean으로 등록해서 사용한다.. -->
+	
+	<!-- p 라는 이름으로 Person을 기본생성 -->
+	<beans:bean id="p" class="com.dm.spring.model.vo.Person" />
+	
+	<!-- 
+		생성과 동시에 특정한 값을 설정하기 
+		1. 매개변수 있는 생성자 이용
+		2. setter를 이용
+	-->
+	
+	<!-- 매개변수 있는 생성자 이용하기 -->
+	<beans:bean id="p1" class="com.dm.spring.model.vo.Person">
+		<beans:constructor-arg index="0" value="이동명" />
+		<beans:constructor-arg index="1" value="19" />
+		<beans:constructor-arg index="2" value="180.5" />
+		<beans:constructor-arg index="3" ref="phone" />
+	</beans:bean>
+	
+	<!-- setter 를 이용해서 값을 대입 -->	
+	<beans:bean id="p2" class="com.dm.spring.model.vo.Person">
+		<beans:property name="name" value="박세현" />
+		<beans:property name="age" value="29" />
+	</beans:bean>
+	
+	<!-- spring bean을 생성하거나 소멸시킬때 실행할 메소드 지정하기	 -->
+	<beans:bean id="p3" class="com.dm.spring.model.vo.Person" init-method="infoPerson" destroy-method="infoPerson">
+		<beans:property name="name" value="오윤재" />
+		<beans:property name="age" value="23" />
+	</beans:bean>
+	
+	<!-- 등록된 bean에 다른 bean을 참조하기 -->
+	<beans:bean id="p4" class="com.dm.spring.model.vo.Person" init-method="infoPerson">
+		<beans:property name="name" value="이동명" />
+		<beans:property name="phone" ref="phone" />
+	</beans:bean>
+	<beans:bean id="phone" class="com.dm.spring.model.vo.Phone">
+		<beans:property name="model" value="갤럭시" />
+		<beans:property name="number" value="010123456789" />
+	</beans:bean>
+	
+</beans:beans>
+
+
+

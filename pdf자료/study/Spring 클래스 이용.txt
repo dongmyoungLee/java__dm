@@ -1,0 +1,13 @@
+Spring 에서 생성한 클래스를 이용하려면
+그 클래스를 spring bean 으로 등록해서 사용한다.
+
+spring bean 으로 등록하는 방법 2가지
+
+1. xml 방식 : beanConfiguration.xml 을 이용해서 등록하는 방법
+
+예) <beans: bean id="" class=""></beans>
+
+
+2. annotaion 방식 : 스프링이 제공하는 어노테이션을 이용해서 등록하는 방법
+   @Component, @Controller , @Service, @Repository(dao)
+   @Configuration을 사용한 클래스 내부에서 @Bean 어노테이션 사용하기
