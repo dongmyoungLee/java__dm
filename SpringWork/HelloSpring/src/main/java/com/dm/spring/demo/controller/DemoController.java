@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -17,9 +18,17 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dm.spring.demo.model.vo.Demo;
+import com.dm.spring.model.service.DemoService;
 
 @Controller
 public class DemoController {
+	
+	private DemoService service;
+	
+	@Autowired
+	public DemoController(DemoService service) {
+		this.service = service;
+	}
 	
 	// 클라이언트가 요청한 서비스를 실행해주는 기능
 	// 클라이언트가 요청한 서비스 주소에 맞는 메소드를 mapping
@@ -185,6 +194,18 @@ public class DemoController {
 		mv.setViewName("demo/demoInfo");
 	
 		return mv;
+	}
+	
+	
+	
+	@RequestMapping("demo/insertDemo.do")
+	public String insertDemo(Demo demo, Model m) {
+		
+		int result = service.insertDemo(demo);
+		
+		System.out.println(result);
+		
+		return "";
 	}
 	
 	
