@@ -1,6 +1,7 @@
 package com.dm.spring.demo.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -213,8 +214,15 @@ public class DemoController {
 		return "redirect:/demo/demo.do";
 	}
 	
-	
-	
+	@RequestMapping("demo/demoList.do")
+	public String demoList(Model m) {
+		
+		List<Demo> result = service.selectDemoAll();
+		
+		m.addAttribute("demos", result);
+		
+		return "demo/demoList";
+	}
 	
 }
 

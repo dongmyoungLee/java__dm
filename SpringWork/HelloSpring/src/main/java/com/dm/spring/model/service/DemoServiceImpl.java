@@ -30,7 +30,7 @@ public class DemoServiceImpl implements DemoService {
 	@Override
 	public List<Demo> selectDemoAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectDemoAll(sqlSession);
 	}
 
 }

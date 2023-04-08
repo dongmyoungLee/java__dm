@@ -54,9 +54,22 @@
 							<a class="nav-link" href="${path}/demo/demoList.do">DemoList</a>
 						</li>
 					</ul>
-					
+					<c:if test="${loginMember == null}">
 						<button class="btn btn-outline-success my-2 my-sm-0"
-						data-toggle="modal" data-target="#loginModal">로그인</button>				
+						data-toggle="modal" data-target="#loginModal">로그인</button>
+						&nbsp;
+						<button class="btn btn-outline-success my-2 my-sm-0"
+						 data-target="#loginModal" onClick="location.assign('${path}/member/enrollMember.do')">회원가입</button>
+								
+					</c:if>
+					<c:if test="${loginMember != null}">
+						<span>
+							<a href="${path}">
+								<c:out value="${loginMember.userName}"/>  
+							</a>님 환영합니다.
+							<button class="btn btn-outline-success my-2 my-sm-0" onclick="location.assign('${path}/member/logout.do')">로그아웃</button>
+						</span>
+					</c:if>
 				</div>
 			</nav>	
 		</header>
@@ -64,6 +77,7 @@
 		aria-labelledby="loginModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
+				
 					<div class="modal-header">
 						<h5 class="modal-title" id="loginModalLabel">로그인</h5>
 						<button type="button" class="close" 
@@ -71,15 +85,22 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
+				
 					
-					<div class="modal-body">
-																	
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-outline-success">로그인</button>
-						<button type="button" class="btn btn-outline-success"
-						data-dismiss="modal">취소</button>
-					</div>
+					<form action="${path}/member/login" method="post">
+						<div class="modal-body">
+						 <input type="text" name="userId" class="form-control" placeholder="아이디입력" required><br/>
+	                     <input type="password" name="password" class="form-control" placeholder="패스워드입력" required>					
+						</div>
+					
+					
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-success">로그인</button>
+							<button type="button" class="btn btn-outline-success"
+							data-dismiss="modal">취소</button>
+						</div>
+					
+					</form>
 					
 				</div>
 			</div>

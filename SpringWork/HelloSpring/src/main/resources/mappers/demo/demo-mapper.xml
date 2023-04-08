@@ -12,4 +12,10 @@
 		#{devLang, typeHandler=strArr}
 		)
 	</insert>
+	<resultMap type="demo" id="demoMap">
+		<result property="devLang" column="devLang" typeHandler="strArr" />
+	</resultMap>
+	<select id="selectAllDemo" resultMap="demoMap">
+		SELECT * FROM DEV
+	</select>
 </mapper>
