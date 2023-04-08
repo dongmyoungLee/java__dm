@@ -111,6 +111,13 @@
 	    	</button>
 	    </div>
    	  </div>
+   	  <div class="form-group row">
+	    <div class="col-sm-12">
+	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo6.do')">
+	    		추가 데이터 확인하기(cookie,session,header)
+	    	</button>
+	    </div>
+   	  </div>
    </div>
 </section>
 

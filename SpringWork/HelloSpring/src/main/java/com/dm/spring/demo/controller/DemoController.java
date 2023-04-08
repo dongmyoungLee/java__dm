@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.dm.spring.demo.model.vo.Demo;
 
@@ -151,6 +154,25 @@ public class DemoController {
 		System.out.println(param);
 		return "demo/demoInfo";
 	}
+	
+	// 추가적인 데이터 받아오기
+	// session 값, header, cookie 정보를 한번에 가져오기
+	@RequestMapping("/demo/demo6.do")
+	public String extraData(
+			@CookieValue(value="testCookie", required=false) String cookieVal,
+			@SessionAttribute(value="sessionId") String sessionVal,
+			@RequestHeader(value="User-agent") String userAgent,
+			@RequestHeader(value="Referer") String referer
+			) {
+		
+		System.out.println(cookieVal);
+		System.out.println(sessionVal);
+		System.out.println(userAgent);
+		System.out.println(referer);
+		
+		return "demo/demoInfo";
+	}
+	
 	
 	
 	
