@@ -9,4 +9,20 @@
 	<select id="selectById" parameterType="string" resultMap="memberMap">
 		SELECT * FROM MEMBER WHERE USERID=#{userId}
 	</select>
+
+	
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO MEMBER VALUES(
+			#{userId},
+			#{password},
+			#{userName},
+			#{gender},
+			#{age},
+			#{email},
+			#{phone},
+			#{address},
+			#{hobby, typeHandler=strArr},
+			SYSDATE
+		)
+	</insert>
 </mapper>

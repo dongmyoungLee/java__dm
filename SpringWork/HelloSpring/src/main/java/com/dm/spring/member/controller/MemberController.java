@@ -63,6 +63,23 @@ public class MemberController {
 		return "member/enrollMember";
 	}
 	
+	@RequestMapping("/enrollMemberEnd.do")
+	public String enrollMemberEnd(Member m, Model model) {
+		
+		int result = service.insertMember(m);
+		
+		if (result > 0) {
+			model.addAttribute("msg", "회원가입이 완료 되었습니다.");
+			model.addAttribute("loc", "/");
+		
+		} else {
+			model.addAttribute("msg", "회원가입 실패");
+			model.addAttribute("loc", "/member/memberEnroll.do");
+		}
+		
+		return "common/msg";
+	}
+	
 }
 
 

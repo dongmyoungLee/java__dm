@@ -13,7 +13,7 @@
 
 <section id="content">
 	<div id="enroll-container">
-	  <form name="memberEnrollFrm"  >
+	  <form action="${path}/member/enrollMemberEnd.do" method="post" name="memberEnrollFrm"  >
 	     <input type="text" class="form-control" placeholder="아이디 (4글자이상)" name="userId" id="userId_" required>
 	     <input type="password" class="form-control" placeholder="비밀번호" name="password" id="password_" required>
 	     <input type="password" class="form-control" placeholder="비밀번호확인" id="password2" required>

@@ -9,3 +9,10 @@ spring에서 DB접속하기
 2. 클래스를 bean 으로 등록한다. -> XML 방식
 
 3. config.xml, mapper.xml 등록한다.
+
+spring 프로젝트로 보안관련 내용을 처리하는 것을 만듬.
+보안 : 인증(+ 비밀번호), 권한 -> spring security
+비밀번호를 암호화하는 기능도 제공..!
+
+spring security 모듈 의존성 등록
+core, web, config
