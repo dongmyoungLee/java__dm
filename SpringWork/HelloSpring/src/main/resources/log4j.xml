@@ -3,16 +3,45 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
 	<!-- Appenders -->
+	<!-- 
+		로그를 출력하는 수단을 정의
+		코드로 작성되어 있는 로그 출력 구문을 어디로 어떻게 출력할지 설정..
+		console 창에 출력, File 로 출력할 수 있음
+		log4j 가 출력하는 클래스를 제공한다.
+	 -->
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
+		
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p : [%l] - %m%n" />
 		</layout>
+	
 	</appender>
 	
+	<!-- 
+		파일 appender 이용해서 파일로 로그 저장하기
+		DailyRollingFileAppender 클래스	
+	 -->
+	 <appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+	 	<param name="file" value="d:/logs/spring-log.log" />
+	 	<param name="append" value="true" />
+	 	<param name="datePattern" value="yyyy-MM-dd" />
+	 	
+	 	<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p : [%l] - %m%n" />
+		</layout>
+	 </appender>
+	
+	
 	<!-- Application Loggers -->
+	<!-- 
+		코드로 작성된 로그 출력 구분을 컨트롤하는 태그
+		로그는 level, 패키지 범위에 따라 출력하게 됨
+		level : debug < info < warn < error < fatal
+	 -->
 	<logger name="com.dm.spring">
 		<level value="info" />
+		<appender-ref ref="fileAppender" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -36,6 +65,7 @@
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
+	
 	</root>
 	
 </log4j:configuration>
