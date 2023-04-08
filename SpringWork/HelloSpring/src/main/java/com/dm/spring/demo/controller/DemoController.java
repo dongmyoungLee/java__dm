@@ -1,6 +1,7 @@
 package com.dm.spring.demo.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -131,6 +132,8 @@ public class DemoController {
 	}
 	
 	//Command 객체를 이용해서 파라미터 직접받기
+	//vo객체에 필드로 다른 클래스가 있는 경우 주의해야 한다.
+	//날짜는 java.sql.Date를 이용하자..
 	@RequestMapping("/demo/demo4.do")
 	public String demo4(Demo demo, Model m) {
 		System.out.println(demo);
@@ -139,6 +142,16 @@ public class DemoController {
 		
 		return "demo/demoInfo";
 	}
+	
+	// Map 방식
+	@RequestMapping("/demo/demo5.do")
+	public String mapMappingTest(@RequestParam Map param, String[] devLang, Model m) {		
+		param.put("devLang", devLang);
+		m.addAttribute("demo", param);
+		System.out.println(param);
+		return "demo/demoInfo";
+	}
+	
 	
 	
 }

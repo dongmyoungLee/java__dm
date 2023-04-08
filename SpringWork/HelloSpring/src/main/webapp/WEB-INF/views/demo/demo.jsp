@@ -104,6 +104,13 @@
 	    	</button>
 	    </div>
    	  </div>
+   	  <div class="form-group row">
+	    <div class="col-sm-12">
+	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo5.do')">
+	    		Map 이용하기
+	    	</button>
+	    </div>
+   	  </div>
    </div>
 </section>
 
