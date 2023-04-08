@@ -1,6 +1,7 @@
 package com.dm.spring.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,12 @@ import com.dm.spring.member.model.vo.Member;
 public class MemberController {
 	
 	private MemberService service;
+	private BCryptPasswordEncoder passwordEncoder;
+	
+	@Autowired
+	public void setPasswordEncoder(BCryptPasswordEncoder encoder) {
+		this.passwordEncoder = encoder;
+	}
 	
 	@Autowired
 	public void setService(MemberService service) {
@@ -27,7 +34,7 @@ public class MemberController {
 		
 		Member m = service.selectMemberById(userId);
 
-		if (m != null && m.getPassword().equals(password)) {
+		if (m != null && passwordEncoder.matches(password, m.getPassword())) {
 			// 로그인 성공
 			//session.setAttribute("loginMember", m);
 			
@@ -65,6 +72,12 @@ public class MemberController {
 	
 	@RequestMapping("/enrollMemberEnd.do")
 	public String enrollMemberEnd(Member m, Model model) {
+		// 매개 변수로 넘어온 password 값을 암호화처리하자..
+		String password = m.getPassword();
+		String encPass = passwordEncoder.encode(password);
+		
+		m.setPassword(encPass);
+		
 		
 		int result = service.insertMember(m);
 		
