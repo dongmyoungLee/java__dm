@@ -205,7 +205,12 @@ public class DemoController {
 		
 		System.out.println(result);
 		
-		return "";
+		// demo 화면으로 전환하기 ->
+		// 기본적으로 String으로 반환하면 RequestDaspatcher.forward 방식..
+		// spring에서 redirect 처리 하기..
+		// viewName 에 redirect: 주소작성(맵핑주소) 하면 redirect 처리가 됨.
+		
+		return "redirect:/demo/demo.do";
 	}
 	
 	

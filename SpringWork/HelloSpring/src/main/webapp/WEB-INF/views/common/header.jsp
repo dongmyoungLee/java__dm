@@ -49,6 +49,10 @@
 						<li class="navbar-item">
 							<a class="nav-link" href="${path}/demo/demo.do">Demo</a>
 						</li>
+						
+						<li class="navbar-item">
+							<a class="nav-link" href="${path}/demo/demoList.do">DemoList</a>
+						</li>
 					</ul>
 					
 						<button class="btn btn-outline-success my-2 my-sm-0"

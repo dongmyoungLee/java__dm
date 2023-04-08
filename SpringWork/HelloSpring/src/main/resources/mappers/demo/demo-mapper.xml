@@ -8,7 +8,8 @@
 		#{devAge},
 		#{devEmail},
 		#{devGender},
-		<foreach item="i" collection="devLang" open="'" close="'" separator=",">${i}</foreach>
+		<!-- <foreach item="i" collection="devLang" open="'" close="'" separator=",">${i}</foreach> -->
+		#{devLang, typeHandler=strArr}
 		)
 	</insert>
 </mapper>

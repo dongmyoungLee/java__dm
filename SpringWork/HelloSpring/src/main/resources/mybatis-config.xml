@@ -6,5 +6,6 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.dm.spring.demo.model.vo.Demo" alias="demo" />
+		<typeAlias type="com.dm.spring.common.StringArrayTypeHandler" alias="strArr" />
 	</typeAliases>
 </configuration>
