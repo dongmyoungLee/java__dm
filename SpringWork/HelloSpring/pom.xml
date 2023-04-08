@@ -128,9 +128,37 @@
 		    <version>1.18.24</version>
 		    <scope>provided</scope>
 		</dependency>
+		
+		<!-- 
+			데이터베이스 연동을 위한 라이브러리 받아오기(mybatis)
+			1. spring-jdbc
+			2. mybatis
+			3. mybatis-spring
+			4. common-dbcp
+			
+		 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.11</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
 				
 				
-	
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

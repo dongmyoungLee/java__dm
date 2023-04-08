@@ -1,0 +1,11 @@
+spring에서 DB접속하기
+
+1. 필요한 라이브러리 등록 -> pom.xml 에 의존성 등록
+
+- ojdbc, mybatis
+- spring 에서 추가 라이브러리 등록
+- spring-jdbc, mybatis-spring, common-dbcp
+
+2. 클래스를 bean 으로 등록한다. -> XML 방식
+
+3. config.xml, mapper.xml 등록한다.

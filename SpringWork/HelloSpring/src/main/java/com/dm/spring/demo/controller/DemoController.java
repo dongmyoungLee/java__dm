@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dm.spring.demo.model.vo.Demo;
 
@@ -171,6 +172,19 @@ public class DemoController {
 		System.out.println(referer);
 		
 		return "demo/demoInfo";
+	}
+	
+	// ModelAndView 로 반환
+	// ModelAndView 는 model 정보와 view의 정보를 한번에 저장관리하는 객체
+	@RequestMapping("demo/demo7.do")
+	public ModelAndView modelAndView(ModelAndView mv, Demo demo) {
+		// data : mv.addObject("key", value);
+		// view : mv.setViewName("view 이름");
+		
+		mv.addObject("demo", demo);
+		mv.setViewName("demo/demoInfo");
+	
+		return mv;
 	}
 	
 	

@@ -118,6 +118,20 @@
 	    	</button>
 	    </div>
    	  </div>
+   	  <div class="form-group row">
+	    <div class="col-sm-12">
+	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo7.do')">
+	    		ModelAndView
+	    	</button>
+	    </div>
+   	  </div>
+   	  <div class="form-group row">
+	    <div class="col-sm-12">
+	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/insertDemo.do')">
+	    		INSERT DEMO
+	    	</button>
+	    </div>
+   	  </div>
    </div>
 </section>
 
