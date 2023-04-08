@@ -64,6 +64,14 @@
 		<beans:property name="number" value="010123456789" />
 	</beans:bean>
 	
+	<!-- 인터셉터 등록 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/member/*"></mapping>
+			<beans:bean class="com.dm.spring.common.interceptor.LoggerInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+	
 </beans:beans>
 
 

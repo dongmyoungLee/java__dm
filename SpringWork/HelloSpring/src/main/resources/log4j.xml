@@ -40,7 +40,7 @@
 		level : debug < info < warn < error < fatal
 	 -->
 	<logger name="com.dm.spring">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="fileAppender" />
 	</logger>
 	
