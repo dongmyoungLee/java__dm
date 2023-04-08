@@ -34,10 +34,10 @@
          </div>
          </div>
          <div class="form-group row">
-         <label for="devEmail" class="col-sm-2 col-form-label">이메일</label>
-         <div class="col-sm-10">
-            <input type="email" class="form-control" id="devEmail" name="devEmail">
-         </div>
+	         <label for="devEmail" class="col-sm-2 col-form-label">이메일</label>
+	         <div class="col-sm-10">
+	            <input type="email" class="form-control" id="devEmail" name="devEmail">
+	         </div>
          </div>
          <div class="form-group row">
             <label class="col-sm-2 col-form-label">성별</label>
@@ -56,19 +56,25 @@
             <label class="col-sm-2 col-form-label">개발언어</label>
             <div class="col-sm-10">
                <div class="form-check form-check-inline">
-               <input class="form-check-input" type="checkbox" name="devLang" id="devLang0" value="Java">
-               <label class="form-check-label" for="devLang0">Java</label>
-               </div>
-               <div class="form-check form-check-inline">
-               <input class="form-check-input" type="checkbox" name="devLang" id="devLang1" value="C">
-               <label class="form-check-label" for="devLang1">C</label>
-               </div>
-               <div class="form-check form-check-inline">
-               <input class="form-check-input" type="checkbox" name="devLang" id="devLang2" value="Javascript">
-               <label class="form-check-label" for="devLang2">Javascript</label>
+	               <input class="form-check-input" type="checkbox" name="devLang" id="devLang0" value="Java">
+	               <label class="form-check-label" for="devLang0">Java</label>
+	               </div>
+	               <div class="form-check form-check-inline">
+	               <input class="form-check-input" type="checkbox" name="devLang" id="devLang1" value="C">
+	               <label class="form-check-label" for="devLang1">C</label>
+	               </div>
+	               <div class="form-check form-check-inline">
+	               <input class="form-check-input" type="checkbox" name="devLang" id="devLang2" value="Javascript">
+	               <label class="form-check-label" for="devLang2">Javascript</label>
                </div>
             </div>
          </div>
+      <div class="form-group row">
+        <label for="birthday" class="col-sm-2 col-form-label">생년월일</label>
+        <div class="col-sm-10">
+           <input type="date" class="form-control" id="birthday" name="birthday">
+        </div>
+       </div>
       </form>
    	  <div class="form-group row">
 	    <div class="col-sm-12">
@@ -88,6 +94,13 @@
 	    <div class="col-sm-12">
 	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo3.do')">
 	    		@RequestParam 이용하기
+	    	</button>
+	    </div>
+   	  </div>
+   	  <div class="form-group row">
+	    <div class="col-sm-12">
+	    	<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo4.do')">
+	    		Comaand 이용하기
 	    	</button>
 	    </div>
    	  </div>

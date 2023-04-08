@@ -1,5 +1,7 @@
 package com.dm.spring.demo.model.vo;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,4 +17,5 @@ public class Demo {
 	private String devGender;
 	private String devEmail;
 	private String[] devLang;
+	private Date birthday;
 }

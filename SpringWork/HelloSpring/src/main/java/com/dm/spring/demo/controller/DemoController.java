@@ -130,6 +130,16 @@ public class DemoController {
 		return "demo/demoInfo";
 	}
 	
+	//Command 객체를 이용해서 파라미터 직접받기
+	@RequestMapping("/demo/demo4.do")
+	public String demo4(Demo demo, Model m) {
+		System.out.println(demo);
+		
+		m.addAttribute("demo", demo);
+		
+		return "demo/demoInfo";
+	}
+	
 	
 }
 
