@@ -40,10 +40,10 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul	class="navbar-nav mr-auto">	
 						<li class="nav-item active">
-							<a class="nav-link" href="${path }">HOME</a>
+							<a class="nav-link" href="${path}">HOME</a>
 						</li>
 						<li class="navbar-item">
-							<a class="nav-link" href="">게시판</a>
+							<a class="nav-link" href="${path}/board/boardList.do">게시판</a>
 						</li>
 
 						<li class="navbar-item">
