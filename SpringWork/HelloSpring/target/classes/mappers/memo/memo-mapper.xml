@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memo">
+	<select id="memoList" resultType="memo">
+		SELECT * FROM MEMO
+	</select>
+	
+	<insert id="insertMemo" parameterType="memo">
+		INSERT INTO MEMO VALUES(SEQ_MEMONO.NEXTVAL, #{memo}, #{password}, SYSDATE)
+	</insert>
+</mapper>

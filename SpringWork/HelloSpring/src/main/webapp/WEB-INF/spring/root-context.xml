@@ -24,8 +24,20 @@
 	 	<property name="password" value="SPRING"></property>
 	 </bean>
 	 
+	 
+	 <!-- SQL문 로그 출력 bean등록 -->
+	<bean id="proxyDataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource" >
+		<constructor-arg ref="dataSource" />
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE" />
+				<property name="sqlPrefix" value="[SQL]" />
+			</bean>
+		</property>
+	</bean>	
+	 
 	 <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	 	<property name="dataSource" ref="dataSource"></property>
+	 	<property name="dataSource" ref="proxyDataSource"></property>
 	 	<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 	 	<property name="mapperLocations" value="classpath:mappers/**/*.xml"></property>
 	 </bean>
@@ -33,5 +45,11 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sessionFactory"></constructor-arg>
 	</bean>
+	
+	
+	
 </beans>
+
+
+
 
