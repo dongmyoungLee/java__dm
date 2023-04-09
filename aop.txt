@@ -1,3 +1,37 @@
 AOP..
 
 Aspect Oriendtied Programing : 관점지향 프로그래밍
+
+관점지향 프로그래밍 -> 클래스의 책임에 집중, 부수적인 기능은 따로 관리를 하자..
+
+Spring에서 AOP를 설정하기..
+
+aspectjweaver 라이브러리 의존성추가..
+
+주요내용:
+
+Aspect : 횡단 관심사를 구현해놓은 클래스(공통으로 실행되는 로직을 선언)
+  - pointcut : 횡단 관심사를 실행할 대상을 지정 -> 메소드의 패턴으로 설정
+  - advisor : 언제 실행할지 설정 (전, 후, 전후, 에러발생시...)
+
+JoinPoint : 서비스 흐름상에서 aspect에 제정된 메소드가 실행되는 지점을 뜻하는 용어
+  - JoinPoint 클래스 : 시점 필요한 정보를 제공하는 클래스(실행될 메소드 명, 클래스 명, 인수들..)
+
+AOP 설정하기
+
+1. xml 방식으로 설정하기
+  1) springbeanconfiguration.xml 파일에 aop namespace 추가해줌
+  2) aopnamespace 가 제공하는 태그를 이용해서 aop를 설정
+     - <aop:config>	
+      - <aop:aspect class="" || ref="">
+            <aop:pointcut expression="대상메소드 패턴작성" id="">
+	<aop:before || after || around... method="실행될 메소드" pointcut-ref="">
+
+2. @annotation 으로 설정하기
+  1) pojo 클래스 생성
+  2) @Component 로 등록.
+  3) @Aspect를 이용해서 Aspect 클래스로 등록
+  4) 클래스내부에 @PointCut, @Before, @After.. 어노테이션을 이용 pointcut, advisor 를 등록
+  5) springbeancofiguration.xml 에 <aop:aspectj-autoproxy> 선언 해줘야 함.
+
+
