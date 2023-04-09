@@ -31,6 +31,24 @@
 			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p : [%l] - %m%n" />
 		</layout>
 	 </appender>
+		
+	<!-- SQL 로그 찍기 --> 
+	 
+	 <appender name="sqlLogger" class="org.apache.log4j.ConsoleAppender">
+	 	<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p : %m%n" />
+		</layout>
+	 </appender>
+	 
+	 <logger name="jdbc.sqlonly" additivity="false">
+	 	<level value="info" />
+	 	<appender-ref ref="sqlLogger" />
+	 </logger>
+	 
+	 <logger name="jdbc.resultsettable" additivity="false">
+	 	<level value="info" />
+	 	<appender-ref ref="sqlLogger" /> 
+	 </logger>
 	
 	
 	<!-- Application Loggers -->
