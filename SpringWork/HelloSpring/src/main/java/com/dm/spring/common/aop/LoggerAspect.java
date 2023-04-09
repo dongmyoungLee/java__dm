@@ -21,4 +21,11 @@ public class LoggerAspect {
 		log.debug(sig.getDeclaringType() + " : " + sig.getName());
 		log.debug("=============================");
 	}
+	
+	public void loggerAfter(JoinPoint jp) {
+		log.debug("===== after logger 실행 =====");
+		Signature sig = jp.getSignature();
+		log.debug(sig.getDeclaringType() + " : " + sig.getName());
+		log.debug("=============================");		
+	}
 }
