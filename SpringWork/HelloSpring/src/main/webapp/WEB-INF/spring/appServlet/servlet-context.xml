@@ -64,11 +64,20 @@
 		<beans:property name="number" value="010123456789" />
 	</beans:bean>
 	
+	<beans:bean id="logincheckInterceptor" class="com.dm.spring.common.interceptor.LoginCheckInterceptor" />
+	
 	<!-- 인터셉터 등록 -->
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/*"></mapping>
 			<beans:bean class="com.dm.spring.common.interceptor.LoggerInterceptor"></beans:bean>
+		</interceptor>
+		
+		<!-- 로그인체크 인터셉터 -->
+		<interceptor>
+			<mapping path="/demo/*"></mapping>
+			<exclude-mapping path="/demo/demo.do" />
+			<beans:ref bean="logincheckInterceptor" />
 		</interceptor>
 	</interceptors>
 	

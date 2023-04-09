@@ -28,11 +28,13 @@ public class BasicController {
 		// session 객체에 데이터 저장..
 		session.setAttribute("sessionId", "admin");
 		
-		
+		/*
 		logger.debug("debug레벨 출력");
 		logger.info("infor 레벨 출력");
 		logger.warn("warn레벨 출력");
 		logger.error("error 레벨 출력");
+		*/
+		
 		
 		//logger 를 이용해서 메세지 출력시 String을 인수로 받는다.
 		// 객체를 출력할때는 매개변수가 두개인 메소드를 이용해야한다.
