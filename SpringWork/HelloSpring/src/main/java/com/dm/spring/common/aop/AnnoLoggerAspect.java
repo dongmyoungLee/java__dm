@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -87,7 +88,11 @@ public class AnnoLoggerAspect {
 		
 		return obj;	
 	}
-	 
+	
+	@AfterThrowing("execution(* com.dm.spring..*(..))")
+	public void exceptionTest(JoinPoint jp) {
+		log.debug("에러발생!");
+	}
 }
 
 

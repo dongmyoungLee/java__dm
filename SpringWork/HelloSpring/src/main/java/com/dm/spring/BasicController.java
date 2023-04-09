@@ -28,6 +28,8 @@ public class BasicController {
 		// session 객체에 데이터 저장..
 		session.setAttribute("sessionId", "admin");
 		
+		
+		
 		/*
 		logger.debug("debug레벨 출력");
 		logger.info("infor 레벨 출력");
@@ -40,8 +42,14 @@ public class BasicController {
 		// 객체를 출력할때는 매개변수가 두개인 메소드를 이용해야한다.
 		// 첫번째는 매개변수에 문자열로 {}, 두번째는 대입될 값을 선언
 		logger.info("{}", session);
-
+		
+//		if(session != null) {
+//			throw new IllegalArgumentException();
+//		}
+		
 		return "index";
+		
+	
 	}
 	
 	
