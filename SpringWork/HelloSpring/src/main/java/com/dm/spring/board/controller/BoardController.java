@@ -45,5 +45,15 @@ public class BoardController {
 		return "board/board";
 	}
 	
+	@RequestMapping("/boardDetail.do")
+	public String boardDetail(@RequestParam(value="pk") int pk,Model m) {
+		
+		int result = service.findByNo(pk);
+		
+		System.out.println(result);
+		
+		return "board/boardDetail";
+	}
+	
 	
 }

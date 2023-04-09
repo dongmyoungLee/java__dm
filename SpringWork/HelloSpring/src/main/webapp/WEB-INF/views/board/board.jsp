@@ -30,10 +30,16 @@
 			  <c:forEach var="board" items="${boards }">
 				<tr>
 					<td scope="col">${board.boardNo }</td>
-					<td scope="col">${board.boardTitle }</td>
-					<td scope="col">${board.boardWriter }</td>
+					<td style="cursor:pointer" scope="col" onClick="location.assign('${path}/board/boardDetail.do?pk=${board.boardNo}')">${board.boardTitle }</td>
+					<td scope="col">${board.boardWriter.userName }</td>
 					<td scope="col">${board.boardDate }</td>
-					<td scope="col">첨부파일</td>
+					<td scope="col">
+						<c:if test="${empty board.files}">첨부파일 없음</c:if>
+						<c:if test="${not empty board.files}">
+							<img src="${path}/resources/images/boardimg.png" width="25" style="cursor:pointer" />
+							<span>(${board.files.size()})</span>
+						</c:if>
+					</td>
 					<td scope="col">${board.boardReadCount }</td>
 				</tr>
 			  </c:forEach>

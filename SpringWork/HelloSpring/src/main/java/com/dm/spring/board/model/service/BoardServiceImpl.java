@@ -30,6 +30,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	public int findByNo(int pk) {
+		// TODO Auto-generated method stub
+		return dao.findByNo(session, pk);
+	}
+
+
+	@Override
 	public int insertBoard(Board b) {
 		// TODO Auto-generated method stub
 		return 0;

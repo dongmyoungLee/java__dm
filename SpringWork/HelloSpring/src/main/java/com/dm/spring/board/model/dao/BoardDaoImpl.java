@@ -31,6 +31,12 @@ public class BoardDaoImpl implements BoardDao {
 		// TODO Auto-generated method stub
 		return session.selectOne("board.boardCount");
 	}
+
+	@Override
+	public int findByNo(SqlSessionTemplate session, int pk) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.findByNo", pk);
+	}
 	
 	
 }

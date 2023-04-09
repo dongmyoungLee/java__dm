@@ -10,5 +10,6 @@
 		<typeAlias type="com.dm.spring.member.model.vo.Member" alias="member" />
 		<typeAlias type="com.dm.spring.memo.model.vo.Memo" alias="memo" />
 		<typeAlias type="com.dm.spring.board.model.vo.Board" alias="board" />
+		<typeAlias type="com.dm.spring.board.model.vo.Attachment" alias="attachment" />
 	</typeAliases>
 </configuration>
