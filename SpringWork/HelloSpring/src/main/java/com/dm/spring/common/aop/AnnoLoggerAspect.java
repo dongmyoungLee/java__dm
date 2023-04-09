@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -72,6 +73,19 @@ public class AnnoLoggerAspect {
 		log.debug("END==========================");
 		
 		return obj;
+	}
+	
+	@Around("execution(* com.dm.spring..insert*(..))")
+	public Object insertTest(ProceedingJoinPoint pjp) throws Throwable {
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		
+		Object obj = pjp.proceed();
+		
+		stopWatch.stop();
+		log.debug("실행시간 : " + stopWatch.getTotalTimeMillis() + "ms");
+		
+		return obj;	
 	}
 	 
 }
