@@ -32,7 +32,7 @@
 					data: {userId : $("#userId_").val()},
 					success: (data) => {
 						console.log(data)
-						if (data == "true") {
+						if (data != null) {
 							$(".ok").hide();
 							$(".error").show();
 						} else {

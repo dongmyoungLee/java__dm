@@ -1,5 +1,7 @@
 package com.dm.spring.member.model.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -19,6 +21,12 @@ public class MemberDaoImpl implements MemberDao {
 	public int insertMember(SqlSessionTemplate session, Member m) {
 		// TODO Auto-generated method stub
 		return session.insert("member.insertMember", m);
+	}
+
+	@Override
+	public List<Member> selectMemberAll(SqlSessionTemplate session) {
+		// TODO Auto-generated method stub
+		return session.selectList("member.selectMemberAll");
 	}
 
 	@Override

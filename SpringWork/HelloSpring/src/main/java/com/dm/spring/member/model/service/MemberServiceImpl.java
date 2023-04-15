@@ -1,5 +1,7 @@
 package com.dm.spring.member.model.service;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,12 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	public void setSession(SqlSessionTemplate session) {
 		this.session = session;
+	}
+
+	@Override
+	public List<Member> selectMemberAll() {
+		// TODO Auto-generated method stub
+		return dao.selectMemberAll(session);
 	}
 
 	@Override

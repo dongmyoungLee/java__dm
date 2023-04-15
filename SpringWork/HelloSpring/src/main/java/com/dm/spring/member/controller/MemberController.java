@@ -2,14 +2,17 @@ package com.dm.spring.member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -19,9 +22,12 @@ import com.dm.spring.member.model.service.MemberService;
 import com.dm.spring.member.model.vo.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @SessionAttributes({"loginMember"})
 @RequestMapping("/member")
+@Slf4j
 public class MemberController {
 	
 	private MemberService service;
@@ -120,12 +126,27 @@ public class MemberController {
 	// json 방식의 데이터를 응답하는 메소드는 @ResponseBody 어노테이션 이용 -> restful 구현했을때 적용..
 	
 	@RequestMapping("/duplicateId2.do")
-	@ResponseBody
-	public Member jacksonBinder(String userId) {
+	public @ResponseBody Member jacksonBinder(String userId) {
 		
 		Member m = service.selectMemberById(userId);
 		
 		return m;
+	}
+	
+	@RequestMapping("/selectMemberAll.do")
+	public @ResponseBody List<Member> selectMemberAll() {
+		
+		return service.selectMemberAll();
+	
+	}
+	
+	// json 방식으로 전송 된 데이터 저장하기
+	@RequestMapping(value="/ajax/insert", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody boolean insertAjax(@RequestBody Member m) {
+		
+		log.debug("{}", m);
+		
+		return false;
 	}
 	
 }
