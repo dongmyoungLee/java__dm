@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dm.spring.board.model.dao.BoardDao;
 import com.dm.spring.board.model.vo.Attachment;
@@ -49,18 +50,22 @@ public class BoardServiceImpl implements BoardService {
 
 
 	@Override
+	//@Transactional
 	public int insertBoard(Board b) {
 		int result = dao.insertBoard(session, b);
-		
-		log.debug("생성된 게시글 번호 {}", b.getBoardNo());
 		
 		if (result > 0 && b.getFiles().size() > 0) {
 			
 			for(Attachment a : b.getFiles()) {
 				a.setBoardNo(b.getBoardNo());
-				result = dao.insertAttachment(session, a);
+				result += dao.insertAttachment(session, a);
 			}
 			
+		
+		}
+		
+		if(b.getFiles().size()+1 != result ) {
+			throw new RuntimeException("내가 발생시킴!");
 		}
 		
 		return result;

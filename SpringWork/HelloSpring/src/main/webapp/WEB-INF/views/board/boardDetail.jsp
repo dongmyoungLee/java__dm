@@ -24,7 +24,7 @@
 			<c:forEach var="f" items="${board.files }">
 	            <button type="button" 
 	                    class="btn btn-outline-success btn-block"
-	                    onclick="">
+	                    onclick="fileDownload('${f.originalFileName}','${f.renamedFineName}');">
 	               ${f.originalFileName}
 	            </button>
             </c:forEach>
@@ -34,5 +34,17 @@
     </div>
 </section>
 
+<script>
+
+	const fileDownload = (og, re ) => {
+		debugger
+		location.assign("${path}/board/filedownload.do?og=" + og + "&re=" + re);
+	}
+
+</script>
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
+

@@ -74,9 +74,9 @@
 	*/
 	
    const addDelhandler=(()=>{
-	      let count=1;
-	      return [
-	         e=>{
+      let count=1;
+      return [
+	      e => {
 	         if(count<5){
 	            const addFileContainer=$(e.target).parent().next().clone(true);
 	            $(addFileContainer).find("span.input-group-text")
@@ -89,13 +89,14 @@
 	            alert("첨부파일은 5개만 가능합니다.");
 	         }
 	      },
-	      e=>{
+	      e => {
 	         if($("div.input-group").length>1){ 
 	            $("div.input-group").last().remove();
 	            count--;
 	         }
-	      }];
-	   })();
+	      }
+    ];
+   })();
    const addFile=addDelhandler[0];
    const delFile=addDelhandler[1];
 		

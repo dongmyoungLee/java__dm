@@ -79,10 +79,12 @@ public class BoardController {
 		//log.debug(boardTitle + " " + boardContent + " " + boardWriter);
 		
 		// 파일 업로드 처리하기..
+
+		
 		// 1. 저장할 위치 선정 -> 절대경로 가져오기
 		// session.getServletContext() -> src - webapp..
 		String path = session.getServletContext().getRealPath("/resources/upload/board/");
-		log.debug(path);
+	
 		
 		// 2. 저장할 위치가 있는지..? 확인하고 없으면 생성하기
 		File dir = new File(path);
@@ -90,13 +92,12 @@ public class BoardController {
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
-		
-		//Attachment file = null;
-		List<Attachment> files = new ArrayList(); 
-		
+			
 		// 3. MultipartFile 클래스를 이용해서 업로드 처리하기
 		// 1) 파일명 rename 처리..
 		// 2) rename 된 파일명으로 파일 서버에 저장하기.. -> MultipartFile.transTo() 이용..
+		
+		List<Attachment> files = new ArrayList();
 		
 		for(MultipartFile f : upFile) {
 			
@@ -122,6 +123,7 @@ public class BoardController {
 				
 				try {
 					f.transferTo(new File(path, renamedFilename));
+					
 					files.add(Attachment.builder()
 							.originalFileName(originalFilename)
 							.renamedFileName(renamedFilename)
@@ -132,6 +134,7 @@ public class BoardController {
 			}
 		}
 		
+		
 		Board b = Board.builder()
 				.boardTitle(boardTitle)
 				.boardWriter(Member.builder().userId(boardWriter).build())
@@ -139,7 +142,22 @@ public class BoardController {
 				.files(files)
 				.build();
 		
-		int result = service.insertBoard(b);
+		int result = 0;
+		
+		try {
+			result = service.insertBoard(b);
+		} catch(RuntimeException e) {
+			// 업로드된 데이터 삭제
+			for(Attachment a : files) {
+				File f = new File(path + "/" + a.getRenamedFileName());
+				
+				if (f.exists()) {
+					f.delete();
+				}
+			}
+		}
+		
+		
 		
 		String msg = "";
 		String loc = "";
@@ -156,6 +174,11 @@ public class BoardController {
 		m.addAttribute("loc", loc);
 		
 		return "common/msg";
+	}
+	
+	@RequestMapping("/filedownload.do")
+	public void fileDownload(String og, String re) {
+		
 	}
 	
 	
