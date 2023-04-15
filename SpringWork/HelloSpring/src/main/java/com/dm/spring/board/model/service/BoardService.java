@@ -9,7 +9,7 @@ public interface BoardService {
 	
 	int insertBoard(Board b);
 	
-	int findByNo(int pk);
+	Board findByNo(int pk);
 	
 	int selectBoardCount();
 }

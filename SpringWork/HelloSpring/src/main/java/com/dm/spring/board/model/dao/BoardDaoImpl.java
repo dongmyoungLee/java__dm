@@ -33,7 +33,13 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int findByNo(SqlSessionTemplate session, int pk) {
+	public int updateBoardReadCount(SqlSessionTemplate session, int pk) {
+		// TODO Auto-generated method stub
+		return session.update("board.updateReadCount", pk);
+	}
+
+	@Override
+	public Board findByNo(SqlSessionTemplate session, int pk) {
 		// TODO Auto-generated method stub
 		return session.selectOne("board.findByNo", pk);
 	}

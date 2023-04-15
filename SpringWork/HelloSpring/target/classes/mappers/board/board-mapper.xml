@@ -7,6 +7,7 @@
 		<result column="boardTitle" property="boardTitle" />
 		<result column="boardDate" property="boardDate" />
 		<result column="boardReadCount" property="boardReadCount" />
+		<result column="boardContent" property="boardContent" />
 		<association resultMap="memberMap" property="boardWriter" />
 		<collection property="files" ofType="attachment">
 			<id property="attachmentNo" column="attachmentNo" />
@@ -26,6 +27,7 @@
 		<result property="phone" column="phone" />
 		<result property="address" column="address" />
 		<result property="enrollDate" column="enrolldate" />
+		<result property="hobby" column="hobby" typeHandler="strArr" />
 	</resultMap>
 
 	<select id="boardList" resultMap="boardMap">
@@ -40,7 +42,14 @@
 		SELECT COUNT(*) FROM BOARD
 	</select>
 	
-	<select id="findByNo" parameterType="_int" resultType="board">
-		//
+	<select id="findByNo" parameterType="_int" resultMap="boardMap">
+		SELECT * FROM BOARD B
+			JOIN MEMBER ON USERID = BOARDWRITER
+			LEFT JOIN ATTACHMENT A ON A.BOARDNO = B.BOARDNO
+		WHERE B.BOARDNO = #{boardNo}
 	</select>
+	
+	<update id="updateReadCount" parameterType="_int">
+		UPDATE BOARD SET BOARDREADCOUNT = BOARDREADCOUNT+1 WHERE BOARDNO = #{boardNo}
+	</update>
 </mapper>

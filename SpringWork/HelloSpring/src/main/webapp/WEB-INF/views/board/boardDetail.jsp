@@ -15,16 +15,22 @@
 
 <section id="content">
 	<div id="board-container">
-        <input type="text" class="form-control" placeholder="제목" name="boardTitle" id="boardTitle"  required>
-        <input type="text" class="form-control" name="boardWriter"  readonly required>
-
-                    <button type="button" 
-                    class="btn btn-outline-success btn-block"
-                    onclick="">
-            </button>
+        <input value="${board.boardTitle }" type="text" class="form-control" placeholder="제목" name="boardTitle" id="boardTitle"  required>
+        <input value="${board.boardWriter.userId }" type="text" class="form-control" name="boardWriter"  readonly required>
+		<c:if test="${empty board.files }">
+		
+		</c:if>
+		<c:if test="${not empty board.files }">
+			<c:forEach var="f" items="${board.files }">
+	            <button type="button" 
+	                    class="btn btn-outline-success btn-block"
+	                    onclick="">
+	               ${f.originalFileName}
+	            </button>
+            </c:forEach>
+        </c:if>
         
-        
-        <textarea class="form-control" name="boardContent" placeholder="내용" required></textarea>
+        <textarea class="form-control" name="boardContent" placeholder="내용" required>${board.boardContent }</textarea>
     </div>
 </section>
 

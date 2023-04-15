@@ -46,11 +46,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/boardDetail.do")
-	public String boardDetail(@RequestParam(value="pk") int pk,Model m) {
+	public String boardDetail(int pk, Model m) {
 		
-		int result = service.findByNo(pk);
 		
-		System.out.println(result);
+		m.addAttribute("board", service.findByNo(pk));
+	
 		
 		return "board/boardDetail";
 	}

@@ -30,9 +30,17 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int findByNo(int pk) {
-		// TODO Auto-generated method stub
-		return dao.findByNo(session, pk);
+	public Board findByNo(int pk) {
+		// 조회수 증가로직..
+		Board b = dao.findByNo(session, pk);
+		
+		if (b != null) {
+			int result = dao.updateBoardReadCount(session, pk);
+			//if(result == 0) new RuntimeException(); 
+		}
+		
+		
+		return b;
 	}
 
 
