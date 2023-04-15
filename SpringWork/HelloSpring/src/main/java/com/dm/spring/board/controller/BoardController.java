@@ -1,6 +1,11 @@
 package com.dm.spring.board.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.dm.spring.board.model.service.BoardService;
+import com.dm.spring.board.model.vo.Attachment;
 import com.dm.spring.board.model.vo.Board;
 import com.dm.spring.common.PageBarFactory;
+import com.dm.spring.member.model.vo.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -63,15 +70,91 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/boardWriteEnd.do")
-	public String insertBoard(MultipartFile upFile, String boardTitle, String boardContent, String boardWriter) {
+	public String insertBoard(MultipartFile upFile, String boardTitle, String boardContent, String boardWriter, HttpSession session, Model m) {
 
-		log.debug("{}", upFile.getName());
-		log.debug("{}", upFile.getSize());
-		log.debug("{}", upFile.getOriginalFilename());
-		log.debug(boardTitle + " " + boardContent + " " + boardWriter);
+		//log.debug("{}", upFile.getName());
+		//log.debug("{}", upFile.getSize());
+		//log.debug("{}", upFile.getOriginalFilename());
+		//log.debug(boardTitle + " " + boardContent + " " + boardWriter);
+		
+		// 파일 업로드 처리하기..
+		// 1. 저장할 위치 선정 -> 절대경로 가져오기
+		// session.getServletContext() -> src - webapp..
+		String path = session.getServletContext().getRealPath("/resources/upload/board/");
+		log.debug(path);
+		
+		// 2. 저장할 위치가 있는지..? 확인하고 없으면 생성하기
+		File dir = new File(path);
+		
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		Attachment file = null;
+		
+		// 3. MultipartFile 클래스를 이용해서 업로드 처리하기
+		// 1) 파일명 rename 처리..
+		// 2) rename 된 파일명으로 파일 서버에 저장하기.. -> MultipartFile.transTo() 이용..
+		
+		if (!upFile.isEmpty()) {
+			// 파일 rename 만들기..
+			String originalFilename = upFile.getOriginalFilename();
+
+			String ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+			
+			// 중복없게 파일명 만들기
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
+			int rnd = (int)(Math.random()*10000) + 1;
+			String renamedFilename = sdf.format(System.currentTimeMillis()) + "_" + rnd + ext;
+			
+			// 파일저장 처리하기 -> 지정된 위치(폴더)에 저장
+			
+			try {
+				upFile.transferTo(new File(path, renamedFilename));
+				file = Attachment.builder()
+						.originalFileName(originalFilename)
+						.renamedFileName(renamedFilename)
+						.build();
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		Board b = Board.builder()
+				.boardTitle(boardTitle)
+				.boardWriter(Member.builder().userId(boardWriter).build())
+				.boardContent(boardContent)
+				.files(List.of(file))
+				.build();
+		
+		if (file != null) {
+			b.setFiles(List.of(file));
+		}
+		
+		int result = service.insertBoard(b);
+		
+		String msg = "";
+		String loc = "";
+		
+		if (result > 0) {
+			msg = "게시글 등록 성공";
+			loc = "/board/boardList.do";
+		} else {
+			msg = "게시글 등록 실패";
+			loc = "/board/boardWrite.do";
+		}
+		
+		m.addAttribute("msg", msg);
+		m.addAttribute("loc", loc);
 		
 		return "common/msg";
 	}
 	
 	
 }
+
+
+
+
+
+

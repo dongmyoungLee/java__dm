@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dm.spring.board.model.dao.BoardDao;
+import com.dm.spring.board.model.vo.Attachment;
 import com.dm.spring.board.model.vo.Board;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService {
 
@@ -46,8 +50,20 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int insertBoard(Board b) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = dao.insertBoard(session, b);
+		
+		log.debug("생성된 게시글 번호 {}", b.getBoardNo());
+		
+		if (result > 0 && b.getFiles() != null) {
+			
+			for(Attachment a : b.getFiles()) {
+				a.setBoardNo(b.getBoardNo());
+				result = dao.insertAttachment(session, a);
+			}
+			
+		}
+		
+		return result;
 	}
 
 

@@ -1,0 +1,61 @@
+20230201
+
+큰 틀-------------------------------------------------------------
+
+1)Data
+2)Analyze                     ---> 2순위:features 잘 선택하기
+3)ML                           ---> 1순위
+4)Tuning                      ----> 2/3순위 컴퓨터성능업그레이드? 
+5)End
+
+
+features 중에서 중요도가 높은 features 만 가지고 ML 돌리면 정확도 증가될 수 있음
+
+variance, bias
+
+low variance, high bias 가 ML 태우는데 낫다
+
+RandomForestClassifier 를 젤 많이 씀
+
+Ensemble method (앙상블 계열의 알고리즘이 현재 가장 뛰어나다) ->
+앙상블-> 디시전트리를 수백번돌리면 좋은 결론으로 수렴한다!!!!
+
+이론공부 후 큰 예제로 연습해보기
+
+
+회귀분석
+
+지도학습
+1)분류:객관식문제푸는것
+2)회귀:주관식문제 푸는것: 숫자의 연속적인 값에 대한 예측: features 들을 학습해서 방정식 찾는것!
+
+1. 일차함수(선형)을 먼저찾는다
+
+회귀에서는, 오차가 제 각각, 오차를 다 더해서 평균을 냄, 오차의 평균을 기반으로 정확도를 평가한다, 제곱의 평균으로 구하거나, 또는 절대값의 평균으로
+
+
+선형에서는 오차만큼 보정: 일차함수니까
+
+검증
+Evaluation(Validation)
+
+1) Class : accuracy, f1-score 
+2) Regression: error_mean(abs, squared, root mean squared),   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

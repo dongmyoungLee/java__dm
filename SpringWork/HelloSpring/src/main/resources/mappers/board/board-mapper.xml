@@ -52,4 +52,18 @@
 	<update id="updateReadCount" parameterType="_int">
 		UPDATE BOARD SET BOARDREADCOUNT = BOARDREADCOUNT+1 WHERE BOARDNO = #{boardNo}
 	</update>
+	
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO BOARD VALUES(SEQ_BOARDNO.NEXTVAL, #{boardTitle}, #{boardWriter.userId}, #{boardContent}, DEFAULT, DEFAULT)	
+		<selectKey keyProperty="boardNo" resultType="_int" order="AFTER">
+			SELECT SEQ_BOARDNO.CURRVAL FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<insert id="insertAttachment" parameterType="attachment">
+		INSERT INTO ATTACHMENT VALUES(SEQ_ATTACHMENTNO.NEXTVAL, #{boardNo}, #{originalFileName}, #{renamedFileName}, default, default, default)
+	</insert>
 </mapper>
+
+
+
