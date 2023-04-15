@@ -26,7 +26,7 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
 			request.setAttribute("msg", "로그인 후 이용 가능한 서비스 입니다.");
 			request.setAttribute("loc", "/");
 			request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp").forward(request, response);
-			log.info(request.getRequestURI() + " : " +request.getRemoteAddr());
+			//log.info(request.getRequestURI() + " : " +request.getRemoteAddr());
 			
 			return false;
 		}

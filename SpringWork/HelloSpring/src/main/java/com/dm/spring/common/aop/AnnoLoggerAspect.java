@@ -26,27 +26,27 @@ public class AnnoLoggerAspect {
 	@Before("memberLogger()")
 	public void loggerBefore(JoinPoint jp) {
 		Signature sig = jp.getSignature();
-		log.debug(sig.getName() + " 메소드 실행 전 ");
-		log.debug(sig.getDeclaringTypeName() + " 클래스");
+		//log.debug(sig.getName() + " 메소드 실행 전 ");
+		//log.debug(sig.getDeclaringTypeName() + " 클래스");
 		
 		// 메소드 실행시 전달되는 파라미터값 확인하기
 		Object[] params = jp.getArgs();
 		
 		if (params != null) {
 			for(Object o : params) {
-				log.debug("파라미터 : {}", o);
+				//log.debug("파라미터 : {}", o);
 			}
 		}
 		
-		log.debug("==============================end");
+		//log.debug("==============================end");
 	}
 	
 	@After("memberLogger()")
 	public void loggerAfter(JoinPoint jp) {
 		Signature sig = jp.getSignature();
-		log.debug(sig.getName() + " 메소드 실행 후 ");
-		log.debug(sig.getDeclaringTypeName() + " 클래스");
-		log.debug("==============================end");
+		//log.debug(sig.getName() + " 메소드 실행 후 ");
+		//log.debug(sig.getDeclaringTypeName() + " 클래스");
+		//log.debug("==============================end");
 	}
 	
 	// 실행 전후에 로직 실행시키기 @Around
@@ -62,16 +62,16 @@ public class AnnoLoggerAspect {
 		Signature sig = pjp.getSignature();
 		
 		// before 로직..
-		log.debug("===== Around 실행 전 =====");
-		log.debug(sig.getName() + " 메소드 실행 !");
-		log.debug("END==========================");
+		//log.debug("===== Around 실행 전 =====");
+		//log.debug(sig.getName() + " 메소드 실행 !");
+		//log.debug("END==========================");
 	
 		Object obj = pjp.proceed();
 		
 		// after 로직..
-		log.debug("===== Around 실행 후 =====");
-		log.debug(sig.getName() + " 메소드 실행 !");
-		log.debug("END==========================");
+		//log.debug("===== Around 실행 후 =====");
+		//log.debug(sig.getName() + " 메소드 실행 !");
+		//log.debug("END==========================");
 		
 		return obj;
 	}
@@ -84,7 +84,7 @@ public class AnnoLoggerAspect {
 		Object obj = pjp.proceed();
 		
 		stopWatch.stop();
-		log.debug("실행시간 : " + stopWatch.getTotalTimeMillis() + "ms");
+		//log.debug("실행시간 : " + stopWatch.getTotalTimeMillis() + "ms");
 		
 		return obj;	
 	}

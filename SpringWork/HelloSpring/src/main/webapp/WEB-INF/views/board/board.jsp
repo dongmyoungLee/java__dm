@@ -10,6 +10,7 @@
 
 <section id="board-container" class="container">
     <p>총 ${totalContents }건의 게시물이 있습니다.</p>
+    <button class="btn btn-outline-success" onClick="location.assign('${path}/board/boardWrite.do')">글쓰기</button>
     
     <table id="tbl-board" class="table table-striped table-hover">
         <tr>

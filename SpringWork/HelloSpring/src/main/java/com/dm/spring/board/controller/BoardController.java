@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.dm.spring.board.model.service.BoardService;
 import com.dm.spring.board.model.vo.Board;
@@ -53,6 +54,23 @@ public class BoardController {
 	
 		
 		return "board/boardDetail";
+	}
+	
+	@RequestMapping("boardWrite.do")
+	public String boardWrite() {
+		
+		return "board/boardWrite";	
+	}
+	
+	@RequestMapping("/boardWriteEnd.do")
+	public String insertBoard(MultipartFile upFile, String boardTitle, String boardContent, String boardWriter) {
+
+		log.debug("{}", upFile.getName());
+		log.debug("{}", upFile.getSize());
+		log.debug("{}", upFile.getOriginalFilename());
+		log.debug(boardTitle + " " + boardContent + " " + boardWriter);
+		
+		return "common/msg";
 	}
 	
 	

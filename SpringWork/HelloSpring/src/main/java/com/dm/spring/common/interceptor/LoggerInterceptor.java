@@ -26,21 +26,21 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 		// TODO Auto-generated method stub
 		//return super.preHandle(request, response, handler);
 		
-		logger.debug("----전처리 interceptor 실행 ----");
-		logger.debug(request.getRequestURI());
+		//logger.debug("----전처리 interceptor 실행 ----");
+		//logger.debug(request.getRequestURI());
 		
 		//handler 인수 이용하기
 		HandlerMethod method = (HandlerMethod)handler;
 		// 실행되는 클래스(controller)정보 가져오기
-		logger.debug("{}", method.getBean());
+		//logger.debug("{}", method.getBean());
 		MemberController c = (MemberController)method.getBean();
 		// 실행되는 메소드에 대한 정보들
-		logger.debug("{}", method.getMethod());
+		//logger.debug("{}", method.getMethod());
 		
 		Method m = method.getMethod();
 		
 		
-		logger.debug("-----------------------------");
+		//logger.debug("-----------------------------");
 		// return 값
 		// true : 맵핑메소드 실행
 		// false : 맵핑메소드 실행하지 않음
@@ -55,10 +55,10 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 			ModelAndView modelAndView) throws Exception {
 		// TODO Auto-generated method stub
 		
-		logger.debug("----- 후처리 실행 -----");
-		logger.debug(modelAndView.getViewName());
-		logger.debug("{}", modelAndView.getModelMap());
-		logger.debug("----------------------");
+		//logger.debug("----- 후처리 실행 -----");
+		//logger.debug(modelAndView.getViewName());
+		//logger.debug("{}", modelAndView.getModelMap());
+		//logger.debug("----------------------");
 	}
 	
 }
