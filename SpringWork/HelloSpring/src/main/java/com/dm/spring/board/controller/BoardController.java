@@ -194,7 +194,6 @@ public class BoardController {
 		
 		File downFile = new File(path + re);
 		
-		System.out.println(downFile);
 		try(FileInputStream fis = new FileInputStream(downFile); BufferedInputStream bis = new BufferedInputStream(fis);) {
 			
 			ServletOutputStream sos = res.getOutputStream();

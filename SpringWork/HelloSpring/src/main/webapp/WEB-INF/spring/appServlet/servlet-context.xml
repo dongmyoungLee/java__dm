@@ -71,6 +71,17 @@
 		<beans:property name="maxUploadSize" value="104857600"></beans:property>
 	</beans:bean>
 	
+	<!-- jackson bind 등록하기 -->
+	<beans:bean id="jacksonbinder" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+
+	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:ref bean="jacksonbinder" />
+			</beans:list>
+		</beans:property>	
+	</beans:bean>
+	
 	
 	
 	<!-- 인터셉터 등록 -->
@@ -95,6 +106,8 @@
 	</interceptors>
 	
 </beans:beans>
+
+
 
 
 

@@ -1,15 +1,23 @@
 package com.dm.spring.member.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.dm.spring.member.model.service.MemberService;
 import com.dm.spring.member.model.vo.Member;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 @SessionAttributes({"loginMember"})
@@ -93,6 +101,40 @@ public class MemberController {
 		return "common/msg";
 	}
 	
+	@RequestMapping("/duplicateId.do")
+	public void basicAjax(String userId, HttpServletResponse res, PrintWriter out) throws IOException, ServletException {
+		
+		Member m = service.selectMemberById(userId);
+		
+		//res.setContentType("text/csv;charset=utf-8");
+		//res.getWriter().print(m != null ? true: false);
+		
+		//out.print(m!=null ? true : false);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		res.setContentType("application/json;charset=utf-8");
+		out.print(mapper.writeValueAsString(m));
+		
+	}
+	
+	// json 방식의 데이터를 응답하는 메소드는 @ResponseBody 어노테이션 이용 -> restful 구현했을때 적용..
+	
+	@RequestMapping("/duplicateId2.do")
+	@ResponseBody
+	public Member jacksonBinder(String userId) {
+		
+		Member m = service.selectMemberById(userId);
+		
+		return m;
+	}
+	
 }
+
+
+
+
+
+
+
 
 

@@ -112,7 +112,19 @@ SERIALIZABLE: 가장 강력한 격리수준으로 순차적으로 실행, 테이
 
 4. READ-ONLY, REAONLY: 읽기전용 트랜잭션(SELECT)
 5. ROLLBACK-FOR, ROLLBACKFOR : 트랜잭션에서 ROLLBACK하는 기준 EXCEPTION 설정
-6.
+
+<Spring 에서 ajax 적용하기>
+
+1. 기본응답 -> public void 0000(HttpServletResponse)
+  HttpServletResponse 객체를 이용해서 응답메세지 작성
+  json -> write()
+
+2. jsonView 라이브러리를 이용하기 (x)
+
+3. jackson coverter 를 이용해서 처리하기
+
+
+
 
 
 
