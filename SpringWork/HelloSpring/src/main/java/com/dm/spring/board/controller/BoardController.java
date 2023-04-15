@@ -3,6 +3,7 @@ package com.dm.spring.board.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -70,7 +71,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/boardWriteEnd.do")
-	public String insertBoard(MultipartFile upFile, String boardTitle, String boardContent, String boardWriter, HttpSession session, Model m) {
+	public String insertBoard(MultipartFile[] upFile, String boardTitle, String boardContent, String boardWriter, HttpSession session, Model m) {
 
 		//log.debug("{}", upFile.getName());
 		//log.debug("{}", upFile.getSize());
@@ -90,33 +91,44 @@ public class BoardController {
 			dir.mkdirs();
 		}
 		
-		Attachment file = null;
+		//Attachment file = null;
+		List<Attachment> files = new ArrayList(); 
 		
 		// 3. MultipartFile 클래스를 이용해서 업로드 처리하기
 		// 1) 파일명 rename 처리..
 		// 2) rename 된 파일명으로 파일 서버에 저장하기.. -> MultipartFile.transTo() 이용..
 		
-		if (!upFile.isEmpty()) {
-			// 파일 rename 만들기..
-			String originalFilename = upFile.getOriginalFilename();
-
-			String ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+		for(MultipartFile f : upFile) {
 			
-			// 중복없게 파일명 만들기
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
-			int rnd = (int)(Math.random()*10000) + 1;
-			String renamedFilename = sdf.format(System.currentTimeMillis()) + "_" + rnd + ext;
-			
-			// 파일저장 처리하기 -> 지정된 위치(폴더)에 저장
-			
-			try {
-				upFile.transferTo(new File(path, renamedFilename));
-				file = Attachment.builder()
-						.originalFileName(originalFilename)
-						.renamedFileName(renamedFilename)
-						.build();
-			} catch(IOException e) {
-				e.printStackTrace();
+			if (f != null && !f.isEmpty()) {
+				// 파일 rename 만들기..
+				String originalFilename = f.getOriginalFilename();
+				
+				String ext = null;
+				
+				try {
+					ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+				} catch (StringIndexOutOfBoundsException e) {
+					ext = null;
+				}
+				
+				
+				// 중복없게 파일명 만들기
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
+				int rnd = (int)(Math.random()*10000) + 1;
+				String renamedFilename = sdf.format(System.currentTimeMillis()) + "_" + rnd + ext;
+				
+				// 파일저장 처리하기 -> 지정된 위치(폴더)에 저장
+				
+				try {
+					f.transferTo(new File(path, renamedFilename));
+					files.add(Attachment.builder()
+							.originalFileName(originalFilename)
+							.renamedFileName(renamedFilename)
+							.build());
+				} catch(IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
@@ -124,12 +136,8 @@ public class BoardController {
 				.boardTitle(boardTitle)
 				.boardWriter(Member.builder().userId(boardWriter).build())
 				.boardContent(boardContent)
-				.files(List.of(file))
+				.files(files)
 				.build();
-		
-		if (file != null) {
-			b.setFiles(List.of(file));
-		}
 		
 		int result = service.insertBoard(b);
 		

@@ -54,7 +54,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		log.debug("생성된 게시글 번호 {}", b.getBoardNo());
 		
-		if (result > 0 && b.getFiles() != null) {
+		if (result > 0 && b.getFiles().size() > 0) {
 			
 			for(Attachment a : b.getFiles()) {
 				a.setBoardNo(b.getBoardNo());
