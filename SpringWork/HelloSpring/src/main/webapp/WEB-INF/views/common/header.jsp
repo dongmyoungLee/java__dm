@@ -114,7 +114,7 @@
 		<script>
 			const openChatting = () => {
 				
-				open("${pageContext.request.contextPath}/openchatting.do", "_blank", "width=400,height=800");
+				open("${pageContext.request.contextPath}/openchatting.do", "_blank", "width=600,height=800");
 			}
 		</script>
 		
