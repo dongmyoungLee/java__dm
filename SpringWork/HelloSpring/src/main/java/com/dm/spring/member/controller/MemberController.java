@@ -142,11 +142,11 @@ public class MemberController {
 	
 	// json 방식으로 전송 된 데이터 저장하기
 	@RequestMapping(value="/ajax/insert", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody boolean insertAjax(@RequestBody Member m) {
+	public @ResponseBody Member insertAjax(@RequestBody Member m) {
 		
 		log.debug("{}", m);
 		
-		return false;
+		return m;
 	}
 	
 }
