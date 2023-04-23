@@ -23,9 +23,11 @@ public class ChattingServer extends TextWebSocketHandler {
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		// 클라이언트가 접속하면 실행되는 메소드
+		
 		//log.debug("클라이언트 접속 !!!");
 		
 		// 접속한 사용자에게 환영메세지 전송 (JSON 방식..)
+		
 		//Message welcome = new Message("system", "admin", "", "입장을 환영 합니다.", "");
 		//session.sendMessage(new TextMessage(mapper.writeValueAsString(welcome)));	
 	}
@@ -35,6 +37,10 @@ public class ChattingServer extends TextWebSocketHandler {
 		// js 에서 send(data) 함수를 실행하면 실행되는 함수
 		log.debug("{}", message.getPayload());
 		Message msg = mapper.readValue(message.getPayload(), Message.class);
+		
+		// room 에 대한 정보는 msg에 있음..
+		// 원하는 데이터를 session 에 저장하는 기능이 있음..
+		session.getAttributes().put("room", msg.getRoom());
 		
 		switch(msg.getType()) {
 			case "connect" :
@@ -83,6 +89,8 @@ public class ChattingServer extends TextWebSocketHandler {
 			} else {
 	
 				for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) {
+					
+					String room = (String)client.getValue().getAttributes().get("room");
 					
 					if(client.getValue().isOpen()) {
 						client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
