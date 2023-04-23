@@ -9,6 +9,7 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,11 +23,11 @@ public class ChattingServer extends TextWebSocketHandler {
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		// 클라이언트가 접속하면 실행되는 메소드
-		log.debug("클라이언트 접속 !!!");
+		//log.debug("클라이언트 접속 !!!");
 		
 		// 접속한 사용자에게 환영메세지 전송 (JSON 방식..)
-		Message welcome = new Message("system", "admin", "", "입장을 환영 합니다.", "");
-		session.sendMessage(new TextMessage(mapper.writeValueAsString(welcome)));	
+		//Message welcome = new Message("system", "admin", "", "입장을 환영 합니다.", "");
+		//session.sendMessage(new TextMessage(mapper.writeValueAsString(welcome)));	
 	}
 
 	@Override
@@ -52,8 +53,7 @@ public class ChattingServer extends TextWebSocketHandler {
 		log.debug("session종료 : " + status.getReason());
 		
 		String userId = "";
-		
-		System.out.println("clients " + clients);
+
 		
 		for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) {
 			
@@ -63,7 +63,7 @@ public class ChattingServer extends TextWebSocketHandler {
 			
 		}
 		
-		sendMessage(Message.builder().type("system").msg(userId + " 님이 퇴장 하셨습니다.").build());
+		sendMessage(Message.builder().type("system").sender(userId).msg(userId + " 님이 퇴장 하셨습니다.").build());
 		
 		deleteClients();
 	}
@@ -71,12 +71,26 @@ public class ChattingServer extends TextWebSocketHandler {
 	private void sendMessage(Message msg) {
 		// 클라이언트가 보낸 메세지 전송처리하는 기능
 		
+		// 귓속말 분기
 		try {
-			for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) { 
-				if (client.getValue().isOpen()) {
-					client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
+			if (msg.getReceiver() != null && !msg.getReceiver().equals("")) {
+				for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) { 
+					if (client.getValue().isOpen() && client.getKey().equals(msg.getReceiver()) || client.getKey().equals(msg.getSender())) {
+						client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
+									
+					}
+				}
+			} else {
+	
+				for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) {
+					
+					if(client.getValue().isOpen()) {
+						client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
+					}
+					
 				}
 			}
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -90,8 +104,14 @@ public class ChattingServer extends TextWebSocketHandler {
 		// 접속중단된 클라이언트 삭제
 		deleteClients();
 		
-		Message info = Message.builder().type("system").sender("admin").msg(msg.getSender() + " 님이 접속 하셨습니다.").build();
+		Message info = Message.builder().type("system").sender(msg.getSender()).msg(msg.getSender() + " 님이 입장 하셨습니다.").build();
 		sendMessage(info);
+		
+		try {
+			sendMessage(Message.builder().type("attendClient").msg(mapper.writeValueAsString(clients.keySet())).build());
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void deleteClients() {

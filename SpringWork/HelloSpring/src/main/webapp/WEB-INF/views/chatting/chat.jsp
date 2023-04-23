@@ -11,6 +11,10 @@
 
 	<body>
 		<div id="inputContainer">
+			대상
+			<select id="receiver">
+				
+			</select>
 			<input type="text" id="msg"><button id="sendMsg">전송</button>
 		</div>
 		
@@ -51,6 +55,9 @@
 					case "msg" :
 						printMsg('${loginMember.userId}', data);
 					break;
+					case "attendClient" :
+						attendClient(JSON.parse(data.msg));
+					break;
 				}
 				
 				
@@ -67,7 +74,7 @@
 				// sender, receiver, msg
 				
 				const sender = "${loginMember.userId}";
-				const receiver = '';
+				const receiver = $('#receiver').val();
 				const sendMessage = new Message("msg", sender, receiver, msg);
 				// 메시지를 서버에 전송하려면 send() 함수를 이용한다.
 				// - 서버의 handleTextMessage 메소드가 실행됨.
