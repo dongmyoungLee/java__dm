@@ -74,6 +74,16 @@
 				websocket.send(JSON.stringify(sendMessage)); 				
 			});
 			
+			/*
+			function Message(type,sender,receiver,msg,room) {
+				this.type = type;
+				this.sender = sender;
+				this.receiver = receiver;
+				this.msg = msg;
+				this.room = room;
+			} 
+			*/
+			
 			class Message {
 				constructor(type, sender, receiver, msg, room) {
 					this.type = type;

@@ -1,6 +1,7 @@
 package com.dm.spring.chatting;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.springframework.web.socket.CloseStatus;
@@ -15,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ChattingServer extends TextWebSocketHandler {
 	
-	//private Set<WebSocketSession> clients = new HashSet();
 	private Map<String, WebSocketSession> clients = new HashMap();
 	private ObjectMapper mapper = new ObjectMapper();
 	
@@ -26,11 +26,7 @@ public class ChattingServer extends TextWebSocketHandler {
 		
 		// 접속한 사용자에게 환영메세지 전송 (JSON 방식..)
 		Message welcome = new Message("system", "admin", "", "입장을 환영 합니다.", "");
-		session.sendMessage(new TextMessage(mapper.writeValueAsString(welcome)));
-		
-		//clients.add(session);
-		
-		log.debug("접속한 클라이언트 수 : {}", clients);
+		session.sendMessage(new TextMessage(mapper.writeValueAsString(welcome)));	
 	}
 
 	@Override
@@ -47,23 +43,28 @@ public class ChattingServer extends TextWebSocketHandler {
 				sendMessage(msg);
 			break;
 		}
-		
-		// 매개변수 WebsocketSession 은 메세지를 작성한 클라이언트
-		//session.sendMessage(message);
-		
-		// 저장된 클라이언트(세션) 마다 전송..
-		/*
-		for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) { 
-			if(client.getValue().isOpen()) {
-				client.sendMessage(message);
-			}
-		}
-		*/
 	}
 
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		// 클라이언트 접속이 종료되면 실행되는 함수
+		
+		log.debug("session종료 : " + status.getReason());
+		
+		String userId = "";
+		
+		System.out.println("clients " + clients);
+		
+		for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) {
+			
+			if(client.getValue().equals(session)) {
+				userId = client.getKey();
+			}
+			
+		}
+		
+		sendMessage(Message.builder().type("system").msg(userId + " 님이 퇴장 하셨습니다.").build());
+		
 		deleteClients();
 	}
 	
@@ -72,7 +73,9 @@ public class ChattingServer extends TextWebSocketHandler {
 		
 		try {
 			for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) { 
-				client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
+				if (client.getValue().isOpen()) {
+					client.getValue().sendMessage(new TextMessage(mapper.writeValueAsString(msg)));
+				}
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -92,9 +95,14 @@ public class ChattingServer extends TextWebSocketHandler {
 	}
 	
 	private void deleteClients() {
-		for(Map.Entry<String, WebSocketSession> client : clients.entrySet()) {
+		Iterator<Map.Entry<String, WebSocketSession>> it = clients.entrySet().iterator();
+		
+
+		while(it.hasNext()) {
+			Map.Entry<String, WebSocketSession> client = it.next();
+			
 			if (!client.getValue().isOpen()) {
-				clients.remove(client.getKey());
+				it.remove();
 			}
 		}
 	}
