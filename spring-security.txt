@@ -1,0 +1,6 @@
+1.security 모듈을 maven 에 등록하자..
+2.security 설정
+  - springbean configuration.xml 파일을 생성
+  - 인증처리에 대한 설정 -> <security:>
+3.security 를 서버에 적용하기
+  - web.xml 파일에 security가 제공하는 클래스를 filter로 등록

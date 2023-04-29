@@ -68,6 +68,8 @@
 				
 			};
 			
+			
+			
 			$("#sendMsg").click(() => {
 				const msg = $("#msg").val();
 				// csv 방식으로 전송하기
