@@ -31,10 +31,23 @@
 		 -->
 		
 		<!-- 로그인 페이지 주소 파라미터 매핑 -->
-		<security:form-login login-page="/member/loginpage.do" username-parameter="userId" password-parameter="pw" login-processing-url="/loginend.do" default-target-url="/" />
+		<security:form-login 
+			login-page="/member/loginpage.do"
+			username-parameter="userId"
+			password-parameter="pw"
+			login-processing-url="/loginend.do"
+			default-target-url="/"
+			authentication-failure-forward-url="/error.do"
+			authentication-success-forward-url="/successLogin.do"	
+		 />
 		
-		<!-- 전체를 못들어가게 막고 기본 홈 디렉토리만 가능하게끔 열어둠.  -->
-		<security:csrf disabled="true" />		
+		<!-- 로그아웃 주소 설정 -->
+		<security:logout logout-url="/logout.do" logout-success-url="/" />
+		
+		
+		<security:csrf disabled="true" />
+		
+		<!-- 전체를 못들어가게 막고 기본 홈 디렉토리만 가능하게끔 열어둠.  -->		
 		<security:intercept-url  pattern="/" access="permitAll()" />
 		<security:intercept-url  pattern="/resources/**" access="permitAll()" />
 		<security:intercept-url  pattern="/member/loginpage.do" access="permitAll()" />

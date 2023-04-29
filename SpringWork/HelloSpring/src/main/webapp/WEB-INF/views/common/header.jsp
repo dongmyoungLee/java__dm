@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+<c:set var="login" value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,11 @@
 		<header>
 			<div id="header-container">
 				<h2>${param.title }</h2>
+				<p>
+					시큐리티 session 값 가져오기
+					<span>${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}</span>
+				</p>
+				
 			</div>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand" href="#">
@@ -58,7 +64,7 @@
 							<a class="nav-link" href="${path}/memo/memoList.do">Memo</a>
 						</li>
 					</ul>
-					<c:if test="${loginMember == null}">
+					<c:if test="${empty login}">
 						<button class="btn btn-outline-success my-2 my-sm-0"
 						data-toggle="modal" data-target="#loginModal">로그인</button>
 						&nbsp;
@@ -66,13 +72,13 @@
 						 data-target="#loginModal" onClick="location.assign('${path}/member/enrollMember.do')">회원가입</button>
 								
 					</c:if>
-					<c:if test="${loginMember != null}">
+					<c:if test="${not empty login}">
 						<span>
 							<a href="${path}">
-								<c:out value="${loginMember.userName}"/>  
+								<c:out value="${login.username}"/>  
 							</a>님 환영합니다.
 							<button class="btn btn-outline-primary my-2 my-sm-0" onclick="openChatting();">채팅하기</button>
-							<button class="btn btn-outline-success my-2 my-sm-0" onclick="location.assign('${path}/member/logout.do')">로그아웃</button>
+							<button class="btn btn-outline-success my-2 my-sm-0" onclick="location.assign('${path}/logout.do')">로그아웃</button>
 							
 						</span>
 					</c:if>
@@ -93,10 +99,10 @@
 					</div>
 				
 					
-					<form action="${path}/member/login" method="post">
+					<form action="${path}/loginend.do" method="post">
 						<div class="modal-body">
 						 <input type="text" name="userId" class="form-control" placeholder="아이디입력" required><br/>
-	                     <input type="password" name="password" class="form-control" placeholder="패스워드입력" required>					
+	                     <input type="password" name="pw" class="form-control" placeholder="패스워드입력" required>					
 						</div>
 					
 					
