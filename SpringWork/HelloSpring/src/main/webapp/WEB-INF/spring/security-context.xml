@@ -44,6 +44,8 @@
 		<!-- 로그아웃 주소 설정 -->
 		<security:logout logout-url="/logout.do" logout-success-url="/" />
 		
+		<!-- 권한에 맞지않는 주소에 접근했을때 페이지 지정 -->
+		<security:access-denied-handler error-page="/WEB-INF/views/error/accessError.jsp" />	
 		
 		<security:csrf disabled="true" />
 		
@@ -51,6 +53,8 @@
 		<security:intercept-url  pattern="/" access="permitAll()" />
 		<security:intercept-url  pattern="/resources/**" access="permitAll()" />
 		<security:intercept-url  pattern="/member/loginpage.do" access="permitAll()" />
+		<security:intercept-url  pattern="/member/enroll*" access="permitAll()" />
+		<security:intercept-url  pattern="/memo/**" access="hasRole('ROLE_ADMIN')" />		
 		<security:intercept-url  pattern="/**" access="hasAnyRole('ROLE_USER, ROLE_ADMIN')" />	
 	</security:http>
 	
@@ -60,15 +64,33 @@
 		2. DBbase의 값과 연동해서 인증 받기
 	 -->	
 	
+	
 	<security:authentication-manager>
+		<!-- in-memory 방식... -->
+		<!-- 
 		<security:authentication-provider>
 			<security:user-service>
 				<security:user name="admin" authorities="ROLE_ADMIN" password="$2a$10$P825v47vwB6yyQEl5fJVgum8kvV9ajoOCSGhBzkqG.4dmQQuZLsF." />
-				<security:user name="user01" authorities="ROLE_USER" password="$2a$10$P825v47vwB6yyQEl5fJVgum8kvV9ajoOCSGhBzkqG.4dmQQuZLsF." />
+				<security:user name="admin1" authorities="ROLE_USER" password="$2a$10$P825v47vwB6yyQEl5fJVgum8kvV9ajoOCSGhBzkqG.4dmQQuZLsF." />
+				<security:user name="admin10" authorities="ROLE_USER" password="$2a$10$P825v47vwB6yyQEl5fJVgum8kvV9ajoOCSGhBzkqG.4dmQQuZLsF." />
 			</security:user-service>
 			<security:password-encoder ref="bcryptPasswordEncoder" />		
 		</security:authentication-provider>
+		 -->
+		 
+		<!-- 
+			DBbase 방식..
+			
+			1. 인증한 내용(loginMember)을 저장할 클래스를 생성
+				-> User(클래스), UserDetails 인터페이스를 구현
+					
+			2. DB에 접속해서 인증처리할 클래스(Service)를 생성해야함.
+			
+			3. 생성한 인증처리 클래스를 provider 에 등록..	
+		 -->		 
 	</security:authentication-manager>
+	
+	
 </beans>
 
 

@@ -95,13 +95,16 @@
 	
 	
 	<!-- 인터셉터 등록 -->
+	
+	<!-- 로그인체크 인터셉터 -->
+	<!--  
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/*"></mapping>
 			<beans:bean class="com.dm.spring.common.interceptor.LoggerInterceptor"></beans:bean>
 		</interceptor>
 		
-		<!-- 로그인체크 인터셉터 -->
+	
 		<interceptor>
 			<mapping path="/demo/*"></mapping>
 			<exclude-mapping path="/demo/demo.do" />
@@ -114,7 +117,7 @@
 		</interceptor>
 		
 	</interceptors>
-	
+	-->
 </beans:beans>
 
 
