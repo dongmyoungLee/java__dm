@@ -55,6 +55,7 @@
 		<security:intercept-url  pattern="/member/loginpage.do" access="permitAll()" />
 		<security:intercept-url  pattern="/member/enroll*" access="permitAll()" />
 		<security:intercept-url  pattern="/memo/**" access="hasAuthority('ADMIN')" />
+		<security:intercept-url  pattern="/jpa/**" access="permitAll()" />
 		<security:intercept-url  pattern="/seller/**" access="hasAnyAuthority('SELLER')" />		
 		<security:intercept-url  pattern="/**" access="hasAnyAuthority('USER, ADMIN')" />	
 	</security:http>

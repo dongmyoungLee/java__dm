@@ -1,0 +1,16 @@
+jpa
+
+RDBMS 사용시 편리하게 사용할 수 있는 영속성 프레임워크
+
+1.DB와 java 애플리케이션을 연동했을때 JDBC를 이용해서 처리
+
+1. jpa 라이브러리 추가하기
+ - hibernate-core, hibernamte-jap-2.1-api, hibernate-entitymanager
+
+2. jpa 설정
+  - persistence.xml 을 생성해서 jpa에 대한 설정
+    - 제공하는 태그를 이용해서 설정
+
+3. entity 클래스를 선언 및 구현
+ -EntityManager : 영속성 컨텍스트를 관리해주는 객체, JPA를 활용하는 명령을 가지고 있음.
+ -EntityTransaction : 트랜잭션관리 영속성 컨텍스트에 있는 sql 구문을 실행하게 하는 객체

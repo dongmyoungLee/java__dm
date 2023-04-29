@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+	<persistence-unit name="dmtest">
+		<!-- DB 연결에 대한 정보, DB 활용에 대한 정보를 설정 -->
+		<properties>
+		
+			<!-- 1. DB연결정보 설정  -->
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="javax.persistence.jdbc.user" value="SPRING" />
+			<property name="javax.persistence.jdbc.password" value="SPRING" /> 
+			
+			<!-- JPA 에 적용할 DB 설정 : 방언설정	-->		
+			 <!-- hibernate dialect는 DB 버전과 맞는 설정으로 맞춰줘야 함 -->
+			 <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			 
+			 <!-- sql 문 실행에 대한 로그 설정 -->
+			 <!-- SQL 로그 포맷 맞춰서 출력  -->
+			 <property name="hibernate.show_sql" value="true" />
+			 <property name="hibernate.format_sql" value="true" />
+			
+			 <!-- Entity로 등록한 클래스를 자동으로 DB에 생성해주는 설정(최초개발, 개발중 테스트용할때 사용, 운영중에는 조심..)
+			 	  
+			 	  create, update, create-drop, validate, none 
+			  -->
+			 <property name="hibernate.hbm2ddl.auto" value="update" />				 
+		 </properties>
+		 
+	</persistence-unit>
+</persistence>
+
+
+
+
+
+
+

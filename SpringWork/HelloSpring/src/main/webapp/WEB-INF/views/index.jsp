@@ -122,5 +122,12 @@ const insertMember = async () => {
 }
 </script>
 
+<div id="jpaContainer">
+	<h3><a href="${path}/jpa/basicJpa">기본 JPA 구문 활용하기</a></h3>
+</div>
+
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
