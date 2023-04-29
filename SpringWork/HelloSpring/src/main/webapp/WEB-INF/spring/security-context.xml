@@ -10,7 +10,7 @@
 	<!-- 패스워드 암호화처리 해주는 클래스를 spring bean으로 등록하고 사용하자
 		BCryptPasswordEncoder 클래스를 제공한다.
 	 -->
-	 
+	
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 	
 	<!-- 클라이언트 요청에 대한 인증처리 설정하기 -->
@@ -54,8 +54,9 @@
 		<security:intercept-url  pattern="/resources/**" access="permitAll()" />
 		<security:intercept-url  pattern="/member/loginpage.do" access="permitAll()" />
 		<security:intercept-url  pattern="/member/enroll*" access="permitAll()" />
-		<security:intercept-url  pattern="/memo/**" access="hasRole('ROLE_ADMIN')" />		
-		<security:intercept-url  pattern="/**" access="hasAnyRole('ROLE_USER, ROLE_ADMIN')" />	
+		<security:intercept-url  pattern="/memo/**" access="hasAuthority('ADMIN')" />
+		<security:intercept-url  pattern="/seller/**" access="hasAnyAuthority('SELLER')" />		
+		<security:intercept-url  pattern="/**" access="hasAnyAuthority('USER, ADMIN')" />	
 	</security:http>
 	
 	<!-- 
@@ -85,11 +86,26 @@
 				-> User(클래스), UserDetails 인터페이스를 구현
 					
 			2. DB에 접속해서 인증처리할 클래스(Service)를 생성해야함.
+				-> UserDetailsService 인터페이스를 구현..
 			
 			3. 생성한 인증처리 클래스를 provider 에 등록..	
-		 -->		 
+		 
+		 -->
+		 
+		 <security:authentication-provider user-service-ref="loginService">
+			<security:password-encoder ref="bcryptPasswordEncoder" /> 
+		 </security:authentication-provider>
+		 
 	</security:authentication-manager>
 	
+	<!-- 만들어지는 시점 때문에 root-context.xml 에 있는 내용을 사용할수없어서 import함 -->
+	<import resource="root-context.xml" /> 
+	
+	<bean id="dao" class="com.dm.spring.member.model.dao.MemberDaoImpl" />
+	<bean id="loginService" class="com.dm.spring.security.SecurityService">
+		<constructor-arg index="0" ref="dao" />
+		<constructor-arg index="1" ref="sqlSessionTemplate" />
+	</bean>	
 	
 </beans>
 

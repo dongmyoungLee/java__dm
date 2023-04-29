@@ -20,7 +20,7 @@
 	
 	<resultMap id="memberMap" type="member">
 		<id property="userId" column="userid" />
-		<result property="userName" column="username" />
+		<result property="name" column="username" />
 		<result property="age" column="age" />
 		<result property="gender" column="gender" />
 		<result property="email" column="email" />

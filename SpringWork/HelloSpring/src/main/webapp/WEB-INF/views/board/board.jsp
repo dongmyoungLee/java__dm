@@ -32,7 +32,7 @@
 			<tr>
 				<td scope="col">${board.boardNo }</td>
 				<td style="cursor:pointer" scope="col" onClick="location.assign('${path}/board/boardDetail.do?pk=${board.boardNo}')">${board.boardTitle }</td>
-				<td scope="col">${board.boardWriter.userName }</td>
+				<td scope="col">${board.boardWriter.name }</td>
 				<td scope="col">${board.boardDate }</td>
 				<td scope="col">
 					<c:if test="${empty board.files}">첨부파일 없음</c:if>
