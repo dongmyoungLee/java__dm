@@ -80,6 +80,13 @@ public class JpaService {
 		dao.deleteMember(manager, deleteMember);
 		et.commit();
 	}
+	
+	public void insertOneToOneData() {
+		EntityTransaction et = manager.getTransaction();
+		et.begin();
+		dao.insertOneToOneData(manager);
+		et.commit();
+	}
 }
 
 

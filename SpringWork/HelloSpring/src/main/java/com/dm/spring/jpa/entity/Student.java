@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
@@ -26,10 +28,13 @@ public class Student {
 	private Integer grade;
 	private Integer classNumber;
 	private String gender;
-	
+
 	// 다른 클래스와의 연관관계를 표시하는 jpa 어노테이션!
-	// @OneToOne,
-	// @OneToMany,
-	// @ManyToOne,
-	// @ManyToMany,
+	// @OneToOne : 1:1로 클래스가 연결되는 것 -> java has a 관계로 클래스를 필드로 선언
+	// @OneToMany : 1:다 -> java has a 관계로 List 타입으로 필드 선언
+	// @ManyToOne : 다 : 1 -> java has a 클래스를 필드로 선언
+	// @ManyToMany: 다 : 다 -> 중간테이블 생성하는 구문을 작성
+	@OneToOne
+	@JoinColumn(name="locker_no")
+	private Locker locker;
 }

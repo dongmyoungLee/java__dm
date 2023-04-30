@@ -81,6 +81,12 @@ public class JpaController {
 		service.deleteMember(memberNo);
 	}
 	
+	@RequestMapping("/jpa/oneToOne")
+	public @ResponseBody String oneToOneText() {
+		service.insertOneToOneData();
+		return "redirect:/";
+	}
+	
 }
 
 

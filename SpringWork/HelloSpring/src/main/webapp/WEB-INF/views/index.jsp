@@ -47,6 +47,8 @@
 				<input type="submit" value="삭제">
 			</form>
 		</div>
+		<h2>연관관계 설정한 entity 관리하기</h2>
+		<h3><a href="${path}/jpa/oneToOne">일대일관계 저장하기</a></h3>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	

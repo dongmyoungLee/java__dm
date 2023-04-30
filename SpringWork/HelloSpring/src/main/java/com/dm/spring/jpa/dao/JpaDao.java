@@ -14,6 +14,8 @@ import com.dm.spring.jpa.common.MemberLevel;
 import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
+import com.dm.spring.jpa.entity.Locker;
+import com.dm.spring.jpa.entity.Student;
 
 @Repository
 public class JpaDao {
@@ -96,6 +98,27 @@ public class JpaDao {
 	public void deleteMember(EntityManager em, JpaMember deleteMember) {
 		// 영속성 컨텍스트에 있는 객체 삭제하기
 		em.remove(deleteMember);
+	}
+	
+	public void insertOneToOneData(EntityManager em) {
+		
+		// 연관관계에 있는 데이터 저장하기
+		Student s = Student.builder()
+					.studentName("이동명")
+					.classNumber(3)
+					.grade(1)
+					.gender("남")
+					.build();
+		
+		Locker l = Locker.builder()
+				   .color("빨강")
+				   .floor(1)
+				   .build();
+		
+		s.setLocker(l);
+		
+		em.persist(l);
+		em.persist(s);
 	}
 }
 
