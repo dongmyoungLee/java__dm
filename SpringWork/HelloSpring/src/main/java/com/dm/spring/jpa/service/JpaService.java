@@ -1,11 +1,14 @@
 package com.dm.spring.jpa.service;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dm.spring.jpa.dao.JpaDao;
+import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 
@@ -34,5 +37,13 @@ public class JpaService {
 	
 	public JpaMember searchMemberByNo(int no) {
 		return dao.searchMemberByNo(manager, no);
+	}
+	
+	public List<JpaMember> searchAllMember() {
+		return dao.searchAllMember(manager);
+	}
+	
+	public Dev searchDev() {
+		return dao.searchDev(manager);
 	}
 }

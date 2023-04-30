@@ -1,13 +1,16 @@
 package com.dm.spring.jpa.dao;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
 import com.dm.spring.jpa.common.MemberLevel;
+import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 
@@ -49,8 +52,24 @@ public class JpaDao {
 		// Entitiy DB 에서 조회할때는 EntitiyManager가 제공하는 메소드를 이용해서 조회..
 		// 단 EntityManager 가 기본적으로 제공하는 메소드는 pk 값을 기준으로 한개의 row만 조회하는 기능임
 		
-		JpaMember m = em.find(JpaMember.class, no);
+		JpaMember m = em.find(JpaMember.class, Long.valueOf(no));
 		return m;
+	}
+	
+	public List<JpaMember> searchAllMember(EntityManager em) {
+		// 다수의 row를 조회해보자..
+		// EntityManager 에서는 다수의 row를 조회하는 구문을 제공하지 않는다..
+		// JPQL 구문을 이용해서 직접 SQL문을 작성하고 그 결과를 받아와야함..
+		// EntityManager 가 제공하는 createQuery("JPQL") 함수를 이용해서 작성을 함..
+		
+		Query sql = em.createQuery("select m from JpaMember m", JpaMember.class);
+		// Query 클래스에서 제공하는 getResultList() 메소드를 이용..
+		return sql.getResultList();
+	}
+	
+	public Dev searchDev(EntityManager em) {
+		
+		return em.find(Dev.class, 1);
 	}
 }
 

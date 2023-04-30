@@ -13,7 +13,9 @@
 	<div id="jpaContainer">
 		<h3><a href="${path}/jpa/basicJpa">기본 JPA 구문 활용하기</a></h3>
 		<h3><a href="${path}/jpa/insertJpa">기본 입력하기</a></h3>
-		<h3><a href="${path}/jpa/member?no=1"></a></h3>
+		<h3><a href="${path}/jpa/member?no=1">회원조회</a></h3>
+		<h3><a href="${path}/jpa/members">전체회원조회</a></h3>
+		<h3><a href="${path}/jpa/dev?no=1">DEV test 조회</a></h3>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	
