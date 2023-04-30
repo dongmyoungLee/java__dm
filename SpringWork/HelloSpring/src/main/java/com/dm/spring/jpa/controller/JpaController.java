@@ -16,6 +16,7 @@ import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 import com.dm.spring.jpa.entity.Locker;
 import com.dm.spring.jpa.entity.Student;
+import com.dm.spring.jpa.entity.Subject;
 import com.dm.spring.jpa.service.JpaService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -109,6 +110,16 @@ public class JpaController {
 		return service.selectClub(no);
 	}
 	
+	@RequestMapping("/jpa/subject")
+	public String insertSubject() {
+		service.insertSubject();
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/jpa/selectSubject/{subjectNo}")
+	public Subject selectSubject(@PathVariable long no) {
+		return service.selectSubject(no);
+	}
 	
 }
 

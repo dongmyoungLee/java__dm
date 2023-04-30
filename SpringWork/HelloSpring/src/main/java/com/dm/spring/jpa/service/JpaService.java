@@ -16,6 +16,7 @@ import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 import com.dm.spring.jpa.entity.Locker;
 import com.dm.spring.jpa.entity.Student;
+import com.dm.spring.jpa.entity.Subject;
 
 @Service
 public class JpaService {
@@ -101,6 +102,17 @@ public class JpaService {
 	
 	public Club selectClub(long no) {
 		return dao.selectClub(manager, no);
+	}
+	
+	public void insertSubject() {
+		EntityTransaction et = manager.getTransaction();
+		et.begin();
+		dao.insertSubject(manager);
+		et.commit();
+	}
+	
+	public Subject selectSubject(long no) {
+		return dao.selectSubject(manager, no);
 	}
 }
 

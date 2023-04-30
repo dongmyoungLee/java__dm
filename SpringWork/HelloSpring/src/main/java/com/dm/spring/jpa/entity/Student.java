@@ -1,11 +1,16 @@
 package com.dm.spring.jpa.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -43,6 +48,17 @@ public class Student {
 	@ManyToOne
 	@JoinColumn(name="club_no")
 	private Club club;
+	
+	// 학생과 과목과의 관계를 설정하기..
+	// 다 대 다 관계
+	/*
+	@ManyToMany
+	@JoinTable(name = "student_subject", joinColumns = @JoinColumn(name="studentNo"), inverseJoinColumns = @JoinColumn(name="subjectNo"))
+	List<Subject> subjects;
+	*/
+	
+	@OneToMany(mappedBy = "student")
+	private List<SubmitSubject> submitSubject;
 }
 
 

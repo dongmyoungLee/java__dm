@@ -17,6 +17,8 @@ import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 import com.dm.spring.jpa.entity.Locker;
 import com.dm.spring.jpa.entity.Student;
+import com.dm.spring.jpa.entity.Subject;
+import com.dm.spring.jpa.entity.SubmitSubject;
 
 @Repository
 public class JpaDao {
@@ -153,6 +155,67 @@ public class JpaDao {
 	public Club selectClub(EntityManager em, long no) {
 		
 		return em.find(Club.class, no);
+	}
+	
+	public void insertSubject(EntityManager em) {
+		Student s=Student.builder()
+				.studentName("한호현")
+				.classNumber(4)
+				.grade(3)
+				.gender("남")
+				.build();
+		Student s1=Student.builder()
+				.studentName("이동명")
+				.classNumber(2)
+				.grade(2)
+				.gender("남")
+				.build();
+		Subject sub=Subject.builder().subjectName("자바").teacherName("유병승").build();
+		Subject sub1=Subject.builder().subjectName("c언어").teacherName("유병승").build();
+		Subject sub2=Subject.builder().subjectName("파이썬").teacherName("유병승").build();
+		Subject sub3=Subject.builder().subjectName("spring").teacherName("유병승").build();
+		
+		
+//		s.setSubjects(List.of(sub,sub3,sub2));
+//		s1.setSubjects(List.of(sub1,sub2,sub3));
+		
+		
+		
+		SubmitSubject ss=SubmitSubject.builder().subject(sub3).student(s)
+				.submitDate(new Date(System.currentTimeMillis())).build();
+		SubmitSubject ss1=SubmitSubject.builder().subject(sub3).student(s1)
+				.submitDate(new Date(System.currentTimeMillis())).build();
+		
+		em.persist(ss1);
+		em.persist(ss);
+		
+		
+//		일부러 복합키 무결성 위배해봄..
+		/*
+		Student s3=em.find(Student.class, 101L);
+		Subject sub4=em.find(Subject.class, 21L);
+		
+		SubmitSubject ss2=SubmitSubject.builder().subject(sub4).student(s3)
+				.submitDate(new Date(System.currentTimeMillis())).build();
+		
+		em.persist(ss2);
+		*/
+		
+		
+		
+		
+		
+		em.persist(s);
+		em.persist(s1);
+		em.persist(sub);
+		em.persist(sub1);
+		em.persist(sub2);
+		em.persist(sub3);
+		
+	}
+	
+	public Subject selectSubject(EntityManager em, Long no) {
+		return em.find(Subject.class, no);
 	}
 }
 

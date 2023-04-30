@@ -16,6 +16,7 @@
 		<h3><a href="${path}/jpa/member?no=1">회원조회</a></h3>
 		<h3><a href="${path}/jpa/members">전체회원조회</a></h3>
 		<h3><a href="${path}/jpa/dev?no=1">DEV test 조회</a></h3>
+		
 		<div>
 			<h3>특정 나이 이상 조회하기</h3>
 			<form action="${path}/jpa/searchAge">
@@ -52,6 +53,8 @@
 		<h3><a href="${path}/jpa/student/21">21번학생조회</a></h3>
 		<h3><a href="${path}/jpa/locker/1">1번학생조회</a></h3>
 		<h3><a href="${path}/jpa/club/1">1번클럽조회</a></h3>
+		<h3><a href="${path}/jpa/subject">수강신청</a></h3>
+		<h3><a href="${path}/jpa/selectSubject/1">과목조회</a></h3>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	
