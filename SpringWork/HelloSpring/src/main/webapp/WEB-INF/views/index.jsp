@@ -10,6 +10,11 @@
 
 <section id="content">
 	<h2>Hello Spring</h2>
+	<div id="jpaContainer">
+		<h3><a href="${path}/jpa/basicJpa">기본 JPA 구문 활용하기</a></h3>
+		<h3><a href="${path}/jpa/insertJpa">기본 입력하기</a></h3>
+		<h3><a href="${path}/jpa/member?no=1"></a></h3>
+	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	
 	<button onClick="selectMemberAll();" class="btn btn-outline-primary">전체회원조회</button>
@@ -122,9 +127,7 @@ const insertMember = async () => {
 }
 </script>
 
-<div id="jpaContainer">
-	<h3><a href="${path}/jpa/basicJpa">기본 JPA 구문 활용하기</a></h3>
-</div>
+
 
 
 

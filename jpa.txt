@@ -14,3 +14,43 @@ RDBMS 사용시 편리하게 사용할 수 있는 영속성 프레임워크
 3. entity 클래스를 선언 및 구현
  -EntityManager : 영속성 컨텍스트를 관리해주는 객체, JPA를 활용하는 명령을 가지고 있음.
  -EntityTransaction : 트랜잭션관리 영속성 컨텍스트에 있는 sql 구문을 실행하게 하는 객체
+
+
+jpa 에서 Entity 설계하기..
+
+Table에 있는 데이터 저장 -> VO / DTO 
+DB관련 설계는 Entity 클래스를 따로 만들어서 관리하자..
+
+Entity를 설계..
+어노테이션으로..
+@Entity : 영속성 컨텍스트에서 관리될 class를 지정 -> 클래스 선언부에 선언
+@Entity(속성명 = 속성값)
+속성 name : 영속성 컨텍스트에서 관리되는 class의 이름지정 등록하지 않으면 클래스이름이 이름이 된다.(이름 중복불가)
+
+기본생성자는 필수로 작성해야함 (enum, interface, inner클래스는 사용이 불가능)
+
+@Table
+등록된 엔티티와 매핑할 DB테이블을 설정하는 어노테이션
+테이블이름, 제약조건
+속성
+name : 테이블 이름 * 생략하면 class 이름으로 테이블 생성
+uniqueConstraints : 유니크 제약조건을 설정할때 사용 * 두개이상의 컬럼에 적용할때 @UniqueConstraint(name = 제약조건명, columnName={"",""})
+
+@SequenceGenerator -> 기본키에 사용할 Sequence 를 생성하는 구문
+
+------------------클래스 선언부에 선언하는 어노테이션---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

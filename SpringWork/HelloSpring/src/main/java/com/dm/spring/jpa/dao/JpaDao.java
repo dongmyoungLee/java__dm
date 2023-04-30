@@ -1,9 +1,14 @@
 package com.dm.spring.jpa.dao;
 
+import java.sql.Date;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import org.springframework.stereotype.Repository;
 
+import com.dm.spring.jpa.common.MemberLevel;
+import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
 
 @Repository
@@ -17,4 +22,27 @@ public class JpaDao {
 		
 		return em.find(JpaTest.class, 1L);
 	}
+	
+	public JpaMember insertJpa(EntityManager em) {
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		
+		JpaMember jm = null;
+		
+		for(int i = 0; i < 10; i++) {
+				jm = JpaMember.builder()
+					.memberId("test" + i)
+					.memberPwd("1234")
+					.age(10 + i)
+					.height(180.5 + i)
+					.memberLevel(MemberLevel.PRETINUM)
+					.enrollDate(new Date(System.currentTimeMillis())).build();
+			em.persist(jm);
+		}
+		
+		et.commit();
+		
+		return jm;
+	}
+
 }
