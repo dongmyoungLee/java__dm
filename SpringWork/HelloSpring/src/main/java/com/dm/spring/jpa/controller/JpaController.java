@@ -48,4 +48,11 @@ public class JpaController {
 	public @ResponseBody Dev searchDev(int no) {
 		return service.searchDev();
 	}
+	
+	@RequestMapping("/jpa/searchAge")
+	public @ResponseBody List<JpaMember> searchMemberBy(int age) {
+		return service.searchMemberBy(age);
+	}
+	
+	
 }

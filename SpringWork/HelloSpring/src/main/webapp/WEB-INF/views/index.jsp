@@ -16,6 +16,13 @@
 		<h3><a href="${path}/jpa/member?no=1">회원조회</a></h3>
 		<h3><a href="${path}/jpa/members">전체회원조회</a></h3>
 		<h3><a href="${path}/jpa/dev?no=1">DEV test 조회</a></h3>
+		<div>
+			<h3>특정 나이 이상 조회하기</h3>
+			<form action="${path}/jpa/searchAge">
+				<input type="number" name="age" min="10">
+				<input type="submit" value="검색">
+			</form>
+		</div>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	

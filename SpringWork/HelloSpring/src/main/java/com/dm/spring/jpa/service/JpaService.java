@@ -46,4 +46,8 @@ public class JpaService {
 	public Dev searchDev() {
 		return dao.searchDev(manager);
 	}
+	
+	public List<JpaMember> searchMemberBy(int age) {
+		return dao.searchMemberBy(manager, age);
+	}
 }

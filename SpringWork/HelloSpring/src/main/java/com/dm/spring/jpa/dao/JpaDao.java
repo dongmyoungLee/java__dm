@@ -71,6 +71,12 @@ public class JpaDao {
 		
 		return em.find(Dev.class, 1);
 	}
+	
+	public List<JpaMember> searchMemberBy(EntityManager em, int age) {
+		Query sql = em.createQuery("select m from JpaMember m where m.age >=:param");
+		sql.setParameter("param", age);
+		return sql.getResultList();
+	}
 }
 
 
