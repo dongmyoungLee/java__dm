@@ -72,7 +72,7 @@ public class JpaMember {
 	@Column(name="age", precision = 20, scale = 0)
 	private Integer age;
 	
-	@Column(insertable = false)
+	/* @Column(insertable = false) */
 	private double height;
 	
 	// 컬럼타입을 설정하는 어노테이션

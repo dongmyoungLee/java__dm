@@ -23,6 +23,30 @@
 				<input type="submit" value="검색">
 			</form>
 		</div>
+		<div>
+			<h3>회원저장하기</h3>
+			<form action="${path}/jpa/insertMember" method="post">
+				<input type="text" name="memberId" placeholder="id"><br>
+				<input type="text" name="memberPwd" placeholder="password"><br>
+				<input type="number" name="age" placeholder="age"><br>
+				<input type="number" name="height" placeholder="height"><br>
+				<textarea cols="30" rows="10" style="resize:none" name="info" placeholder="info"></textarea><br>
+				<input type="submit" value="회원가입">
+			</form>
+			<h3>회원수정하기</h3>
+			<form action="${path}/jpa/updateMember" method="post">
+				<input type="number" name="age" placeholder="age"><br>
+				<input type="number" name="height" placeholder="height"><br>
+				<textarea cols="30" rows="10" style="resize:none" name="info" placeholder="info"></textarea><br>
+				<input type="hidden" name="memberNo" value="10">
+				<input type="submit" value="회원수정">
+			</form>
+			<h3>회원정보삭제</h3>
+			<form action="${path}/jpa/deleteMember" method="post">
+				<input type="text" name="memberNo">
+				<input type="submit" value="삭제">
+			</form>
+		</div>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	

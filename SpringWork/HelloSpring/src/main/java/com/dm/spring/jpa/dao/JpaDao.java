@@ -2,6 +2,7 @@ package com.dm.spring.jpa.dao;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -76,6 +77,25 @@ public class JpaDao {
 		Query sql = em.createQuery("select m from JpaMember m where m.age >=:param");
 		sql.setParameter("param", age);
 		return sql.getResultList();
+	}
+	
+	public void insertMember(EntityManager em, JpaMember m) {
+		// 비영속상태 에서 영속상태로 바꿈..
+		em.persist(m);
+	}
+	
+	public void updateMember(EntityManager em, JpaMember m, Map param) {
+		// jpa에서 수정할때는 영속성 컨텍스트에 등록된 객체게 필드값을 수정하면 update문이 생성되고
+		// commit(), flush() 를 실행하면 update문이 실행된다.
+		
+		m.setAge(Integer.parseInt((String)param.get("age")));
+		m.setHeight(Double.parseDouble((String)param.get("height")));
+		m.setInfo((String)param.get("info"));
+	}
+	
+	public void deleteMember(EntityManager em, JpaMember deleteMember) {
+		// 영속성 컨텍스트에 있는 객체 삭제하기
+		em.remove(deleteMember);
 	}
 }
 
