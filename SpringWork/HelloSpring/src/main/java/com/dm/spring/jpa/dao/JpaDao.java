@@ -44,5 +44,26 @@ public class JpaDao {
 		
 		return jm;
 	}
-
+	
+	public JpaMember searchMemberByNo(EntityManager em, int no) {
+		// Entitiy DB 에서 조회할때는 EntitiyManager가 제공하는 메소드를 이용해서 조회..
+		// 단 EntityManager 가 기본적으로 제공하는 메소드는 pk 값을 기준으로 한개의 row만 조회하는 기능임
+		
+		JpaMember m = em.find(JpaMember.class, no);
+		return m;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
