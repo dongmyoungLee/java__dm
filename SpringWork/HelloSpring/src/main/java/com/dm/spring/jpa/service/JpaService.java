@@ -10,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dm.spring.jpa.dao.JpaDao;
+import com.dm.spring.jpa.entity.Club;
 import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
+import com.dm.spring.jpa.entity.Locker;
+import com.dm.spring.jpa.entity.Student;
 
 @Service
 public class JpaService {
@@ -87,7 +90,26 @@ public class JpaService {
 		dao.insertOneToOneData(manager);
 		et.commit();
 	}
+	
+	public Student selectStudent(long no) {
+		return dao.selectStudent(manager, no);
+	}
+	
+	public Locker selectLocker(long no) {
+		return dao.selectLocker(manager, no);
+	}
+	
+	public Club selectClub(long no) {
+		return dao.selectClub(manager, no);
+	}
 }
+
+
+
+
+
+
+
 
 
 

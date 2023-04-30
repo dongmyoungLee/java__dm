@@ -4,14 +4,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dm.spring.jpa.common.MemberLevel;
+import com.dm.spring.jpa.entity.Club;
 import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
+import com.dm.spring.jpa.entity.Locker;
+import com.dm.spring.jpa.entity.Student;
 import com.dm.spring.jpa.service.JpaService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -87,7 +91,37 @@ public class JpaController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/jpa/student/{studentNo}")
+	@ResponseBody
+	public Student selectStudent(@PathVariable(name="studentNo") Long no) {
+		return service.selectStudent(no);
+	}
+	
+	@RequestMapping("/jpa/locker/{lockerNo}")
+	@ResponseBody
+	public Locker selectLocker(@PathVariable(name="lockerNo") Long no) {
+		return service.selectLocker(no);
+	}
+	
+	@RequestMapping("/jpa/club/{clubNo}")
+	@ResponseBody
+	public Club selectClub(@PathVariable(name="clubNo") Long no) {
+		return service.selectClub(no);
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

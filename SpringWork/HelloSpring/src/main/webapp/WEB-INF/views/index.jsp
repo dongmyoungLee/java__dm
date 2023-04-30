@@ -49,6 +49,9 @@
 		</div>
 		<h2>연관관계 설정한 entity 관리하기</h2>
 		<h3><a href="${path}/jpa/oneToOne">일대일관계 저장하기</a></h3>
+		<h3><a href="${path}/jpa/student/21">21번학생조회</a></h3>
+		<h3><a href="${path}/jpa/locker/1">1번학생조회</a></h3>
+		<h3><a href="${path}/jpa/club/1">1번클럽조회</a></h3>
 	</div>
 	<img src="${path}/resources/images/logo-spring.png" id="center-image" alt="스프링로고" />
 	

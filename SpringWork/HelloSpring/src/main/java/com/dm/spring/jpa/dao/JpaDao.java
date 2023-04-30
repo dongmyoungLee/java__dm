@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.dm.spring.jpa.common.MemberLevel;
+import com.dm.spring.jpa.entity.Club;
 import com.dm.spring.jpa.entity.Dev;
 import com.dm.spring.jpa.entity.JpaMember;
 import com.dm.spring.jpa.entity.JpaTest;
@@ -115,10 +116,43 @@ public class JpaDao {
 				   .floor(1)
 				   .build();
 		
-		s.setLocker(l);
+		Club c = Club.builder()
+				 .name("축구")
+				 .position("공격")
+				 .build();
 		
+		Student s1 = Student.builder()
+				.studentName("유병승")
+				.classNumber(5)
+				.grade(3)
+				.gender("여")
+				.build();
+		
+		s.setLocker(l);
+		s.setClub(c);
+		
+		s1.setClub(c);
+		
+		em.persist(c);
 		em.persist(l);
 		em.persist(s);
+		
+		em.persist(s1);
+	}
+	
+	public Student selectStudent(EntityManager em, long no) {
+		
+		return em.find(Student.class, no);
+	}
+	
+	public Locker selectLocker(EntityManager em, long no) {
+		
+		return em.find(Locker.class, no);
+	}
+	
+	public Club selectClub(EntityManager em, long no) {
+		
+		return em.find(Club.class, no);
 	}
 }
 
