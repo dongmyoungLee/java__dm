@@ -60,10 +60,8 @@ public class BasicController {
 	@RequestMapping("/fileupload")
 	public String uploadFile(MultipartFile upfile) {
 		
-
 		log.info("파일크기 : " + upfile.getSize());
 		log.info("파일이름 : " + upfile.getOriginalFilename());
-		log.info("base : " + linuxBaseDir);
 		return "redirect:/";
 	}
 }
