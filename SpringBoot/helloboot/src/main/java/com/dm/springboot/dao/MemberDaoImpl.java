@@ -3,10 +3,12 @@ package com.dm.springboot.dao;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.dm.springboot.model.vo.Member;
 
+@Primary
 @Repository
 public class MemberDaoImpl implements MemberDao {
 	
@@ -19,9 +21,10 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public Member selectByMemberbyId(SqlSessionTemplate session, String id) {
+	public List<Member> selectByMemberbyId(SqlSessionTemplate session, String id) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return session.selectList("member.selectByMemberbyId", id);
 	}
 
 }

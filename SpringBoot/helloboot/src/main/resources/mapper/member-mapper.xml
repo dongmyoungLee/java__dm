@@ -5,4 +5,8 @@
 	<select id="selectMemberAll" resultType="com.dm.springboot.model.vo.Member">
 		SELECT * FROM MEMBER
 	</select>
+	
+	<select id="selectByMemberbyId" resultType="member">
+		SELECT * FROM MEMBER WHERE USERID like '%'||#{id}||'%'
+	</select>
 </mapper>

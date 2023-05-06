@@ -7,5 +7,5 @@ import com.dm.springboot.model.vo.Member;
 public interface MemberService {
 	List<Member> selectMemberAll();
 	
-	Member selectByMemberbyId(String id);
+	List<Member> selectByMemberbyId(String id);
 }

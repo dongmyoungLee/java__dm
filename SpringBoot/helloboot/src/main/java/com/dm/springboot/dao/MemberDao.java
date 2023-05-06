@@ -9,6 +9,6 @@ import com.dm.springboot.model.vo.Member;
 public interface MemberDao {
 	List<Member> selectMemberAll(SqlSessionTemplate session);
 	
-	Member selectByMemberbyId(SqlSessionTemplate session, String id);
+	List<Member> selectByMemberbyId(SqlSessionTemplate session, String id);
 	
 }

@@ -2,18 +2,18 @@ package com.dm.springboot.contoller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dm.springboot.model.service.MemberService;
 import com.dm.springboot.model.vo.Member;
-import com.dm.springboot.model.vo.Test;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
+@Slf4j
 public class BasicController {
 	
 	private MemberService service;
@@ -35,4 +35,28 @@ public class BasicController {
 		
 		return service.selectMemberAll(); 
 	}
+	
+	@RequestMapping("/member/memberAll.do")
+	public String selectMemberAll2(Model model) {		
+		List<Member> list = service.selectMemberAll();
+		model.addAttribute("members", list);
+		
+		return "member/memberList";
+	}
+	
+	@RequestMapping("/member/searchMember.do")
+	public String searchMember(Model model, String id) {
+		List<Member> list = service.selectByMemberbyId(id);
+		model.addAttribute("members", list);
+		
+		return "member/memberList";
+		
+	}
 }
+
+
+
+
+
+
+

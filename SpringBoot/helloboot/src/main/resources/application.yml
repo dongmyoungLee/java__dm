@@ -16,9 +16,9 @@ spring:
       suffix: .jsp
     
 #mybatis
-mybatis: 
-  config-location: classpath:/config/mybatis-config.xml
-  mapper-locations: classpath:/mapper/**/*.xml
+#mybatis: 
+#  config-location: classpath:/config/mybatis-config.xml
+#  mapper-locations: classpath:/mapper/**/*.xml
 
 
   
