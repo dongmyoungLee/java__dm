@@ -26,13 +26,21 @@ spring:
 #  config-location: classpath:/config/mybatis-config.xml
 #  mapper-locations: classpath:/mapper/**/*.xml
 
-# 고정데이터 입력
+# 고정데이터 입력(custom)
 # 기본 경로, 기본 포트, 계정관련내용
 linux: 
   url: localhost:8989
   username: root
   base: /home/dm
 
+# 로그에 대한 설정하기
+logging:
+  file:
+    name: logs/springboot.log
+  level:
+    root: info
+    '[com.dm.springboot]': warn
+  
 
 
 
