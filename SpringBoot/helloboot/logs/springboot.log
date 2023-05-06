@@ -13,3 +13,944 @@
 2023-05-06 15:30:10.291  INFO 248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2023-05-06 15:30:10.299  INFO 248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
 2023-05-06 15:30:10.302  INFO 248 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:33:33.105  INFO 248 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:33:33.119  INFO 248 --- [Thread-44] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:33:33.122  INFO 248 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2023-05-06 15:33:33.127  INFO 248 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2023-05-06 15:33:33.263  INFO 248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:33:33.265  INFO 248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:33:33.327  INFO 248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:33:33.327  INFO 248 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:33:33.328  INFO 248 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:33:33.385  INFO 248 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:33:33.395  INFO 248 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:33:33.395  INFO 248 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 216 ms
+2023-05-06 15:33:33.507  INFO 248 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:33:33.565  INFO 248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2023-05-06 15:33:33.565  WARN 248 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:33:33.608  INFO 248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2023-05-06 15:33:33.646  INFO 248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:33:33.654  INFO 248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:33:33.659  INFO 248 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:33:44.855  INFO 248 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:33:44.855  INFO 248 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:33:44.857  INFO 248 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-06 15:33:49.131  INFO 248 --- [RMI TCP Connection(50)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-06 15:33:49.142  INFO 248 --- [RMI TCP Connection(50)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:33:49.142  INFO 248 --- [RMI TCP Connection(50)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:33:49.145  INFO 248 --- [RMI TCP Connection(50)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2023-05-06 15:33:49.151  INFO 248 --- [RMI TCP Connection(50)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2023-05-06 15:33:51.238  INFO 4724 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 15:33:51.239  INFO 4724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 15:33:51.239  INFO 4724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 15:33:51.588  INFO 4724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:33:51.596  INFO 4724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:33:52.102  INFO 4724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:33:52.108  INFO 4724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:33:52.109  INFO 4724 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:33:52.270  INFO 4724 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:33:52.288  INFO 4724 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:33:52.289  INFO 4724 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1049 ms
+2023-05-06 15:33:52.629  INFO 4724 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:33:52.756  INFO 4724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 15:33:52.759  WARN 4724 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:33:52.945  INFO 4724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 15:33:53.036  INFO 4724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:33:53.067  INFO 4724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:33:59.292  INFO 4724 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:33:59.293  INFO 4724 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:33:59.296  INFO 4724 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-05-06 15:34:26.103  INFO 4724 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-06 15:34:26.117  INFO 4724 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:34:26.118  INFO 4724 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:34:26.125  INFO 4724 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 15:34:26.131  INFO 4724 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 15:34:33.444  INFO 13124 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 15:34:33.445  INFO 13124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 15:34:33.445  INFO 13124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 15:34:33.790  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:34:33.798  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:34:34.299  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:34:34.307  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:34:34.307  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:34:34.471  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:34:34.489  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:34:34.489  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1044 ms
+2023-05-06 15:34:34.829  INFO 13124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:34:34.956  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 15:34:34.960  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:34:35.144  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 15:34:35.235  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:34:35.269  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:34:37.390  INFO 13124 --- [http-nio-9091-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:34:37.390  INFO 13124 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:34:37.391  INFO 13124 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 15:36:01.413  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-05-06 15:36:01.426  INFO 13124 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:36:01.427  INFO 13124 --- [Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:36:01.433  INFO 13124 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 15:36:01.440  INFO 13124 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 15:36:01.590  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:36:01.591  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:36:01.659  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:36:01.659  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:36:01.659  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:36:01.726  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:36:01.737  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:36:01.737  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 241 ms
+2023-05-06 15:36:01.853  INFO 13124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:36:01.914  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-06 15:36:01.914  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:36:01.968  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-06 15:36:01.993  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:36:02.002  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:36:02.007  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:36:03.536  INFO 13124 --- [http-nio-9091-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:36:03.536  INFO 13124 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:36:03.537  INFO 13124 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 15:38:30.154  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:38:30.165  INFO 13124 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:38:30.165  INFO 13124 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:38:30.168  INFO 13124 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-06 15:38:30.174  INFO 13124 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-06 15:38:30.315  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:38:30.317  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:38:30.377  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:38:30.377  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:38:30.377  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:38:30.436  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:38:30.447  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:38:30.447  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 219 ms
+2023-05-06 15:38:30.567  INFO 13124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:38:30.628  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-06 15:38:30.628  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:38:30.722  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-06 15:38:30.750  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:38:30.758  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:38:30.761  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:38:55.899  INFO 13124 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:38:55.899  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:38:55.900  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 15:39:23.822  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:39:23.835  INFO 13124 --- [Thread-14] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:39:23.835  INFO 13124 --- [Thread-14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:39:23.838  INFO 13124 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-05-06 15:39:23.844  INFO 13124 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-05-06 15:39:23.986  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:39:23.988  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:39:24.048  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:39:24.049  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:39:24.049  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:39:24.114  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:39:24.124  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:39:24.124  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 231 ms
+2023-05-06 15:39:24.241  INFO 13124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:39:24.302  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-05-06 15:39:24.302  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:39:24.350  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-05-06 15:39:24.376  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:39:24.382  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:39:24.387  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:39:24.406  INFO 13124 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:39:24.406  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:39:24.406  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-06 15:39:29.840  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:39:29.849  INFO 13124 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:39:29.850  INFO 13124 --- [Thread-19] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:39:29.852  INFO 13124 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-05-06 15:39:29.856  INFO 13124 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-05-06 15:39:29.984  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:39:29.986  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:39:30.064  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:39:30.064  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:39:30.065  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:39:30.122  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:39:30.132  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:39:30.132  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 229 ms
+2023-05-06 15:39:30.245  INFO 13124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-06 15:39:30.304  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-05-06 15:39:30.304  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:39:30.345  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-05-06 15:39:30.369  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:39:30.377  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:39:30.380  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:39:30.532  INFO 13124 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:39:30.532  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:39:30.532  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-06 15:50:04.605  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:50:04.615  INFO 13124 --- [Thread-24] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:50:04.615  INFO 13124 --- [Thread-24] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 15:50:04.618  INFO 13124 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-05-06 15:50:04.624  INFO 13124 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-05-06 15:50:04.760  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:50:04.762  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:50:04.829  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:50:04.829  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:50:04.829  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:50:04.891  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:50:04.901  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:50:04.901  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 229 ms
+2023-05-06 15:50:05.083  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-05-06 15:50:05.083  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:50:05.162  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-05-06 15:50:05.193  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:50:05.202  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:50:05.207  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:51:03.293  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 15:51:03.304  INFO 13124 --- [Thread-29] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:51:03.307  INFO 13124 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-05-06 15:51:03.313  INFO 13124 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-05-06 15:51:03.441  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 15:51:03.443  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 15:51:03.503  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 15:51:03.503  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:51:03.504  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 15:51:03.558  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 15:51:03.567  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:51:03.567  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 206 ms
+2023-05-06 15:51:03.731  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-05-06 15:51:03.731  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 15:51:03.770  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-05-06 15:51:03.793  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:51:03.801  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 15:51:03.804  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:51:25.309  INFO 13124 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:51:25.309  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:51:25.310  INFO 13124 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 16:07:18.027  INFO 13124 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-05-06 16:07:18.037  INFO 13124 --- [Thread-34] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:07:18.038  INFO 13124 --- [Thread-34] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:07:18.041  INFO 13124 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-05-06 16:07:18.049  INFO 13124 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-05-06 16:07:18.224  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:07:18.226  INFO 13124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:07:18.282  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:07:18.283  INFO 13124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:07:18.283  INFO 13124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:07:18.488  INFO 13124 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:07:18.521  INFO 13124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:07:18.521  INFO 13124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 417 ms
+2023-05-06 16:07:18.686  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-05-06 16:07:18.686  WARN 13124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:07:18.809  INFO 13124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-05-06 16:07:18.832  INFO 13124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:07:18.840  INFO 13124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:07:18.844  INFO 13124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:08:14.453  INFO 13124 --- [RMI TCP Connection(67)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-06 16:08:14.464  INFO 13124 --- [RMI TCP Connection(67)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:08:14.467  INFO 13124 --- [RMI TCP Connection(67)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-05-06 16:08:14.473  INFO 13124 --- [RMI TCP Connection(67)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-05-06 16:24:18.078  INFO 5700 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:24:18.079  INFO 5700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:24:18.079  INFO 5700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:24:18.455  INFO 5700 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:24:18.464  INFO 5700 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:24:19.015  INFO 5700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:24:19.022  INFO 5700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:24:19.022  INFO 5700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:24:19.185  INFO 5700 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:24:19.207  INFO 5700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:24:19.207  INFO 5700 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1128 ms
+2023-05-06 16:24:19.485  WARN 5700 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+2023-05-06 16:24:19.487  INFO 5700 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:24:19.495  INFO 5700 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 16:24:19.511 ERROR 5700 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:720) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:760) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 41 common frames omitted
+Caused by: java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.security.authentication.ProviderManager.checkState(ProviderManager.java:140) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.authentication.ProviderManager.<init>(ProviderManager.java:129) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:228) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:52) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:305) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.beforeConfigure(HttpSecurity.java:3209) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:302) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at com.dm.springboot.common.SecurityConfig.authenticationPath(SecurityConfig.java:19) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$5f8022a1.CGLIB$authenticationPath$0(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$5f8022a1$$FastClassBySpringCGLIB$$19899364.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$5f8022a1.authenticationPath(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$FastClassBySpringCGLIB$$4dba21ce.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$698022f0.authenticationPath(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 42 common frames omitted
+
+2023-05-06 16:25:29.270  INFO 1556 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:25:29.271  INFO 1556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:25:29.271  INFO 1556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:25:29.644  INFO 1556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:25:29.652  INFO 1556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:25:30.177  INFO 1556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:25:30.184  INFO 1556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:25:30.184  INFO 1556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:25:30.350  INFO 1556 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:25:30.368  INFO 1556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:25:30.368  INFO 1556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1097 ms
+2023-05-06 16:25:30.649  WARN 1556 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+2023-05-06 16:25:30.651  INFO 1556 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:25:30.660  INFO 1556 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 16:25:30.676 ERROR 1556 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:720) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:760) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 41 common frames omitted
+Caused by: java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.security.authentication.ProviderManager.checkState(ProviderManager.java:140) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.authentication.ProviderManager.<init>(ProviderManager.java:129) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:228) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:52) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:305) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.beforeConfigure(HttpSecurity.java:3209) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:302) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at com.dm.springboot.common.SecurityConfig.authenticationPath(SecurityConfig.java:25) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$d2219815.CGLIB$authenticationPath$0(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$d2219815$$FastClassBySpringCGLIB$$62f10a3b.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$d2219815.authenticationPath(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$FastClassBySpringCGLIB$$4dba21ce.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$5f665b33.authenticationPath(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 42 common frames omitted
+
+2023-05-06 16:33:25.214  INFO 12312 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:33:25.215  INFO 12312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:33:25.215  INFO 12312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:33:25.607  INFO 12312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:33:25.616  INFO 12312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:33:26.150  INFO 12312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:33:26.157  INFO 12312 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:33:26.158  INFO 12312 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:33:26.326  INFO 12312 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:33:26.343  INFO 12312 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:33:26.344  INFO 12312 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1128 ms
+2023-05-06 16:33:26.629  WARN 12312 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+2023-05-06 16:33:26.631  INFO 12312 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:33:26.640  INFO 12312 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 16:33:26.656 ERROR 12312 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:720) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:760) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 41 common frames omitted
+Caused by: java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.security.authentication.ProviderManager.checkState(ProviderManager.java:140) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.authentication.ProviderManager.<init>(ProviderManager.java:129) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:228) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:52) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:305) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.beforeConfigure(HttpSecurity.java:3209) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:302) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at com.dm.springboot.common.SecurityConfig.authenticationPath(SecurityConfig.java:25) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$e73f8a25.CGLIB$authenticationPath$0(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$e73f8a25$$FastClassBySpringCGLIB$$d7f13b5c.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$e73f8a25.authenticationPath(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$FastClassBySpringCGLIB$$4dba21ce.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$925b3652.authenticationPath(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 42 common frames omitted
+
+2023-05-06 16:35:07.941  INFO 9792 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:35:07.942  INFO 9792 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:35:07.942  INFO 9792 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:35:08.319  INFO 9792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:35:08.328  INFO 9792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:35:08.848  INFO 9792 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:35:08.855  INFO 9792 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:35:08.856  INFO 9792 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:35:09.016  INFO 9792 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:35:09.040  INFO 9792 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:35:09.041  INFO 9792 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1099 ms
+2023-05-06 16:35:09.318  WARN 9792 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+2023-05-06 16:35:09.320  INFO 9792 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:35:09.329  INFO 9792 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 16:35:09.345 ERROR 9792 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:720) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationPath' defined in class path resource [com/dm/springboot/common/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:760) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authenticationPath' threw exception; nested exception is java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 41 common frames omitted
+Caused by: java.lang.IllegalArgumentException: providers list cannot contain null values
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.security.authentication.ProviderManager.checkState(ProviderManager.java:140) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.authentication.ProviderManager.<init>(ProviderManager.java:129) ~[spring-security-core-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:228) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder.performBuild(AuthenticationManagerBuilder.java:52) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:305) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.beforeConfigure(HttpSecurity.java:3209) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:302) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.8.jar:5.7.8]
+	at com.dm.springboot.common.SecurityConfig.authenticationPath(SecurityConfig.java:25) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$24d420a7.CGLIB$authenticationPath$0(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$24d420a7$$FastClassBySpringCGLIB$$d83c0bf1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$24d420a7.authenticationPath(<generated>) ~[classes/:na]
+	at com.dm.springboot.common.SecurityConfig$$FastClassBySpringCGLIB$$4dba21ce.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at com.dm.springboot.common.SecurityConfig$$EnhancerBySpringCGLIB$$b4300dd6.authenticationPath(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 42 common frames omitted
+
+2023-05-06 16:35:39.510  INFO 14272 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:35:39.510  INFO 14272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:35:39.510  INFO 14272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:35:39.887  INFO 14272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:35:39.896  INFO 14272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:35:40.419  INFO 14272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:35:40.425  INFO 14272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:35:40.426  INFO 14272 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:35:40.591  INFO 14272 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:35:40.609  INFO 14272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:35:40.609  INFO 14272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1098 ms
+2023-05-06 16:35:40.892  INFO 14272 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2da729ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1348b61f, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d050784, org.springframework.security.web.header.HeaderWriterFilter@47982137, org.springframework.security.web.authentication.logout.LogoutFilter@6afa1dd6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17de1077, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@363dca2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22518ccc, org.springframework.security.web.session.SessionManagementFilter@2b8aff0a, org.springframework.security.web.access.ExceptionTranslationFilter@2f758b79, org.springframework.security.web.access.intercept.AuthorizationFilter@5fadd0ba]
+2023-05-06 16:35:41.200  INFO 14272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 16:35:41.203  WARN 14272 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:35:41.460  INFO 14272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 16:35:41.559  INFO 14272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:35:41.593  INFO 14272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:35:46.944  INFO 14272 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:35:46.944  INFO 14272 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:35:46.945  INFO 14272 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-06 16:37:29.242  INFO 14272 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-06 16:37:29.261  INFO 14272 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:37:29.265  INFO 14272 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:37:29.275  INFO 14272 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 16:37:29.288  INFO 14272 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 16:37:31.864  INFO 13632 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-06 16:37:31.865  INFO 13632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 16:37:31.865  INFO 13632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 16:37:32.240  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:37:32.249  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:37:32.800  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:37:32.807  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:37:32.808  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:37:32.980  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:37:33.007  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:37:33.007  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1141 ms
+2023-05-06 16:37:33.349  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16a67d4d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@138b1821, org.springframework.security.web.context.SecurityContextPersistenceFilter@617802ab, org.springframework.security.web.header.HeaderWriterFilter@7877bfa3, org.springframework.security.web.authentication.logout.LogoutFilter@5b847e28, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@154607d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@daf5ea3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d60387d, org.springframework.security.web.session.SessionManagementFilter@566ecc4b, org.springframework.security.web.access.ExceptionTranslationFilter@7aaa4c06, org.springframework.security.web.access.intercept.AuthorizationFilter@2139f78a]
+2023-05-06 16:37:33.716  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 16:37:33.720  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:37:33.904  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 16:37:33.998  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:37:34.038  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:37:35.054  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:37:35.054  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:37:35.055  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 16:39:09.993  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:39:10.007  INFO 13632 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:39:10.008  INFO 13632 --- [Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:39:10.015  INFO 13632 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 16:39:10.022  INFO 13632 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 16:39:10.188  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:39:10.191  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:39:10.261  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:39:10.262  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:39:10.262  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:39:10.331  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:39:10.341  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:39:10.341  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 254 ms
+2023-05-06 16:39:10.425  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e54cbfa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e8aa2e4, org.springframework.security.web.context.SecurityContextPersistenceFilter@61f08ad7, org.springframework.security.web.header.HeaderWriterFilter@35a50873, org.springframework.security.web.authentication.logout.LogoutFilter@316a2a8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23bc8fcd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e47fd59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2741ed, org.springframework.security.web.session.SessionManagementFilter@4515e235, org.springframework.security.web.access.ExceptionTranslationFilter@7af71f23, org.springframework.security.web.access.intercept.AuthorizationFilter@77c38f28]
+2023-05-06 16:39:10.562  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-06 16:39:10.562  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:39:10.603  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-06 16:39:10.627  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:39:10.635  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:39:10.640  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:39:12.833  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:39:12.834  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:39:12.835  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 16:40:39.992  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:40:40.002  INFO 13632 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:40:40.003  INFO 13632 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:40:40.050  INFO 13632 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-06 16:40:40.057  INFO 13632 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-06 16:40:40.206  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:40:40.209  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:40:40.275  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:40:40.276  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:40:40.276  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:40:40.337  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:40:40.346  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:40:40.346  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 233 ms
+2023-05-06 16:40:40.426  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76c6cb61, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6667837f, org.springframework.security.web.context.SecurityContextPersistenceFilter@71fd92dc, org.springframework.security.web.header.HeaderWriterFilter@742619ad, org.springframework.security.web.authentication.logout.LogoutFilter@734c6fa1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12eb8582, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56c41d03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72288fb7, org.springframework.security.web.session.SessionManagementFilter@235372b9, org.springframework.security.web.access.ExceptionTranslationFilter@4b55040d, org.springframework.security.web.access.intercept.AuthorizationFilter@4b1f1d61]
+2023-05-06 16:40:40.554  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-06 16:40:40.554  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:40:40.595  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-06 16:40:40.620  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:40:40.628  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:40:40.633  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:40:42.731  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:40:42.731  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:40:42.732  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 16:41:29.620  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:41:29.631  INFO 13632 --- [Thread-14] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:41:29.631  INFO 13632 --- [Thread-14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:41:29.634  INFO 13632 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-05-06 16:41:29.640  INFO 13632 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-05-06 16:41:29.777  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:41:29.780  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:41:29.841  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:41:29.842  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:41:29.842  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:41:29.903  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:41:29.914  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:41:29.914  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 227 ms
+2023-05-06 16:41:30.001  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35e0c6dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a4a7b5f, org.springframework.security.web.context.SecurityContextPersistenceFilter@22ec7ee, org.springframework.security.web.header.HeaderWriterFilter@520925ba, org.springframework.security.web.authentication.logout.LogoutFilter@36612e90, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37890b64, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c36ccda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2521775c, org.springframework.security.web.session.SessionManagementFilter@5ef60550, org.springframework.security.web.access.ExceptionTranslationFilter@27a25611, org.springframework.security.web.access.intercept.AuthorizationFilter@538684fc]
+2023-05-06 16:41:30.127  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-05-06 16:41:30.127  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:41:30.179  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-05-06 16:41:30.203  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:41:30.212  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:41:30.219  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:41:34.658  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:41:34.668  INFO 13632 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:41:34.671  INFO 13632 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-05-06 16:41:34.677  INFO 13632 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-05-06 16:41:34.811  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:41:34.813  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:41:34.874  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:41:34.874  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:41:34.875  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:41:34.932  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:41:34.942  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:41:34.942  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 218 ms
+2023-05-06 16:41:35.015  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52bf3db7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5eef7876, org.springframework.security.web.context.SecurityContextPersistenceFilter@7efed179, org.springframework.security.web.header.HeaderWriterFilter@6c8553b2, org.springframework.security.web.authentication.logout.LogoutFilter@d803b85, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2225dabe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64fb058b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3870e2e2, org.springframework.security.web.session.SessionManagementFilter@25e881e7, org.springframework.security.web.access.ExceptionTranslationFilter@65b5b9b, org.springframework.security.web.access.intercept.AuthorizationFilter@3d976a58]
+2023-05-06 16:41:35.142  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-05-06 16:41:35.142  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:41:35.180  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-05-06 16:41:35.203  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:41:35.211  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:41:35.215  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:41:36.676  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:41:36.676  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:41:36.678  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 16:42:19.165  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:42:19.179  INFO 13632 --- [Thread-24] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:42:19.179  INFO 13632 --- [Thread-24] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:42:19.183  INFO 13632 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-05-06 16:42:19.188  INFO 13632 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-05-06 16:42:19.322  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:42:19.324  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:42:19.387  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:42:19.388  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:42:19.388  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:42:19.444  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:42:19.454  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:42:19.454  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 220 ms
+2023-05-06 16:42:19.537  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@315d1f7d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43832558, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d6165c5, org.springframework.security.web.header.HeaderWriterFilter@58069a63, org.springframework.security.web.authentication.logout.LogoutFilter@207bb41a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@621b1881, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@20fad8f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2541747f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d4b3a56, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51f27a1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c2b52ef, org.springframework.security.web.session.SessionManagementFilter@53b003cc, org.springframework.security.web.access.ExceptionTranslationFilter@87f14b3, org.springframework.security.web.access.intercept.AuthorizationFilter@bfa5929]
+2023-05-06 16:42:19.664  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-05-06 16:42:19.664  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:42:19.704  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-05-06 16:42:19.728  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:42:19.735  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:42:19.739  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 16:42:21.379  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 16:42:21.379  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 16:42:21.380  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-06 16:42:42.423  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 16:42:42.437  INFO 13632 --- [Thread-29] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 16:42:42.437  INFO 13632 --- [Thread-29] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 16:42:42.445  WARN 13632 --- [Thread-29] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [2C2F150833AD28BB9DD2D1F0E8012191]
+
+java.io.NotSerializableException: com.dm.springboot.model.vo.Member
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:350) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1761) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1067) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5175) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1348) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1337) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:936) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:491) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:970) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:496) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:52) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1069) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1023) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:309) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:251) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:629) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+
+2023-05-06 16:42:42.448  INFO 13632 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-05-06 16:42:42.454  INFO 13632 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-05-06 16:42:42.587  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-06 16:42:42.590  INFO 13632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2023-05-06 16:42:42.654  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-06 16:42:42.655  INFO 13632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 16:42:42.655  INFO 13632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-06 16:42:42.714  INFO 13632 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-06 16:42:42.723  INFO 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 16:42:42.723  INFO 13632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 224 ms
+2023-05-06 16:42:42.740  WARN 13632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [2C2F150833AD28BB9DD2D1F0E8012191]
+2023-05-06 16:42:42.742 ERROR 13632 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1810) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:708) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:983) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2023) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1635) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1050) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:219) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4963) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+
+2023-05-06 16:42:42.816  INFO 13632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3be9c64c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47a03e0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3878b0c9, org.springframework.security.web.header.HeaderWriterFilter@5afc3e52, org.springframework.security.web.authentication.logout.LogoutFilter@49aba8d4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ae6ca70, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2161cc36, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6fba8b06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2056a152, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1be315a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41b793b5, org.springframework.security.web.session.SessionManagementFilter@7e28820c, org.springframework.security.web.access.ExceptionTranslationFilter@b310a4, org.springframework.security.web.access.intercept.AuthorizationFilter@2f903662]
+2023-05-06 16:42:42.954  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-05-06 16:42:42.954  WARN 13632 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-06 16:42:42.996  INFO 13632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-05-06 16:42:43.021  INFO 13632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 16:42:43.028  INFO 13632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-06 16:42:43.032  INFO 13632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
+//@CrossOrigin
 public class BasicController {
 	
 	@Value("${linux.base}")
@@ -28,11 +30,13 @@ public class BasicController {
 		this.service = service;
 	}
 	
+	/*
 	@RequestMapping("/")
 	public String index() {
 		
 		return "index";
 	}
+	*/
 	
 	@RequestMapping("/member")
 	@ResponseBody
