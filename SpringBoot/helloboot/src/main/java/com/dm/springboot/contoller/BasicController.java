@@ -2,10 +2,12 @@ package com.dm.springboot.contoller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.dm.springboot.model.service.MemberService;
 import com.dm.springboot.model.vo.Member;
@@ -15,6 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class BasicController {
+	
+	@Value("${linux.base}")
+	private String linuxBaseDir;
 	
 	private MemberService service;
 	
@@ -49,8 +54,17 @@ public class BasicController {
 		List<Member> list = service.selectByMemberbyId(id);
 		model.addAttribute("members", list);
 		
-		return "member/memberList";
+		return "member/memberList";	
+	}
+	
+	@RequestMapping("/fileupload")
+	public String uploadFile(MultipartFile upfile) {
 		
+
+		log.info("파일크기 : " + upfile.getSize());
+		log.info("파일이름 : " + upfile.getOriginalFilename());
+		log.info("base : " + linuxBaseDir);
+		return "redirect:/";
 	}
 }
 

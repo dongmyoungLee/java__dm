@@ -14,11 +14,29 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-    
+  
+  #업로드 파일 크기 제한 설정
+  servlet: 
+    multipart: 
+      max-file-size: 10MB
+      max-request-size: 10MB
+        
 #mybatis
 #mybatis: 
 #  config-location: classpath:/config/mybatis-config.xml
 #  mapper-locations: classpath:/mapper/**/*.xml
+
+# 고정데이터 입력
+# 기본 경로, 기본 포트, 계정관련내용
+linux: 
+  url: localhost:8989
+  username: root
+  base: /home/dm
+
+
+
+
+
 
 
   
