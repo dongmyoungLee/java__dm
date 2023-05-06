@@ -15,4 +15,7 @@ public interface MemberMapper {
 	
 	@Select("SELECT * FROM MEMBER WHERE USERID LIKE '%'||#{id}||'%'")
 	List<Member> selectMemberById(String id);
+	
+	@Select("SELECT * FROM MEMBER WHERE USERID = #{id}")
+	Member selectMemberLogin(String id);
 }

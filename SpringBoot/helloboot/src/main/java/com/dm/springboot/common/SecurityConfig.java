@@ -22,10 +22,18 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain authenticationPath(HttpSecurity http) throws Exception {
 		//authenticationProvider -> 인증처리(로그인 처리 설정)
-		return http.csrf().disable().formLogin().and().authorizeHttpRequests()
+		return http.csrf().disable().formLogin()
+				//.successForwardUrl("/")
+				//.failureForwardUrl("/")
+				//.loginPage("/loginpage")
+				//.passwordParameter("pw")
+				//.usernameParameter("id")
+				//.loginProcessingUrl("/loginEnd.do")
+				.and().authorizeHttpRequests()
 				.antMatchers("/resources/**").permitAll()
 				.antMatchers("/logout.do").permitAll()
-				.antMatchers("/**").hasAnyAuthority("ROLE_ADMIN")
+				.antMatchers("/loginpage").permitAll()
+				.antMatchers("/**").hasAnyAuthority(MyAuthority.ADMIN.name(), MyAuthority.USER.name())
 				.and().logout().logoutUrl("/logout.do")
 				.and().authenticationProvider(provider).build();
 	}
