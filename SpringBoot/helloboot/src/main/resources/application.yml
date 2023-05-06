@@ -1,0 +1,24 @@
+#server port
+server: 
+  port: 9091
+
+#DB
+spring: 
+  datasource: 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe 
+    username: SPRING
+    password: SPRING
+# view화면 jsp 연결
+  mvc: 
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    
+#mybatis
+mybatis: 
+  config-location: classpath:/config/mybatis-config.xml
+  mapper-locations: classpath:/mapper/**/*.xml
+
+
+  
