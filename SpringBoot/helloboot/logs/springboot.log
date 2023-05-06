@@ -1358,3 +1358,8 @@ java.io.NotSerializableException: com.dm.springboot.model.vo.Member
 2023-05-06 17:39:00.222  INFO 13632 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-05-06 17:39:00.222  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-05-06 17:39:00.224  INFO 13632 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-06 17:46:59.526  INFO 13632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-06 17:46:59.536  INFO 13632 --- [Thread-122] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 17:46:59.537  INFO 13632 --- [Thread-122] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-06 17:46:59.542  INFO 13632 --- [Thread-122] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown initiated...
+2023-05-06 17:46:59.547  INFO 13632 --- [Thread-122] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown completed.
