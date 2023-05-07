@@ -10,4 +10,4 @@ DELETE FROM MEMBER WHERE USERID = 'admin';
 
 UPDATE member SET username = '관리자' WHERE userid = 'user6';
 
-INSERT INTO JPA_BOARD values(seq_jpaboardno.nextval, 'test', sysdate, 'title', 'admin');
+INSERT INTO JPA_BOARD values(seq_jpaboardno.nextval, '하하', sysdate, 'title', 'admin');

@@ -22,7 +22,6 @@ public interface JpaService {
 	
 	JpaBoard selectBoard(Long id);
 	
-	
 	List<JpaBoard> selectBoardByContent(String keyword);
 	
 	
