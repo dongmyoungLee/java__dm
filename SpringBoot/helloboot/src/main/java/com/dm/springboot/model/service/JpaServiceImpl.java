@@ -2,11 +2,13 @@ package com.dm.springboot.model.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.dm.springboot.dao.JpaBoardDao;
 import com.dm.springboot.dao.JpaMemberDao;
 import com.dm.springboot.model.entity.JpaBoard;
 import com.dm.springboot.model.entity.JpaMember;
@@ -16,10 +18,14 @@ public class JpaServiceImpl implements JpaService {
 	
 	
 	private JpaMemberDao dao;
-
-	public JpaServiceImpl(JpaMemberDao dao) {
+	private JpaBoardDao dao2;
+	
+	@Autowired
+	public JpaServiceImpl(JpaMemberDao dao, JpaBoardDao dao2) {
 		this.dao = dao;
+		this.dao2 = dao2;
 	}
+	
 	
 	@Override
 	public List<JpaMember> selectMemberAll() {
@@ -54,22 +60,22 @@ public class JpaServiceImpl implements JpaService {
 	}
 
 	@Override
-	public List<JpaMember> selectBoardAll() {
+	public List<JpaBoard> selectBoardAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao2.findAll();
 	}
 
 	
 	@Override
 	public JpaBoard selectBoard(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao2.findById(id).orElse(JpaBoard.builder().build());
 	}
 
 	@Override
 	public List<JpaBoard> selectBoardByContent(String keyword) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao2.findByBoardContentLike("%" + keyword + "%");
 	}
 
 }

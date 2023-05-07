@@ -16,11 +16,12 @@ public interface JpaService {
 	
 	Page<JpaMember> selectMemberPage();
 	
-	List<JpaMember> selectBoardAll();
-	
 	JpaMember insertMember(JpaMember member);
 	
+	List<JpaBoard> selectBoardAll();
+	
 	JpaBoard selectBoard(Long id);
+	
 	
 	List<JpaBoard> selectBoardByContent(String keyword);
 	
