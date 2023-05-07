@@ -2,6 +2,9 @@ package com.dm.springboot.model.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.dm.springboot.dao.JpaMemberDao;
@@ -35,6 +38,14 @@ public class JpaServiceImpl implements JpaService {
 		// TODO Auto-generated method stub
 		return dao.save(member);
 	}
+	
+	// 페이징처리한 데이터 가져오기
+	@Override
+	public Page<JpaMember> selectMemberPage() {
+		// TODO Auto-generated method stub
+		return dao.findAll(PageRequest.of(0, 5, Sort.by("userId").descending()));
+	}
+
 	
 	@Override
 	public List<JpaMember> selectMemberByName(String name) {

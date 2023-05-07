@@ -2,6 +2,7 @@ package com.dm.springboot.contoller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,6 +49,11 @@ public class JpaController {
 	@GetMapping("/member/name/{name}")
 	public List<JpaMember> selectMemberByName(@PathVariable String name) {
 		return service.selectMemberByName(name);
+	}
+	
+	@GetMapping("/member/page")
+	public Page<JpaMember> selectMemberPage() {
+		return service.selectMemberPage();
 	}
 	
 	@PostMapping("/member")

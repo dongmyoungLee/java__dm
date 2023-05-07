@@ -23,7 +23,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-      
+
+
+
 
 # view화면 jsp 연결
   mvc: 
@@ -56,7 +58,7 @@ logging:
     name: logs/springboot.log
   level:
     root: info
-    '[com.dm.springboot]': warn
+    '[com.dm.springboot]': info
   
 
 
