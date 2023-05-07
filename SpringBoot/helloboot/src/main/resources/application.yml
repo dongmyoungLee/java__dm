@@ -9,6 +9,22 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:xe 
     username: SPRING
     password: SPRING
+    # JPA connection pool 관리
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+      auto-commit: false
+      connection-test-query: select 1 from dual
+      pool-name: dmpool
+  jpa:
+    database: oracle
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      
+
 # view화면 jsp 연결
   mvc: 
     view:
@@ -20,6 +36,7 @@ spring:
     multipart: 
       max-file-size: 10MB
       max-request-size: 10MB
+  
         
 #mybatis
 #mybatis: 

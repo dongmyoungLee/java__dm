@@ -27,9 +27,10 @@ public class MyProvider implements AuthenticationProvider {
 		String password = (String)authentication.getCredentials();
 		Member loginMember = mapper.selectMemberLogin(userId);
 		
-		if (loginMember == null || !encoder.matches(password, loginMember.getPassword())) {
-			throw new BadCredentialsException("인증 실패");
-		}
+		
+		 if (loginMember == null || !encoder.matches(password,
+		 loginMember.getPassword())) { throw new BadCredentialsException("인증 실패"); }
+		 
 		
 		return new UsernamePasswordAuthenticationToken(loginMember, loginMember.getPassword(), loginMember.getAuthorities());
 	}
