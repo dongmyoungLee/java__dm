@@ -6968,3 +6968,838 @@ Consider renaming one of the beans or enabling overriding by setting spring.main
 2023-05-07 14:08:05.270  INFO 11088 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : selectMemberPage
 2023-05-07 14:08:05.270  INFO 11088 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : selectMemberPage
 2023-05-07 14:08:05.271  INFO 11088 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : findAll
+2023-05-07 14:10:33.194  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-07 14:10:33.206  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:10:33.206  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:10:33.213  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:10:33.214  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:10:33.218  INFO 11088 --- [RMI TCP Connection(96)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:18:35.567  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:18:35.568  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:18:35.604  INFO 5156 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-07 14:18:35.604  INFO 5156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-07 14:18:35.604  INFO 5156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-07 14:18:36.036  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:18:36.037  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:18:36.058  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:18:36.058  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:18:36.064  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:18:36.065  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:18:36.085  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:18:36.674  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:18:36.681  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:18:36.681  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:18:36.882  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:18:36.901  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:18:36.901  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+2023-05-07 14:18:37.096  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:18:37.132  INFO 5156 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-07 14:18:37.244  INFO 5156 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-07 14:18:37.312  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:18:37.315  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:18:37.608  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:18:37.619  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:18:38.088  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:18:38.095  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:18:38.510  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:18:38.541  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28e79ab9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c213eb8, org.springframework.security.web.context.SecurityContextPersistenceFilter@3625088f, org.springframework.security.web.header.HeaderWriterFilter@44e3bf29, org.springframework.security.web.authentication.logout.LogoutFilter@54a105aa, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71318309, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a15487a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@741891ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@264d391d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d35c0cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20be6693, org.springframework.security.web.session.SessionManagementFilter@57f41064, org.springframework.security.web.access.ExceptionTranslationFilter@4c99a4fc, org.springframework.security.web.access.intercept.AuthorizationFilter@547f9dd7]
+2023-05-07 14:18:38.588  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:18:38.720  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:18:38.759  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:18:38.941  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:18:38.975  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:18:38.984  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 3.698 seconds (JVM running for 4.318)
+2023-05-07 14:18:40.766  INFO 5156 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:18:40.767  INFO 5156 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:18:40.768  INFO 5156 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:18:43.951  INFO 5156 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : supports
+2023-05-07 14:18:43.954  INFO 5156 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : authenticate
+2023-05-07 14:18:43.954  INFO 5156 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : selectMemberLogin
+2023-05-07 14:18:44.085  INFO 5156 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:18:44.085  INFO 5156 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:18:44.590  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:18:44.590  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:18:44.598  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:18:44.602  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:19:28.711  INFO 5156 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:28.711  INFO 5156 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:28.859  INFO 5156 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:28.860  INFO 5156 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:28.861  INFO 5156 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:19:28.863  INFO 5156 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:19:29.339  INFO 5156 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:29.340  INFO 5156 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:29.378  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:29.378  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:29.379  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:19:29.379  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:19:30.556  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:19:30.557  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:20:46.282  INFO 5156 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:20:46.309  INFO 5156 --- [Thread-6] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:20:46.309  INFO 5156 --- [Thread-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:20:46.322  INFO 5156 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:20:46.324  INFO 5156 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:20:46.332  INFO 5156 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:20:46.399  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:20:46.399  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:20:46.541  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:20:46.541  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:20:46.545  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:20:46.546  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:20:46.548  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:20:46.548  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:20:46.553  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:20:46.636  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:20:46.637  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:20:46.637  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:20:46.728  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:20:46.740  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:20:46.740  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2023-05-07 14:20:46.787  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:20:46.791  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:20:46.791  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:20:46.837  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:20:46.838  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:20:46.908  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:20:46.908  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:20:47.051  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:20:47.066  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@323bff66, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78664d0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@ee586e3, org.springframework.security.web.header.HeaderWriterFilter@311acedd, org.springframework.security.web.authentication.logout.LogoutFilter@6fbd866b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@118b7398, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@eeb57c3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6ea34260, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71c65477, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16cd10b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a5e3740, org.springframework.security.web.session.SessionManagementFilter@3a245355, org.springframework.security.web.access.ExceptionTranslationFilter@4ae6a757, org.springframework.security.web.access.intercept.AuthorizationFilter@3136a9f5]
+2023-05-07 14:20:47.083  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:20:47.153  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:20:47.168  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:20:47.259  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:20:47.275  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:20:47.279  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.902 seconds (JVM running for 132.613)
+2023-05-07 14:20:47.281  INFO 5156 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:21:33.323  INFO 5156 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:21:33.354  INFO 5156 --- [Thread-8] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:21:33.357  INFO 5156 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:21:33.358  INFO 5156 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:21:33.363  INFO 5156 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:21:33.428  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:21:33.428  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:21:33.537  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:21:33.537  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:21:33.542  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:21:33.542  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:21:33.544  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:21:33.544  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:21:33.549  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:21:33.621  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:21:33.622  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:21:33.622  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:21:33.705  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:21:33.716  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:21:33.716  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 287 ms
+2023-05-07 14:21:33.765  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:21:33.769  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:21:33.769  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:21:33.816  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:21:33.816  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:21:33.884  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:21:33.884  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:21:34.012  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:21:34.026  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8fe948d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@217e8f61, org.springframework.security.web.context.SecurityContextPersistenceFilter@39f237ca, org.springframework.security.web.header.HeaderWriterFilter@4d0087c8, org.springframework.security.web.authentication.logout.LogoutFilter@479a4784, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1437a3d0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a5dacb7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@564ee99e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@475c4b51, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e2bbab5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2142766e, org.springframework.security.web.session.SessionManagementFilter@919b562, org.springframework.security.web.access.ExceptionTranslationFilter@180ccb9e, org.springframework.security.web.access.intercept.AuthorizationFilter@1dcd56d7]
+2023-05-07 14:21:34.041  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:21:34.103  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:21:34.119  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:21:34.202  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:21:34.215  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:21:34.219  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.81 seconds (JVM running for 179.553)
+2023-05-07 14:21:34.221  INFO 5156 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:21:35.610  INFO 5156 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:21:35.622  INFO 5156 --- [Thread-12] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:21:35.625  INFO 5156 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:21:35.626  INFO 5156 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:21:35.630  INFO 5156 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:21:35.683  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:21:35.683  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:21:35.790  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:21:35.790  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:21:35.795  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:21:35.795  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:21:35.797  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:21:35.798  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:21:35.803  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:21:35.877  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:21:35.878  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:21:35.878  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:21:35.958  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:21:35.968  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:21:35.969  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 285 ms
+2023-05-07 14:21:36.016  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:21:36.019  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:21:36.019  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:21:36.066  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:21:36.067  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:21:36.138  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:21:36.139  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:21:36.283  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:21:36.299  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24ab2ea4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cbcd8c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ad983f, org.springframework.security.web.header.HeaderWriterFilter@4afbfc44, org.springframework.security.web.authentication.logout.LogoutFilter@2ae4eefb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57e1e5d9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a3d187e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@66d6d690, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d4062b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@184cb688, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6314fbe3, org.springframework.security.web.session.SessionManagementFilter@56909661, org.springframework.security.web.access.ExceptionTranslationFilter@920c84a, org.springframework.security.web.access.intercept.AuthorizationFilter@29359e4f]
+2023-05-07 14:21:36.315  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:21:36.380  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:21:36.394  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:21:36.478  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:21:36.490  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:21:36.494  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.829 seconds (JVM running for 181.829)
+2023-05-07 14:21:36.495  INFO 5156 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:22:29.651  INFO 5156 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:22:29.663  INFO 5156 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:22:29.666  INFO 5156 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:22:29.666  INFO 5156 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:22:29.670  INFO 5156 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:22:29.725  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:22:29.725  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:22:29.829  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:22:29.829  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:22:29.833  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:22:29.833  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:22:29.835  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:22:29.835  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:22:29.839  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:22:29.911  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:22:29.912  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:22:29.912  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:22:29.989  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:22:29.999  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:22:29.999  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 273 ms
+2023-05-07 14:22:30.043  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:22:30.046  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:22:30.046  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:22:30.091  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:22:30.092  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:22:30.159  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:22:30.159  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:22:30.183  WARN 5156 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webMvcConfig' defined in file [D:\java__dm\SpringBoot\helloboot\target\classes\com\dm\springboot\common\WebMvcConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type WebMvcConfig must implement the inherited abstract method WebSocketConfigurer.registerWebSocketHandlers(WebSocketHandlerRegistry)
+	chatServer cannot be resolved or is not a field
+
+2023-05-07 14:22:30.183  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:22:30.183  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:22:30.184  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:22:30.184  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:22:30.189  INFO 5156 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-07 14:22:30.204 ERROR 5156 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webMvcConfig' defined in file [D:\java__dm\SpringBoot\helloboot\target\classes\com\dm\springboot\common\WebMvcConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type WebMvcConfig must implement the inherited abstract method WebSocketConfigurer.registerWebSocketHandlers(WebSocketHandlerRegistry)
+	chatServer cannot be resolved or is not a field
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type WebMvcConfig must implement the inherited abstract method WebSocketConfigurer.registerWebSocketHandlers(WebSocketHandlerRegistry)
+	chatServer cannot be resolved or is not a field
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type WebMvcConfig must implement the inherited abstract method WebSocketConfigurer.registerWebSocketHandlers(WebSocketHandlerRegistry)
+	chatServer cannot be resolved or is not a field
+
+	at com.dm.springboot.common.WebMvcConfig.<init>(WebMvcConfig.java:12) ~[classes/:na]
+	at com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 26 common frames omitted
+
+2023-05-07 14:23:02.014  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:23:02.014  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:23:02.129  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:02.130  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:23:02.134  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:23:02.134  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:23:02.136  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:02.136  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:23:02.140  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:23:02.212  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:23:02.213  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:23:02.213  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:23:02.289  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:23:02.300  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:23:02.300  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 285 ms
+2023-05-07 14:23:02.346  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:23:02.349  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:23:02.349  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:23:02.394  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:23:02.394  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:23:02.457  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:23:02.458  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:02.484  WARN 5156 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webMvcConfig' defined in file [D:\java__dm\SpringBoot\helloboot\target\classes\com\dm\springboot\common\WebMvcConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	chatServer cannot be resolved or is not a field
+	charServer cannot be resolved to a variable
+
+2023-05-07 14:23:02.484  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:02.485  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:23:02.485  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:23:02.486  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:23:02.490  INFO 5156 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-07 14:23:02.493 ERROR 5156 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webMvcConfig' defined in file [D:\java__dm\SpringBoot\helloboot\target\classes\com\dm\springboot\common\WebMvcConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	chatServer cannot be resolved or is not a field
+	charServer cannot be resolved to a variable
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+	at com.dm.springboot.HellobootApplication.main(HellobootApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.12-SNAPSHOT.jar:2.7.12-SNAPSHOT]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	chatServer cannot be resolved or is not a field
+	charServer cannot be resolved to a variable
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	chatServer cannot be resolved or is not a field
+	charServer cannot be resolved to a variable
+
+	at com.dm.springboot.common.WebMvcConfig.<init>(WebMvcConfig.java:18) ~[classes/:na]
+	at com.dm.springboot.common.WebMvcConfig$$EnhancerBySpringCGLIB$$17df7ed8.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.28-SNAPSHOT.jar:5.3.28-SNAPSHOT]
+	... 26 common frames omitted
+
+2023-05-07 14:23:21.122  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:23:21.122  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:23:21.229  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:21.229  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:23:21.233  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:23:21.234  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:23:21.236  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:21.236  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:23:21.240  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:23:21.324  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:23:21.326  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:23:21.326  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:23:21.403  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:23:21.412  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:23:21.412  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 289 ms
+2023-05-07 14:23:21.456  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:23:21.459  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:23:21.459  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:23:21.537  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:23:21.537  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:23:21.599  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:23:21.599  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:21.723  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:23:21.739  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3321fb0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@284bdef5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ac165ac, org.springframework.security.web.header.HeaderWriterFilter@6becc974, org.springframework.security.web.authentication.logout.LogoutFilter@1d487986, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53cf13b0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@694238ae, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@567747d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1228606, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c08583f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e5a9bda, org.springframework.security.web.session.SessionManagementFilter@2c593ede, org.springframework.security.web.access.ExceptionTranslationFilter@29384614, org.springframework.security.web.access.intercept.AuthorizationFilter@5de8d9c2]
+2023-05-07 14:23:21.757  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:23:21.823  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:23:21.837  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:23:21.916  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:23:21.927  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:23:21.930  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.827 seconds (JVM running for 287.265)
+2023-05-07 14:23:21.932  INFO 5156 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:23:26.390  INFO 5156 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:23:26.400  INFO 5156 --- [Thread-20] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:23:26.404  INFO 5156 --- [Thread-20] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:26.404  INFO 5156 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:23:26.409  INFO 5156 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:23:26.482  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 5156 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:23:26.482  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:23:26.589  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:26.589  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:23:26.593  INFO 5156 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:23:26.593  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:23:26.595  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:26.595  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:23:26.600  INFO 5156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:23:26.673  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:23:26.673  INFO 5156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:23:26.673  INFO 5156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:23:26.750  INFO 5156 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:23:26.759  INFO 5156 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:23:26.759  INFO 5156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 276 ms
+2023-05-07 14:23:26.805  INFO 5156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:23:26.808  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:23:26.808  WARN 5156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:23:26.860  INFO 5156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:23:26.860  INFO 5156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:23:26.923  INFO 5156 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:23:26.923  INFO 5156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:27.046  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:23:27.060  INFO 5156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4408fddf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@488de3ff, org.springframework.security.web.context.SecurityContextPersistenceFilter@43c460e1, org.springframework.security.web.header.HeaderWriterFilter@14a3f299, org.springframework.security.web.authentication.logout.LogoutFilter@54fcd683, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@b70ff2e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@161e80, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@63122cd2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fe9728c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@745570d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62ffd69, org.springframework.security.web.session.SessionManagementFilter@29cbbf9f, org.springframework.security.web.access.ExceptionTranslationFilter@73c9fb1e, org.springframework.security.web.access.intercept.AuthorizationFilter@7672655c]
+2023-05-07 14:23:27.077  WARN 5156 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:23:27.141  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:23:27.156  INFO 5156 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:23:27.240  INFO 5156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:23:27.249  INFO 5156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:23:27.253  INFO 5156 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.79 seconds (JVM running for 292.588)
+2023-05-07 14:23:27.254  INFO 5156 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:23:46.303  INFO 5156 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:23:46.303  INFO 5156 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:23:46.304  INFO 5156 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:23:46.305  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:46.305  INFO 5156 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:46.424  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:46.425  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:46.425  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:23:46.427  INFO 5156 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:23:49.044  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:49.044  INFO 5156 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:23:53.632  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-07 14:23:53.644  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:23:53.644  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:23:53.647  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:53.648  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:23:53.653  INFO 5156 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:23:57.112  INFO 13356 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 13356 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:23:57.113  INFO 13356 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:23:57.148  INFO 13356 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-07 14:23:57.149  INFO 13356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-07 14:23:57.149  INFO 13356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-07 14:23:57.555  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:57.556  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:23:57.577  INFO 13356 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:23:57.578  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:23:57.584  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:23:57.584  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:23:57.606  INFO 13356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:23:58.159  INFO 13356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:23:58.166  INFO 13356 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:23:58.166  INFO 13356 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:23:58.361  INFO 13356 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:23:58.380  INFO 13356 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:23:58.380  INFO 13356 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1231 ms
+2023-05-07 14:23:58.584  INFO 13356 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:23:58.619  INFO 13356 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-07 14:23:58.729  INFO 13356 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-07 14:23:58.802  INFO 13356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:23:58.806  WARN 13356 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:23:59.068  INFO 13356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:23:59.080  INFO 13356 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:23:59.556  INFO 13356 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:23:59.563  INFO 13356 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:23:59.982  INFO 13356 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:24:00.018  INFO 13356 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@482e5f11, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16bad30c, org.springframework.security.web.context.SecurityContextPersistenceFilter@403d6f19, org.springframework.security.web.header.HeaderWriterFilter@271047e, org.springframework.security.web.authentication.logout.LogoutFilter@7ac2bcb7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71473171, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@154a0f41, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@238c0a29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f60aeb9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d1c1203, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69920d96, org.springframework.security.web.session.SessionManagementFilter@4b72e7b7, org.springframework.security.web.access.ExceptionTranslationFilter@572742c0, org.springframework.security.web.access.intercept.AuthorizationFilter@2142882a]
+2023-05-07 14:24:00.060  WARN 13356 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:24:00.194  INFO 13356 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:24:00.238  INFO 13356 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:24:00.410  INFO 13356 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:24:00.444  INFO 13356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:24:00.452  INFO 13356 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 3.614 seconds (JVM running for 4.211)
+2023-05-07 14:24:03.564  INFO 13356 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:24:03.564  INFO 13356 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:24:03.565  INFO 13356 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:24:03.578  INFO 13356 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:03.579  INFO 13356 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:04.068  INFO 13356 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:04.069  INFO 13356 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:04.081  INFO 13356 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:04.084  INFO 13356 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:05.012  INFO 13356 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:05.013  INFO 13356 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:11.909  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-07 14:24:11.925  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:24:11.926  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:24:11.936  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:24:11.938  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:24:11.946  INFO 13356 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:24:13.651  INFO 6568 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 6568 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:24:13.652  INFO 6568 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:24:13.686  INFO 6568 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-07 14:24:13.686  INFO 6568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-07 14:24:13.686  INFO 6568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-07 14:24:14.089  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:24:14.090  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:24:14.110  INFO 6568 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:24:14.110  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:24:14.116  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:24:14.117  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:24:14.138  INFO 6568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:24:14.691  INFO 6568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:24:14.697  INFO 6568 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:24:14.698  INFO 6568 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:24:14.893  INFO 6568 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:24:14.911  INFO 6568 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:24:14.911  INFO 6568 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1225 ms
+2023-05-07 14:24:15.110  INFO 6568 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:24:15.144  INFO 6568 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-07 14:24:15.257  INFO 6568 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-07 14:24:15.324  INFO 6568 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:24:15.327  WARN 6568 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:24:15.582  INFO 6568 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:24:15.593  INFO 6568 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:24:16.055  INFO 6568 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:24:16.063  INFO 6568 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:24:16.512  INFO 6568 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:24:16.545  INFO 6568 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30f83772, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d8116b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e2d1c5f, org.springframework.security.web.header.HeaderWriterFilter@343a96e9, org.springframework.security.web.authentication.logout.LogoutFilter@76119440, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6c30065b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1e9ee3c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@ca261b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b6e3064, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37e75fd0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6649e0e, org.springframework.security.web.session.SessionManagementFilter@652322c6, org.springframework.security.web.access.ExceptionTranslationFilter@47d3ff7a, org.springframework.security.web.access.intercept.AuthorizationFilter@881247c]
+2023-05-07 14:24:16.588  WARN 6568 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:24:16.719  INFO 6568 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:24:16.763  INFO 6568 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:24:16.958  INFO 6568 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:24:16.995  INFO 6568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:24:17.004  INFO 6568 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 3.614 seconds (JVM running for 4.223)
+2023-05-07 14:24:26.981  INFO 6568 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:24:26.981  INFO 6568 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:24:26.982  INFO 6568 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-07 14:24:26.995  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:26.996  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:27.484  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:27.485  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:27.499  INFO 6568 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:27.499  INFO 6568 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:27.501  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:27.505  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:35.519  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:35.519  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:35.624  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:35.625  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:35.626  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:35.627  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.379  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.379  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.412  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.412  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.413  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.413  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.527  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.527  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.556  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.556  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.558  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.558  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.678  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.678  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.707  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.708  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:36.709  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:36.709  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:24:37.156  INFO 6568 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:37.156  INFO 6568 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:48.492  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:24:48.492  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:20.949  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:20.949  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:21.068  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:21.069  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:21.070  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:25:21.070  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:25:27.392  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:27.393  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:39.811  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:39.812  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:39.841  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:39.842  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:39.843  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:25:39.844  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:25:41.884  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:25:41.884  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:39.986  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:39.987  INFO 6568 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:40.098  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:40.098  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:40.099  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:26:40.099  INFO 6568 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:26:41.163  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:41.163  INFO 6568 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.179  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.180  INFO 6568 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.515  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.515  INFO 6568 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.875  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:43.876  INFO 6568 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:51.246  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:51.247  INFO 6568 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:51.346  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:51.346  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:51.349  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:26:51.349  INFO 6568 --- [http-nio-9091-exec-10] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:26:52.502  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:26:52.502  INFO 6568 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:20.472  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-05-07 14:27:20.487  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:27:20.488  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:27:20.494  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:27:20.496  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:27:20.504  INFO 6568 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:27:22.204  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 7376 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:27:22.205  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:27:22.241  INFO 7376 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\user\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/user/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-05-07 14:27:22.242  INFO 7376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-07 14:27:22.242  INFO 7376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-07 14:27:22.650  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:27:22.651  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:27:22.672  INFO 7376 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:27:22.672  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:27:22.678  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:27:22.679  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:27:22.698  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:27:23.258  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:27:23.265  INFO 7376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:27:23.265  INFO 7376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:27:23.461  INFO 7376 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:27:23.479  INFO 7376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:27:23.480  INFO 7376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1238 ms
+2023-05-07 14:27:23.688  INFO 7376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:27:23.723  INFO 7376 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-07 14:27:23.836  INFO 7376 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-07 14:27:23.907  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:27:23.910  WARN 7376 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:27:24.172  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:27:24.185  INFO 7376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:27:24.660  INFO 7376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:27:24.668  INFO 7376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:27:25.092  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:27:25.121  INFO 7376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f0303f5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c645d81, org.springframework.security.web.context.SecurityContextPersistenceFilter@49bfb2da, org.springframework.security.web.header.HeaderWriterFilter@44a4df41, org.springframework.security.web.authentication.logout.LogoutFilter@227ac4f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6715b809, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@37a5aae7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@46c5a175, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4325db92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a6c9895, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18dba343, org.springframework.security.web.session.SessionManagementFilter@1cae2191, org.springframework.security.web.access.ExceptionTranslationFilter@23fd0e08, org.springframework.security.web.access.intercept.AuthorizationFilter@395c64fc]
+2023-05-07 14:27:25.171  WARN 7376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:27:25.305  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:27:25.345  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:27:25.517  INFO 7376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:27:25.551  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:27:25.560  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 3.619 seconds (JVM running for 4.232)
+2023-05-07 14:27:30.215  INFO 7376 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:27:30.215  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:27:30.216  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:27:30.229  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:30.230  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:30.710  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:30.710  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:30.719  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:27:30.721  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:27:32.326  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:32.326  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:42.712  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:42.712  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:42.744  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:42.744  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:42.745  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:27:42.745  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:27:43.188  INFO 7376 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:27:43.203  INFO 7376 --- [Thread-6] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:27:43.204  INFO 7376 --- [Thread-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:27:43.210  INFO 7376 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:27:43.212  INFO 7376 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:27:43.221  INFO 7376 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:27:43.286  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 7376 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:27:43.287  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:27:43.409  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:27:43.409  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:27:43.414  INFO 7376 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:27:43.414  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:27:43.416  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:27:43.416  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:27:43.421  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:27:43.499  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:27:43.500  INFO 7376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:27:43.500  INFO 7376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:27:43.589  INFO 7376 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:27:43.599  INFO 7376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:27:43.599  INFO 7376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 311 ms
+2023-05-07 14:27:43.645  INFO 7376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:27:43.648  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:27:43.648  WARN 7376 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:27:43.695  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:27:43.695  INFO 7376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:27:43.761  INFO 7376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:27:43.762  INFO 7376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:27:43.895  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:27:43.910  INFO 7376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ef6c19d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52f873e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@44e6e068, org.springframework.security.web.header.HeaderWriterFilter@392d558c, org.springframework.security.web.authentication.logout.LogoutFilter@23fe726d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1f186953, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2a43fe68, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1387139c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ca0de29, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f726504, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1026066a, org.springframework.security.web.session.SessionManagementFilter@2a65ea28, org.springframework.security.web.access.ExceptionTranslationFilter@6f7ae095, org.springframework.security.web.access.intercept.AuthorizationFilter@5e4bbd23]
+2023-05-07 14:27:43.927  WARN 7376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:27:44.002  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:27:44.017  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:27:44.098  INFO 7376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:27:44.108  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:27:44.113  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.848 seconds (JVM running for 22.786)
+2023-05-07 14:27:44.114  INFO 7376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:27:44.583  INFO 7376 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:27:44.583  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:27:44.584  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:27:44.585  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:27:44.585  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:08.177  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:08.177  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:08.331  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:08.331  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:08.333  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:08.336  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:09.268  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:09.268  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:34.086  INFO 7376 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:29:34.097  INFO 7376 --- [Thread-8] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:29:34.098  INFO 7376 --- [Thread-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:29:34.102  INFO 7376 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:29:34.102  INFO 7376 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:29:34.107  INFO 7376 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:29:34.170  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 7376 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:29:34.171  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:29:34.280  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:29:34.281  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:29:34.285  INFO 7376 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:29:34.285  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:29:34.287  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:29:34.287  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:29:34.291  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:29:34.367  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:29:34.368  INFO 7376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:29:34.368  INFO 7376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:29:34.446  INFO 7376 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:29:34.456  INFO 7376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:29:34.456  INFO 7376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 284 ms
+2023-05-07 14:29:34.502  INFO 7376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:29:34.505  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:29:34.505  WARN 7376 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:29:34.562  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:29:34.563  INFO 7376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:29:34.629  INFO 7376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:29:34.629  INFO 7376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:29:34.754  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:29:34.769  INFO 7376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@797af332, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@103dd87f, org.springframework.security.web.context.SecurityContextPersistenceFilter@738c6458, org.springframework.security.web.header.HeaderWriterFilter@6ccece02, org.springframework.security.web.authentication.logout.LogoutFilter@6fee2a19, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7fdda78, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2ed49846, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@16f9342d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ceba7db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@164fd69a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@248846e3, org.springframework.security.web.session.SessionManagementFilter@79582f6a, org.springframework.security.web.access.ExceptionTranslationFilter@74f17d37, org.springframework.security.web.access.intercept.AuthorizationFilter@67dab332]
+2023-05-07 14:29:34.789  WARN 7376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:29:34.852  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:29:34.868  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:29:34.947  INFO 7376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:29:34.957  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:29:34.961  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.809 seconds (JVM running for 133.633)
+2023-05-07 14:29:34.963  INFO 7376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:29:36.253  INFO 7376 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:29:36.253  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:29:36.254  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:29:36.255  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:36.257  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:36.369  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:36.370  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:36.371  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:36.373  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.002  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.002  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.030  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.030  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.031  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.031  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.165  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.165  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.195  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.195  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.196  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.196  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.287  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.287  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.321  INFO 7376 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.321  INFO 7376 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.322  INFO 7376 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.322  INFO 7376 --- [http-nio-9091-exec-8] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:29:37.588  INFO 7376 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:29:37.588  INFO 7376 --- [http-nio-9091-exec-9] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:24.110  INFO 7376 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-07 14:30:24.123  INFO 7376 --- [Thread-12] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-07 14:30:24.123  INFO 7376 --- [Thread-12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-07 14:30:24.126  INFO 7376 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:30:24.127  INFO 7376 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown initiated...
+2023-05-07 14:30:24.131  INFO 7376 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : dmpool - Shutdown completed.
+2023-05-07 14:30:24.194  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Starting HellobootApplication using Java 17.0.7 on DESKTOP-VQ691DG with PID 7376 (D:\java__dm\SpringBoot\helloboot\target\classes started by user in D:\java__dm\SpringBoot\helloboot)
+2023-05-07 14:30:24.195  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-07 14:30:24.302  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:30:24.302  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-05-07 14:30:24.307  INFO 7376 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.dm.springboot.dao.JpaMemberDao; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-05-07 14:30:24.307  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-05-07 14:30:24.308  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-05-07 14:30:24.308  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-07 14:30:24.313  INFO 7376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-05-07 14:30:24.385  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-05-07 14:30:24.385  INFO 7376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-07 14:30:24.385  INFO 7376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 14:30:24.460  INFO 7376 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-07 14:30:24.471  INFO 7376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-07 14:30:24.471  INFO 7376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 275 ms
+2023-05-07 14:30:24.518  INFO 7376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-07 14:30:24.521  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Starting...
+2023-05-07 14:30:24.521  WARN 7376 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-05-07 14:30:24.567  INFO 7376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : dmpool - Start completed.
+2023-05-07 14:30:24.567  INFO 7376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-05-07 14:30:24.633  INFO 7376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-07 14:30:24.633  INFO 7376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-07 14:30:24.758  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : authenticationPath
+2023-05-07 14:30:24.774  INFO 7376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ea2679a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a6b6c43, org.springframework.security.web.context.SecurityContextPersistenceFilter@33eb9715, org.springframework.security.web.header.HeaderWriterFilter@6bf31ac0, org.springframework.security.web.authentication.logout.LogoutFilter@37862314, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@24e203fe, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@99c7696, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@53cbff45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@286f230c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b3919db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28728899, org.springframework.security.web.session.SessionManagementFilter@24aedb39, org.springframework.security.web.access.ExceptionTranslationFilter@30b56549, org.springframework.security.web.access.intercept.AuthorizationFilter@28ba6f1a]
+2023-05-07 14:30:24.782  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : registerWebSocketHandlers
+2023-05-07 14:30:24.808  WARN 7376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-07 14:30:24.867  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addCorsMappings
+2023-05-07 14:30:24.882  INFO 7376 --- [restartedMain] c.dm.springboot.common.aop.LoggerAspect  : addViewControllers
+2023-05-07 14:30:24.960  INFO 7376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-07 14:30:24.971  INFO 7376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-05-07 14:30:24.975  INFO 7376 --- [restartedMain] com.dm.springboot.HellobootApplication   : Started HellobootApplication in 0.8 seconds (JVM running for 183.647)
+2023-05-07 14:30:24.976  INFO 7376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-07 14:30:27.605  INFO 7376 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 14:30:27.605  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-07 14:30:27.606  INFO 7376 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-07 14:30:27.607  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:27.607  INFO 7376 --- [http-nio-9091-exec-1] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:27.715  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:27.715  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:27.716  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:30:27.720  INFO 7376 --- [http-nio-9091-exec-2] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:30:28.579  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:28.579  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:28.625  INFO 7376 --- [http-nio-9091-exec-3] c.dm.springboot.common.aop.LoggerAspect  : afterConnectionEstablished
+2023-05-07 14:30:41.205  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:41.205  INFO 7376 --- [http-nio-9091-exec-4] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:41.298  INFO 7376 --- [http-nio-9091-exec-5] c.dm.springboot.common.aop.LoggerAspect  : afterConnectionClosed
+2023-05-07 14:30:41.307  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:41.307  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:41.307  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:30:41.308  INFO 7376 --- [http-nio-9091-exec-6] c.dm.springboot.common.aop.LoggerAspect  : selectMemberAll
+2023-05-07 14:30:42.308  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:42.308  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : doFilter
+2023-05-07 14:30:42.309  INFO 7376 --- [http-nio-9091-exec-7] c.dm.springboot.common.aop.LoggerAspect  : afterConnectionEstablished

@@ -7,4 +7,4 @@ INSERT INTO MEMBER VALUES('admin1', '수원시2', 17, 'pajang12515@daum.net', '2
 
 DELETE FROM MEMBER WHERE USERID = 'admin1';
 
-UPDATE member SET username = '관리자' WHERE userid = 'admin';
+UPDATE member SET username = '관리자' WHERE userid = 'user6';

@@ -86,6 +86,22 @@
 			location.assign("${pageContext.request.contextPath}/jpa/member/name/" + name)
 		}
 	</script>
+	
+	<h2>채팅서버연결</h2>
+	<button onclick="openChatting();">채팅하기</button>
+	<script>
+		let socket;
+		const openChatting = () => {
+			
+			socket = new WebSocket("ws://localhost:9091/chatting");
+
+			socket.onopen = (data) => {
+				console.log(data);
+			}
+		}
+	</script>
+	
+	<h2><a href="${pageContext.request.contextPath}/jpa/board">게시글 전체요청</a></h2>
 </body>
 </html>
 
